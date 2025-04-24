@@ -16,6 +16,13 @@ export default defineNuxtConfig({
     },
   ],
   devtools: { enabled: true },
+  app: {
+    head: {
+      htmlAttrs: {
+        class: "is-light",
+      },
+    },
+  },
   // Custom styles
   css: ["@lttr/puleo", "~/assets/css/main.css"],
   site: {

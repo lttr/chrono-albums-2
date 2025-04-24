@@ -1,6 +1,10 @@
 <template>
-  <div>
+  <div class="p-flow">
     <h1>File Upload</h1>
+
+    <section>
+      <MediaUploader />
+    </section>
   </div>
 </template>
 

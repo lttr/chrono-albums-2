@@ -1,7 +1,7 @@
 <template>
   <div>
     <header></header>
-    <main>
+    <main class="main p-container">
       <NuxtPage />
     </main>
     <footer></footer>
@@ -10,4 +10,8 @@
 
 <script lang="ts" setup></script>
 
-<style scoped></style>
+<style scoped>
+.main {
+  margin-top: var(--space-5);
+}
+</style>
