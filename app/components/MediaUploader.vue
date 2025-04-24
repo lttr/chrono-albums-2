@@ -31,13 +31,9 @@
 </template>
 
 <script lang="ts" setup>
-const allowedMimeTypes = ["image/jpeg", "image/heif", "video/mp4", "video/mov"]
-const acceptedFileTypes = allowedMimeTypes
-  .concat([".jpeg", ".jpg", ".heic", ".mov", ".mp4"])
-  .join(",")
-
-const MAX_VIDEO_SIZE = 1024 * 1024 * 10 // 10 MB
-const MAX_IMAGE_SIZE = 1024 * 1024 * 100 // 200 MB
+const acceptedFileTypes = ALLOWED_MIME_TYPES.concat(
+  ALLOWED_FILE_EXTENSIONS,
+).join(",")
 
 const files = ref<File[]>([])
 
