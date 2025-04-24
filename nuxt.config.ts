@@ -9,27 +9,21 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "@vueuse/nuxt",
   ],
-  devtools: { enabled: true },
   components: [
     {
       path: "~/components",
       pathPrefix: false,
     },
   ],
+  devtools: { enabled: true },
   // Custom styles
   css: ["@lttr/puleo", "~/assets/css/main.css"],
-  eslint: {
-    config: {
-      nuxt: {
-        sortConfigKeys: true,
-      },
-    },
-  },
   site: {
     url: "https://example.com",
     name: "Website name",
     description: "Website description",
     defaultLocale: "en",
+    indexable: false,
   },
   future: {
     compatibilityVersion: 4,
@@ -38,6 +32,13 @@ export default defineNuxtConfig({
     typedPages: true,
   },
   compatibilityDate: "2025-04-01",
+  eslint: {
+    config: {
+      nuxt: {
+        sortConfigKeys: true,
+      },
+    },
+  },
   // Custom styles
   lttrConfigPostcss: {
     filesWithGlobals: ["./node_modules/@lttr/puleo/output/media.css"],
