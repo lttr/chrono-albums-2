@@ -37,11 +37,28 @@ const acceptedFileTypes = ALLOWED_MIME_TYPES.concat(
 
 const files = ref<File[]>([])
 
-function handleFileSelect(event: Event) {
-  const target = event.target as HTMLInputElement
-  if (target.files) {
-    files.value = files.value.concat(Array.from(target.files))
+async function handleFileSelect(event: Event) {
+  const input = event.target as HTMLInputElement
+  const filesAsArray = Array.from(input?.files ?? [])
+
+  await processFiles(filesAsArray)
+
+  files.value = files.value.concat(filesAsArray)
+}
+
+async function processFiles(files: File[]) {
+  const formData = new FormData()
+  files.forEach((file) => formData.append(file.name, file))
+  const response = await $fetch("/api/upload", {
+    method: "POST",
+    body: formData,
+  })
+
+  if (!response) {
+    throw new Error("Failed to upload files")
   }
+
+  console.log(response)
 }
 
 function fileIsTooBig(file: File) {

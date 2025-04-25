@@ -39,6 +39,14 @@ export default defineNuxtConfig({
     typedPages: true,
   },
   compatibilityDate: "2025-04-01",
+  nitro: {
+    storage: {
+      uploads: {
+        driver: "fs",
+        base: "./user-data/uploads",
+      },
+    },
+  },
   eslint: {
     config: {
       nuxt: {

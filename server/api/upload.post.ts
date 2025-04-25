@@ -47,8 +47,14 @@ export default defineEventHandler(async (event) => {
       }
 
       // Store file using useStorage
-      const fileName = `${Date.now()}-${file.filename}`
+      // const fileName = `${Date.now()}-${file.filename}`
+      const fileName = `${file.filename}`
       await storage.setItemRaw(`${fileName}`, file.data)
+      await storage.setItem(`${fileName}-metadata`, {
+        filename: file.filename,
+        size: file.name,
+        type: file.type,
+      })
       uploadedFiles.push({
         filename: fileName,
         url: `/uploads/${fileName}`,
@@ -59,6 +65,7 @@ export default defineEventHandler(async (event) => {
       files: uploadedFiles,
     }
   } catch (error) {
+    console.error(error)
     if (error instanceof H3Error) {
       throw error
     }
