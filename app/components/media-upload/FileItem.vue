@@ -1,7 +1,45 @@
 <template>
-  <div></div>
+  <div>
+    {{ fileStatus.file.name }}
+    <div class="preview">
+      <img v-if="fileStatus?.type === 'image'" :src="previewUrl" alt="" />
+      <video v-if="fileStatus?.type === 'video'" controls>
+        <source :src="previewUrl" />
+      </video>
+    </div>
+    <span v-if="fileIsTooBig(fileStatus.file)">(too big)</span>
+    <span v-if="!attrAccept(fileStatus.file, acceptedFileTypes)"
+      >(wrong format)</span
+    >
+  </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { attrAccept, fileIsTooBig } from "./validators"
+import type { FileStatus } from "./types"
 
-<style scoped></style>
+const { fileStatus } = defineProps<{
+  fileStatus: FileStatus
+}>()
+
+const acceptedFileTypes = ALLOWED_MIME_TYPES.concat(
+  ALLOWED_FILE_EXTENSIONS,
+).join(",")
+
+const previewUrl = computed(() => {
+  return URL.createObjectURL(fileStatus.file)
+})
+
+onUnmounted(() => {
+  if (previewUrl.value) {
+    URL.revokeObjectURL(previewUrl.value)
+  }
+})
+</script>
+
+<style scoped>
+.preview {
+  max-height: 20rem;
+  max-width: 20rem;
+}
+</style>

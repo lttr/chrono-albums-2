@@ -16,8 +16,8 @@
         <Icon name="uil-image-upload" class="icon" />
         <div class="p-heading-4">Nahraj fotky a videa</div>
         <div class="upload-hint p-secondary-text-regular">
-          Přetáhni sem soubory nebo klikni na tlačítko. Přijímá soubory ve
-          formátech JPEG, HEIC, MP4 a MOV.
+          Přetáhni sem soubory nebo klikni. Přijímá soubory ve formátech JPEG,
+          HEIC, MP4 a MOV.
         </div>
         <input
           :id="fileUploadId"
@@ -31,33 +31,20 @@
       </label>
     </section>
     <section>
-      <div v-for="(file, index) of files" :key="file.name">
-        {{ file.name }}
-        <div class="preview">
-          <img
-            v-if="previews[index]?.type === 'image'"
-            :src="previews[index].url"
-            alt=""
-          />
-          <video v-if="previews[index]?.type === 'video'" controls>
-            <source :src="previews[index].url" />
-          </video>
-        </div>
-        <span v-if="fileIsTooBig(file)">(too big)</span>
-        <span v-if="!attrAccept(file, acceptedFileTypes)">(wrong format)</span>
-      </div>
+      <FileList :file-statuses />
     </section>
   </div>
 </template>
 
 <script lang="ts" setup>
-import attrAccept from "attr-accept"
+import type { FileStatus } from "./types"
+import { fileIsTooBig, attrAccept } from "./validators"
 
 const acceptedFileTypes = ALLOWED_MIME_TYPES.concat(
   ALLOWED_FILE_EXTENSIONS,
 ).join(",")
 
-const files = ref<File[]>([])
+const fileStatuses = ref<FileStatus[]>([])
 
 const isDragging = ref(false)
 
@@ -69,7 +56,15 @@ async function handleFileSelect(event: Event) {
 
   await processFiles(filesAsArray)
 
-  files.value = files.value.concat(filesAsArray)
+  fileStatuses.value = fileStatuses.value.concat(
+    filesAsArray.map((file) => {
+      return {
+        file,
+        type: file.type.startsWith("image/") ? "image" : "video",
+        status: "pending",
+      }
+    }),
+  )
 }
 
 async function processFiles(files: File[]) {
@@ -108,60 +103,9 @@ function openFileInput() {
     fileInput.value.click()
   }
 }
-
-function fileIsTooBig(file: File) {
-  const maxSize = file.type.startsWith("video/")
-    ? MAX_VIDEO_SIZE
-    : MAX_IMAGE_SIZE
-  return file.size > maxSize
-}
-
-type Preview = {
-  type: "image" | "video"
-  url: string
-} | null
-
-const previews = computed<Preview[]>((oldPreviews) => {
-  if (oldPreviews) {
-    cleanupObjectURLs(oldPreviews)
-  }
-
-  return files.value.map((file) => {
-    if (file.type.startsWith("image/")) {
-      return {
-        type: "image",
-        url: URL.createObjectURL(file),
-      }
-    } else if (file.type.startsWith("video/")) {
-      return {
-        type: "video",
-        url: URL.createObjectURL(file),
-      }
-    }
-    return null
-  })
-})
-
-function cleanupObjectURLs(previews: Preview[]) {
-  previews.forEach((preview) => {
-    if (preview?.url) {
-      URL.revokeObjectURL(preview.url)
-    }
-  })
-}
-
-// Cleanup old previews
-onUnmounted(() => {
-  cleanupObjectURLs(previews.value)
-})
 </script>
 
 <style scoped>
-.preview {
-  max-height: 20rem;
-  max-width: 20rem;
-}
-
 .upload-label {
   padding-block: var(--space-6);
   padding-inline: var(--space-3);
