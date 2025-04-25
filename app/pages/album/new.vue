@@ -1,6 +1,10 @@
 <template>
   <div class="p-flow">
-    <h1>Alba</h1>
+    <h1>Nové album</h1>
+
+    <section>
+      <NewAlbumForm />
+    </section>
   </div>
 </template>
 

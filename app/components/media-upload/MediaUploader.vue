@@ -11,9 +11,9 @@
         @dragenter="isDragging = true"
         @dragover="isDragging = true"
         @dragleave="isDragging = false"
-        @drop="isDragging = false"
+        @drop="onDrop"
       >
-        <Icon name="uil-cloud-upload" class="icon" />
+        <Icon name="uil-image-upload" class="icon" />
         <div class="p-heading-4">Nahraj fotky a videa</div>
         <div class="upload-hint p-secondary-text-regular">
           Přetáhni sem soubory nebo klikni na tlačítko. Přijímá soubory ve
@@ -44,12 +44,15 @@
           </video>
         </div>
         <span v-if="fileIsTooBig(file)">(too big)</span>
+        <span v-if="!attrAccept(file, acceptedFileTypes)">(wrong format)</span>
       </div>
     </section>
   </div>
 </template>
 
 <script lang="ts" setup>
+import attrAccept from "attr-accept"
+
 const acceptedFileTypes = ALLOWED_MIME_TYPES.concat(
   ALLOWED_FILE_EXTENSIONS,
 ).join(",")
@@ -71,7 +74,17 @@ async function handleFileSelect(event: Event) {
 
 async function processFiles(files: File[]) {
   const formData = new FormData()
-  files.forEach((file) => formData.append(file.name, file))
+  for (const file of files) {
+    if (!fileIsTooBig(file) && attrAccept(file, acceptedFileTypes)) {
+      formData.append(file.name, file)
+    }
+  }
+
+  if (Array.from(formData.values()).length === 0) {
+    // no validated files
+    return
+  }
+
   const response = await $fetch("/api/upload", {
     method: "POST",
     body: formData,
@@ -82,6 +95,10 @@ async function processFiles(files: File[]) {
   }
 
   console.log(response)
+}
+
+function onDrop(event: DragEvent) {
+  console.log(event)
 }
 
 const fileInput = templateRef<HTMLInputElement>("fileInput")

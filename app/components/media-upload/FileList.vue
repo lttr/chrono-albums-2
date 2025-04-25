@@ -1,7 +1,5 @@
 <template>
-  <div class="p-flow">
-    <h1>Alba</h1>
-  </div>
+  <div></div>
 </template>
 
 <script lang="ts" setup></script>

@@ -1,8 +1,15 @@
 :root {
-  --font-transitional: Charter, Bitstream Charter, Sitka Text, Cambria, serif;
+  --font-transitional:
+    "Alike", Charter, Bitstream Charter, Sitka Text, Cambria, serif;
   --font-family-body: var(--font-transitional);
 }
 
 body {
-  font-family: var(--font-transitional);
+  font-family:
+    "Alike",
+    Charter,
+    Bitstream Charter,
+    Sitka Text,
+    Cambria,
+    serif;
 }
