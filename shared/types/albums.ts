@@ -22,19 +22,39 @@ export const categories = [
 
 export type Category = (typeof categories)[number]
 
+// Custom error messages for validation
+const errorMessages = {
+  id: "ID alba je povinný, a musí být v UUID formátu.",
+  title: "Název alba je povinný a délka musí být 3-70 znaků.",
+  month: "Měsíc je povinný a musí to být číslo 1-12.",
+  year: `Rok je povinný a musí to být číslo od ${firstYear} do aktuálního roku.`,
+  category: `Kategorie je povinná a musí být jedna z: ${categories.join(", ")}.`,
+}
+
 export const AlbumSearchParamsSchema = z.interface({
-  id: z.uuid("ID alba je povinný, a musí být v UUID formátu"),
+  id: z.uuid(errorMessages.id),
   title: z
-    .string("Název alba je povinný a délka musí být 3-70 znaků")
-    .check(z.minLength(3), z.maxLength(70)),
+    .string(errorMessages.title)
+    .check(
+      z.minLength(3, errorMessages.title),
+      z.maxLength(70, errorMessages.title),
+    ),
   month: z.coerce
-    .number("Měsíc je povinný a musí to být číslo 1-12")
-    .check(z.int(), z.gte(1), z.lte(12)),
+    .number(errorMessages.month)
+    .check(
+      z.int(errorMessages.month),
+      z.gte(1, errorMessages.month),
+      z.lte(12, errorMessages.month),
+    ),
   year: z.coerce
-    .number("Rok je povinný a musí to být číslo od 1968 do aktuálního roku")
-    .check(z.int(), z.gte(firstYear), z.lte(currentYear)),
+    .number(errorMessages.year)
+    .check(
+      z.int(errorMessages.year),
+      z.lte(currentYear, errorMessages.year),
+      z.gte(firstYear, errorMessages.year),
+    ),
   category: z.enum([...categories], {
-    error: "Kategorie je povinná a musí být jedna z: " + categories.join(", "),
+    error: errorMessages.category,
   }),
 })
 

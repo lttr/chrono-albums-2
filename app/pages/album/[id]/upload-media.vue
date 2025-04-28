@@ -15,8 +15,8 @@
       <MediaUploader v-if="!prettyError" />
       <div v-else>
         <TheAlert type="error">
-          <p class="p-base-text-bold">Neplatné parametry</p>
-          <p>{{ prettyError }}</p>
+          <p class="error-heading">Neplatné parametry</p>
+          <pre>{{ prettyError }}</pre>
         </TheAlert>
       </div>
     </section>
@@ -28,27 +28,15 @@ import { AlbumSearchParamsSchema } from "~~/shared/types/albums"
 import * as z from "@zod/mini"
 
 const route = useRoute()
-
-const prettyError = ref("")
-
-watch(
-  () => route.fullPath,
-  () => {
-    console.log("route.fullPath", route.fullPath)
-    const params = {
-      ...route.params,
-      ...route.query,
-    }
-    const result = AlbumSearchParamsSchema.safeParse(params)
-    console.log("result", result.error)
-    if (result.error) {
-      prettyError.value = z.prettifyError(result.error).replace(/ → .*/, "")
-    } else {
-      prettyError.value = ""
-    }
-  },
-  { immediate: true },
-)
+const prettyError = computed(() => {
+  const result = AlbumSearchParamsSchema.safeParse({
+    ...route.params,
+    ...route.query,
+  })
+  return result.error
+    ? z.prettifyError(result.error).replaceAll(/ → .*/g, "")
+    : ""
+})
 </script>
 
 <style scoped>
@@ -58,5 +46,11 @@ watch(
   column-gap: var(--space-3);
   row-gap: var(--space-1);
   font-size: var(--font-size--1);
+}
+
+.error-heading {
+  font-size: var(--font-size-0);
+  font-weight: bold;
+  margin-bottom: var(--space-3);
 }
 </style>
