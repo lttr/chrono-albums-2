@@ -8,7 +8,7 @@
       </video>
     </div>
     <span v-if="fileIsTooBig(fileStatus.file)">(too big)</span>
-    <span v-if="!attrAccept(fileStatus.file, acceptedFileTypes)"
+    <span v-if="!attrAccept(fileStatus.file, ACCEPTED_FILE_TYPES)"
       >(wrong format)</span
     >
   </div>
@@ -21,10 +21,6 @@ import type { FileStatus } from "./types"
 const { fileStatus } = defineProps<{
   fileStatus: FileStatus
 }>()
-
-const acceptedFileTypes = ALLOWED_MIME_TYPES.concat(
-  ALLOWED_FILE_EXTENSIONS,
-).join(",")
 
 const previewUrl = computed(() => {
   return URL.createObjectURL(fileStatus.file)

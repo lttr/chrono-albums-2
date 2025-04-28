@@ -11,5 +11,12 @@ export const ALLOWED_FILE_EXTENSIONS = [
   ".mov",
   ".mp4",
 ]
+
+export const ACCEPTED_FILE_TYPES = ALLOWED_MIME_TYPES.concat(
+  ALLOWED_FILE_EXTENSIONS,
+).join(",")
+
 export const MAX_VIDEO_SIZE_MB = 10
 export const MAX_IMAGE_SIZE_MB = 100
+
+export const MAX_FILES = 500

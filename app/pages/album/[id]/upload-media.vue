@@ -12,7 +12,7 @@
       <span>{{ route.query.category }}</span>
     </section>
     <section>
-      <MediaUploader v-if="!prettyError" />
+      <MediaUploader v-if="!prettyError && params" :params />
       <div v-else>
         <TheAlert type="error">
           <p class="error-heading">Neplatné parametry</p>
@@ -27,16 +27,27 @@
 import { AlbumSearchParamsSchema } from "~~/shared/types/albums"
 import * as z from "@zod/mini"
 
+const params = ref<AlbumSearchParams>()
+const prettyError = ref("")
+
 const route = useRoute()
-const prettyError = computed(() => {
-  const result = AlbumSearchParamsSchema.safeParse({
-    ...route.params,
-    ...route.query,
-  })
-  return result.error
-    ? z.prettifyError(result.error).replaceAll(/ → .*/g, "")
-    : ""
-})
+
+watch(
+  () => route.fullPath,
+  () => {
+    const result = AlbumSearchParamsSchema.safeParse({
+      ...route.params,
+      ...route.query,
+    })
+    if (result.success) {
+      params.value = result.data
+    }
+    prettyError.value = result.error
+      ? z.prettifyError(result.error).replaceAll(/ → .*/g, "")
+      : ""
+  },
+  { immediate: true },
+)
 </script>
 
 <style scoped>
@@ -52,5 +63,9 @@ const prettyError = computed(() => {
   font-size: var(--font-size-0);
   font-weight: bold;
   margin-bottom: var(--space-3);
+}
+
+pre {
+  white-space: pre-wrap;
 }
 </style>
