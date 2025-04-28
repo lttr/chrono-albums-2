@@ -2,13 +2,16 @@
   <div>
     <AppHeader />
     <main class="main p-container">
-      <NuxtPage />
+      <NuxtPage v-if="!error" />
+      <slot v-else></slot>
     </main>
     <footer></footer>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const error = useError()
+</script>
 
 <style scoped>
 .main {

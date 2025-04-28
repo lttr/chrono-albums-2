@@ -46,28 +46,12 @@
 </template>
 
 <script lang="ts" setup>
+import { months, years, categories } from "~~/shared/types/albums"
+
 const titleId = useId()
 const monthId = useId()
 const yearId = useId()
 const categoryId = useId()
-
-const currentYear = new Date().getFullYear()
-const firstYear = 1968
-const years = Array.from(
-  Array(currentYear - firstYear + 1),
-  (_, i) => firstYear + i,
-).reverse()
-const months = Array.from(Array(12), (_, i) => i + 1).reverse()
-
-const categories = [
-  "Akce oddílu",
-  "Tábory",
-  "Svojsíkovy závody",
-  "Roveři",
-  "Tábořiště",
-  "Oddílové hry",
-  "Klubovny",
-]
 
 function onSubmit(e: Event) {
   const id = crypto.randomUUID()

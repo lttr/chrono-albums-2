@@ -1,5 +1,5 @@
 import { H3Error } from "h3"
-import { MAX_IMAGE_SIZE } from "~~/shared/utils/upload"
+import { MAX_IMAGE_SIZE_MB, MAX_VIDEO_SIZE_MB } from "~~/shared/utils/upload"
 
 export default defineEventHandler(async (event) => {
   // Parse multipart form data
@@ -16,18 +16,20 @@ export default defineEventHandler(async (event) => {
   const storage = useStorage("uploads")
   const uploadedFiles = []
 
+  const maxImageSize = MAX_IMAGE_SIZE_MB * 1024 * 1024
+  const maxVideoSize = MAX_VIDEO_SIZE_MB * 1024 * 1024
+
   try {
     // Process each file in the form data
     for (const file of formData) {
       // Validate file size
       if (
-        (file.type?.startsWith("image/") &&
-          file.data.length > MAX_IMAGE_SIZE) ||
-        (file.type?.startsWith("video/") && file.data.length > MAX_VIDEO_SIZE)
+        (file.type?.startsWith("image/") && file.data.length > maxImageSize) ||
+        (file.type?.startsWith("video/") && file.data.length > maxVideoSize)
       ) {
         throw createError({
           statusCode: 400,
-          statusMessage: `File ${file.filename} exceeds maximum size of ${MAX_IMAGE_SIZE / 1024 / 1024} MB`,
+          statusMessage: `File ${file.filename} exceeds maximum size of ${maxImageSize} MB`,
         })
       }
 
