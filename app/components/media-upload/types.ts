@@ -1,8 +1,10 @@
 export interface FileStatus {
-  file: File
-  type: "video" | "image"
-  status: "pending" | "uploading" | "success" | "error"
   error?: string
-  url?: string
+  file: File
+  id: string
   previewUrl?: string
+  progress: number
+  status: "pending" | "uploading" | "success" | "error"
+  type: "video" | "image"
+  url?: string
 }

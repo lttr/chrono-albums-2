@@ -3,9 +3,6 @@
   <div
     class="upload-label p-center p-flow"
     :class="{ 'is-dragging': isDragging, 'has-error': hasError }"
-    tabindex="0"
-    @keydown.enter="openFileInput"
-    @click="openFileInput"
     @dragenter.prevent="isDragging = true"
     @dragleave.prevent="isDragging = false"
     @dragover.prevent
@@ -15,8 +12,8 @@
     <label class="label p-center p-flow">
       <div class="p-heading-4">Nahraj fotky a videa</div>
       <div class="upload-hint p-secondary-text-regular">
-        Přetáhni sem soubory nebo klikni. Přijímá soubory ve formátech JPEG,
-        HEIC, MP4 a MOV.
+        Přetáhni sem soubory nebo klikni na tlačítko. Přijímá soubory ve
+        formátech JPEG, HEIC, MP4 a MOV.
       </div>
       <input
         ref="fileInput"
@@ -77,10 +74,8 @@ function openFileInput() {
   border: var(--border-size-2) dashed var(--text-color-2);
   border-radius: var(--radius-3);
   box-shadow: var(--inner-shadow-3);
-  cursor: pointer;
 
-  &.is-dragging,
-  &:hover {
+  &.is-dragging {
     border: var(--border-size-2) dashed var(--text-color-1);
     box-shadow: var(--inner-shadow-0);
     background: var(--surface-1);
@@ -92,10 +87,10 @@ function openFileInput() {
 }
 
 .upload-input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
+  margin-inline: auto;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
 }
 
 .icon {

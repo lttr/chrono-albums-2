@@ -87,20 +87,20 @@ async function onFilesSelected(files: File[]) {
     return
   }
 
-  const validFiles = files.filter(validateFile)
-  if (validFiles.length) {
-    const newFileStatuses: FileStatus[] = validFiles.map((file) => ({
+  const newFileStatuses = files.map((file) => {
+    return {
       file,
-      type: file.type.startsWith("image/") ? "image" : "video",
-      status: "pending" as const,
+      id: crypto.randomUUID(),
       progress: 0,
-    }))
+      status: "pending" as const,
+      type: file.type.startsWith("image/") ? "image" : "video",
+    } satisfies FileStatus
+  })
 
-    fileStatuses.value = [...fileStatuses.value, ...newFileStatuses]
+  fileStatuses.value = [...fileStatuses.value, ...newFileStatuses]
 
-    const promises = newFileStatuses.map(processFile)
-    await Promise.all(promises)
-  }
+  const promises = newFileStatuses.map(processFile)
+  await Promise.all(promises)
 }
 
 //
