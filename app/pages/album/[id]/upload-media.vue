@@ -16,7 +16,7 @@
       <div v-else>
         <TheAlert type="error">
           <p class="error-heading">Neplatné parametry</p>
-          <pre>{{ prettyError }}</pre>
+          <pre class="error-message">{{ prettyError }}</pre>
         </TheAlert>
       </div>
     </section>
@@ -65,7 +65,7 @@ watch(
   margin-bottom: var(--space-3);
 }
 
-pre {
+.error-message {
   white-space: pre-wrap;
 }
 </style>

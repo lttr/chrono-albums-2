@@ -6,5 +6,6 @@ export interface FileStatus {
   progress: number
   status: "pending" | "uploading" | "success" | "error"
   type: "video" | "image"
+  valid: boolean
   url?: string
 }

@@ -1,7 +1,10 @@
 <template>
-  <div>
+  <div class="p-flow">
     <section class="p-flow">
       <DropZone :has-error="hasError" @files-selected="onFilesSelected" />
+    </section>
+    <section v-if="validFilesCount > 0" class="p-flow">
+      Nahráno {{ uploadedFilesCount }} z {{ validFilesCount }} souborů
     </section>
     <section>
       <FileList :file-statuses />
@@ -22,6 +25,14 @@ const acceptedFileTypes = ACCEPTED_FILE_TYPES
 const maxFiles = MAX_FILES
 
 const fileStatuses = ref<FileStatus[]>([])
+
+const uploadedFilesCount = computed(() => {
+  return fileStatuses.value.filter((file) => file.status === "success").length
+})
+
+const validFilesCount = computed(() => {
+  return fileStatuses.value.filter((file) => file.valid).length
+})
 
 //
 // Errors
@@ -78,8 +89,6 @@ ${ALLOWED_FILE_EXTENSIONS.join(", ")}.`)
 //
 
 async function onFilesSelected(files: File[]) {
-  clearError()
-
   if (fileStatuses.value.length + files.length > maxFiles) {
     setError(
       `Promiň, ale je povoleno nahrávat maximálně ${maxFiles} souborů najednou.`,
@@ -94,13 +103,17 @@ async function onFilesSelected(files: File[]) {
       progress: 0,
       status: "pending" as const,
       type: file.type.startsWith("image/") ? "image" : "video",
+      valid: validateFile(file),
     } satisfies FileStatus
   })
 
   fileStatuses.value = [...fileStatuses.value, ...newFileStatuses]
 
-  const promises = newFileStatuses.map(processFile)
-  await Promise.all(promises)
+  await Promise.all(
+    newFileStatuses
+      .filter((fileStatus) => fileStatus.valid)
+      .map((fileStatus) => processFile(fileStatus)),
+  )
 }
 
 //
@@ -108,6 +121,11 @@ async function onFilesSelected(files: File[]) {
 //
 
 async function processFile(fileStatus: FileStatus): Promise<void> {
+  // update status
+  fileStatus.status = "uploading"
+  // convert
+  // TODO
+  // upload
   await uploadFile(fileStatus)
 }
 
@@ -126,12 +144,6 @@ async function uploadFile(fileStatus: FileStatus) {
   formData.append("albumMonth", params.month.toString())
   formData.append("albumCategory", params.category)
 
-  // Update the status in the array
-  const index = fileStatuses.value.indexOf(fileStatus)
-  if (index !== -1) {
-    fileStatuses.value[index] = { ...fileStatus, status: "uploading" }
-  }
-
   try {
     const response = await fetch("/api/upload", {
       method: "POST",
@@ -142,30 +154,22 @@ async function uploadFile(fileStatus: FileStatus) {
       throw new Error(`Upload failed: ${response.statusText}`)
     }
 
-    const result = await response.json()
+    const result = (await response.json()) as { files: { url: string }[] }
     const uploadedFile = result.files[0]
 
-    // Update the status in the array
-    if (index !== -1) {
-      fileStatuses.value[index] = {
-        ...fileStatus,
-        status: "success",
-        url: uploadedFile.url,
-      }
+    if (!uploadedFile) {
+      throw new Error("Upload failed")
     }
+
+    fileStatus.status = "success"
+    fileStatus.url = uploadedFile.url
 
     return result
   } catch (error) {
     if (error instanceof Error) {
       console.error("Upload error:", error.message)
-      // Update the status in the array
-      if (index !== -1) {
-        fileStatuses.value[index] = {
-          ...fileStatus,
-          status: "error",
-          error: error?.message || "Upload failed",
-        }
-      }
+      fileStatus.status = "error"
+      fileStatus.error = error?.message || "Upload failed"
     }
     setError(fileStatus.error || "Upload failed")
   }

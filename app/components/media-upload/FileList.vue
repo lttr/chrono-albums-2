@@ -1,6 +1,10 @@
 <template>
-  <div v-for="fileStatus of fileStatuses" :key="fileStatus.file.name">
-    <FileItem :file-status="fileStatus" />
+  <div class="file-list p-stack">
+    <FileItem
+      v-for="fileStatus of fileStatuses"
+      :key="fileStatus.file.name"
+      :file-status="fileStatus"
+    />
   </div>
 </template>
 
@@ -12,4 +16,8 @@ const { fileStatuses } = defineProps<{
 }>()
 </script>
 
-<style scoped></style>
+<style scoped>
+.file-list {
+  --stack-space: var(--space-2);
+}
+</style>
