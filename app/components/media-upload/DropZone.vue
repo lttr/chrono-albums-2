@@ -1,12 +1,8 @@
 <template>
-  <!-- eslint-disable-next-line vuejs-accessibility/no-static-element-interactions -->
   <div
+    ref="dropZone"
     class="upload-label p-center p-flow"
-    :class="{ 'is-dragging': isDragging, 'has-error': hasError }"
-    @dragenter.prevent="isDragging = true"
-    @dragleave.prevent="isDragging = false"
-    @dragover.prevent
-    @drop.prevent="onDrop"
+    :class="{ 'is-dragging': isOverDropZone, 'has-error': hasError }"
   >
     <Icon name="uil-image-upload" class="icon" />
     <label class="label p-center p-flow">
@@ -16,7 +12,6 @@
         formátech JPEG, HEIC, MP4 a MOV.
       </div>
       <input
-        ref="fileInput"
         class="upload-input"
         type="file"
         multiple
@@ -28,7 +23,8 @@
 </template>
 
 <script setup lang="ts">
-import { ACCEPTED_FILE_TYPES } from "~~/shared/utils/upload"
+import { ACCEPTED_FILE_TYPES } from "~~/shared/types/media"
+import { useDropZone } from "@vueuse/core"
 
 defineProps<{
   hasError: boolean
@@ -40,9 +36,10 @@ const emit = defineEmits<{
 
 const acceptedFileTypes = ACCEPTED_FILE_TYPES
 
-const isDragging = ref(false)
+const dropZone = templateRef<HTMLDivElement>("dropZone")
 
-// Handle file selection
+const { isOverDropZone } = useDropZone(dropZone, { onDrop })
+
 const handleFileSelect = (event: Event) => {
   const input = event.target as HTMLInputElement
   if (!input.files?.length) {
@@ -51,19 +48,8 @@ const handleFileSelect = (event: Event) => {
   emit("filesSelected", Array.from(input.files))
 }
 
-// Handle drop
-function onDrop(event: DragEvent) {
-  isDragging.value = false
-  const droppedFiles = Array.from(event.dataTransfer?.files || [])
-  emit("filesSelected", droppedFiles)
-}
-
-const fileInput = templateRef<HTMLInputElement>("fileInput")
-
-function openFileInput() {
-  if (fileInput.value) {
-    fileInput.value.click()
-  }
+function onDrop(droppedFiles: File[] | null) {
+  emit("filesSelected", droppedFiles || [])
 }
 </script>
 
