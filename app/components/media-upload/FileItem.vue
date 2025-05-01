@@ -2,25 +2,43 @@
   <div class="file-item">
     <div class="progress"></div>
     <div class="media">
-      <div class="name">{{ fileStatus.file.name }}</div>
+      <Icon v-if="fileStatus.type === 'image'" name="uil-image" class="icon" />
+      <Icon v-if="fileStatus.type === 'video'" name="uil-video" class="icon" />
+      <div class="name" :title="fileStatus.file.name">
+        {{ fileStatus.file.name }}
+      </div>
       <div class="preview">
-        <img v-if="fileStatus?.type === 'image'" :src="previewUrl" alt="" />
-        <video v-if="fileStatus?.type === 'video'" controls>
-          <source :src="previewUrl" />
-        </video>
+        <template v-if="!fileStatus.error">
+          <img v-if="fileStatus?.type === 'image'" :src="previewUrl" alt="" />
+          <video v-if="fileStatus?.type === 'video'">
+            <source :src="previewUrl" />
+          </video>
+        </template>
       </div>
       <div class="errors">
-        <span v-if="fileIsTooBig(fileStatus.file)">(too big)</span>
-        <span v-if="!attrAccept(fileStatus.file, ACCEPTED_FILE_TYPES)"
-          >(wrong format)</span
-        >
+        <div v-if="fileStatus.error" class="error">
+          <Icon
+            name="uil:exclamation-triangle"
+            class="icon"
+            :title="fileStatus.error"
+          />
+        </div>
+        <div v-if="fileStatus.status === 'error'" class="error">
+          <Icon
+            name="uil-warning"
+            class="icon"
+            :title="'Nahrání se nezdařilo'"
+          />
+        </div>
       </div>
+    </div>
+    <div class="error-text">
+      {{ fileStatus.error }}
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { attrAccept, fileIsTooBig } from "./validators"
 import type { FileStatus } from "./types"
 
 const { fileStatus } = defineProps<{
@@ -49,14 +67,13 @@ onUnmounted(() => {
 
 .media {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: 1em repeat(auto-fit, minmax(10rem, 1fr));
   align-items: center;
   gap: var(--space-3);
-  max-height: 4rem;
 }
 
 .preview * {
-  height: 3rem;
+  height: 2rem;
 }
 
 .name {
@@ -64,5 +81,14 @@ onUnmounted(() => {
   max-width: 15ch;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.error {
+  color: var(--error-alert-color);
+}
+
+.error-text {
+  color: var(--error-alert-color);
+  font-size: var(--font-size--2);
 }
 </style>

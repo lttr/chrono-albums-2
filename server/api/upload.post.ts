@@ -1,5 +1,5 @@
 import { H3Error } from "h3"
-import { MAX_IMAGE_SIZE_MB, MAX_VIDEO_SIZE_MB } from "~~/shared/utils/upload"
+import { MAX_IMAGE_SIZE_BYTES, MAX_VIDEO_SIZE_BYTES, ACCEPTED_MIME_TYPES } from "~~/shared/types/media"
 
 export default defineEventHandler(async (event) => {
   // Parse multipart form data
@@ -16,8 +16,8 @@ export default defineEventHandler(async (event) => {
   const storage = useStorage("uploads")
   const uploadedFiles = []
 
-  const maxImageSize = MAX_IMAGE_SIZE_MB * 1024 * 1024
-  const maxVideoSize = MAX_VIDEO_SIZE_MB * 1024 * 1024
+  const maxImageSize = MAX_IMAGE_SIZE_BYTES
+  const maxVideoSize = MAX_VIDEO_SIZE_BYTES
 
   try {
     // Process each file in the form data
@@ -34,12 +34,12 @@ export default defineEventHandler(async (event) => {
       }
 
       // Validate file type
-      if (!file.type || !ALLOWED_MIME_TYPES.includes(file.type)) {
+      if (!file.type || !ACCEPTED_MIME_TYPES.includes(file.type)) {
         throw createError({
           statusCode: 400,
           statusMessage: `File type ${
             file.type || "unknown"
-          } not allowed. Allowed types: ${ALLOWED_MIME_TYPES.join(", ")}`,
+          } not allowed. Allowed types: ${ACCEPTED_MIME_TYPES.join(", ")}`,
         })
       }
 

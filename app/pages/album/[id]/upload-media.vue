@@ -25,7 +25,7 @@
 
 <script lang="ts" setup>
 import { AlbumSearchParamsSchema } from "~~/shared/types/albums"
-import * as z from "@zod/mini"
+import { formatError } from "~~/shared/utils/errors"
 
 const params = ref<AlbumSearchParams>()
 const prettyError = ref("")
@@ -42,9 +42,7 @@ watch(
     if (result.success) {
       params.value = result.data
     }
-    prettyError.value = result.error
-      ? z.prettifyError(result.error).replaceAll(/ → .*/g, "")
-      : ""
+    prettyError.value = formatError(result.error)
   },
   { immediate: true },
 )

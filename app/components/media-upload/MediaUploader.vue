@@ -13,15 +13,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ACCEPTED_FILE_TYPES, MAX_FILES } from "~~/shared/utils/upload"
+import * as z from "@zod/mini"
+import { MAX_FILES, ImageSchema, VideoSchema } from "~~/shared/types/media"
 import type { FileStatus } from "./types"
-import { fileIsTooBig, attrAccept } from "./validators"
 
 const { params } = defineProps<{
   params: AlbumSearchParams
 }>()
 
-const acceptedFileTypes = ACCEPTED_FILE_TYPES
 const maxFiles = MAX_FILES
 
 const fileStatuses = ref<FileStatus[]>([])
@@ -65,26 +64,6 @@ const setError = (message: string) => {
 }
 
 //
-// Validations
-//
-
-function validateFile(file: File): boolean {
-  if (fileIsTooBig(file)) {
-    setError(
-      `Soubor je moc velký. Maximální velikost je ${MAX_IMAGE_SIZE_MB} MB pro
-obrázky a ${MAX_VIDEO_SIZE_MB} MB pro videa.`,
-    )
-    return false
-  }
-  if (!attrAccept(file, acceptedFileTypes)) {
-    setError(`Tento typ souboru není podporován. Povolené typy souborů jsou
-${ALLOWED_FILE_EXTENSIONS.join(", ")}.`)
-    return false
-  }
-  return true
-}
-
-//
 // File processing
 //
 
@@ -97,13 +76,23 @@ async function onFilesSelected(files: File[]) {
   }
 
   const newFileStatuses = files.map((file) => {
+    const type = file.type.startsWith("image/") ? "image" : "video"
+    let validationResult
+    if (type === "image") {
+      validationResult = ImageSchema.safeParse(file)
+    } else {
+      validationResult = VideoSchema.safeParse(file)
+    }
+    const error =
+      validationResult.error && z.prettifyError(validationResult.error)
     return {
+      error,
       file,
       id: crypto.randomUUID(),
       progress: 0,
       status: "pending" as const,
-      type: file.type.startsWith("image/") ? "image" : "video",
-      valid: validateFile(file),
+      type,
+      valid: validationResult.success,
     } satisfies FileStatus
   })
 
