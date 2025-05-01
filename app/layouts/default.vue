@@ -16,5 +16,6 @@ const error = useError()
 <style scoped>
 .main {
   margin-top: var(--space-5);
+  padding-bottom: var(--space-7);
 }
 </style>

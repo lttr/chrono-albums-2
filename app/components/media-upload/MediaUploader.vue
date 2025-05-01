@@ -3,8 +3,13 @@
     <section class="p-flow">
       <DropZone :has-error="hasError" @files-selected="onFilesSelected" />
     </section>
-    <section v-if="validFilesCount > 0" class="p-flow">
-      Nahráno {{ uploadedFilesCount }} z {{ validFilesCount }} souborů
+    <section v-if="validFilesCount > 0" class="p-flow p-secondary-text-regular">
+      <span>
+        Nahráno {{ uploadedFilesCount }} z {{ validFilesCount }} souborů
+      </span>
+      <span v-if="invalidFilesCount > 0">
+        ({{ invalidFilesCount }} souborů nebylo možné nahrát)
+      </span>
     </section>
     <section>
       <FileList :file-statuses />
@@ -13,9 +18,9 @@
 </template>
 
 <script lang="ts" setup>
-import * as z from "@zod/mini"
 import { MAX_FILES, ImageSchema, VideoSchema } from "~~/shared/types/media"
 import type { FileStatus } from "./types"
+import { formatError } from "~~/shared/utils/errors"
 
 const { params } = defineProps<{
   params: AlbumSearchParams
@@ -31,6 +36,10 @@ const uploadedFilesCount = computed(() => {
 
 const validFilesCount = computed(() => {
   return fileStatuses.value.filter((file) => file.valid).length
+})
+
+const invalidFilesCount = computed(() => {
+  return fileStatuses.value.filter((file) => !file.valid).length
 })
 
 //
@@ -76,22 +85,24 @@ async function onFilesSelected(files: File[]) {
   }
 
   const newFileStatuses = files.map((file) => {
-    const type = file.type.startsWith("image/") ? "image" : "video"
+    const kind = file.type.startsWith("image/") ? "image" : "video"
     let validationResult
-    if (type === "image") {
+    if (kind === "image") {
       validationResult = ImageSchema.safeParse(file)
     } else {
       validationResult = VideoSchema.safeParse(file)
     }
-    const error =
-      validationResult.error && z.prettifyError(validationResult.error)
+    let error
+    if (!validationResult.success) {
+      error = formatError(validationResult.error)
+    }
     return {
       error,
       file,
       id: crypto.randomUUID(),
       progress: 0,
       status: "pending" as const,
-      type,
+      kind,
       valid: validationResult.success,
     } satisfies FileStatus
   })
@@ -101,7 +112,12 @@ async function onFilesSelected(files: File[]) {
   await Promise.all(
     newFileStatuses
       .filter((fileStatus) => fileStatus.valid)
-      .map((fileStatus) => processFile(fileStatus)),
+      .map((fileStatus) =>
+        processValidFile(
+          // make sure the passed array is reactive
+          fileStatuses.value.find((status) => status.id === fileStatus.id)!,
+        ),
+      ),
   )
 }
 
@@ -109,7 +125,7 @@ async function onFilesSelected(files: File[]) {
 // Processing
 //
 
-async function processFile(fileStatus: FileStatus): Promise<void> {
+async function processValidFile(fileStatus: FileStatus): Promise<void> {
   // update status
   fileStatus.status = "uploading"
   // convert
@@ -125,13 +141,15 @@ async function processFile(fileStatus: FileStatus): Promise<void> {
 async function uploadFile(fileStatus: FileStatus) {
   const formData = new FormData()
   formData.append("file", fileStatus.file)
-  formData.append("type", fileStatus.type)
-
-  formData.append("albumId", params.id)
-  formData.append("albumTitle", params.title)
-  formData.append("albumYear", params.year.toString())
-  formData.append("albumMonth", params.month.toString())
-  formData.append("albumCategory", params.category)
+  formData.append("id", fileStatus.id)
+  formData.append("kind", fileStatus.kind)
+  if (fileStatus.dateTaken) {
+    formData.append("dateTaken", fileStatus.dateTaken)
+  }
+  if (fileStatus.location) {
+    formData.append("location", JSON.stringify(fileStatus.location))
+  }
+  formData.append("album", JSON.stringify(params))
 
   try {
     const response = await fetch("/api/upload", {
@@ -143,17 +161,7 @@ async function uploadFile(fileStatus: FileStatus) {
       throw new Error(`Upload failed: ${response.statusText}`)
     }
 
-    const result = (await response.json()) as { files: { url: string }[] }
-    const uploadedFile = result.files[0]
-
-    if (!uploadedFile) {
-      throw new Error("Upload failed")
-    }
-
     fileStatus.status = "success"
-    fileStatus.url = uploadedFile.url
-
-    return result
   } catch (error) {
     if (error instanceof Error) {
       console.error("Upload error:", error.message)

@@ -41,8 +41,9 @@ watch(
     })
     if (result.success) {
       params.value = result.data
+    } else {
+      prettyError.value = formatError(result.error)
     }
-    prettyError.value = formatError(result.error)
   },
   { immediate: true },
 )
