@@ -1,5 +1,3 @@
-import heic2any from "heic2any"
-
 export async function getImageDimensions(file: File): Promise<void> {
   try {
     // Check if it's a HEIC file
@@ -8,6 +6,7 @@ export async function getImageDimensions(file: File): Promise<void> {
       file.name.endsWith(".heic") ||
       file.name.endsWith(".HEIC")
     ) {
+      const { default: heic2any } = await import("heic2any")
       // Convert HEIC to JPEG using heic2any
       const blobs = await heic2any({
         blob: file,
