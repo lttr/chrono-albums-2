@@ -58,4 +58,4 @@ export const VideoSchema = z
 
 export const FileSchema = z.union([ImageSchema, VideoSchema])
 
-export type File = z.infer<typeof FileSchema>
+export type FileType = z.infer<typeof FileSchema>
