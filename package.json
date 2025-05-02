@@ -21,6 +21,7 @@
     "@lttr/puleo": "^0.5.0",
     "@zod/core": "^0.9.0",
     "@zod/mini": "4.0.0-beta.0",
+    "exifreader": "^4.30.0",
     "nuxt": "^3.16.2",
     "vue": "latest"
   },

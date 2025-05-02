@@ -21,6 +21,7 @@
 import { MAX_FILES, ImageSchema, VideoSchema } from "~~/shared/types/media"
 import type { FileStatus } from "./types"
 import { formatError } from "~~/shared/utils/errors"
+import { parseExifData } from "./exif"
 
 const { params } = defineProps<{
   params: AlbumSearchParams
@@ -128,7 +129,12 @@ async function onFilesSelected(files: File[]) {
 async function processValidFile(fileStatus: FileStatus): Promise<void> {
   // update status
   fileStatus.status = "uploading"
+  // TODO image width and height
   // convert
+  if (fileStatus.kind === "image") {
+    const exifData = await parseExifData(fileStatus.file)
+    console.log(exifData)
+  }
   // TODO
   // upload
   await uploadFile(fileStatus)
