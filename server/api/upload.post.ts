@@ -113,9 +113,12 @@ export default defineEventHandler(async (event) => {
 
   try {
     // Store file using useStorage
-    await storage.setItemRaw(uploadData.id, uploadData.file)
+    await storage.setItemRaw(`${uploadData.id}.jpeg`, uploadData.file)
     const { file, ...metadata } = uploadData
-    await storage.setItem(`${uploadData.id}-metadata`, metadata)
+    await storage.setItem(
+      `${uploadData.id}-metadata.json`,
+      JSON.stringify(metadata, null, 2),
+    )
   } catch (error) {
     console.error(error)
     if (error instanceof H3Error) {

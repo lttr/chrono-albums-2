@@ -1,44 +1,30 @@
-export async function getImageDimensions(file: File): Promise<void> {
+export async function getImageDimensions(
+  blob: Blob,
+): Promise<{ width: number; height: number } | undefined> {
   try {
-    // Check if it's a HEIC file
-    if (
-      file.type === "image/heic" ||
-      file.name.endsWith(".heic") ||
-      file.name.endsWith(".HEIC")
-    ) {
-      const { default: heic2any } = await import("heic2any")
-      // Convert HEIC to JPEG using heic2any
-      const blobs = await heic2any({
-        blob: file,
-        toType: "image/jpeg",
-      })
-
-      // Create URL from the converted JPEG
-      const jpegBlob = Array.isArray(blobs) ? blobs[0] : blobs
-      if (!jpegBlob) {
-        throw new Error("Conversion failed")
-      }
-
-      const imageUrl = URL.createObjectURL(jpegBlob)
-
-      // Get dimensions from the converted image
-      const img = new Image()
-      img.onload = function () {
-        console.log(`HEIC image dimensions: ${img.width}x${img.height}`)
-        URL.revokeObjectURL(imageUrl)
-      }
-      img.src = imageUrl
-    } else {
+    return new Promise((resolve, reject) => {
       // Handle normal images as before
-      const imageUrl = URL.createObjectURL(file)
+      const imageUrl = URL.createObjectURL(blob)
       const img = new Image()
+
       img.onload = function () {
-        console.log(`Image dimensions: ${img.width}x${img.height}`)
+        const dimensions = {
+          width: img.width,
+          height: img.height,
+        }
         URL.revokeObjectURL(imageUrl)
+        resolve(dimensions)
       }
+
+      img.onerror = function () {
+        URL.revokeObjectURL(imageUrl)
+        reject(new Error("Failed to load image"))
+      }
+
       img.src = imageUrl
-    }
+    })
   } catch (error) {
-    console.error("Error processing image:", error)
+    console.error("Error getting image dimensions:", error)
+    return undefined
   }
 }

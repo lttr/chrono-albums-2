@@ -1,11 +1,30 @@
 import * as ExifReader from "exifreader"
+import { parse } from "date-fns"
 
-export async function parseExifData(file: File) {
+export interface GpsTags {
+  Latitude?: number
+  Longitude?: number
+  Altitude?: number
+}
+
+export interface MyExifData {
+  dateTaken?: Date
+  gps?: GpsTags
+}
+
+export async function parseExifData(file: File): Promise<MyExifData> {
   const tags = await ExifReader.load(file, { expanded: true })
-  console.log(file.name)
-  const dateTaken = tags.exif?.DateTimeOriginal
-  console.log("dateTaken", dateTaken)
+
+  const dateTimeOriginal = tags.exif?.DateTimeOriginal?.description
+  let dateTaken = undefined
+  if (dateTimeOriginal) {
+    dateTaken = parse(dateTimeOriginal, "yyyy:MM:dd HH:mm:ss", new Date())
+  }
 
   const gps = tags.gps
-  console.log("gps", gps)
+
+  return {
+    dateTaken,
+    gps,
+  }
 }

@@ -26,6 +26,9 @@ export const MAX_IMAGE_SIZE_BYTES = MAX_IMAGE_SIZE_MB * 1024 * 1024
 
 export const MAX_FILES = 500
 
+export const TARGET_JPEG_QUALITY = 0.85
+export const TARGET_IMAGE_DIMENSION = 3000
+
 export const ImageSchema = z
   .file("Toto není soubor")
   .check(

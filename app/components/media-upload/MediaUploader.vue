@@ -23,6 +23,8 @@ import type { FileStatus } from "./types"
 import { formatError } from "~~/shared/utils/errors"
 import { parseExifData } from "./exif"
 import { getImageDimensions } from "./dimensions"
+import { isHeic, convertHeicToJpeg } from "./heic"
+import { compressJpeg } from "./compress"
 
 const { params } = defineProps<{
   params: AlbumSearchParams
@@ -130,14 +132,35 @@ async function onFilesSelected(files: File[]) {
 async function processValidFile(fileStatus: FileStatus): Promise<void> {
   // update status
   fileStatus.status = "uploading"
-  // TODO image width and height
-  await getImageDimensions(fileStatus.file)
-  // convert
+
   if (fileStatus.kind === "image") {
+    // handle HEIC images
+    let jpegBlob: Blob
+    if (isHeic(fileStatus.file)) {
+      jpegBlob = await convertHeicToJpeg(fileStatus.file)
+    } else {
+      jpegBlob = fileStatus.file
+    }
+
+    // get dimensions
+    const dimensions = await getImageDimensions(jpegBlob)
+    fileStatus.width = dimensions?.width
+    fileStatus.height = dimensions?.height
+
+    // parse EXIF data
     const exifData = await parseExifData(fileStatus.file)
-    console.log(exifData)
+    fileStatus.dateTaken = exifData.dateTaken
+    fileStatus.location = exifData.gps
+
+    // compress JPEG
+    const resultData = await compressJpeg(jpegBlob)
+
+    // prepare image file for upload
+    fileStatus.file = new File([resultData], fileStatus.file.name, {
+      type: fileStatus.file.type,
+    })
   }
-  // TODO
+
   // upload
   await uploadFile(fileStatus)
 }
@@ -152,7 +175,7 @@ async function uploadFile(fileStatus: FileStatus) {
   formData.append("id", fileStatus.id)
   formData.append("kind", fileStatus.kind)
   if (fileStatus.dateTaken) {
-    formData.append("dateTaken", fileStatus.dateTaken)
+    formData.append("dateTaken", fileStatus.dateTaken.toISOString())
   }
   if (fileStatus.location) {
     formData.append("location", JSON.stringify(fileStatus.location))
