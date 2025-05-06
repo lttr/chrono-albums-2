@@ -171,25 +171,31 @@ async function processValidFile(fileStatus: FileStatus): Promise<void> {
 
 async function uploadFile(fileStatus: FileStatus) {
   const formData = new FormData()
-  formData.append("file", fileStatus.file)
-  formData.append("id", fileStatus.id)
-  formData.append("kind", fileStatus.kind)
+  formData.append("album", JSON.stringify(params))
   if (fileStatus.dateTaken) {
     formData.append("dateTaken", fileStatus.dateTaken.toISOString())
   }
+  formData.append("file", fileStatus.file)
+  if (fileStatus.height) {
+    formData.append("height", fileStatus.height.toString())
+  }
+  formData.append("id", fileStatus.id)
+  formData.append("kind", fileStatus.kind)
   if (fileStatus.location) {
     formData.append("location", JSON.stringify(fileStatus.location))
   }
-  formData.append("album", JSON.stringify(params))
+  if (fileStatus.width) {
+    formData.append("width", fileStatus.width.toString())
+  }
 
   try {
-    const response = await fetch("/api/upload", {
+    const response = await $fetch("/api/upload", {
       method: "POST",
       body: formData,
     })
 
-    if (!response.ok) {
-      throw new Error(`Upload failed: ${response.statusText}`)
+    if (response?.status && response.status >= 400) {
+      throw new Error(`Upload failed: ${response.body.error}`)
     }
 
     fileStatus.status = "success"

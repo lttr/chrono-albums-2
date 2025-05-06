@@ -8,10 +8,8 @@ export interface FileStatus {
   id: string
   kind: "video" | "image"
   location?: GpsTags
-  previewUrl?: string
   progress: number
   status: "pending" | "uploading" | "success" | "error"
-  url?: string
   valid: boolean
   width?: number
 }

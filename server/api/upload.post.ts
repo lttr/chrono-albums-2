@@ -5,16 +5,24 @@ import {
   ACCEPTED_MIME_TYPES,
 } from "~~/shared/types/media"
 
+interface GpsTags {
+  Latitude?: number
+  Longitude?: number
+  Altitude?: number
+}
+
 interface MediaUploadData {
-  fileName?: string
-  fileSize?: number
-  mimeType?: string
   album?: AlbumSearchParams
   dateTaken?: string
   file?: Buffer
+  fileName?: string
+  fileSize?: number
+  height?: number
   id?: string
   kind?: "video" | "image"
-  location?: [number, number]
+  location?: GpsTags
+  mimeType?: string
+  width?: number
 }
 
 export default defineEventHandler(async (event) => {
@@ -48,13 +56,16 @@ export default defineEventHandler(async (event) => {
         uploadData.dateTaken = part.data.toString()
         break
       case "location":
-        uploadData.location = JSON.parse(part.data.toString()) as [
-          number,
-          number,
-        ]
+        uploadData.location = JSON.parse(part.data.toString()) as GpsTags
         break
       case "album":
         uploadData.album = JSON.parse(part.data.toString()) as AlbumSearchParams
+        break
+      case "height":
+        uploadData.height = parseInt(part.data.toString())
+        break
+      case "width":
+        uploadData.width = parseInt(part.data.toString())
         break
       default:
         console.warn("Unknown part", part)
@@ -115,6 +126,61 @@ export default defineEventHandler(async (event) => {
     // Store file using useStorage
     await storage.setItemRaw(`${uploadData.id}.jpeg`, uploadData.file)
     const { file, ...metadata } = uploadData
+
+    const db = useDatabase()
+
+    const altitude = uploadData.location?.Altitude ?? null
+    const latitude = uploadData.location?.Latitude ?? null
+    const longitude = uploadData.location?.Longitude ?? null
+    const dateTaken =
+      uploadData.dateTaken && uploadData.dateTaken !== "undefined"
+        ? new Date(uploadData.dateTaken).toISOString()
+        : null
+
+    await db.sql`
+      INSERT INTO media (
+        album,
+        dateTaken,
+        fileName,
+        fileSize,
+        id,
+        kind,
+        locationAlt,
+        locationLat,
+        locationLng,
+        mimeType,
+        updatedAt
+      ) VALUES (
+        ${uploadData.album.id},
+        ${dateTaken},
+        ${uploadData.fileName},
+        ${uploadData.fileSize},
+        ${uploadData.id},
+        ${uploadData.kind},
+        ${altitude},
+        ${latitude},
+        ${longitude},
+        ${uploadData.mimeType},
+        datetime('now')
+      )
+    `
+    // upsert album
+    await db.sql`
+      INSERT INTO album (
+        id,
+        title,
+        month,
+        year,
+        category
+      ) VALUES (
+        ${uploadData.album.id},
+        ${uploadData.album.title},
+        ${uploadData.album.month},
+        ${uploadData.album.year},
+        ${uploadData.album.category}
+      ) ON CONFLICT (id) DO NOTHING
+    `
+
     await storage.setItem(
       `${uploadData.id}-metadata.json`,
       JSON.stringify(metadata, null, 2),

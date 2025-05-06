@@ -46,6 +46,16 @@ export default defineNuxtConfig({
         base: "./user-data/uploads",
       },
     },
+    experimental: {
+      database: true,
+      tasks: true,
+    },
+    database: {
+      default: {
+        connector: "sqlite",
+        options: { name: "db" },
+      },
+    },
   },
   eslint: {
     config: {
