@@ -28,3 +28,6 @@ user-data
 .aider.chat*
 .aider.input*
 .aider.tags*
+
+# Drizzle
+server/database/migrations/meta/
