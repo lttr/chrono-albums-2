@@ -2,13 +2,21 @@
   <header class="header">
     <section>
       <NuxtLink to="/" class="link-home p-cluster">
-        <Icon name="uil-images" class="app-icon" />
+        <Icon name="uil-comment-alt-image" class="app-icon" />
         <span class="app-title p-base-text-bold">Chrono Albums</span>
       </NuxtLink>
     </section>
     <section class="right">
       <span class="p-cluster">
-        <NuxtLink class="nav-link" to="/album/new">
+        <NuxtLink class="nav-link" to="/projects">
+          <Icon name="uil-files-landscapes-alt" class="icon-in-button" />
+          Projekty
+        </NuxtLink>
+        <NuxtLink class="nav-link" to="/albums">
+          <Icon name="uil-images" class="icon-in-button" />
+          Alba
+        </NuxtLink>
+        <NuxtLink class="nav-link" to="/albums/new">
           <Icon name="uil-image-plus" class="icon-in-button" />
           Nové album
         </NuxtLink>

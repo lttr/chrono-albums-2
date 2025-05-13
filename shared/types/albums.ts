@@ -59,3 +59,18 @@ export const AlbumSearchParamsSchema = z.interface({
 })
 
 export type AlbumSearchParams = z.infer<typeof AlbumSearchParamsSchema>
+
+export interface AlbumWithMediaInfo {
+  id: string
+  title: string
+  year: number
+  month: number
+  category: Category
+  createdAt: Date
+  mediaCount: number
+  thumbnailId: string | null
+}
+
+export interface AlbumsResponse {
+  albums: AlbumWithMediaInfo[]
+}

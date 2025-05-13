@@ -60,7 +60,7 @@ function onSubmit(e: Event) {
   const searchParams = new URLSearchParams(
     formData as unknown as Record<string, string>,
   ).toString()
-  navigateTo(`/album/${id}/upload-media?${searchParams}`)
+  navigateTo(`/albums/${id}/upload-media?${searchParams}`)
 }
 </script>
 
