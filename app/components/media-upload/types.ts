@@ -1,15 +1,26 @@
-import type { GpsTags } from "./exif"
+import type { GpsTags } from "~~/shared/types/media"
 
 export interface FileStatus {
-  dateTaken?: Date
   error?: string
   file: File
-  height?: number
   id: string
   kind: "video" | "image"
-  location?: GpsTags
   progress: number
   status: "pending" | "uploading" | "success" | "error"
   valid: boolean
+}
+
+export interface MediaUploadData {
+  album: AlbumSearchParams
+  dateTaken?: Date
+  file: Blob
+  fileName: string
+  fileSize: number
+  height?: number
+  id: string
+  kind: "image" | "video"
+  location?: GpsTags
+  mimeType: string
+  originalName: string
   width?: number
 }

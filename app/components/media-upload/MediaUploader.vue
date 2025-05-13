@@ -19,7 +19,7 @@
 
 <script lang="ts" setup>
 import { MAX_FILES, ImageSchema, VideoSchema } from "~~/shared/types/media"
-import type { FileStatus } from "./types"
+import type { FileStatus, MediaUploadData } from "./types"
 import { formatError } from "~~/shared/utils/errors"
 import { parseExifData } from "./exif"
 import { getImageDimensions } from "./dimensions"
@@ -133,71 +133,86 @@ async function processValidFile(fileStatus: FileStatus): Promise<void> {
   // update status
   fileStatus.status = "uploading"
 
+  let imageUploadData: Partial<MediaUploadData> = {}
   if (fileStatus.kind === "image") {
     // handle HEIC images
     let jpegBlob: Blob
     if (isHeic(fileStatus.file)) {
       jpegBlob = await convertHeicToJpeg(fileStatus.file)
     } else {
+      // expected to be a jpeg file
       jpegBlob = fileStatus.file
     }
 
-    // get dimensions
-    const dimensions = await getImageDimensions(jpegBlob)
-    fileStatus.width = dimensions?.width
-    fileStatus.height = dimensions?.height
-
-    // parse EXIF data
-    const exifData = await parseExifData(fileStatus.file)
-    fileStatus.dateTaken = exifData.dateTaken
-    fileStatus.location = exifData.gps
-
-    // compress JPEG
-    const resultData = await compressJpeg(jpegBlob)
-
-    // prepare image file for upload
-    fileStatus.file = new File([resultData], fileStatus.file.name, {
-      type: fileStatus.file.type,
+    fileStatus.file = new File([jpegBlob], fileStatus.file.name, {
+      type: "image/jpeg",
     })
+
+    const dimensions = await getImageDimensions(jpegBlob)
+    const exifData = await parseExifData(fileStatus.file)
+    const unifiedFileName = `${fileStatus.file.name.split(".")[0]}.jpg`
+
+    imageUploadData = {
+      fileName: unifiedFileName,
+      mimeType: "image/jpeg",
+      dateTaken: exifData.dateTaken,
+      file: await compressJpeg(jpegBlob),
+      height: dimensions?.height,
+      location: exifData.gps,
+      width: dimensions?.width,
+    }
+  }
+
+  const mediaUploadData: MediaUploadData = {
+    originalName: fileStatus.file.name,
+    album: params,
+    file: fileStatus.file,
+    fileName: fileStatus.file.name,
+    fileSize: fileStatus.file.size,
+    id: fileStatus.id,
+    kind: fileStatus.kind,
+    mimeType: fileStatus.file.type,
+    ...imageUploadData,
   }
 
   // upload
-  await uploadFile(fileStatus)
+  await uploadFile(mediaUploadData, fileStatus)
 }
 
 //
 // Upload a single file
 //
 
-async function uploadFile(fileStatus: FileStatus) {
+async function uploadFile(data: MediaUploadData, fileStatus: FileStatus) {
   const formData = new FormData()
-  formData.append("album", JSON.stringify(params))
-  if (fileStatus.dateTaken) {
-    formData.append("dateTaken", fileStatus.dateTaken.toISOString())
-  }
-  formData.append("file", fileStatus.file)
-  if (fileStatus.height) {
-    formData.append("height", fileStatus.height.toString())
-  }
-  formData.append("id", fileStatus.id)
-  formData.append("kind", fileStatus.kind)
-  if (fileStatus.location) {
-    formData.append("location", JSON.stringify(fileStatus.location))
-  }
-  if (fileStatus.width) {
-    formData.append("width", fileStatus.width.toString())
+  const file = new File([data.file], data.fileName, {
+    type: data.mimeType,
+  })
+  formData.append("album", JSON.stringify(data.album))
+  formData.append("file", file)
+  formData.append("id", data.id)
+  formData.append("kind", data.kind)
+  if (data.kind === "image") {
+    if (data.dateTaken) {
+      formData.append("dateTaken", data.dateTaken.toISOString())
+    }
+    if (data.height) {
+      formData.append("height", data.height.toString())
+    }
+    if (data.location) {
+      formData.append("location", JSON.stringify(data.location))
+    }
+    if (data.width) {
+      formData.append("width", data.width.toString())
+    }
+    formData.append("originalName", data.originalName)
   }
 
   try {
-    const response = await $fetch("/api/upload", {
+    await $fetch("/api/upload", {
       method: "POST",
       body: formData,
     })
-
-    if (response?.status && response.status >= 400) {
-      throw new Error(`Upload failed: ${response.body.error}`)
-    }
-
     fileStatus.status = "success"
   } catch (error) {
     if (error instanceof Error) {

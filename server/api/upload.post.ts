@@ -1,29 +1,18 @@
 import { H3Error } from "h3"
 import {
+  ACCEPTED_MIME_TYPES,
   MAX_IMAGE_SIZE_BYTES,
   MAX_VIDEO_SIZE_BYTES,
-  ACCEPTED_MIME_TYPES,
 } from "~~/shared/types/media"
-
-interface GpsTags {
-  Latitude?: number
-  Longitude?: number
-  Altitude?: number
-}
-
-interface MediaUploadData {
-  album?: AlbumSearchParams
-  dateTaken?: string
-  file?: Buffer
-  fileName?: string
-  fileSize?: number
-  height?: number
-  id?: string
-  kind?: "video" | "image"
-  location?: GpsTags
-  mimeType?: string
-  width?: number
-}
+import type { NewAlbum, NewMedia } from "../database/schema"
+import {
+  album,
+  albumInsertSchema,
+  media,
+  mediaInsertSchema,
+} from "../database/schema"
+import type { GpsTags } from "~~/shared/types/media"
+import type { MediaUploadData } from "../types/media"
 
 export default defineEventHandler(async (event) => {
   // Parse multipart form data
@@ -61,6 +50,9 @@ export default defineEventHandler(async (event) => {
       case "album":
         uploadData.album = JSON.parse(part.data.toString()) as AlbumSearchParams
         break
+      case "originalName":
+        uploadData.originalName = part.data.toString()
+        break
       case "height":
         uploadData.height = parseInt(part.data.toString())
         break
@@ -69,24 +61,6 @@ export default defineEventHandler(async (event) => {
         break
       default:
         console.warn("Unknown part", part)
-    }
-  }
-
-  // TODO validate using Zod
-
-  // Validate required fields
-  if (
-    !uploadData.file ||
-    !uploadData.id ||
-    !uploadData.kind ||
-    !uploadData.album
-  ) {
-    return {
-      status: 400,
-      body: {
-        error:
-          "Missing required fields: file, id, and kind, album are required",
-      },
     }
   }
 
@@ -120,71 +94,63 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const storage = useStorage("uploads")
+  let newAlbum: NewAlbum
 
   try {
-    // Store file using useStorage
+    newAlbum = albumInsertSchema.parse(uploadData.album)
+  } catch (error) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: "Invalid album data",
+      cause: error,
+    })
+  }
+
+  // Store file using useStorage
+  const storage = useStorage("uploads")
+  try {
     await storage.setItemRaw(`${uploadData.id}.jpeg`, uploadData.file)
-    const { file, ...metadata } = uploadData
+  } catch (error) {
+    console.error(error)
+    if (error instanceof H3Error) {
+      throw error
+    }
+    throw createError({
+      statusCode: 500,
+      statusMessage: "Error storing files",
+    })
+  }
 
-    const db = useDatabase()
+  // Insert metadata into database
+  const db = useDb()
+  try {
+    await db
+      .insert(album)
+      .values(newAlbum)
+      .onConflictDoUpdate({
+        target: album.id,
+        set: {
+          category: newAlbum.category,
+          month: newAlbum.month,
+          title: newAlbum.title,
+          year: newAlbum.year,
+        },
+      })
 
-    const altitude = uploadData.location?.Altitude ?? null
-    const latitude = uploadData.location?.Latitude ?? null
-    const longitude = uploadData.location?.Longitude ?? null
-    const dateTaken =
-      uploadData.dateTaken && uploadData.dateTaken !== "undefined"
-        ? new Date(uploadData.dateTaken).toISOString()
-        : null
+    const locationAlt = uploadData.location?.Altitude ?? null
+    const locationLat = uploadData.location?.Latitude ?? null
+    const locationLon = uploadData.location?.Longitude ?? null
 
-    await db.sql`
-      INSERT INTO media (
-        album,
-        dateTaken,
-        fileName,
-        fileSize,
-        id,
-        kind,
-        locationAlt,
-        locationLat,
-        locationLng,
-        mimeType,
-        updatedAt
-      ) VALUES (
-        ${uploadData.album.id},
-        ${dateTaken},
-        ${uploadData.fileName},
-        ${uploadData.fileSize},
-        ${uploadData.id},
-        ${uploadData.kind},
-        ${altitude},
-        ${latitude},
-        ${longitude},
-        ${uploadData.mimeType},
-        datetime('now')
-      )
-    `
-    // upsert album
-    await db.sql`
-      INSERT INTO album (
-        id,
-        title,
-        month,
-        year,
-        category
-      ) VALUES (
-        ${uploadData.album.id},
-        ${uploadData.album.title},
-        ${uploadData.album.month},
-        ${uploadData.album.year},
-        ${uploadData.album.category}
-      ) ON CONFLICT (id) DO NOTHING
-    `
+    const newMedia = {
+      ...uploadData,
+      albumId: newAlbum.id,
+      locationAlt,
+      locationLat,
+      locationLon,
+    } satisfies NewMedia
+    const newMediaValidated = mediaInsertSchema.parse(newMedia)
 
-    await storage.setItem(
-      `${uploadData.id}-metadata.json`,
-      JSON.stringify(metadata, null, 2),
-    )
+    await db.insert(media).values(newMediaValidated)
   } catch (error) {
     console.error(error)
     if (error instanceof H3Error) {

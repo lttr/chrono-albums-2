@@ -29,6 +29,7 @@
     "date-fns": "^4.1.0",
     "db0": "^0.3.2",
     "drizzle-orm": "^0.43.1",
+    "drizzle-zod": "^0.7.1",
     "exifreader": "^4.30.0",
     "heic2any": "^0.0.4",
     "nuxt": "^3.16.2",

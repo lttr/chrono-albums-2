@@ -1,15 +1,10 @@
 import * as ExifReader from "exifreader"
 import { parse } from "date-fns"
-
-export interface GpsTags {
-  Latitude?: number
-  Longitude?: number
-  Altitude?: number
-}
+import type { GpsTags } from "~~/shared/types/media"
 
 export interface MyExifData {
-  dateTaken?: Date
-  gps?: GpsTags
+  dateTaken: Date | undefined
+  gps: GpsTags | undefined
 }
 
 export async function parseExifData(file: File): Promise<MyExifData> {

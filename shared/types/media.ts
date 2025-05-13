@@ -1,7 +1,7 @@
 import * as z from "@zod/mini"
 
-const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/heif"]
-const ACCEPTED_VIDEO_TYPES = ["video/mp4", "video/mov"]
+const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/heif", "image/heic"]
+const ACCEPTED_VIDEO_TYPES = ["video/mp4", "video/mov", "video/quicktime"]
 export const ACCEPTED_MIME_TYPES = [
   ...ACCEPTED_IMAGE_TYPES,
   ...ACCEPTED_VIDEO_TYPES,
@@ -38,7 +38,7 @@ export const ImageSchema = z
     ),
     z.mime(
       ACCEPTED_IMAGE_TYPES,
-      `Tento typ obrázku není podporován. Podporované typy jsou ${ACCEPTED_IMAGE_TYPES.join(
+      `Tento typ obrázku není podporován. Podporované typy jsou ${ACCEPTED_IMAGE_EXTENSIONS.join(
         ", ",
       )}.`,
     ),
@@ -53,7 +53,7 @@ export const VideoSchema = z
     ),
     z.mime(
       ACCEPTED_VIDEO_TYPES,
-      `Tento typ videa není podporován. Podporované typy jsou ${ACCEPTED_VIDEO_TYPES.join(
+      `Tento typ videa není podporován. Podporované typy jsou ${ACCEPTED_VIDEO_EXTENSIONS.join(
         ", ",
       )}.`,
     ),
@@ -62,3 +62,9 @@ export const VideoSchema = z
 export const FileSchema = z.union([ImageSchema, VideoSchema])
 
 export type FileType = z.infer<typeof FileSchema>
+
+export interface GpsTags {
+  Latitude?: number
+  Longitude?: number
+  Altitude?: number
+}

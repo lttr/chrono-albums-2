@@ -5,6 +5,6 @@ export default {
   out: "./server/database/migrations",
   dialect: "sqlite",
   dbCredentials: {
-    url: "./.data/db.sqlite3", // This matches DB0's default location
+    url: "./.data/db.sqlite", // This matches DB0's default location
   },
 } satisfies Config
