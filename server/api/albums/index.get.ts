@@ -1,19 +1,27 @@
+import { desc } from "drizzle-orm"
 import { album } from "~~/server/database/schema"
 import { useDb } from "~~/server/utils/db"
 
 export default defineEventHandler(async () => {
   const db = useDb()
 
-  const albums = await db.select().from(album)
+  const data = await db
+    .select({
+      id: album.id,
+      title: album.title,
+      year: album.year,
+      month: album.month,
+      category: album.category,
+    })
+    .from(album)
+    .orderBy(desc(album.year), desc(album.month))
 
-  if (!albums.length) {
+  if (!data.length) {
     throw createError({
       statusCode: 404,
       message: "Album not found",
     })
   }
 
-  return {
-    albums,
-  }
+  return data
 })

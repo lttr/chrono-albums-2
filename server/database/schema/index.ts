@@ -1,6 +1,11 @@
 import { relations, sql } from "drizzle-orm"
-import { real } from "drizzle-orm/gel-core"
-import { integer, sqliteTable, text, index } from "drizzle-orm/sqlite-core"
+import {
+  integer,
+  sqliteTable,
+  text,
+  index,
+  real,
+} from "drizzle-orm/sqlite-core"
 import { createInsertSchema, createUpdateSchema } from "drizzle-zod"
 
 // Album table schema
@@ -32,7 +37,6 @@ export const albumUpdateSchema = createUpdateSchema(album)
 export const media = sqliteTable(
   "media",
   {
-    // @ts-expect-error - Wierd TS error
     albumId: text("albumId").notNull(),
     createdAt: integer("createdAt", { mode: "timestamp" })
       .notNull()
@@ -51,7 +55,6 @@ export const media = sqliteTable(
     width: integer("width"),
   },
   (table) => [
-    // To prevent TS error, the ! is required
     index("idx_media_kind").on(table.kind!),
     index("idx_media_albumId").on(table.albumId!),
   ],

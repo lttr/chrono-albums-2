@@ -26,7 +26,7 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const uploadData: MediaUploadData = {}
+  const uploadData: Partial<MediaUploadData> = {}
   for (const part of parts) {
     switch (part.name) {
       case "file":

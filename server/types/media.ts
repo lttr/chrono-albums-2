@@ -7,8 +7,8 @@ export interface MediaUploadData {
   fileName?: string
   fileSize?: number
   height?: number
-  id?: string
-  kind?: "video" | "image"
+  id: string
+  kind: "video" | "image"
   location?: GpsTags
   mimeType?: string
   originalName?: string
