@@ -13,7 +13,7 @@ CREATE TABLE `media` (
 	`albumId` text NOT NULL,
 	`createdAt` integer DEFAULT (unixepoch()) NOT NULL,
 	`dateTaken` text,
-	`fileName` text,
+	`fileName` text NOT NULL,
 	`fileSize` integer,
 	`height` integer,
 	`id` text PRIMARY KEY NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE `media` (
 	`locationAlt` real,
 	`locationLat` real,
 	`locationLon` real,
-	`mimeType` text,
+	`mimeType` text NOT NULL,
 	`originalName` text,
 	`width` integer
 );

@@ -178,6 +178,7 @@ async function processValidFile(fileStatus: FileStatus): Promise<void> {
 
   // upload
   try {
+    // TODO create album
     await Promise.all([
       uploadFile(mediaUploadData, fileStatus),
       postMetadata(mediaUploadData),
@@ -232,25 +233,9 @@ async function uploadFile(data: MediaUploadData, fileStatus: FileStatus) {
   const file = new File([data.file], data.fileName, {
     type: data.mimeType,
   })
-  formData.append("album", JSON.stringify(data.album))
   formData.append("file", file)
   formData.append("id", data.id)
-  formData.append("kind", data.kind)
-  if (data.kind === "image") {
-    if (data.dateTaken) {
-      formData.append("dateTaken", data.dateTaken.toISOString())
-    }
-    if (data.height) {
-      formData.append("height", data.height.toString())
-    }
-    if (data.location) {
-      formData.append("location", JSON.stringify(data.location))
-    }
-    if (data.width) {
-      formData.append("width", data.width.toString())
-    }
-    formData.append("originalName", data.originalName)
-  }
+  formData.append("albumId", data.album.id)
 
   try {
     await $fetch("/api/upload", {

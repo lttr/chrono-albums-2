@@ -42,7 +42,7 @@ export const media = sqliteTable(
       .notNull()
       .default(sql`(unixepoch())`),
     dateTaken: text("dateTaken"),
-    fileName: text("fileName"),
+    fileName: text("fileName").notNull(),
     fileSize: integer("fileSize"),
     height: integer("height"),
     id: text("id").primaryKey(),
@@ -50,7 +50,7 @@ export const media = sqliteTable(
     locationAlt: real("locationAlt"),
     locationLat: real("locationLat"),
     locationLon: real("locationLon"),
-    mimeType: text("mimeType"),
+    mimeType: text("mimeType").notNull(),
     originalName: text("originalName"),
     width: integer("width"),
   },
