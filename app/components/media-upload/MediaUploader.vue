@@ -25,6 +25,7 @@ import { parseExifData } from "./exif"
 import { getImageDimensions } from "./dimensions"
 import { isHeic, convertHeicToJpeg } from "./heic"
 import { compressJpeg } from "./compress"
+import type { NewMedia } from "~~/server/database/schema"
 
 const { params } = defineProps<{
   params: AlbumSearchParams
@@ -176,12 +177,55 @@ async function processValidFile(fileStatus: FileStatus): Promise<void> {
   }
 
   // upload
-  await uploadFile(mediaUploadData, fileStatus)
+  try {
+    await Promise.all([
+      uploadFile(mediaUploadData, fileStatus),
+      postMetadata(mediaUploadData),
+    ])
+  } catch (error) {
+    fileStatus.status = "error"
+    if (error instanceof Error) {
+      fileStatus.error = error.message || "Upload failed"
+      console.error("Upload error:", error.message)
+    } else {
+      fileStatus.error = "Upload failed"
+      console.error("Upload error:", error)
+    }
+    setError(fileStatus.error)
+  }
 }
 
 //
 // Upload a single file
 //
+
+async function postMetadata(data: MediaUploadData) {
+  try {
+    const metadata = {
+      id: data.id,
+      albumId: data.album.id,
+      kind: data.kind,
+      dateTaken: data.dateTaken?.toISOString(),
+      fileName: data.fileName,
+      fileSize: data.fileSize,
+      height: data.height,
+      width: data.width,
+      mimeType: data.mimeType,
+      originalName: data.originalName,
+      locationLat: data.location?.Latitude,
+      locationLon: data.location?.Longitude,
+      locationAlt: data.location?.Altitude,
+    } satisfies NewMedia
+
+    await $fetch("/api/media", {
+      method: "POST",
+      body: metadata,
+    })
+  } catch (error) {
+    console.error("Failed to post metadata:", error)
+    throw error
+  }
+}
 
 async function uploadFile(data: MediaUploadData, fileStatus: FileStatus) {
   const formData = new FormData()
