@@ -8,8 +8,7 @@ export default defineEventHandler(async (event) => {
   try {
     const newAlbum = await readValidatedBody(event, AlbumCreateSchema.parse)
 
-    const db = useDb()
-    await db
+    await useDb()
       .insert(album)
       .values(newAlbum)
       .onConflictDoUpdate({

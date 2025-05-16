@@ -12,11 +12,11 @@
           <Icon name="uil-files-landscapes-alt" class="icon-in-button" />
           Projekty
         </NuxtLink>
-        <NuxtLink class="nav-link" to="/albums">
+        <NuxtLink class="nav-link" to="/album">
           <Icon name="uil-images" class="icon-in-button" />
           Alba
         </NuxtLink>
-        <NuxtLink class="nav-link" to="/albums/new">
+        <NuxtLink class="nav-link" to="/album/new">
           <Icon name="uil-image-plus" class="icon-in-button" />
           Nové album
         </NuxtLink>

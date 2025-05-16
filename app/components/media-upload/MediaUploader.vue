@@ -25,7 +25,7 @@ import { parseExifData } from "./exif"
 import { getImageDimensions } from "./dimensions"
 import { isHeic, convertHeicToJpeg } from "./heic"
 import { compressJpeg } from "./compress"
-import type { NewMedia } from "~~/server/database/schema"
+import type { NewMedia, NewAlbum } from "~~/server/database/schema"
 
 const { params } = defineProps<{
   params: AlbumSearchParams
@@ -178,11 +178,9 @@ async function processValidFile(fileStatus: FileStatus): Promise<void> {
 
   // upload
   try {
-    // TODO create album
-    await Promise.all([
-      uploadFile(mediaUploadData, fileStatus),
-      postMetadata(mediaUploadData),
-    ])
+    await postMetadata(mediaUploadData)
+    await createAlbum(mediaUploadData)
+    await uploadFile(mediaUploadData, fileStatus)
   } catch (error) {
     fileStatus.status = "error"
     if (error instanceof Error) {
@@ -199,6 +197,18 @@ async function processValidFile(fileStatus: FileStatus): Promise<void> {
 //
 // Upload a single file
 //
+
+async function createAlbum(data: MediaUploadData) {
+  try {
+    await $fetch("/api/albums", {
+      method: "POST",
+      body: data.album satisfies NewAlbum,
+    })
+  } catch (error) {
+    console.error("Failed to create album:", error)
+    throw error
+  }
+}
 
 async function postMetadata(data: MediaUploadData) {
   try {

@@ -8,8 +8,7 @@ export default defineEventHandler(async (event) => {
   try {
     const newMedia = await readValidatedBody(event, MediaCreateSchema.parse)
 
-    const db = useDb()
-    await db.insert(media).values(newMedia)
+    await useDb().insert(media).values(newMedia)
 
     return {
       success: true,

@@ -3,9 +3,7 @@ import { album } from "~~/server/database/schema"
 import { useDb } from "~~/server/utils/db"
 
 export default defineEventHandler(async () => {
-  const db = useDb()
-
-  const data = await db
+  const data = await useDb()
     .select({
       id: album.id,
       title: album.title,

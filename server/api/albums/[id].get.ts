@@ -3,7 +3,6 @@ import { album, media } from "~~/server/database/schema"
 import { useDb } from "~~/server/utils/db"
 
 export default defineEventHandler(async (event) => {
-  const db = useDb()
   const id = getRouterParam(event, "id")
 
   if (!id) {
@@ -13,7 +12,7 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const albumDetails = await db
+  const albumDetails = await useDb()
     .select()
     .from(album)
     .where(eq(album.id, id))
@@ -26,7 +25,7 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const mediaItems = await db
+  const mediaItems = await useDb()
     .select()
     .from(media)
     .where(eq(media.albumId, id))
