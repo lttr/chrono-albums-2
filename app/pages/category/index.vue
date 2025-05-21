@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <h1>Kategorie</h1>
+  </div>
 </template>
 
 <script lang="ts" setup></script>
