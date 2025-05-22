@@ -12,6 +12,7 @@ export const album = sqliteTable(
       .default(sql`(unixepoch())`),
     id: text("id").primaryKey(),
     month: integer("month").notNull(),
+    projectId: text("projectId").notNull(),
     title: text("title").notNull(),
     year: integer("year").notNull(),
   },
