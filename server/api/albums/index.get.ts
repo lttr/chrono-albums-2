@@ -9,7 +9,7 @@ export default defineEventHandler(async () => {
       title: album.title,
       year: album.year,
       month: album.month,
-      category: album.category,
+      category: album.categoryId,
     })
     .from(album)
     .orderBy(desc(album.year), desc(album.month))

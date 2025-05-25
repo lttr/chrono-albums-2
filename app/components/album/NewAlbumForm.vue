@@ -32,15 +32,28 @@
         <label :for="categoryId">Kategorie</label>
         <select :id="categoryId" name="category">
           <option
-            v-for="category of categories"
-            :key="category"
-            :value="category"
+            v-for="category of categoriesFromDb"
+            :key="category.name"
+            :value="category.id"
           >
-            {{ category }}
+            {{ category.name }}
+          </option>
+        </select>
+      </div>
+      <div class="p-form-group">
+        <label :for="projectId">Projekt</label>
+        <select :id="projectId" name="project">
+          <option
+            v-for="project of projects"
+            :key="project.name"
+            :value="project.id"
+          >
+            {{ project.name }}
           </option>
         </select>
       </div>
       <button type="submit" class="create">Vytvořit</button>
+      <div v-if="error" class="error">{{ error }}</div>
     </form>
   </div>
 </template>
@@ -48,19 +61,44 @@
 <script lang="ts" setup>
 import { months, years, categories } from "~~/shared/types/albums"
 
+const categoriesFromDb = categories.map((category) => ({
+  id: crypto.randomUUID(),
+  name: category,
+}))
+
+const projects = categories.map((category) => ({
+  id: crypto.randomUUID(),
+  name: category,
+}))
+
 const titleId = useId()
 const monthId = useId()
 const yearId = useId()
 const categoryId = useId()
+const projectId = useId()
+
+const error = ref("")
 
 function onSubmit(e: Event) {
   const id = crypto.randomUUID()
   const form = e.target as HTMLFormElement
   const formData = new FormData(form)
-  const searchParams = new URLSearchParams(
-    formData as unknown as Record<string, string>,
-  ).toString()
-  navigateTo(`/album/${id}/upload-media?${searchParams}`)
+  const rawData = Object.fromEntries(formData)
+  const result = AlbumSearchParamsSchema.safeParse({
+    ...rawData,
+    id
+  })
+  
+  if (!result.success) {
+    error.value = formatError(result.error)
+    console.error('Validation failed:', result.error)
+    return
+  }
+
+  navigateTo({
+    path: `/album/${id}/upload-media`,
+    query: result.data
+  })
 }
 </script>
 
@@ -73,5 +111,12 @@ function onSubmit(e: Event) {
   width: auto;
   min-width: 0;
   justify-self: start;
+}
+
+.error {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-default);
+  background-color: var(--error-alert-bg-color);
+  color: var(--error-alert-color);
 }
 </style>

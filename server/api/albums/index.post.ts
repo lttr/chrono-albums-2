@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
       .onConflictDoUpdate({
         target: album.id,
         set: {
-          category: newAlbum.category,
+          categoryId: newAlbum.categoryId,
           month: newAlbum.month,
           title: newAlbum.title,
           year: newAlbum.year,

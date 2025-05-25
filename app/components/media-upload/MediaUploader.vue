@@ -167,12 +167,14 @@ async function processValidFile(fileStatus: FileStatus): Promise<void> {
   const mediaUploadData: MediaUploadData = {
     originalName: fileStatus.file.name,
     album: params,
+    albumId: params.id,
     file: fileStatus.file,
     fileName: fileStatus.file.name,
     fileSize: fileStatus.file.size,
     id: fileStatus.id,
     kind: fileStatus.kind,
     mimeType: fileStatus.file.type,
+    projectId: params.projectId,
     ...imageUploadData,
   }
 

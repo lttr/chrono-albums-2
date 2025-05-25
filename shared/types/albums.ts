@@ -8,7 +8,7 @@ export const years = Array.from(
   (_, i) => firstYear + i,
 ).reverse()
 
-export const months = Array.from(Array(12), (_, i) => i + 1).reverse()
+export const months = Array.from(Array(12), (_, i) => i + 1)
 
 export const categories = [
   "Akce oddílu",
@@ -29,6 +29,7 @@ const errorMessages = {
   month: "Měsíc je povinný a musí to být číslo 1-12.",
   year: `Rok je povinný a musí to být číslo od ${firstYear} do aktuálního roku.`,
   category: `Kategorie je povinná a musí být jedna z: ${categories.join(", ")}.`,
+  project: "ID projektu je povinný, a musí být v UUID formátu.",
 }
 
 export const AlbumSearchParamsSchema = z.interface({
@@ -53,9 +54,8 @@ export const AlbumSearchParamsSchema = z.interface({
       z.lte(currentYear, errorMessages.year),
       z.gte(firstYear, errorMessages.year),
     ),
-  category: z.enum([...categories], {
-    error: errorMessages.category,
-  }),
+  categoryId: z.uuid(errorMessages.category),
+  projectId: z.uuid(errorMessages.project),
 })
 
 export type AlbumSearchParams = z.infer<typeof AlbumSearchParamsSchema>

@@ -12,6 +12,7 @@ export interface FileStatus {
 
 export interface MediaUploadData {
   album: AlbumSearchParams
+  albumId: string
   dateTaken?: Date
   file: Blob
   fileName: string
@@ -22,5 +23,6 @@ export interface MediaUploadData {
   location?: GpsTags
   mimeType: string
   originalName: string
+  projectId: string
   width?: number
 }
