@@ -19,9 +19,6 @@ export const album = sqliteTable(
   (table) => [index("idx_album_year").on(table.year)],
 )
 
-export type Album = typeof album.$inferSelect
-export type NewAlbum = typeof album.$inferInsert
-
 export const albumInsertSchema = createInsertSchema(album).omit({
   id: true,
   createdAt: true,

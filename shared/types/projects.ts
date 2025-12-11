@@ -1,4 +1,4 @@
-import type { Project } from "~~/server/db/schema"
+import type { Project } from "./db"
 
 export interface ProjectResponse {
   projects: Project[]

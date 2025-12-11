@@ -12,9 +12,6 @@ export const category = sqliteTable("category", {
   projectId: text("projectId").notNull(),
 })
 
-export type Category = typeof category.$inferSelect
-export type NewCategory = typeof category.$inferInsert
-
 export const categoryInsertSchema = createInsertSchema(category).omit({
   id: true,
   createdAt: true,

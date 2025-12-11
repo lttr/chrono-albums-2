@@ -35,9 +35,6 @@ export const media = sqliteTable(
   ],
 )
 
-export type Media = typeof media.$inferSelect
-export type NewMedia = typeof media.$inferInsert
-
 export const mediaInsertSchema = createInsertSchema(media).omit({
   id: true,
   createdAt: true,

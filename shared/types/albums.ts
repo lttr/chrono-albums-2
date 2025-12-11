@@ -10,6 +10,7 @@ export const years = Array.from(
 
 export const months = Array.from(Array(12), (_, i) => i + 1)
 
+// Legacy categories for form placeholders (will be fetched from DB)
 export const categories = [
   "Akce oddílu",
   "Tábory",
@@ -20,15 +21,13 @@ export const categories = [
   "Klubovny",
 ] as const
 
-export type Category = (typeof categories)[number]
-
 // Custom error messages for validation
 const errorMessages = {
   id: "ID alba je povinný, a musí být v UUID formátu.",
   title: "Název alba je povinný a délka musí být 3-70 znaků.",
   month: "Měsíc je povinný a musí to být číslo 1-12.",
   year: `Rok je povinný a musí to být číslo od ${firstYear} do aktuálního roku.`,
-  category: `Kategorie je povinná a musí být jedna z: ${categories.join(", ")}.`,
+  category: "ID kategorie je povinný, a musí být v UUID formátu.",
   project: "ID projektu je povinný, a musí být v UUID formátu.",
 }
 
@@ -59,18 +58,3 @@ export const AlbumSearchParamsSchema = z.object({
 })
 
 export type AlbumSearchParams = z.infer<typeof AlbumSearchParamsSchema>
-
-export interface AlbumWithMediaInfo {
-  id: string
-  title: string
-  year: number
-  month: number
-  category: Category
-  createdAt: Date
-  mediaCount: number
-  thumbnailId: string | null
-}
-
-export interface AlbumsResponse {
-  albums: AlbumWithMediaInfo[]
-}

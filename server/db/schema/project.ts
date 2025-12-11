@@ -11,9 +11,6 @@ export const project = sqliteTable("project", {
   name: text("name").notNull(),
 })
 
-export type Project = typeof project.$inferSelect
-export type NewProject = typeof project.$inferInsert
-
 export const projectInsertSchema = createInsertSchema(project).omit({
   id: true,
   createdAt: true,
