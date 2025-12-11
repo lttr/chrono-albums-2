@@ -52,13 +52,13 @@ export default defineTask({
       project: {
         count: 3,
         columns: {
-          name: f.valuesFromArray({ values: projectNames }),
+          name: f.valuesFromArray({ values: projectNames, isUnique: true }),
         },
       },
       category: {
         count: 5,
         columns: {
-          name: f.valuesFromArray({ values: categoryNames }),
+          name: f.valuesFromArray({ values: categoryNames, isUnique: true }),
         },
       },
       album: {
