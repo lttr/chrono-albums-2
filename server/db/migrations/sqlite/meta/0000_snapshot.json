@@ -61,9 +61,7 @@
       "indexes": {
         "idx_album_year": {
           "name": "idx_album_year",
-          "columns": [
-            "year"
-          ],
+          "columns": ["year"],
           "isUnique": false
         }
       },
@@ -217,16 +215,12 @@
       "indexes": {
         "idx_media_kind": {
           "name": "idx_media_kind",
-          "columns": [
-            "kind"
-          ],
+          "columns": ["kind"],
           "isUnique": false
         },
         "idx_media_albumId": {
           "name": "idx_media_albumId",
-          "columns": [
-            "albumId"
-          ],
+          "columns": ["albumId"],
           "isUnique": false
         }
       },
