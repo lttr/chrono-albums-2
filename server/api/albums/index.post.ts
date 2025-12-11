@@ -6,22 +6,13 @@ const AlbumCreateSchema = albumInsertSchema
 
 export default defineEventHandler(async (event) => {
   try {
-    const newAlbum = await readValidatedBody(event, AlbumCreateSchema.parse)
+    const body = await readValidatedBody(event, AlbumCreateSchema.parse)
+    const id = crypto.randomUUID()
 
-    await db
-      .insert(schema.album)
-      .values(newAlbum)
-      .onConflictDoUpdate({
-        target: schema.album.id,
-        set: {
-          categoryId: newAlbum.categoryId,
-          month: newAlbum.month,
-          title: newAlbum.title,
-          year: newAlbum.year,
-        },
-      })
+    await db.insert(schema.album).values({ ...body, id })
 
     return {
+      id,
       success: true,
     }
   } catch (error) {

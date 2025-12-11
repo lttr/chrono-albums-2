@@ -6,11 +6,13 @@ const MediaCreateSchema = mediaInsertSchema
 
 export default defineEventHandler(async (event) => {
   try {
-    const newMedia = await readValidatedBody(event, MediaCreateSchema.parse)
+    const body = await readValidatedBody(event, MediaCreateSchema.parse)
+    const id = crypto.randomUUID()
 
-    await db.insert(schema.media).values(newMedia)
+    await db.insert(schema.media).values({ ...body, id })
 
     return {
+      id,
       success: true,
     }
   } catch (error) {

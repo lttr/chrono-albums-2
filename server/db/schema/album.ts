@@ -22,5 +22,8 @@ export const album = sqliteTable(
 export type Album = typeof album.$inferSelect
 export type NewAlbum = typeof album.$inferInsert
 
-export const albumInsertSchema = createInsertSchema(album)
+export const albumInsertSchema = createInsertSchema(album).omit({
+  id: true,
+  createdAt: true,
+})
 export const albumUpdateSchema = createUpdateSchema(album)

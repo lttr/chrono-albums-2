@@ -4,9 +4,12 @@ import { projectInsertSchema } from "~~/server/db/schema"
 export default defineEventHandler(async (event) => {
   try {
     const body = await readValidatedBody(event, projectInsertSchema.parse)
-    const result = await db.insert(schema.project).values(body).returning({
-      id: schema.project.id,
-    })
+    const result = await db
+      .insert(schema.project)
+      .values({ ...body, id: crypto.randomUUID() })
+      .returning({
+        id: schema.project.id,
+      })
     const inserted = result[0]
     if (!inserted) {
       throw new Error("Insert returned no result")
