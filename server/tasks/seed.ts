@@ -6,7 +6,7 @@ const currentYear = new Date().getFullYear()
 const firstYear = 1968
 
 export default defineTask({
-  meta: { name: "db:seed", description: "Seed database with test data" },
+  meta: { name: "seed", description: "Seed database with test data" },
   async run() {
     console.log("Seeding database...")
 
