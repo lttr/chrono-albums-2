@@ -26,7 +26,6 @@
     "@libsql/client": "^0.15.15",
     "@lttr/puleo": "^0.8.1",
     "@zod/core": "^0.11.6",
-    "@zod/mini": "4.0.0-beta.0",
     "compressorjs": "^1.2.1",
     "date-fns": "^4.1.0",
     "db0": "^0.3.4",
@@ -36,7 +35,7 @@
     "heic2any": "^0.0.4",
     "nuxt": "^4.2.2",
     "vue": "latest",
-    "zod": "3.25.76"
+    "zod": "4.1.13"
   },
   "devDependencies": {
     "@iconify-json/uil": "^1.2.3",

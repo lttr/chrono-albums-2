@@ -52,7 +52,7 @@ db.select().from(album)
 
 ### Validation
 
-Schema uses `@zod/mini` for validation. Types exported from `shared/types/` include both Zod schemas and inferred TypeScript types.
+Schema uses `zod` v4 for validation. Types exported from `shared/types/` include both Zod schemas and inferred TypeScript types.
 
 ## Stack Notes
 

@@ -36,7 +36,7 @@
 </template>
 
 <script lang="ts" setup>
-import * as z from "@zod/mini"
+import * as z from "zod"
 
 const nameId = useId()
 const router = useRouter()

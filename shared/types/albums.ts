@@ -1,4 +1,4 @@
-import * as z from "@zod/mini"
+import * as z from "zod"
 
 const currentYear = new Date().getFullYear()
 const firstYear = 1968
@@ -32,7 +32,7 @@ const errorMessages = {
   project: "ID projektu je povinný, a musí být v UUID formátu.",
 }
 
-export const AlbumSearchParamsSchema = z.interface({
+export const AlbumSearchParamsSchema = z.object({
   id: z.uuid(errorMessages.id),
   title: z
     .string(errorMessages.title)

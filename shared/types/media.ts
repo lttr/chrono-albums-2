@@ -1,4 +1,4 @@
-import * as z from "@zod/mini"
+import * as z from "zod"
 
 const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/heif", "image/heic"]
 const ACCEPTED_VIDEO_TYPES = ["video/mp4", "video/mov", "video/quicktime"]
