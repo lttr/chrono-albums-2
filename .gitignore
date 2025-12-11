@@ -27,4 +27,4 @@ logs
 user-data
 
 # Drizzle
-server/database/migrations/meta/
+server/db/migrations/sqlite/meta/
