@@ -10,17 +10,6 @@ export const years = Array.from(
 
 export const months = Array.from(Array(12), (_, i) => i + 1)
 
-// Legacy categories for form placeholders (will be fetched from DB)
-export const categories = [
-  "Akce oddílu",
-  "Tábory",
-  "Svojsíkovy závody",
-  "Roveři",
-  "Tábořiště",
-  "Oddílové hry",
-  "Klubovny",
-] as const
-
 // Custom error messages for validation
 const errorMessages = {
   id: "ID alba je povinný, a musí být v UUID formátu.",

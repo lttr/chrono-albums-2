@@ -30,9 +30,9 @@
       </div>
       <div class="p-form-group">
         <label :for="categoryId">Kategorie</label>
-        <select :id="categoryId" name="category">
+        <select :id="categoryId" name="categoryId">
           <option
-            v-for="category of categoriesFromDb"
+            v-for="category of categories ?? []"
             :key="category.name"
             :value="category.id"
           >
@@ -42,9 +42,9 @@
       </div>
       <div class="p-form-group">
         <label :for="projectId">Projekt</label>
-        <select :id="projectId" name="project">
+        <select :id="projectId" name="projectId">
           <option
-            v-for="project of projects"
+            v-for="project of projects ?? []"
             :key="project.name"
             :value="project.id"
           >
@@ -59,17 +59,10 @@
 </template>
 
 <script lang="ts" setup>
-import { months, years, categories } from "~~/shared/types/albums"
+import { months, years } from "~~/shared/types/albums"
 
-const categoriesFromDb = categories.map((category) => ({
-  id: crypto.randomUUID(),
-  name: category,
-}))
-
-const projects = categories.map((category) => ({
-  id: crypto.randomUUID(),
-  name: category,
-}))
+const { data: categories } = await useFetch("/api/categories")
+const { data: projects } = await useFetch("/api/projects")
 
 const titleId = useId()
 const monthId = useId()
