@@ -1,4 +1,4 @@
-import { desc, eq } from "drizzle-orm"
+import { count, desc, eq } from "drizzle-orm"
 import { db, schema } from "hub:db"
 
 export default defineEventHandler(async () => {
@@ -11,10 +11,13 @@ export default defineEventHandler(async () => {
       createdAt: schema.album.createdAt,
       projectName: schema.project.name,
       categoryName: schema.category.name,
+      mediaCount: count(schema.media.id),
     })
     .from(schema.album)
     .leftJoin(schema.project, eq(schema.album.projectId, schema.project.id))
     .leftJoin(schema.category, eq(schema.album.categoryId, schema.category.id))
+    .leftJoin(schema.media, eq(schema.media.albumId, schema.album.id))
+    .groupBy(schema.album.id)
     .orderBy(desc(schema.album.year), desc(schema.album.month))
 
   if (!data.length) {

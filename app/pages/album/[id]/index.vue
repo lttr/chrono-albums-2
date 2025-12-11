@@ -16,6 +16,10 @@
           <dt>Vytvořeno</dt>
           <dd>{{ formatDate(data.album.createdAt) }}</dd>
         </div>
+        <div>
+          <dt>Médií</dt>
+          <dd>{{ data.media.length }}</dd>
+        </div>
       </dl>
     </header>
 

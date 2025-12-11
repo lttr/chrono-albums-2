@@ -23,6 +23,10 @@
             <dt>Vytvořeno</dt>
             <dd>{{ formatDate(album.createdAt) }}</dd>
           </div>
+          <div>
+            <dt>Médií</dt>
+            <dd>{{ album.mediaCount }}</dd>
+          </div>
         </dl>
       </NuxtLink>
     </div>
