@@ -1,8 +1,11 @@
 import { desc } from "drizzle-orm"
-import { project } from "~~/server/database/schema/project"
+import type { Project } from "~~/database/schema/project"
+import { project } from "~~/database/schema/project"
 import { useDb } from "~~/server/utils/db"
 
-export default defineEventHandler(async () => {
+export type GetProject = Pick<Project, "id" | "name">
+
+export default defineEventHandler(async (): Promise<GetProject[]> => {
   const data = await useDb()
     .select({
       id: project.id,

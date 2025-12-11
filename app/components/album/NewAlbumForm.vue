@@ -86,18 +86,18 @@ function onSubmit(e: Event) {
   const rawData = Object.fromEntries(formData)
   const result = AlbumSearchParamsSchema.safeParse({
     ...rawData,
-    id
+    id,
   })
-  
+
   if (!result.success) {
     error.value = formatError(result.error)
-    console.error('Validation failed:', result.error)
+    console.error("Validation failed:", result.error)
     return
   }
 
   navigateTo({
     path: `/album/${id}/upload-media`,
-    query: result.data
+    query: result.data,
   })
 }
 </script>

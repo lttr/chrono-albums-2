@@ -1,5 +1,5 @@
 import { useDb } from "~~/server/utils/db"
-import { project, ProjectInsertSchema } from "~~/server/database/schema/project"
+import { project, ProjectInsertSchema } from "~~/database/schema/project"
 
 export default defineEventHandler(async (event) => {
   try {
