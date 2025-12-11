@@ -24,11 +24,10 @@ nr db:reset && nr db:seed
 - `.data/db/sqlite.db` - local DB, gitignored
 - `server/tasks/db-seed.ts` - seed logic
 
-## Deploy (when you add NuxtHub remote later)
+## Deploy (self-hosted)
 
-```bash
-npx nuxt db migrate --remote   # Apply migrations to production
-```
+For self-hosted deployment, migrations run automatically on server start.
+The `.data/db/sqlite.db` file persists on the server.
 
 ## Key points
 
