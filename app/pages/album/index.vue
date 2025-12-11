@@ -21,7 +21,7 @@
           </div>
           <div>
             <dt>Vytvořeno</dt>
-            <dd>{{ new Date(album.createdAt).toLocaleDateString("cs") }}</dd>
+            <dd>{{ formatDate(album.createdAt) }}</dd>
           </div>
         </dl>
       </NuxtLink>

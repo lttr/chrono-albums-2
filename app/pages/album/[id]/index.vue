@@ -14,7 +14,7 @@
         </div>
         <div>
           <dt>Vytvořeno</dt>
-          <dd>{{ new Date(data.album.createdAt).toLocaleDateString("cs") }}</dd>
+          <dd>{{ formatDate(data.album.createdAt) }}</dd>
         </div>
       </dl>
     </header>
