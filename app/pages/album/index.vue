@@ -12,16 +12,12 @@
         <span class="album-date">{{ album.month }}/{{ album.year }}</span>
         <dl class="album-meta">
           <div>
-            <dt>ID</dt>
-            <dd>{{ album.id }}</dd>
+            <dt>Projekt</dt>
+            <dd>{{ album.projectName || "–" }}</dd>
           </div>
           <div>
-            <dt>Project</dt>
-            <dd>{{ album.projectId }}</dd>
-          </div>
-          <div>
-            <dt>Category</dt>
-            <dd>{{ album.categoryId || "–" }}</dd>
+            <dt>Kategorie</dt>
+            <dd>{{ album.categoryName || "–" }}</dd>
           </div>
           <div>
             <dt>Vytvořeno</dt>
