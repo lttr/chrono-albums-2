@@ -1,7 +1,7 @@
 import { drizzle } from "drizzle-orm/libsql"
 import { seed } from "drizzle-seed"
-import config from "../database/drizzle.config"
-import * as schema from "../database/schema"
+import config from "../server/database/drizzle.config"
+import * as schema from "../server/database/schema"
 
 const currentYear = new Date().getFullYear()
 const firstYear = 1968

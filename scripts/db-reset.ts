@@ -1,7 +1,7 @@
 import { drizzle } from "drizzle-orm/libsql"
 import { reset } from "drizzle-seed"
-import config from "../database/drizzle.config"
-import * as schema from "../database/schema"
+import config from "../server/database/drizzle.config"
+import * as schema from "../server/database/schema"
 
 async function main() {
   const db = drizzle(`file:${config.dbCredentials.url}`)

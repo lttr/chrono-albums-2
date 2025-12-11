@@ -1,6 +1,6 @@
 import { desc } from "drizzle-orm"
-import type { Project } from "~~/database/schema/project"
-import { project } from "~~/database/schema/project"
+import type { Project } from "~~/server/database/schema"
+import { project } from "~~/server/database/schema"
 import { useDb } from "~~/server/utils/db"
 
 export type GetProject = Pick<Project, "id" | "name">

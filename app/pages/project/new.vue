@@ -5,15 +5,26 @@
     <form class="project-form" @submit.prevent="onSubmit">
       <div class="p-form-group">
         <label :for="nameId">Název projektu</label>
-        <input :id="nameId" type="text" required />
+        <input
+          :id="nameId"
+          v-model="form.name"
+          type="text"
+          required
+          :class="{ 'input-error': errors.name }"
+        />
+        <span v-if="errors.name" class="error-text">{{ errors.name }}</span>
       </div>
 
       <div class="p-cluster form-actions">
         <NuxtLink to="/project" class="p-button p-button-secondary"
           >Zrušit</NuxtLink
         >
-        <button type="submit" class="p-button p-button-brand">
-          {{ "Vytvořit projekt" }}
+        <button
+          type="submit"
+          class="p-button p-button-brand"
+          :disabled="isSubmitting"
+        >
+          {{ isSubmitting ? "Vytvářím..." : "Vytvořit projekt" }}
         </button>
       </div>
     </form>
@@ -25,39 +36,56 @@
 </template>
 
 <script lang="ts" setup>
-import { NewProject, ProjectInsertSchema } from "~~/server/database/schema"
+import * as z from "@zod/mini"
 
 const nameId = useId()
-
 const router = useRouter()
 
-const submitError = ref("")
-
-// Use the schema from shared types with Czech error messages
-const ProjectFormSchema = NewProjectSchema.extend({
-  name: z
-    .string()
-    .min(1, "Název projektu je povinný")
-    .max(100, "Název projektu je příliš dlouhý"),
-  description: z.string().max(500, "Popis je příliš dlouhý").optional(),
+// Form state
+const form = reactive({
+  name: "",
 })
 
-async function createProject() {
+const errors = reactive({
+  name: "",
+})
+
+const isSubmitting = ref(false)
+const submitError = ref("")
+
+// Validation schema with Czech error messages
+const ProjectFormSchema = z.object({
+  name: z
+    .string()
+    .check(
+      z.minLength(1, "Název projektu je povinný"),
+      z.maxLength(100, "Název projektu je příliš dlouhý"),
+    ),
+})
+
+async function onSubmit() {
   // Reset errors
   errors.name = ""
-  errors.description = ""
   submitError.value = ""
 
+  // Validate form
+  const result = z.safeParse(ProjectFormSchema, form)
+  if (!result.success) {
+    for (const issue of result.error.issues) {
+      if (issue.path[0] === "name") {
+        errors.name = issue.message
+      }
+    }
+    return
+  }
+
+  isSubmitting.value = true
+
   try {
-    // Validate form
-    const validatedData = ProjectFormSchema.parse(form)
-
-    isSubmitting.value = true
-
     // Submit to API
     const { error } = await useFetch("/api/projects", {
       method: "POST",
-      body: validatedData,
+      body: result.data,
     })
 
     if (error.value) {
@@ -69,18 +97,8 @@ async function createProject() {
     // Redirect to projects list
     router.push("/project")
   } catch (err) {
-    // if (err instanceof z.ZodError) {
-    //   const formattedErrors = err.format()
-    //   if (formattedErrors.name?._errors) {
-    //     errors.name = formattedErrors.name._errors.join(", ")
-    //   }
-    //   if (formattedErrors.description?._errors) {
-    //     errors.description = formattedErrors.description._errors.join(", ")
-    //   }
-    // } else {
-    //   submitError.value = "Nastala neočekávaná chyba"
-    //   console.error(err)
-    // }
+    submitError.value = "Nastala neočekávaná chyba"
+    console.error(err)
   } finally {
     isSubmitting.value = false
   }

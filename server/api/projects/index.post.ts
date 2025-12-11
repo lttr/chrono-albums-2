@@ -1,14 +1,18 @@
 import { useDb } from "~~/server/utils/db"
-import { project, ProjectInsertSchema } from "~~/database/schema/project"
+import { project, projectInsertSchema } from "~~/server/database/schema"
 
 export default defineEventHandler(async (event) => {
   try {
-    const body = await readValidatedBody(event, ProjectInsertSchema.parse)
+    const body = await readValidatedBody(event, projectInsertSchema.parse)
     const result = await useDb().insert(project).values(body).returning({
       id: project.id,
     })
+    const inserted = result[0]
+    if (!inserted) {
+      throw new Error("Insert returned no result")
+    }
     return {
-      id: result[0].id,
+      id: inserted.id,
       success: true,
     }
   } catch (error) {
