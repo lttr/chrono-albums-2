@@ -63,10 +63,14 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  // Store file using useStorage
-  const storage = useStorage("uploads")
+  // Store file using blob
   try {
-    await storage.setItemRaw(`${uploadData.id}.jpeg`, uploadData.file)
+    if (!uploadData.file) {
+      throw createError({ statusCode: 400, statusMessage: "No file data" })
+    }
+    await blob.put(`${uploadData.id}.jpeg`, uploadData.file, {
+      addRandomSuffix: false,
+    })
   } catch (error) {
     console.error(error)
     if (error instanceof H3Error) {

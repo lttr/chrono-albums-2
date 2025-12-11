@@ -1,5 +1,5 @@
-import { media, mediaInsertSchema } from "~~/server/database/schema"
-import { useDb } from "~~/server/utils/db"
+import { db, schema } from "hub:db"
+import { mediaInsertSchema } from "~~/server/db/schema"
 import { createError } from "h3"
 
 const MediaCreateSchema = mediaInsertSchema
@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
   try {
     const newMedia = await readValidatedBody(event, MediaCreateSchema.parse)
 
-    await useDb().insert(media).values(newMedia)
+    await db.insert(schema.media).values(newMedia)
 
     return {
       success: true,

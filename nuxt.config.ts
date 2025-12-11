@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   modules: [
+    "@nuxthub/core",
     "@lttr/nuxt-config-postcss",
     "@nuxt/eslint",
     "@nuxt/fonts",
@@ -40,22 +41,13 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2025-04-01",
   nitro: {
-    storage: {
-      uploads: {
-        driver: "fs",
-        base: "./user-data/uploads",
-      },
-    },
     experimental: {
-      database: true,
       tasks: true,
     },
-    database: {
-      default: {
-        connector: "sqlite",
-        options: { name: "db" },
-      },
-    },
+  },
+  hub: {
+    db: "sqlite",
+    blob: true,
   },
   eslint: {
     config: {

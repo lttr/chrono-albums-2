@@ -25,7 +25,7 @@ import { parseExifData } from "./exif"
 import { getImageDimensions } from "./dimensions"
 import { isHeic, convertHeicToJpeg } from "./heic"
 import { compressJpeg } from "./compress"
-import type { NewMedia, NewAlbum } from "~~/server/database/schema"
+import type { NewMedia, NewAlbum } from "~~/server/db/schema"
 
 const { params } = defineProps<{
   params: AlbumSearchParams

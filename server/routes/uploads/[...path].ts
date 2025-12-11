@@ -1,5 +1,4 @@
 export default defineEventHandler(async (event) => {
-  const storage = useStorage("uploads")
   const path = getRouterParam(event, "path")
 
   if (!path) {
@@ -9,7 +8,5 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const file = await storage.getItemRaw(path)
-
-  return file
+  return blob.serve(event, path)
 })

@@ -1,18 +1,17 @@
 import { desc } from "drizzle-orm"
-import { album } from "~~/server/database/schema"
-import { useDb } from "~~/server/utils/db"
+import { db, schema } from "hub:db"
 
 export default defineEventHandler(async () => {
-  const data = await useDb()
+  const data = await db
     .select({
-      id: album.id,
-      title: album.title,
-      year: album.year,
-      month: album.month,
-      category: album.categoryId,
+      id: schema.album.id,
+      title: schema.album.title,
+      year: schema.album.year,
+      month: schema.album.month,
+      category: schema.album.categoryId,
     })
-    .from(album)
-    .orderBy(desc(album.year), desc(album.month))
+    .from(schema.album)
+    .orderBy(desc(schema.album.year), desc(schema.album.month))
 
   if (!data.length) {
     throw createError({

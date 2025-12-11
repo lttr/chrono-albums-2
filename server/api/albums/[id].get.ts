@@ -1,6 +1,5 @@
 import { eq } from "drizzle-orm"
-import { album, media } from "~~/server/database/schema"
-import { useDb } from "~~/server/utils/db"
+import { db, schema } from "hub:db"
 
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, "id")
@@ -12,10 +11,10 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const albumDetails = await useDb()
+  const albumDetails = await db
     .select()
-    .from(album)
-    .where(eq(album.id, id))
+    .from(schema.album)
+    .where(eq(schema.album.id, id))
     .limit(1)
 
   if (!albumDetails.length) {
@@ -25,11 +24,11 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const mediaItems = await useDb()
+  const mediaItems = await db
     .select()
-    .from(media)
-    .where(eq(media.albumId, id))
-    .orderBy(media.dateTaken)
+    .from(schema.media)
+    .where(eq(schema.media.albumId, id))
+    .orderBy(schema.media.dateTaken)
 
   return {
     album: albumDetails[0],

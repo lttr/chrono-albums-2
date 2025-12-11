@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { Album } from "~~/server/database/schema"
+import type { Album } from "~~/server/db/schema"
 
 const { data: albums } = useFetch<Album[]>("/api/albums")
 </script>

@@ -1,18 +1,17 @@
 import { desc } from "drizzle-orm"
-import type { Project } from "~~/server/database/schema"
-import { project } from "~~/server/database/schema"
-import { useDb } from "~~/server/utils/db"
+import { db, schema } from "hub:db"
+import type { Project } from "~~/server/db/schema"
 
 export type GetProject = Pick<Project, "id" | "name">
 
 export default defineEventHandler(async (): Promise<GetProject[]> => {
-  const data = await useDb()
+  const data = await db
     .select({
-      id: project.id,
-      name: project.name,
+      id: schema.project.id,
+      name: schema.project.name,
     })
-    .from(project)
-    .orderBy(desc(project.createdAt))
+    .from(schema.project)
+    .orderBy(desc(schema.project.createdAt))
 
   if (!data.length) {
     throw createError({

@@ -1,11 +1,11 @@
-import { useDb } from "~~/server/utils/db"
-import { project, projectInsertSchema } from "~~/server/database/schema"
+import { db, schema } from "hub:db"
+import { projectInsertSchema } from "~~/server/db/schema"
 
 export default defineEventHandler(async (event) => {
   try {
     const body = await readValidatedBody(event, projectInsertSchema.parse)
-    const result = await useDb().insert(project).values(body).returning({
-      id: project.id,
+    const result = await db.insert(schema.project).values(body).returning({
+      id: schema.project.id,
     })
     const inserted = result[0]
     if (!inserted) {

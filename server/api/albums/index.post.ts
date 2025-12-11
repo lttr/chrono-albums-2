@@ -1,5 +1,5 @@
-import { album, albumInsertSchema } from "~~/server/database/schema"
-import { useDb } from "~~/server/utils/db"
+import { db, schema } from "hub:db"
+import { albumInsertSchema } from "~~/server/db/schema"
 import { createError } from "h3"
 
 const AlbumCreateSchema = albumInsertSchema
@@ -8,11 +8,11 @@ export default defineEventHandler(async (event) => {
   try {
     const newAlbum = await readValidatedBody(event, AlbumCreateSchema.parse)
 
-    await useDb()
-      .insert(album)
+    await db
+      .insert(schema.album)
       .values(newAlbum)
       .onConflictDoUpdate({
-        target: album.id,
+        target: schema.album.id,
         set: {
           categoryId: newAlbum.categoryId,
           month: newAlbum.month,
