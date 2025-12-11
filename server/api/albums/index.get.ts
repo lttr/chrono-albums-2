@@ -3,13 +3,7 @@ import { db, schema } from "hub:db"
 
 export default defineEventHandler(async () => {
   const data = await db
-    .select({
-      id: schema.album.id,
-      title: schema.album.title,
-      year: schema.album.year,
-      month: schema.album.month,
-      category: schema.album.categoryId,
-    })
+    .select()
     .from(schema.album)
     .orderBy(desc(schema.album.year), desc(schema.album.month))
 
