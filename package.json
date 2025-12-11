@@ -19,9 +19,9 @@
     "start": "node .output/server/index.mjs",
     "test": "exit 0",
     "typecheck": "nuxi typecheck",
-    "validate": "npm run format && npm run lint:fix && npm run typecheck && npm test"
+    "verify": "npm run format && npm run lint:fix && npm run typecheck && npm test"
   },
-  "packageManager": "pnpm@10.9.0",
+  "packageManager": "pnpm@10.17.1",
   "dependencies": {
     "@libsql/client": "^0.15.4",
     "@lttr/puleo": "^0.5.0",
