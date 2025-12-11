@@ -1,75 +1,50 @@
-# Nuxt 3 Minimal Starter
+# Chrono Albums
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Photo album management app built with Nuxt 4 and SQLite.
+
+## Data Model
+
+```
+Project → Category → Album → Media
+```
+
+- **Project**: Top-level container
+- **Category**: Groups albums (e.g., "Tábory", "Akce oddílu")
+- **Album**: Photo album with year/month metadata
+- **Media**: Images/videos with EXIF data
 
 ## Setup
 
-Make sure to install the dependencies:
-
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
+pnpm run db:migrate
 pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
+## Development
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+nr dev              # Dev server on http://localhost:3000
+nr verify           # Format + lint + typecheck + test
+nr test             # Run tests
 ```
 
-Locally preview production build:
+## Database
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+nr db:generate      # Generate migrations from schema
+nr db:migrate       # Apply migrations
+nr db:seed          # Seed test data (requires dev server)
+nr db:reset         # Reset database
+nr db:studio        # Open Drizzle Studio
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+See [docs/database-workflow.md](docs/database-workflow.md) for details.
+
+## Stack
+
+- **Framework**: Nuxt 4 (compatibility mode)
+- **Database**: SQLite via Drizzle ORM
+- **Styling**: @lttr/puleo CSS
+- **Validation**: Zod v4
+- **Image handling**: HEIC conversion, EXIF extraction

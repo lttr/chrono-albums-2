@@ -5,7 +5,7 @@
 ```bash
 # First time / fresh start
 nr db:generate          # Create migration from schema
-nr db:migrate           # Apply migration (creates .data/db/sqlite.db)
+nr db:migrate           # Apply migration (and creates .data/db/sqlite.db)
 nr db:seed              # Populate test data
 
 # Schema changes
@@ -14,7 +14,8 @@ nr db:generate          # Creates new migration file
 nr db:migrate           # Applies it
 
 # Full reset (wipe + reseed)
-nr db:reset && nr db:seed
+# Note: db:seed requires dev server running
+nr db:reset         # Resets and seeds in one command
 ```
 
 ## Files involved
