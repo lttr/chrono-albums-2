@@ -1,5 +1,27 @@
 <template>
   <div class="admin-layout">
+    <!-- Admin top bar -->
+    <header class="admin-header">
+      <div class="header-left p-cluster">
+        <NuxtLink to="/" class="logo-link p-cluster">
+          <Icon name="uil-comment-alt-image" class="logo-icon" />
+          <span class="logo-text p-base-text-bold">Chrono Albums</span>
+        </NuxtLink>
+      </div>
+
+      <div class="header-right p-cluster">
+        <NuxtLink to="/admin" class="header-link">
+          <Icon name="uil-th-large" aria-hidden="true" />
+          <span class="header-link-text">Admin</span>
+        </NuxtLink>
+        <NuxtLink to="/admin/profile" class="header-link">
+          <Icon name="uil-user" aria-hidden="true" />
+          <span class="header-link-text">Profil</span>
+        </NuxtLink>
+        <ColorModeSwitch />
+      </div>
+    </header>
+
     <div class="admin-body">
       <!-- Mobile sidebar toggle -->
       <button
@@ -85,6 +107,59 @@ watch(
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+/* Admin header */
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-1);
+  background: var(--surface-0);
+}
+
+.logo-link {
+  text-decoration-color: var(--text-color-1);
+
+  &:visited {
+    color: var(--color-text-1);
+  }
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+.logo-text {
+  @media (width < 480px) {
+    display: none;
+  }
+}
+
+.header-right {
+  gap: var(--space-3);
+}
+
+.header-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  color: var(--text-color-2);
+  text-decoration: none;
+  border-radius: var(--radius-2);
+
+  &:hover {
+    background: var(--surface-1);
+    color: var(--text-color-1);
+  }
+}
+
+.header-link-text {
+  @media (width < 600px) {
+    display: none;
+  }
 }
 
 .admin-body {

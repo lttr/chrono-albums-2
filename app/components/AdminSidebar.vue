@@ -1,13 +1,6 @@
 <template>
   <nav class="sidebar" aria-label="Admin navigace">
     <div class="sidebar-section">
-      <NuxtLink to="/admin" class="sidebar-link sidebar-home">
-        <Icon name="uil-th-large" aria-hidden="true" />
-        Admin
-      </NuxtLink>
-    </div>
-
-    <div class="sidebar-section">
       <h2 id="projects-heading" class="sidebar-header">Projekty</h2>
       <div v-if="pending" class="sidebar-loading" aria-live="polite">
         Načítám...
@@ -30,10 +23,6 @@
         </li>
       </ul>
       <div v-else class="sidebar-empty">Žádné projekty</div>
-    </div>
-
-    <div class="sidebar-section sidebar-bottom">
-      <ColorModeSwitch class="color-mode-switch" />
     </div>
 
     <div class="sidebar-section sidebar-actions">
@@ -117,11 +106,6 @@ function isProjectActive(projectId: string): boolean {
   }
 }
 
-.sidebar-home {
-  font-weight: var(--font-weight-6);
-  color: var(--text-color-1);
-}
-
 .sidebar-icon {
   flex-shrink: 0;
   font-size: 1rem;
@@ -135,18 +119,10 @@ function isProjectActive(projectId: string): boolean {
   font-style: italic;
 }
 
-.sidebar-bottom {
+.sidebar-actions {
   margin-top: auto;
   padding-top: var(--space-3);
   border-top: var(--border-1);
-}
-
-.color-mode-switch {
-  padding: var(--space-2);
-}
-
-.sidebar-actions {
-  padding-top: var(--space-2);
 }
 
 .sidebar-action {

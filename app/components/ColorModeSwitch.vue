@@ -34,6 +34,8 @@ function setPreference(mode: string) {
 <style scoped>
 .color-mode-switch {
   --cluster-gap: var(--space-1);
+
+  flex-wrap: nowrap;
 }
 
 .mode-btn {
