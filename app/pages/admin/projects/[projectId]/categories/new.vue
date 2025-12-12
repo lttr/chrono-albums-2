@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1 class="p-heading-2 page-title">Nový projekt</h1>
+    <h1 class="p-heading-2 page-title">Nová kategorie</h1>
 
-    <form class="project-form" @submit.prevent="onSubmit">
+    <form class="category-form" @submit.prevent="onSubmit">
       <div class="p-form-group">
-        <label :for="nameId">Název projektu</label>
+        <label :for="nameId">Název kategorie</label>
         <input
           :id="nameId"
           v-model="form.name"
@@ -16,15 +16,18 @@
       </div>
 
       <div class="p-cluster form-actions">
-        <NuxtLink to="/project" class="p-button p-button-secondary"
-          >Zrušit</NuxtLink
+        <NuxtLink
+          :to="`/admin/projects/${projectId}`"
+          class="p-button p-button-secondary"
         >
+          Zrušit
+        </NuxtLink>
         <button
           type="submit"
           class="p-button p-button-brand"
           :disabled="isSubmitting"
         >
-          {{ isSubmitting ? "Vytvářím..." : "Vytvořit projekt" }}
+          {{ isSubmitting ? "Vytvářím..." : "Vytvořit kategorii" }}
         </button>
       </div>
     </form>
@@ -38,10 +41,17 @@
 <script lang="ts" setup>
 import * as z from "zod"
 
-const nameId = useId()
-const router = useRouter()
+definePageMeta({
+  layout: "admin",
+  pageName: "Nová kategorie",
+})
 
-// Form state
+const route = useRoute("admin-projects-projectId-categories-new")
+const router = useRouter()
+const projectId = computed(() => route.params.projectId)
+
+const nameId = useId()
+
 const form = reactive({
   name: "",
 })
@@ -53,23 +63,20 @@ const errors = reactive({
 const isSubmitting = ref(false)
 const submitError = ref("")
 
-// Validation schema with Czech error messages
-const ProjectFormSchema = z.object({
+const CategoryFormSchema = z.object({
   name: z
     .string()
     .check(
-      z.minLength(1, "Název projektu je povinný"),
-      z.maxLength(100, "Název projektu je příliš dlouhý"),
+      z.minLength(1, "Název kategorie je povinný"),
+      z.maxLength(100, "Název kategorie je příliš dlouhý"),
     ),
 })
 
 async function onSubmit() {
-  // Reset errors
   errors.name = ""
   submitError.value = ""
 
-  // Validate form
-  const result = z.safeParse(ProjectFormSchema, form)
+  const result = z.safeParse(CategoryFormSchema, form)
   if (!result.success) {
     for (const issue of result.error.issues) {
       if (issue.path[0] === "name") {
@@ -82,22 +89,17 @@ async function onSubmit() {
   isSubmitting.value = true
 
   try {
-    // Submit to API
-    const { error } = await useFetch("/api/projects", {
+    const response = await $fetch("/api/categories", {
       method: "POST",
-      body: result.data,
+      body: {
+        ...result.data,
+        projectId: projectId.value,
+      },
     })
 
-    if (error.value) {
-      submitError.value = "Nastala chyba při vytváření projektu"
-      console.error(error.value)
-      return
-    }
-
-    // Redirect to projects list
-    router.push("/project")
+    router.push(`/admin/projects/${projectId.value}/categories/${response.id}`)
   } catch (err) {
-    submitError.value = "Nastala neočekávaná chyba"
+    submitError.value = "Nastala chyba při vytváření kategorie"
     console.error(err)
   } finally {
     isSubmitting.value = false
@@ -110,7 +112,7 @@ async function onSubmit() {
   margin-bottom: var(--space-6);
 }
 
-.project-form {
+.category-form {
   max-width: var(--size-content-2);
 }
 

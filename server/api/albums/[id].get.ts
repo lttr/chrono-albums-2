@@ -14,6 +14,7 @@ export default defineEventHandler(async (event) => {
   const albumDetails = await db
     .select({
       id: schema.album.id,
+      slug: schema.album.slug,
       title: schema.album.title,
       month: schema.album.month,
       year: schema.album.year,

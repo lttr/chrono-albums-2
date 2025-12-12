@@ -2,7 +2,7 @@
   <div>
     <div class="p-cluster header-container">
       <h1 class="p-heading-2">Projekty</h1>
-      <NuxtLink to="/project/new" class="p-button p-button-brand">
+      <NuxtLink to="/admin/projects/new" class="p-button p-button-brand">
         Nový projekt
       </NuxtLink>
     </div>
@@ -20,6 +20,7 @@
         v-for="project of projects"
         :key="project.id"
         :title="project.name"
+        :to="`/admin/projects/${project.id}`"
       >
         <template #actions>
           <NuxtLink
@@ -27,9 +28,9 @@
             class="public-link"
             title="Veřejný odkaz"
             target="_blank"
+            @click.stop
           >
             <Icon name="uil:external-link-alt" />
-            Veřejný odkaz
           </NuxtLink>
         </template>
       </AdminCard>
@@ -38,6 +39,10 @@
 </template>
 
 <script lang="ts" setup>
+definePageMeta({
+  layout: "admin",
+})
+
 const { data: projects, error } = await useFetch("/api/projects")
 </script>
 
@@ -61,15 +66,13 @@ const { data: projects, error } = await useFetch("/api/projects")
 }
 
 .public-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-  font-size: var(--font-size--1);
   color: var(--text-color-2);
-  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.15s;
 }
 
 .public-link:hover {
+  opacity: 1;
   color: var(--brand-color);
 }
 </style>

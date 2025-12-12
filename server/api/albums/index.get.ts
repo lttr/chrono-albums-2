@@ -10,6 +10,8 @@ export default defineEventHandler(async () => {
       month: schema.album.month,
       year: schema.album.year,
       createdAt: schema.album.createdAt,
+      projectId: schema.album.projectId,
+      categoryId: schema.album.categoryId,
       projectName: schema.project.name,
       categoryName: schema.category.name,
       mediaCount: count(schema.media.id),

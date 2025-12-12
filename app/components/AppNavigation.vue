@@ -1,18 +1,10 @@
 <template>
   <span class="p-cluster">
-    <NuxtLink class="nav-link" to="/project">
-      <Icon name="uil-file-contract" class="icon-in-button" />
-      Projekty
+    <NuxtLink class="nav-link" to="/admin">
+      <Icon name="uil-th-large" class="icon-in-button" />
+      Admin
     </NuxtLink>
-    <NuxtLink class="nav-link" to="/category">
-      <Icon name="uil-files-landscapes-alt" class="icon-in-button" />
-      Kategorie
-    </NuxtLink>
-    <NuxtLink class="nav-link" to="/album">
-      <Icon name="uil-images" class="icon-in-button" />
-      Alba
-    </NuxtLink>
-    <NuxtLink class="nav-link" to="/album/new">
+    <NuxtLink class="nav-link" to="/admin/albums/new">
       <Icon name="uil-image-plus" class="icon-in-button" />
       Nové album
     </NuxtLink>

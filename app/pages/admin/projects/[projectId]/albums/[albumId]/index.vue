@@ -1,13 +1,28 @@
 <template>
   <div class="p-stack">
     <header v-if="data?.album" class="album-header">
-      <h1>{{ data.album.title }}</h1>
+      <div class="p-cluster header-row">
+        <h1 class="p-heading-2">{{ data.album.title }}</h1>
+        <div class="header-actions">
+          <NuxtLink
+            :to="`/admin/projects/${projectId}/albums/${albumId}/upload`"
+            class="p-button p-button-small"
+          >
+            <Icon name="uil-image-plus" />
+            Nahrát média
+          </NuxtLink>
+          <NuxtLink
+            :to="`/a/${data.album.slug}`"
+            class="public-link"
+            target="_blank"
+          >
+            <Icon name="uil:external-link-alt" />
+            Veřejný odkaz
+          </NuxtLink>
+        </div>
+      </div>
       <p class="album-date">{{ data.album.month }}/{{ data.album.year }}</p>
       <dl class="album-meta">
-        <div v-if="data.album.projectName">
-          <dt>Projekt</dt>
-          <dd>{{ data.album.projectName }}</dd>
-        </div>
         <div v-if="data.album.categoryName">
           <dt>Kategorie</dt>
           <dd>{{ data.album.categoryName }}</dd>
@@ -45,13 +60,33 @@
 
     <p v-else-if="data && !data.media.length" class="empty-state">
       Album neobsahuje žádná média.
+      <NuxtLink :to="`/admin/projects/${projectId}/albums/${albumId}/upload`">
+        Nahrát média
+      </NuxtLink>
     </p>
+
+    <div v-else-if="!data" class="error-message">Album nenalezeno.</div>
   </div>
 </template>
 
 <script lang="ts" setup>
-const route = useRoute("album-id")
-const { data } = useFetch(`/api/albums/${route.params.id}`)
+definePageMeta({
+  layout: "admin",
+})
+
+const route = useRoute("admin-projects-projectId-albums-albumId")
+const projectId = computed(() => route.params.projectId)
+const albumId = computed(() => route.params.albumId)
+
+const { data } = useFetch(() => `/api/albums/${albumId.value}`)
+
+// Set breadcrumb data
+const routeMeta = route.meta as { albumTitle?: string }
+watchEffect(() => {
+  if (data.value?.album) {
+    routeMeta.albumTitle = data.value.album.title
+  }
+})
 </script>
 
 <style scoped>
@@ -59,6 +94,30 @@ const { data } = useFetch(`/api/albums/${route.params.id}`)
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+}
+
+.header-row {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.public-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--text-color-2);
+  font-size: var(--font-size--1);
+}
+
+.public-link:hover {
+  color: var(--brand-color);
 }
 
 .album-date {
@@ -119,5 +178,11 @@ const { data } = useFetch(`/api/albums/${route.params.id}`)
 .empty-state {
   color: var(--text-color-2);
   font-style: italic;
+}
+
+.error-message {
+  padding: var(--space-6);
+  color: var(--negative-color);
+  text-align: center;
 }
 </style>
