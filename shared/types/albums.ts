@@ -12,16 +12,16 @@ export const months = Array.from(Array(12), (_, i) => i + 1)
 
 // Custom error messages for validation
 const errorMessages = {
-  id: "ID alba je povinný, a musí být v UUID formátu.",
+  id: "ID alba je povinné.",
   title: "Název alba je povinný a délka musí být 3-70 znaků.",
   month: "Měsíc je povinný a musí to být číslo 1-12.",
   year: `Rok je povinný a musí to být číslo od ${firstYear} do aktuálního roku.`,
-  category: "ID kategorie je povinný, a musí být v UUID formátu.",
-  project: "ID projektu je povinný, a musí být v UUID formátu.",
+  category: "ID kategorie je povinné.",
+  project: "ID projektu je povinné.",
 }
 
 export const AlbumSearchParamsSchema = z.object({
-  id: z.uuid(errorMessages.id),
+  id: z.string(errorMessages.id).check(z.minLength(1, errorMessages.id)),
   title: z
     .string(errorMessages.title)
     .check(
@@ -42,8 +42,12 @@ export const AlbumSearchParamsSchema = z.object({
       z.lte(currentYear, errorMessages.year),
       z.gte(firstYear, errorMessages.year),
     ),
-  categoryId: z.uuid(errorMessages.category),
-  projectId: z.uuid(errorMessages.project),
+  categoryId: z
+    .string(errorMessages.category)
+    .check(z.minLength(1, errorMessages.category)),
+  projectId: z
+    .string(errorMessages.project)
+    .check(z.minLength(1, errorMessages.project)),
 })
 
 export type AlbumSearchParams = z.infer<typeof AlbumSearchParamsSchema>

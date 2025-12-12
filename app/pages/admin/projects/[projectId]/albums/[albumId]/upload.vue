@@ -2,13 +2,13 @@
   <div class="p-flow">
     <h1 class="p-heading-2">Nahrání médií</h1>
 
-    <section class="params">
+    <section v-if="albumInfo" class="params">
       <span>Název alba:</span>
-      <span>{{ route.query.title }}</span>
+      <span>{{ albumInfo.title }}</span>
       <span>Rok:</span>
-      <span>{{ route.query.year }}</span>
+      <span>{{ albumInfo.year }}</span>
       <span>Měsíc:</span>
-      <span>{{ route.query.month }}</span>
+      <span>{{ albumInfo.month }}</span>
       <span v-if="categoryName">Kategorie:</span>
       <span v-if="categoryName">{{ categoryName }}</span>
     </section>
@@ -50,25 +50,60 @@ const route = useRoute("admin-projects-projectId-albums-albumId-upload")
 const projectId = computed(() => route.params.projectId)
 const albumId = computed(() => route.params.albumId)
 
-const { data: categories } = await useFetch("/api/categories")
+// Fetch album data if query params are missing
+const { data: albumData } = await useFetch(
+  () => `/api/albums/${albumId.value}`,
+  {
+    immediate: !route.query.title,
+  },
+)
+
+const albumInfo = computed(() => {
+  // Prefer query params if available, fall back to fetched data
+  if (route.query.title) {
+    return {
+      title: route.query.title as string,
+      year: route.query.year as string,
+      month: route.query.month as string,
+      categoryId: route.query.categoryId as string,
+      categoryName: null as string | null,
+    }
+  }
+  if (albumData.value?.album) {
+    const album = albumData.value.album
+    return {
+      title: album.title,
+      year: String(album.year),
+      month: String(album.month),
+      categoryId: album.categoryId,
+      categoryName: album.categoryName,
+    }
+  }
+  return null
+})
 
 const categoryName = computed(() => {
-  const categoryId = route.query.categoryId
-  if (!categoryId) {
-    return null
-  }
-  return categories.value?.find((c) => c.id === categoryId)?.name
+  return albumInfo.value?.categoryName ?? null
 })
 
 watch(
-  () => route.fullPath,
+  [albumId, albumInfo],
   () => {
+    if (!albumInfo.value) {
+      prettyError.value = "Nepodařilo se načíst data alba."
+      return
+    }
     const result = AlbumSearchParamsSchema.safeParse({
       id: albumId.value,
-      ...route.query,
+      title: albumInfo.value.title,
+      year: albumInfo.value.year,
+      month: albumInfo.value.month,
+      categoryId: albumInfo.value.categoryId,
+      projectId: projectId.value,
     })
     if (result.success) {
       params.value = result.data
+      prettyError.value = ""
     } else {
       prettyError.value = formatError(result.error)
     }
