@@ -2,6 +2,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxthub/core",
     "@lttr/nuxt-config-postcss",
+    "@lttr/nuxt-puleo",
     "@nuxt/eslint",
     "@nuxt/fonts",
     "@nuxt/icon",
@@ -17,15 +18,15 @@ export default defineNuxtConfig({
     },
   ],
   devtools: { enabled: true },
-  app: {
-    head: {
-      htmlAttrs: {
-        class: "is-light",
-      },
-    },
-  },
+  // app: {
+  //   head: {
+  //     htmlAttrs: {
+  //       class: "is-light",
+  //     },
+  //   },
+  // },
   // Custom styles
-  css: ["@lttr/puleo", "~/assets/css/main.css"],
+  css: ["~/assets/css/main.css"],
   site: {
     url: "https://example.com",
     name: "Website name",
@@ -55,10 +56,6 @@ export default defineNuxtConfig({
         sortConfigKeys: true,
       },
     },
-  },
-  // Custom styles
-  lttrConfigPostcss: {
-    filesWithGlobals: ["./node_modules/@lttr/puleo/output/media.css"],
   },
   plausible: {
     ignoredHostnames: ["localhost"],

@@ -40,7 +40,7 @@
   "devDependencies": {
     "@iconify-json/uil": "^1.2.3",
     "@lttr/nuxt-config-eslint": "^0.4.0",
-    "@lttr/nuxt-config-postcss": "^0.0.8",
+    "@lttr/nuxt-puleo": "^0.0.8",
     "@nuxt/eslint": "^1.12.1",
     "@nuxt/fonts": "^0.12.1",
     "@nuxt/icon": "^2.1.0",
