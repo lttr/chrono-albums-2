@@ -7,6 +7,7 @@
       </NuxtLink>
     </section>
     <section class="right">
+      <ColorModeSwitch />
       <AppNavigation />
     </section>
   </header>

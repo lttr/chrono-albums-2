@@ -1,6 +1,10 @@
 import { describe, it, expect } from "vitest"
-import { mountSuspended } from "@nuxt/test-utils/runtime"
+import { mockNuxtImport, mountSuspended } from "@nuxt/test-utils/runtime"
 import App from "~/app.vue"
+
+mockNuxtImport("useColorMode", () => {
+  return () => ({ preference: "system", value: "light" })
+})
 
 describe("App", () => {
   it("mounts successfully", async () => {

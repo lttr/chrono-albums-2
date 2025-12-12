@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/icon",
     "@nuxt/image",
+    "@nuxtjs/color-mode",
     "@nuxtjs/plausible",
     "@nuxtjs/seo",
     "@vueuse/nuxt",
@@ -32,6 +33,12 @@ export default defineNuxtConfig({
     description: "Website description",
     defaultLocale: "en",
     indexable: false,
+  },
+  colorMode: {
+    preference: "system",
+    fallback: "light",
+    classPrefix: "is-",
+    classSuffix: "",
   },
   routeRules: {
     "/p/**": { headers: { "X-Robots-Tag": "noindex, nofollow" } },
