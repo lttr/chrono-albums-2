@@ -1,6 +1,5 @@
 <template>
-  <div class="admin-layout admin-layout--hide-header-mobile">
-    <AppHeader />
+  <div class="admin-layout">
     <div class="admin-body">
       <!-- Mobile sidebar toggle -->
       <button
@@ -86,11 +85,6 @@ watch(
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-/* Hide AppHeader's mobile menu button in admin layout */
-.admin-layout--hide-header-mobile :deep(.mobile-menu-btn) {
-  display: none !important;
 }
 
 .admin-body {

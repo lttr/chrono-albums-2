@@ -32,6 +32,10 @@
       <div v-else class="sidebar-empty">Žádné projekty</div>
     </div>
 
+    <div class="sidebar-section sidebar-bottom">
+      <ColorModeSwitch class="color-mode-switch" />
+    </div>
+
     <div class="sidebar-section sidebar-actions">
       <NuxtLink to="/admin/albums/new" class="sidebar-link sidebar-action">
         <Icon name="uil-image-plus" aria-hidden="true" />
@@ -131,10 +135,18 @@ function isProjectActive(projectId: string): boolean {
   font-style: italic;
 }
 
-.sidebar-actions {
+.sidebar-bottom {
   margin-top: auto;
   padding-top: var(--space-3);
   border-top: var(--border-1);
+}
+
+.color-mode-switch {
+  padding: var(--space-2);
+}
+
+.sidebar-actions {
+  padding-top: var(--space-2);
 }
 
 .sidebar-action {
