@@ -22,6 +22,7 @@ export const media = sqliteTable(
     height: integer("height"),
     id: text("id").primaryKey(),
     kind: text("kind", { enum: ["image", "video"] }).notNull(),
+    slug: text("slug").notNull().unique(),
     locationAlt: real("locationAlt"),
     locationLat: real("locationLat"),
     locationLon: real("locationLon"),
@@ -36,7 +37,7 @@ export const media = sqliteTable(
 )
 
 export const mediaInsertSchema = createInsertSchema(media).omit({
-  id: true,
+  slug: true,
   createdAt: true,
 })
 export const mediaUpdateSchema = createUpdateSchema(media)

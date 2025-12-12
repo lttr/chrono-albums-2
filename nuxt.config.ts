@@ -34,13 +34,20 @@ export default defineNuxtConfig({
     defaultLocale: "en",
     indexable: false,
   },
+  routeRules: {
+    "/p/**": { headers: { "X-Robots-Tag": "noindex, nofollow" } },
+    "/c/**": { headers: { "X-Robots-Tag": "noindex, nofollow" } },
+    "/a/**": { headers: { "X-Robots-Tag": "noindex, nofollow" } },
+    "/m/**": { headers: { "X-Robots-Tag": "noindex, nofollow" } },
+  },
   future: {
     compatibilityVersion: 4,
   },
   experimental: {
     typedPages: true,
+    typescriptPlugin: true,
   },
-  compatibilityDate: "2025-04-01",
+  compatibilityDate: "2025-12-01",
   nitro: {
     experimental: {
       tasks: true,

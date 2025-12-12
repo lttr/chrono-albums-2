@@ -8,31 +8,36 @@
     >
       <h2 class="year-heading">{{ year }}</h2>
       <div class="p-auto-grid cards-grid">
-        <NuxtLink
-          v-for="album of yearAlbums"
-          :key="album.id"
-          :to="`/album/${album.id}`"
-          class="album-card"
-        >
-          <div class="album-header">
-            <strong class="album-title">{{ album.title }}</strong>
-            <span class="album-date">{{ album.month }}/{{ album.year }}</span>
-          </div>
-          <dl class="album-meta">
-            <div>
-              <dt>Projekt</dt>
-              <dd>{{ album.projectName || "–" }}</dd>
+        <div v-for="album of yearAlbums" :key="album.id" class="album-card">
+          <NuxtLink :to="`/album/${album.id}`" class="album-link">
+            <div class="album-header">
+              <strong class="album-title">{{ album.title }}</strong>
+              <span class="album-date">{{ album.month }}/{{ album.year }}</span>
             </div>
-            <div>
-              <dt>Kategorie</dt>
-              <dd>{{ album.categoryName || "–" }}</dd>
-            </div>
-            <div>
-              <dt>Médií</dt>
-              <dd>{{ album.mediaCount }}</dd>
-            </div>
-          </dl>
-        </NuxtLink>
+            <dl class="album-meta">
+              <div>
+                <dt>Projekt</dt>
+                <dd>{{ album.projectName || "–" }}</dd>
+              </div>
+              <div>
+                <dt>Kategorie</dt>
+                <dd>{{ album.categoryName || "–" }}</dd>
+              </div>
+              <div>
+                <dt>Médií</dt>
+                <dd>{{ album.mediaCount }}</dd>
+              </div>
+            </dl>
+          </NuxtLink>
+          <NuxtLink
+            :to="`/a/${album.slug}`"
+            class="public-link"
+            title="Veřejný odkaz"
+            target="_blank"
+          >
+            <Icon name="uil:external-link-alt" />
+          </NuxtLink>
+        </div>
       </div>
     </section>
   </div>
@@ -72,6 +77,7 @@ const albumsByYear = computed(() => {
 }
 
 .album-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
@@ -80,12 +86,29 @@ const albumsByYear = computed(() => {
   background: var(--surface-0);
   border: var(--border-1);
   border-radius: var(--radius-2);
-  text-decoration: none;
-  color: inherit;
 }
 
 .album-card:hover {
   background: var(--surface-2);
+}
+
+.album-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.public-link {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  color: var(--text-color-2);
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+
+.public-link:hover {
+  opacity: 1;
+  color: var(--brand-color);
 }
 
 .album-header {

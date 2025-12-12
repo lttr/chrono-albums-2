@@ -18,6 +18,15 @@
     <div v-else class="p-auto-grid">
       <div v-for="project of projects" :key="project.id" class="project-card">
         <h3 class="p-heading-3">{{ project.name }}</h3>
+        <NuxtLink
+          :to="`/p/${project.slug}`"
+          class="public-link"
+          title="Veřejný odkaz"
+          target="_blank"
+        >
+          <Icon name="uil:external-link-alt" />
+          Veřejný odkaz
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -47,9 +56,25 @@ const { data: projects, error } = await useFetch("/api/projects")
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
   border: var(--border-2);
   border-radius: var(--radius-2);
   padding: var(--space-4);
   box-shadow: var(--shadow-2);
+}
+
+.public-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size--1);
+  color: var(--text-color-2);
+  text-decoration: none;
+}
+
+.public-link:hover {
+  color: var(--brand-color);
 }
 </style>

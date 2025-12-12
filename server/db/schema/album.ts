@@ -12,6 +12,7 @@ export const album = sqliteTable(
       .default(sql`(unixepoch())`),
     id: text("id").primaryKey(),
     month: integer("month").notNull(),
+    slug: text("slug").notNull().unique(),
     projectId: text("projectId").notNull(),
     title: text("title").notNull(),
     year: integer("year").notNull(),
@@ -20,7 +21,7 @@ export const album = sqliteTable(
 )
 
 export const albumInsertSchema = createInsertSchema(album).omit({
-  id: true,
+  slug: true,
   createdAt: true,
 })
 export const albumUpdateSchema = createUpdateSchema(album)

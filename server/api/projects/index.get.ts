@@ -2,13 +2,14 @@ import { desc } from "drizzle-orm"
 import { db, schema } from "hub:db"
 import type { Project } from "~~/shared/types/db"
 
-export type GetProject = Pick<Project, "id" | "name">
+export type GetProject = Pick<Project, "id" | "name" | "slug">
 
 export default defineEventHandler(async (): Promise<GetProject[]> => {
   const data = await db
     .select({
       id: schema.project.id,
       name: schema.project.name,
+      slug: schema.project.slug,
     })
     .from(schema.project)
     .orderBy(desc(schema.project.createdAt))

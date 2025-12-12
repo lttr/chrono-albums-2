@@ -10,10 +10,12 @@ export const category = sqliteTable("category", {
   id: text("id").primaryKey(),
   name: text("name").notNull(),
   projectId: text("projectId").notNull(),
+  slug: text("slug").notNull().unique(),
 })
 
 export const categoryInsertSchema = createInsertSchema(category).omit({
   id: true,
+  slug: true,
   createdAt: true,
 })
 export const categoryUpdateSchema = createUpdateSchema(category)

@@ -1,6 +1,7 @@
 import { db, schema } from "hub:db"
 import { seed } from "drizzle-seed"
 import type { BaseSQLiteDatabase } from "drizzle-orm/sqlite-core"
+import { generateSlug } from "~~/server/utils/slug"
 
 const currentYear = new Date().getFullYear()
 const firstYear = 1968
@@ -44,6 +45,12 @@ export default defineTask({
   async run() {
     console.log("Seeding database...")
 
+    // Clear existing data first (in correct order due to foreign keys)
+    await db.delete(schema.media)
+    await db.delete(schema.album)
+    await db.delete(schema.category)
+    await db.delete(schema.project)
+
     // Cast db for drizzle-seed compatibility
     await seed(
       db as unknown as BaseSQLiteDatabase<"async", unknown>,
@@ -53,12 +60,20 @@ export default defineTask({
         count: 3,
         columns: {
           name: f.valuesFromArray({ values: projectNames, isUnique: true }),
+          slug: f.valuesFromArray({
+            values: Array.from({ length: 3 }, () => generateSlug()),
+            isUnique: true,
+          }),
         },
       },
       category: {
         count: 5,
         columns: {
           name: f.valuesFromArray({ values: categoryNames, isUnique: true }),
+          slug: f.valuesFromArray({
+            values: Array.from({ length: 5 }, () => generateSlug()),
+            isUnique: true,
+          }),
         },
       },
       album: {
@@ -67,6 +82,10 @@ export default defineTask({
           title: f.valuesFromArray({ values: albumTitles }),
           month: f.int({ minValue: 1, maxValue: 12 }),
           year: f.int({ minValue: firstYear, maxValue: currentYear }),
+          slug: f.valuesFromArray({
+            values: Array.from({ length: 20 }, () => generateSlug()),
+            isUnique: true,
+          }),
         },
       },
       media: {
@@ -74,6 +93,10 @@ export default defineTask({
         columns: {
           height: f.int({ minValue: 0, maxValue: 1000 }),
           width: f.int({ minValue: 0, maxValue: 1000 }),
+          slug: f.valuesFromArray({
+            values: Array.from({ length: 10 }, () => generateSlug()),
+            isUnique: true,
+          }),
         },
       },
     }))

@@ -1,15 +1,15 @@
 import { db, schema } from "hub:db"
-import { projectInsertSchema } from "~~/server/db/schema"
+import { categoryInsertSchema } from "~~/server/db/schema"
 import { generateSlug } from "~~/server/utils/slug"
 
 export default defineEventHandler(async (event) => {
   try {
-    const body = await readValidatedBody(event, projectInsertSchema.parse)
+    const body = await readValidatedBody(event, categoryInsertSchema.parse)
     const result = await db
-      .insert(schema.project)
+      .insert(schema.category)
       .values({ ...body, id: crypto.randomUUID(), slug: generateSlug() })
       .returning({
-        id: schema.project.id,
+        id: schema.category.id,
       })
     const inserted = result[0]
     if (!inserted) {
@@ -20,10 +20,10 @@ export default defineEventHandler(async (event) => {
       success: true,
     }
   } catch (error) {
-    console.error("Error creating project:", error)
+    console.error("Error creating category:", error)
     throw createError({
       statusCode: 500,
-      message: "Failed to create project",
+      message: "Failed to create category",
       data: error instanceof Error ? { message: error.message } : undefined,
     })
   }

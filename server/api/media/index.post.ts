@@ -1,18 +1,19 @@
 import { db, schema } from "hub:db"
 import { mediaInsertSchema } from "~~/server/db/schema"
 import { createError } from "h3"
+import { generateSlug } from "~~/server/utils/slug"
 
 const MediaCreateSchema = mediaInsertSchema
 
 export default defineEventHandler(async (event) => {
   try {
     const body = await readValidatedBody(event, MediaCreateSchema.parse)
-    const id = crypto.randomUUID()
+    const slug = generateSlug()
 
-    await db.insert(schema.media).values({ ...body, id })
+    await db.insert(schema.media).values({ ...body, slug })
 
     return {
-      id,
+      id: body.id,
       success: true,
     }
   } catch (error) {

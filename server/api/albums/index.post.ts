@@ -1,18 +1,19 @@
 import { db, schema } from "hub:db"
 import { albumInsertSchema } from "~~/server/db/schema"
 import { createError } from "h3"
+import { generateSlug } from "~~/server/utils/slug"
 
 const AlbumCreateSchema = albumInsertSchema
 
 export default defineEventHandler(async (event) => {
   try {
     const body = await readValidatedBody(event, AlbumCreateSchema.parse)
-    const id = crypto.randomUUID()
+    const slug = generateSlug()
 
-    await db.insert(schema.album).values({ ...body, id })
+    await db.insert(schema.album).values({ ...body, slug })
 
     return {
-      id,
+      id: body.id,
       success: true,
     }
   } catch (error) {
