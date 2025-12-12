@@ -8,36 +8,39 @@
     >
       <h2 class="year-heading">{{ year }}</h2>
       <div class="p-auto-grid cards-grid">
-        <div v-for="album of yearAlbums" :key="album.id" class="album-card">
-          <NuxtLink :to="`/album/${album.id}`" class="album-link">
-            <div class="album-header">
-              <strong class="album-title">{{ album.title }}</strong>
-              <span class="album-date">{{ album.month }}/{{ album.year }}</span>
+        <AdminCard
+          v-for="album of yearAlbums"
+          :key="album.id"
+          :title="album.title"
+          :badge="`${album.month}/${album.year}`"
+          :to="`/album/${album.id}`"
+        >
+          <dl class="album-meta">
+            <div>
+              <dt>Projekt</dt>
+              <dd>{{ album.projectName || "–" }}</dd>
             </div>
-            <dl class="album-meta">
-              <div>
-                <dt>Projekt</dt>
-                <dd>{{ album.projectName || "–" }}</dd>
-              </div>
-              <div>
-                <dt>Kategorie</dt>
-                <dd>{{ album.categoryName || "–" }}</dd>
-              </div>
-              <div>
-                <dt>Médií</dt>
-                <dd>{{ album.mediaCount }}</dd>
-              </div>
-            </dl>
-          </NuxtLink>
-          <NuxtLink
-            :to="`/a/${album.slug}`"
-            class="public-link"
-            title="Veřejný odkaz"
-            target="_blank"
-          >
-            <Icon name="uil:external-link-alt" />
-          </NuxtLink>
-        </div>
+            <div>
+              <dt>Kategorie</dt>
+              <dd>{{ album.categoryName || "–" }}</dd>
+            </div>
+            <div>
+              <dt>Médií</dt>
+              <dd>{{ album.mediaCount }}</dd>
+            </div>
+          </dl>
+          <template #actions>
+            <NuxtLink
+              :to="`/a/${album.slug}`"
+              class="public-link"
+              title="Veřejný odkaz"
+              target="_blank"
+              @click.stop
+            >
+              <Icon name="uil:external-link-alt" />
+            </NuxtLink>
+          </template>
+        </AdminCard>
       </div>
     </section>
   </div>
@@ -76,31 +79,7 @@ const albumsByYear = computed(() => {
   --auto-grid-min: 220px;
 }
 
-.album-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-  padding: var(--space-2) var(--space-3);
-  max-width: var(--size-content-2);
-  background: var(--surface-0);
-  border: var(--border-1);
-  border-radius: var(--radius-2);
-}
-
-.album-card:hover {
-  background: var(--surface-2);
-}
-
-.album-link {
-  text-decoration: none;
-  color: inherit;
-}
-
 .public-link {
-  position: absolute;
-  top: var(--space-2);
-  right: var(--space-2);
   color: var(--text-color-2);
   opacity: 0.5;
   transition: opacity 0.15s;
@@ -111,35 +90,11 @@ const albumsByYear = computed(() => {
   color: var(--brand-color);
 }
 
-.album-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: var(--space-2);
-}
-
-.album-title {
-  font-size: var(--font-size-0);
-  font-weight: var(--font-weight-6);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.album-date {
-  flex-shrink: 0;
-  color: var(--text-color-2);
-  font-size: var(--font-size--1);
-}
-
 .album-meta {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
   margin: 0;
-  padding-top: var(--space-2);
-  border-top: var(--border-1);
-  color: var(--text-color-2);
   font-size: var(--font-size--2);
 }
 

@@ -97,14 +97,58 @@
         <AlertsTheAlert type="info">Info message</AlertsTheAlert>
       </div>
 
-      <h3>Cards</h3>
-      <div class="card-demo">
-        <div class="card">
-          <div class="card-body">
-            <h4>Album Card</h4>
-            <p class="text-muted">12 photos · June 2024</p>
-          </div>
-        </div>
+      <h3>Admin Cards</h3>
+      <div class="card-grid">
+        <!-- Simple card -->
+        <AdminCard title="Simple Card" />
+
+        <!-- Card with badge -->
+        <AdminCard title="Card with Badge" badge="6/2024" />
+
+        <!-- Card with body content -->
+        <AdminCard title="Card with Body" badge="12 items">
+          Additional details or metadata can go here in the body slot.
+        </AdminCard>
+
+        <!-- Clickable card -->
+        <AdminCard title="Clickable Card" badge="Link" to="/styleguide">
+          This card is a link. Hover to see the effect.
+        </AdminCard>
+
+        <!-- Card with actions -->
+        <AdminCard title="Card with Actions" badge="Action">
+          <template #actions>
+            <button class="p-button" data-variant="ghost" data-size="small">
+              Edit
+            </button>
+            <button class="p-button" data-variant="ghost" data-size="small">
+              Delete
+            </button>
+          </template>
+        </AdminCard>
+
+        <!-- Full example -->
+        <AdminCard title="Album Example" badge="6/2024" to="/styleguide">
+          <dl class="meta-list">
+            <div>
+              <dt>Project</dt>
+              <dd>Summer 2024</dd>
+            </div>
+            <div>
+              <dt>Category</dt>
+              <dd>Camps</dd>
+            </div>
+            <div>
+              <dt>Media</dt>
+              <dd>48</dd>
+            </div>
+          </dl>
+          <template #actions>
+            <a href="#" class="icon-link" aria-label="External link">
+              <Icon name="uil:external-link-alt" />
+            </a>
+          </template>
+        </AdminCard>
       </div>
 
       <h3>Photo Frame</h3>
@@ -214,28 +258,46 @@
   align-items: center;
 }
 
-/* Card */
-.card {
-  background: var(--surface-1);
-  border-radius: var(--radius-2);
-  box-shadow: var(--shadow-1);
-  overflow: hidden;
+/* Card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-4);
 }
 
-.card-body {
-  padding: var(--space-4);
+.meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  font-size: var(--font-size--2);
 
-  h4 {
+  div {
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  dt {
+    width: 5rem;
+    font-weight: var(--font-weight-6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  dd {
     margin: 0;
   }
-
-  p {
-    margin: var(--space-1) 0 0;
-  }
 }
 
-.card-demo {
-  max-width: 250px;
+.icon-link {
+  color: var(--text-color-2);
+  opacity: 0.5;
+  transition: opacity 0.15s;
+
+  &:hover {
+    opacity: 1;
+    color: var(--brand-color);
+  }
 }
 
 /* Shadows */
