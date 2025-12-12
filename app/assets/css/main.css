@@ -1,7 +1,59 @@
+/* ==========================================================================
+   Chrono Album - Visual Identity
+   Retro-modern: warm, nostalgic, minimal
+   ========================================================================== */
+
 :root {
+  /* Typography */
   --font-transitional:
     "Alike", Charter, Bitstream Charter, Sitka Text, Cambria, serif;
   --font-family-body: var(--font-transitional);
+
+  /* Warm backgrounds */
+  --bg-color-body: #f8f6f1;
+  --surface-0: #f8f6f1;
+  --surface-1: #f3f0e8;
+  --surface-2: #ebe7dc;
+  --surface-3: #e0dac9;
+
+  /* Soft text */
+  --text-color-1: #2c2c2c;
+  --text-color-2: #6b6560;
+
+  /* Accent: terracotta */
+  --brand-color: #c45b28;
+  --brand-color-bright: #d97b4a;
+  --brand-color-dim: #9a4820;
+
+  /* Links */
+  --link-color: var(--brand-color);
+
+  /* Softer shadows - warm undertone */
+  --shadow-color: 35 20% 20%;
+  --shadow-strength: 3%;
+
+  /* Gentle corners for photos */
+  --radius-default: var(--radius-2);
+}
+
+@media (--OSdark) {
+  :root {
+    /* Warm dark backgrounds (not cold black) */
+    --bg-color-body: #1a1816;
+    --surface-0: #1a1816;
+    --surface-1: #252220;
+    --surface-2: #322e2a;
+    --surface-3: #403a35;
+
+    /* Light warm text */
+    --text-color-1: #f0ebe5;
+    --text-color-2: #a89f94;
+
+    /* Terracotta - slightly brighter for dark bg */
+    --brand-color: #d97b4a;
+    --brand-color-bright: #e8956a;
+    --brand-color-dim: #c45b28;
+  }
 }
 
 body {
@@ -12,4 +64,33 @@ body {
     Sitka Text,
     Cambria,
     serif;
+}
+
+/* Grain Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Photo & Image Utilities */
+.photo-frame {
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-1);
+  transition: opacity 150ms var(--ease-2);
+}
+
+.photo-frame:hover {
+  opacity: 0.95;
+}
+
+/* Year divider for album groupings */
+.year-divider {
+  border-top: 1px solid var(--surface-3);
+  color: var(--text-color-2);
+  font-size: var(--font-size--1);
 }

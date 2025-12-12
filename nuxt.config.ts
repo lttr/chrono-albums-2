@@ -1,8 +1,6 @@
 export default defineNuxtConfig({
   modules: [
     "@nuxthub/core",
-    "@lttr/nuxt-config-postcss",
-    "@lttr/nuxt-puleo",
     "@nuxt/eslint",
     "@nuxt/fonts",
     "@nuxt/icon",
@@ -10,6 +8,7 @@ export default defineNuxtConfig({
     "@nuxtjs/plausible",
     "@nuxtjs/seo",
     "@vueuse/nuxt",
+    "@lttr/nuxt-puleo",
   ],
   components: [
     {
