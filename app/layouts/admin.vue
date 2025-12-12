@@ -9,16 +9,33 @@
         </NuxtLink>
       </div>
 
-      <div class="header-right p-cluster">
+      <div class="header-right">
         <NuxtLink to="/admin" class="header-link">
           <Icon name="uil-th-large" aria-hidden="true" />
           <span class="header-link-text">Admin</span>
         </NuxtLink>
-        <NuxtLink to="/admin/profile" class="header-link">
-          <Icon name="uil-user" aria-hidden="true" />
-          <span class="header-link-text">Profil</span>
-        </NuxtLink>
-        <ColorModeSwitch />
+
+        <button
+          type="button"
+          class="menu-btn"
+          :aria-expanded="menuOpen"
+          aria-label="Menu"
+          @click="menuOpen = !menuOpen"
+        >
+          <Icon name="uil-ellipsis-v" />
+        </button>
+
+        <div v-if="menuOpen" class="menu-dropdown">
+          <ColorModeSwitch class="menu-item" />
+          <NuxtLink
+            to="/admin/profile"
+            class="menu-item menu-link"
+            @click="menuOpen = false"
+          >
+            <Icon name="uil-user" aria-hidden="true" />
+            Profil
+          </NuxtLink>
+        </div>
       </div>
     </header>
 
@@ -73,6 +90,7 @@
 
 <script lang="ts" setup>
 const sidebarOpen = ref(false)
+const menuOpen = ref(false)
 const route = useRoute()
 
 // Show sidebar: always on desktop, only when open on mobile
@@ -91,6 +109,16 @@ onMounted(() => {
   }
   mediaQuery.addEventListener("change", handler)
   onUnmounted(() => mediaQuery.removeEventListener("change", handler))
+
+  // Close menu on click outside
+  const menuHandler = (e: MouseEvent) => {
+    const target = e.target as HTMLElement
+    if (!target.closest(".header-right")) {
+      menuOpen.value = false
+    }
+  }
+  document.addEventListener("click", menuHandler)
+  onUnmounted(() => document.removeEventListener("click", menuHandler))
 })
 
 // Close sidebar on route change
@@ -138,7 +166,10 @@ watch(
 }
 
 .header-right {
+  display: flex;
+  align-items: center;
   gap: var(--space-3);
+  position: relative;
 }
 
 .header-link {
@@ -159,6 +190,60 @@ watch(
 .header-link-text {
   @media (width < 600px) {
     display: none;
+  }
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1);
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--text-color-2);
+  font-size: 1.25rem;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--text-color-1);
+  }
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 140px;
+  padding: var(--space-2);
+  margin-top: var(--space-1);
+  background: var(--surface-0);
+  border: var(--border-1);
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-3);
+}
+
+.menu-item {
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-1);
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-color-2);
+  text-decoration: none;
+  font-size: var(--font-size--1);
+
+  &:hover {
+    background: var(--surface-1);
+    color: var(--text-color-1);
   }
 }
 
