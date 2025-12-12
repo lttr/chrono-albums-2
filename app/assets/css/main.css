@@ -70,6 +70,23 @@ body {
     serif;
 }
 
+/* TODO: Temporary fix until puleo uses CSS layers.
+   Problem: puleo's :where(a) applies padding/margin for inline text links,
+   but this affects ALL anchors. Without CSS layers, we can't use revert-layer
+   to selectively undo these styles. So we reset all anchors to initial,
+   then manually re-apply button styles that got clobbered.
+   Alt fix: puleo could avoid applying negative margins/padding to all <a> tags.
+   Remove once @lttr/puleo implements @layer or removes the :where(a) styles. */
+a {
+  margin: initial;
+  padding: initial;
+}
+
+a.p-button {
+  padding-block: 0.75ch;
+  padding-inline: var(--space-3);
+}
+
 /* Photo & Image Utilities */
 .photo-frame {
   border-radius: var(--radius-2);
