@@ -15,6 +15,8 @@
           <span class="header-link-text">Admin</span>
         </NuxtLink>
 
+        <span v-if="user" class="user-name">{{ user.name }}</span>
+
         <button
           type="button"
           class="menu-btn"
@@ -89,6 +91,8 @@
 </template>
 
 <script lang="ts" setup>
+const { user } = useUser()
+
 const sidebarOpen = ref(false)
 const menuOpen = ref(false)
 const route = useRoute()
@@ -190,6 +194,15 @@ watch(
 
 .header-link-text {
   @media (width < 600px) {
+    display: none;
+  }
+}
+
+.user-name {
+  font-size: var(--font-size--1);
+  color: var(--text-color-2);
+
+  @media (width < 480px) {
     display: none;
   }
 }

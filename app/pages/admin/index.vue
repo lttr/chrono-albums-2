@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h1 class="p-heading-2">Admin</h1>
+    <div v-if="user" class="greeting-card">
+      <h1 class="greeting-text">Ahoj, {{ user.name }}</h1>
+    </div>
+
+    <h2 class="p-heading-3">Přehled</h2>
     <p class="intro-text">
       Vyberte projekt v postranním panelu nebo vytvořte nový.
     </p>
@@ -27,12 +31,24 @@ definePageMeta({
   layout: "admin",
 })
 
+const { user } = useUser()
+
 const { data: projects } = useFetch("/api/projects")
 const { data: categories } = useFetch("/api/categories")
 const { data: albums } = useFetch("/api/albums")
 </script>
 
 <style scoped>
+.greeting-card {
+  margin-bottom: var(--space-5);
+}
+
+.greeting-text {
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-6);
+  margin: 0;
+}
+
 .intro-text {
   margin-bottom: var(--space-5);
   color: var(--text-color-2);
