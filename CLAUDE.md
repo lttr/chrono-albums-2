@@ -57,6 +57,12 @@ db.select().from(album)
 
 Schema uses `zod` v4 for validation. Types exported from `shared/types/` include both Zod schemas and inferred TypeScript types.
 
+## Git Commits
+
+Use conventional commits with scope: `<type>(<scope>): <description>`
+
+Derive scope from the area of change (e.g., `upload`, `album`, `api`, `db`, `ui`).
+
 ## Stack Notes
 
 - **Styling**: `@lttr/puleo` CSS framework

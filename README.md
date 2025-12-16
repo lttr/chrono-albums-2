@@ -41,6 +41,10 @@ nr db:studio        # Open Drizzle Studio
 
 See [docs/database-workflow.md](docs/database-workflow.md) for details.
 
+## Git Commits
+
+[Conventional commits](https://www.conventionalcommits.org/) with scope: `<type>(<scope>): <description>`
+
 ## Stack
 
 - **Framework**: Nuxt 4 (compatibility mode)
