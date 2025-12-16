@@ -1,5 +1,7 @@
 # Data Model
 
+## Content
+
 ```
 ┌─────────────┐
 │   Project   │
@@ -34,9 +36,35 @@
                         └─────────────┘
 ```
 
+## Auth & Access
+
+```
+┌─────────────┐          ┌───────────────────┐          ┌─────────────┐
+│    User     │          │ ProjectMembership │          │   Project   │
+│─────────────│          │───────────────────│          │─────────────│
+│ id          │◄─────────│ userId            │          │ id          │
+│ name        │          │ projectId ────────┼─────────►│ name        │
+│ email       │          │ role              │          │ ...         │
+│ image       │          └───────────────────┘          └─────────────┘
+└─────────────┘
+      │                   role: "owner" | "member"
+      │ 1:N
+      ▼
+┌─────────────┐
+│   Session   │
+│─────────────│
+│ id          │
+│ userId      │
+│ token       │
+│ expiresAt   │
+└─────────────┘
+```
+
 ## Relationships
 
 - **Project** is top-level container
 - **Category** groups albums within a project (optional)
 - **Album** has year/month + belongs to project (directly) and optionally a category
 - **Media** stores files with metadata (EXIF, GPS, dimensions)
+- **User** authenticates via Google OAuth
+- **ProjectMembership** links users to projects with a role
