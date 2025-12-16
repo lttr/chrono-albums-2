@@ -35,12 +35,10 @@ definePageMeta({
   pageName: "Profil",
 })
 
-const { user, logout } = useUser()
-const router = useRouter()
+const { user, signOut } = useAuth()
 
 function handleLogout() {
-  logout()
-  router.push("/login")
+  signOut()
 }
 </script>
 

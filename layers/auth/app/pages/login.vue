@@ -4,7 +4,7 @@
       <h1 class="login-title">Přihlášení</h1>
       <p class="login-subtitle">Pro správu alb se přihlaste</p>
 
-      <button type="button" class="google-btn" @click="handleGoogleLogin">
+      <button type="button" class="google-btn" @click="signInWithGoogle">
         <Icon name="uil-google" />
         Přihlásit se přes Google
       </button>
@@ -17,7 +17,7 @@ definePageMeta({
   layout: "default",
 })
 
-const { login, isLoggedIn } = useUser()
+const { signInWithGoogle, isLoggedIn } = useAuth()
 const router = useRouter()
 
 // Redirect if already logged in
@@ -30,11 +30,6 @@ watch(
   },
   { immediate: true },
 )
-
-function handleGoogleLogin() {
-  // Mock login - will be replaced with real OAuth
-  login()
-}
 </script>
 
 <style scoped>

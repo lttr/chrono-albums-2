@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  extends: ["./layers/auth"],
   modules: [
     "@nuxthub/core",
     "@nuxt/eslint",

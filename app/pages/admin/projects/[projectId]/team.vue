@@ -14,7 +14,7 @@
     </div>
 
     <div class="members-list">
-      <div v-for="member of mockMembers" :key="member.id" class="member-card">
+      <div v-for="member of members" :key="member.userId" class="member-card">
         <div class="member-info">
           <span class="member-name">{{ member.name }}</span>
           <span class="member-email">{{ member.email }}</span>
@@ -24,10 +24,10 @@
             {{ member.role === "owner" ? "Vlastník" : "Člen" }}
           </span>
           <button
-            v-if="canRemoveMembers && member.id !== currentUserId"
+            v-if="canRemoveMembers && member.userId !== currentUserId"
             type="button"
             class="remove-btn"
-            @click="removeMember(member.id)"
+            @click="removeMember(member.userId)"
           >
             <Icon name="uil-times" />
           </button>
@@ -56,17 +56,23 @@
                 placeholder="email@example.com"
                 required
               />
+              <p v-if="inviteError" class="error-message">{{ inviteError }}</p>
             </div>
             <div class="modal-actions">
               <button
                 type="button"
                 class="p-button"
+                :disabled="inviteLoading"
                 @click="showInviteModal = false"
               >
                 Zrušit
               </button>
-              <button type="submit" class="p-button p-button-primary">
-                Pozvat
+              <button
+                type="submit"
+                class="p-button p-button-primary"
+                :disabled="inviteLoading"
+              >
+                {{ inviteLoading ? "Zvu..." : "Pozvat" }}
               </button>
             </div>
           </form>
@@ -85,44 +91,51 @@ definePageMeta({
 const route = useRoute("admin-projects-projectId-team")
 const projectId = computed(() => route.params.projectId)
 
-const { user } = useUser()
+const { user } = useAuth()
 const { canInviteMembers, canRemoveMembers } = useProjectAccess(projectId)
 
 const currentUserId = computed(() => user.value?.id)
 
-// Mock data - will be replaced with API
-const mockMembers = ref([
-  {
-    id: "user-1",
-    name: "Lukáš",
-    email: "lukas@example.com",
-    role: "owner" as const,
-  },
-  {
-    id: "user-2",
-    name: "Jana",
-    email: "jana@example.com",
-    role: "member" as const,
-  },
-])
+// Fetch members from API
+const { data: members, refresh: refreshMembers } = useFetch(
+  () => `/api/projects/${projectId.value}/members`,
+)
 
 const showInviteModal = ref(false)
 const inviteEmail = ref("")
+const inviteError = ref("")
+const inviteLoading = ref(false)
 
-function inviteMember() {
-  // Mock - add to list
-  mockMembers.value.push({
-    id: `user-${Date.now()}`,
-    name: inviteEmail.value.split("@")[0] ?? inviteEmail.value,
-    email: inviteEmail.value,
-    role: "member",
-  })
-  inviteEmail.value = ""
-  showInviteModal.value = false
+async function inviteMember() {
+  inviteError.value = ""
+  inviteLoading.value = true
+
+  try {
+    await $fetch(`/api/projects/${projectId.value}/members`, {
+      method: "POST",
+      body: { email: inviteEmail.value },
+    })
+    inviteEmail.value = ""
+    showInviteModal.value = false
+    await refreshMembers()
+  } catch (err: unknown) {
+    const error = err as { data?: { message?: string } }
+    inviteError.value = error.data?.message || "Nepodařilo se pozvat uživatele"
+  } finally {
+    inviteLoading.value = false
+  }
 }
 
-function removeMember(memberId: string) {
-  mockMembers.value = mockMembers.value.filter((m) => m.id !== memberId)
+async function removeMember(memberId: string) {
+  try {
+    await $fetch(`/api/projects/${projectId.value}/members/${memberId}`, {
+      method: "DELETE",
+    })
+    await refreshMembers()
+  } catch (err: unknown) {
+    const error = err as { data?: { message?: string } }
+    console.error("Failed to remove member:", error.data?.message)
+  }
 }
 </script>
 
@@ -241,5 +254,11 @@ function removeMember(memberId: string) {
   justify-content: flex-end;
   gap: var(--space-2);
   margin-top: var(--space-2);
+}
+
+.error-message {
+  color: var(--negative-color);
+  font-size: var(--font-size--1);
+  margin-top: var(--space-1);
 }
 </style>

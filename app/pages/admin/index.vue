@@ -31,7 +31,7 @@ definePageMeta({
   layout: "admin",
 })
 
-const { user } = useUser()
+const { user } = useAuth()
 
 const { data: projects } = useFetch("/api/projects")
 const { data: categories } = useFetch("/api/categories")

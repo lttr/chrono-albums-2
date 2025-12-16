@@ -7,7 +7,7 @@
  * - member: invited collaborator, can contribute but not delete structural items
  */
 export function useProjectAccess(projectId: MaybeRef<string>) {
-  const { getProjectRole } = useUser()
+  const { getProjectRole } = useAccess()
 
   const role = computed(() => getProjectRole(toValue(projectId)))
   const isOwner = computed(() => role.value === "owner")

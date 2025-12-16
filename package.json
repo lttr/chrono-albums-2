@@ -27,6 +27,7 @@
     "@lttr/puleo": "^0.8.1",
     "@nuxthub/core": "^0.10.1",
     "@zod/core": "^0.11.6",
+    "better-auth": "^1.4.7",
     "compressorjs": "^1.2.1",
     "date-fns": "^4.1.0",
     "drizzle-orm": "^0.45.1",
