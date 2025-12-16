@@ -134,7 +134,8 @@ watch(
 .admin-layout {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* Admin header */
@@ -251,6 +252,8 @@ watch(
   display: flex;
   flex: 1;
   position: relative;
+  min-height: 0;
+  overflow: hidden;
 }
 
 /* Mobile toggle button */
@@ -345,7 +348,7 @@ watch(
 .admin-main {
   flex: 1;
   padding-block: var(--space-4);
-  overflow-x: auto;
+  overflow: auto;
 }
 
 .admin-breadcrumb {
