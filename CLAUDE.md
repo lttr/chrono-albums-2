@@ -14,7 +14,7 @@ nr verify           # Format + lint + typecheck (run before commits)
 nr db:generate      # Generate migrations from schema changes
 nr db:migrate       # Apply migrations
 nr db:seed          # Seed with test data
-nr db:reset         # Reset database (requires dev server for seed)
+nr db:reset         # Reset database
 nr db:studio        # Open Drizzle Studio
 
 # Testing
