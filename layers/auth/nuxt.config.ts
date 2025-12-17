@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     },
     public: {
       authUrl: "",
-      mockAuth: "",
+      mockAuth: false,
     },
   },
 })
