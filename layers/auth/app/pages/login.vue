@@ -17,19 +17,7 @@ definePageMeta({
   layout: "default",
 })
 
-const { signInWithGoogle, isLoggedIn } = useAuth()
-const router = useRouter()
-
-// Redirect if already logged in
-watch(
-  isLoggedIn,
-  (loggedIn) => {
-    if (loggedIn) {
-      router.push("/admin")
-    }
-  },
-  { immediate: true },
-)
+const { signInWithGoogle } = useAuth()
 </script>
 
 <style scoped>

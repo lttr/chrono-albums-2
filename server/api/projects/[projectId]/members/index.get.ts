@@ -1,6 +1,5 @@
 import { eq, and } from "drizzle-orm"
 import { db, schema } from "hub:db"
-import { auth } from "~~/layers/auth/server/utils/auth"
 
 export interface ProjectMember {
   userId: string
@@ -20,9 +19,7 @@ export default defineEventHandler(async (event): Promise<ProjectMember[]> => {
     })
   }
 
-  const session = await auth.api.getSession({
-    headers: event.headers,
-  })
+  const session = await getAuthSession(event)
 
   if (!session?.user) {
     throw createError({

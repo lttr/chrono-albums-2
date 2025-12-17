@@ -1,7 +1,6 @@
 import { eq, and } from "drizzle-orm"
 import { db, schema } from "hub:db"
 import { z } from "zod/v4"
-import { auth } from "~~/layers/auth/server/utils/auth"
 
 const inviteSchema = z.object({
   email: z.email(),
@@ -17,9 +16,7 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const session = await auth.api.getSession({
-    headers: event.headers,
-  })
+  const session = await getAuthSession(event)
 
   if (!session?.user) {
     throw createError({

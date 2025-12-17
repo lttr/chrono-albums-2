@@ -1,4 +1,5 @@
 import { createAuthClient } from "better-auth/vue"
+import { MOCK_USER } from "~~/shared/constants/mockAuth"
 
 let authClient: ReturnType<typeof createAuthClient> | null = null
 
@@ -12,6 +13,27 @@ function getAuthClient() {
 }
 
 export function useAuth() {
+  const config = useRuntimeConfig()
+
+  // Mock auth mode - bypass better-auth entirely
+  if (config.public.mockAuth) {
+    const mockUser = ref(MOCK_USER)
+    const mockSession = ref({ data: { user: MOCK_USER } })
+
+    return {
+      session: mockSession,
+      user: computed(() => mockUser.value),
+      isLoggedIn: computed(() => true),
+      signInWithGoogle: async () => {
+        await navigateTo("/admin")
+      },
+      signOut: async () => {
+        await navigateTo("/login")
+      },
+    }
+  }
+
+  // Real auth mode
   const client = getAuthClient()
   const session = client.useSession()
 

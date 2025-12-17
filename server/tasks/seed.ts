@@ -2,6 +2,7 @@ import { db, schema } from "hub:db"
 import { seed } from "drizzle-seed"
 import type { BaseSQLiteDatabase } from "drizzle-orm/sqlite-core"
 import { generateSlug } from "~~/server/utils/slug"
+import { MOCK_USER } from "~~/shared/constants/mockAuth"
 
 const currentYear = new Date().getFullYear()
 const firstYear = 1968
@@ -49,12 +50,40 @@ export default defineTask({
     await db.delete(schema.media)
     await db.delete(schema.album)
     await db.delete(schema.category)
+    await db.delete(schema.projectMembership)
     await db.delete(schema.project)
+    // Clear auth tables (session, account reference user)
+    await db.delete(schema.session)
+    await db.delete(schema.account)
+    await db.delete(schema.verification)
+    await db.delete(schema.user)
+
+    // Insert mock user
+    await db.insert(schema.user).values({
+      id: MOCK_USER.id,
+      name: MOCK_USER.name,
+      email: MOCK_USER.email,
+      emailVerified: MOCK_USER.emailVerified,
+      image: MOCK_USER.image,
+    })
+    console.log("Mock user created:", MOCK_USER.email)
 
     // Cast db for drizzle-seed compatibility
+    // Exclude tables/relations not being seeded to avoid warnings
+    const {
+      projectMembership: _pm,
+      user: _u,
+      session: _s,
+      account: _a,
+      verification: _v,
+      userRelations: _ur,
+      sessionRelations: _sr,
+      accountRelations: _ar,
+      ...seedSchema
+    } = schema
     await seed(
       db as unknown as BaseSQLiteDatabase<"async", unknown>,
-      schema,
+      seedSchema,
     ).refine((f) => ({
       project: {
         count: 3,
@@ -100,6 +129,18 @@ export default defineTask({
         },
       },
     }))
+
+    // Create project memberships for mock user
+    // Owner of first 2 projects, member of 3rd
+    const projects = await db.select().from(schema.project)
+    for (let i = 0; i < projects.length; i++) {
+      await db.insert(schema.projectMembership).values({
+        userId: MOCK_USER.id,
+        projectId: projects[i].id,
+        role: i < 2 ? "owner" : "member",
+      })
+    }
+    console.log("Mock user memberships created (owner: 2, member: 1)")
 
     console.log("Database seeded successfully!")
     return { result: "Database seeded" }
