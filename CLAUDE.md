@@ -53,6 +53,8 @@ const db = useDb()
 db.select().from(album)
 ```
 
+**Local DB queries**: Use `sqlite3 .data/db/sqlite.db` for direct database operations.
+
 ### Validation
 
 Schema uses `zod` v4 for validation. Types exported from `shared/types/` include both Zod schemas and inferred TypeScript types.
