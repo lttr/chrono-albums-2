@@ -1,5 +1,4 @@
 export default defineNuxtConfig({
-  extends: ["./layers/auth"],
   modules: [
     "@nuxthub/core",
     "@nuxt/eslint",
@@ -19,20 +18,12 @@ export default defineNuxtConfig({
     },
   ],
   devtools: { enabled: true },
-  // app: {
-  //   head: {
-  //     htmlAttrs: {
-  //       class: "is-light",
-  //     },
-  //   },
-  // },
-  // Custom styles
   css: ["~/assets/css/main.css"],
   site: {
-    url: "https://example.com",
-    name: "Website name",
-    description: "Website description",
-    defaultLocale: "en",
+    url: "https://chrono-albums.lttr.cz",
+    name: "Chrono Albums",
+    description: "A web app for chronological photo albums",
+    defaultLocale: "cs",
     indexable: false,
   },
   colorMode: {
@@ -40,15 +31,6 @@ export default defineNuxtConfig({
     fallback: "light",
     classPrefix: "is-",
     classSuffix: "",
-  },
-  routeRules: {
-    "/p/**": { headers: { "X-Robots-Tag": "noindex, nofollow" } },
-    "/c/**": { headers: { "X-Robots-Tag": "noindex, nofollow" } },
-    "/a/**": { headers: { "X-Robots-Tag": "noindex, nofollow" } },
-    "/m/**": { headers: { "X-Robots-Tag": "noindex, nofollow" } },
-  },
-  future: {
-    compatibilityVersion: 4,
   },
   experimental: {
     typedPages: true,
