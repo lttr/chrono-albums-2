@@ -53,6 +53,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  ogImage: {
+    enabled: false,
+  },
   plausible: {
     ignoredHostnames: ["localhost"],
     apiHost: "https://plausible.lttr.cz",
