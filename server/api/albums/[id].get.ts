@@ -38,13 +38,32 @@ export default defineEventHandler(async (event) => {
   }
 
   const mediaItems = await db
-    .select()
+    .select({
+      id: schema.media.id,
+      slug: schema.media.slug,
+      fileName: schema.media.fileName,
+      originalName: schema.media.originalName,
+      mimeType: schema.media.mimeType,
+      kind: schema.media.kind,
+      width: schema.media.width,
+      height: schema.media.height,
+      dateTaken: schema.media.dateTaken,
+      lqip: schema.media.lqip,
+    })
     .from(schema.media)
     .where(eq(schema.media.albumId, id))
     .orderBy(schema.media.dateTaken)
 
+  // Transform to slug-based URLs
+  const mediaWithUrls = mediaItems.map((item) => ({
+    ...item,
+    thumbnailUrl: `/m/${item.slug}/thumb`,
+    fullUrl: `/m/${item.slug}`,
+    originalUrl: `/m/${item.slug}/original`,
+  }))
+
   return {
     album: albumDetails[0],
-    media: mediaItems,
+    media: mediaWithUrls,
   }
 })

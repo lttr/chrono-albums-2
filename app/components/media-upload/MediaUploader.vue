@@ -188,6 +188,7 @@ async function processValidFile(fileStatus: FileStatus): Promise<void> {
       mediaUploadData.lqip = uploadResponse.lqip
       mediaUploadData.thumbnailPath = uploadResponse.thumbnailPath
       mediaUploadData.fullPath = uploadResponse.fullPath
+      mediaUploadData.originalPath = uploadResponse.originalPath
       // Use server-side dimensions if available (more accurate after processing)
       if (uploadResponse.width) {
         mediaUploadData.width = uploadResponse.width
@@ -248,6 +249,7 @@ async function postMetadata(data: MediaUploadData) {
       lqip: data.lqip,
       thumbnailPath: data.thumbnailPath,
       fullPath: data.fullPath,
+      originalPath: data.originalPath,
     } satisfies NewMedia
 
     await $fetch("/api/media", {
@@ -266,6 +268,7 @@ interface UploadResponse {
   lqip?: string
   thumbnailPath?: string
   fullPath?: string
+  originalPath?: string
   width?: number
   height?: number
 }

@@ -14,6 +14,7 @@ export interface UploadResponse {
   lqip?: string
   thumbnailPath?: string
   fullPath?: string
+  originalPath?: string
   width?: number
   height?: number
 }
@@ -112,6 +113,7 @@ export default defineEventHandler(async (event): Promise<UploadResponse> => {
         lqip: variants.lqip,
         thumbnailPath,
         fullPath,
+        originalPath,
         width: metadata.width,
         height: metadata.height,
       }

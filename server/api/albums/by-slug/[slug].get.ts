@@ -49,18 +49,17 @@ export default defineEventHandler(async (event) => {
       height: schema.media.height,
       dateTaken: schema.media.dateTaken,
       lqip: schema.media.lqip,
-      thumbnailPath: schema.media.thumbnailPath,
-      fullPath: schema.media.fullPath,
     })
     .from(schema.media)
     .where(eq(schema.media.albumId, albumDetails[0]!.id))
     .orderBy(schema.media.dateTaken)
 
-  // Transform paths to URLs
+  // Transform to slug-based URLs (no internal paths exposed)
   const mediaWithUrls = mediaItems.map((item) => ({
     ...item,
-    thumbnailUrl: item.thumbnailPath ? `/${item.thumbnailPath}` : null,
-    fullUrl: item.fullPath ? `/${item.fullPath}` : null,
+    thumbnailUrl: `/m/${item.slug}/thumb`,
+    fullUrl: `/m/${item.slug}`,
+    originalUrl: `/m/${item.slug}/original`,
   }))
 
   return {

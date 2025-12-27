@@ -173,17 +173,18 @@ await Promise.all([
 
 **File:** `server/api/albums/by-slug/[slug].get.ts`
 
-Add variant URLs to media response shape.
+Add variant URLs to media response shape. ✅ DONE
 
 **Tasks:**
 
-- [ ] Add `lqip`, `thumbnailPath`, `fullPath` to media select query
-- [ ] Transform paths to full URLs in response:
+- [x] Add `lqip` to media select query (paths not exposed)
+- [x] Transform to slug-based URLs in response:
   ```typescript
-  thumbnailUrl: `/photos/${media.id}-thumb.webp`
-  fullUrl: `/photos/${media.id}-full.jpg`
+  thumbnailUrl: `/m/${media.slug}/thumb`
+  fullUrl: `/m/${media.slug}`
+  originalUrl: `/m/${media.slug}/original`
   ```
-- [ ] Update response type documentation
+- [x] Update response type documentation
 
 **Target response shape:**
 
@@ -195,62 +196,52 @@ interface MediaItem {
   width: number
   height: number
   lqip: string // base64 data URI
-  thumbnailUrl: string // /photos/{id}-thumb.webp
-  fullUrl: string // /photos/{id}-full.jpg
+  thumbnailUrl: string // /m/{slug}/thumb
+  fullUrl: string // /m/{slug}
+  originalUrl: string // /m/{slug}/original
   dateTaken: string | null
 }
 ```
 
 ---
 
-### 2.2 Add Variant Serving Route
+### 2.2 Unified Media Serving Route ✅ DONE
 
-**File:** `server/routes/photos/[...path].ts`
+**File:** `server/routes/m/[...path].ts`
 
-Serve variant files from blob with immutable cache headers.
+All media served via slug-based URLs. No direct path exposure.
+
+**Routes:**
+
+- `/m/{slug}` → full variant (default)
+- `/m/{slug}/thumb` → thumbnail
+- `/m/{slug}/original` → original with EXIF
 
 **Tasks:**
 
-- [ ] Create `server/routes/photos/[...path].ts`
-- [ ] Implement blob.serve() with cache headers
-- [ ] Set `Cache-Control: public, max-age=31536000, immutable`
-- [ ] Handle 404 for missing files
-
-**Implementation:**
-
-```typescript
-export default defineEventHandler(async (event) => {
-  const path = getRouterParam(event, "path")
-
-  setHeader(event, "Cache-Control", "public, max-age=31536000, immutable")
-
-  return hubBlob().serve(event, `photos/${path}`)
-})
-```
-
----
-
-### 2.3 Update Existing Media Route
-
-**File:** `server/routes/m/[slug].ts`
-
-- [ ] Add cache headers to existing route
-- [ ] Consider deprecating in favor of direct `/photos/` paths
+- [x] Create `server/routes/m/[...path].ts` with variant support
+- [x] Delete `server/routes/photos/[...path].ts`
+- [x] Delete `server/routes/uploads/[...path].ts`
+- [x] Set `Cache-Control: public, max-age=31536000, immutable`
+- [x] Handle 404 for missing files
 
 ---
 
 ## Files to Modify/Create
 
-| File                                            | Action |
-| ----------------------------------------------- | ------ |
-| `server/utils/image-variants.ts`                | Create |
-| `server/db/schema/media.ts`                     | Modify |
-| `server/api/upload.post.ts`                     | Modify |
-| `server/api/albums/by-slug/[slug].get.ts`       | Modify |
-| `server/routes/photos/[...path].ts`             | Create |
-| `server/routes/m/[slug].ts`                     | Modify |
-| `app/components/media-upload/MediaUploader.vue` | Modify |
-| `shared/types/media.ts`                         | Modify |
+| File                                            | Action  |
+| ----------------------------------------------- | ------- |
+| `server/utils/image-variants.ts`                | Created |
+| `server/db/schema/media.ts`                     | Done    |
+| `server/api/upload.post.ts`                     | Done    |
+| `server/api/albums/by-slug/[slug].get.ts`       | Done    |
+| `server/api/albums/[id].get.ts`                 | Done    |
+| `server/routes/m/[...path].ts`                  | Created |
+| `server/routes/photos/[...path].ts`             | Deleted |
+| `server/routes/uploads/[...path].ts`            | Deleted |
+| `app/components/media-upload/MediaUploader.vue` | Done    |
+| `app/pages/a/[slug].vue`                        | Done    |
+| `app/pages/admin/.../[albumId]/index.vue`       | Done    |
 
 ---
 

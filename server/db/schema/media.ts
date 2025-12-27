@@ -33,6 +33,7 @@ export const media = sqliteTable(
     lqip: text("lqip"),
     thumbnailPath: text("thumbnail_path"),
     fullPath: text("full_path"),
+    originalPath: text("original_path"),
   },
   (table) => [
     index("idx_media_kind").on(table.kind!),

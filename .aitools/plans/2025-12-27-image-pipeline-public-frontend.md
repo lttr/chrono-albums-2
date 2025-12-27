@@ -51,28 +51,35 @@
 
 ---
 
-### 2. Media API Enhancement
+### 2. Media API Enhancement ✅ DONE
 
 **Goal:** Expose variant URLs in API responses
 
 **Tasks:**
 
-1. Update `GET /api/albums/by-slug/[slug]` to return variant URLs
-2. Add serving routes for variants (`/photos/[id]-full.jpg`, `/photos/[id]-thumb.webp`)
-3. Add cache headers (immutable for variants)
+1. ✅ Update `GET /api/albums/by-slug/[slug]` to return slug-based URLs
+2. ✅ Unified serving route: `server/routes/m/[...path].ts`
+3. ✅ Add cache headers (immutable for variants)
+
+**Routes:**
+
+- `/m/{slug}` → full variant (default)
+- `/m/{slug}/thumb` → thumbnail
+- `/m/{slug}/original` → original with EXIF
 
 **Response shape:**
 
 ```typescript
 interface MediaItem {
-  id: number
+  id: string
   slug: string
   kind: "image" | "video"
   width: number
   height: number
   lqip: string // base64 data URI
-  thumbnailUrl: string // /photos/{id}-thumb.webp
-  fullUrl: string // /photos/{id}-full.jpg
+  thumbnailUrl: string // /m/{slug}/thumb
+  fullUrl: string // /m/{slug}
+  originalUrl: string // /m/{slug}/original
   dateTaken: string | null
 }
 ```

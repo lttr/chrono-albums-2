@@ -211,7 +211,7 @@ LQIP stored in database alongside photo metadata, not as separate files.
   class="photo-item"
   style="background-image: url(data:image/jpeg;base64,...); aspect-ratio: 4/3"
 >
-  <img src="/photos/abc-thumb.webp" loading="lazy" alt="..." />
+  <img src="/m/{slug}/thumb" loading="lazy" alt="..." />
 </button>
 ```
 
@@ -329,11 +329,12 @@ On album/photo changes:
 
 ### URL Structure
 
-Photo IDs are UUIDs – re-upload creates new ID, so URLs are inherently immutable.
+All media served via slug-based URLs. IDs never exposed publicly.
 
 ```
-/photos/{uuid}-full.jpg
-/photos/{uuid}-thumb.webp
+/m/{slug}          → full variant (default)
+/m/{slug}/thumb    → thumbnail (WebP)
+/m/{slug}/original → original with EXIF
 ```
 
-No cache-busting hashes or version prefixes needed.
+Slugs are immutable (32-char hex from UUID). No cache-busting needed.

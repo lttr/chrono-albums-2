@@ -22,18 +22,14 @@
 
     <section v-if="data?.media.length" class="media-grid p-auto-grid">
       <figure v-for="item of data.media" :key="item.id" class="media-item">
-        <a :href="`/m/${item.slug}`" target="_blank" class="media-link">
+        <a :href="item.fullUrl" target="_blank" class="media-link">
           <img
             v-if="item.kind === 'image'"
-            :src="`/uploads/${item.fileName}`"
+            :src="item.thumbnailUrl"
             :alt="item.originalName || item.fileName"
             loading="lazy"
           />
-          <video
-            v-else
-            :src="`/uploads/${item.fileName}`"
-            preload="metadata"
-          ></video>
+          <video v-else :src="item.fullUrl" preload="metadata"></video>
         </a>
         <figcaption v-if="item.originalName">
           {{ item.originalName }}

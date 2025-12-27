@@ -29,4 +29,5 @@ export interface MediaUploadData {
   lqip?: string
   thumbnailPath?: string
   fullPath?: string
+  originalPath?: string
 }
