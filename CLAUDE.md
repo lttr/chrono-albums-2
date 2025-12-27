@@ -41,9 +41,9 @@ Project → has many → Category
 
 - `app/` - Nuxt frontend (pages, components, layouts)
 - `server/api/` - API routes (Nitro handlers)
-- `server/database/schema/` - Drizzle schema definitions with Zod validation via `drizzle-zod`
+- `server/db/schema/` - Drizzle schema definitions with Zod validation via `drizzle-zod`
 - `shared/types/` - Shared TypeScript types and Zod schemas for validation
-- `user-data/uploads/` - File storage (configured in Nitro)
+- `.data/blob/` - NuxtHub blob storage for uploaded media
 
 ### Database Access
 
