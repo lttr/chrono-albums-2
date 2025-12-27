@@ -10,7 +10,10 @@ export default defineEventHandler(async (event) => {
     const body = await readValidatedBody(event, AlbumCreateSchema.parse)
     const slug = generateSlug()
 
-    await db.insert(schema.album).values({ ...body, slug })
+    await db
+      .insert(schema.album)
+      .values({ ...body, slug })
+      .onConflictDoNothing({ target: schema.album.id })
 
     return {
       id: body.id,
