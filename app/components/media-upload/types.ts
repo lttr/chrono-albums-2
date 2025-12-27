@@ -25,4 +25,8 @@ export interface MediaUploadData {
   originalName: string
   projectId: string
   width?: number
+  // Image variant data (populated after upload)
+  lqip?: string
+  thumbnailPath?: string
+  fullPath?: string
 }

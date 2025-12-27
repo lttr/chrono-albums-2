@@ -48,13 +48,23 @@ export default defineEventHandler(async (event) => {
       width: schema.media.width,
       height: schema.media.height,
       dateTaken: schema.media.dateTaken,
+      lqip: schema.media.lqip,
+      thumbnailPath: schema.media.thumbnailPath,
+      fullPath: schema.media.fullPath,
     })
     .from(schema.media)
     .where(eq(schema.media.albumId, albumDetails[0]!.id))
     .orderBy(schema.media.dateTaken)
 
+  // Transform paths to URLs
+  const mediaWithUrls = mediaItems.map((item) => ({
+    ...item,
+    thumbnailUrl: item.thumbnailPath ? `/${item.thumbnailPath}` : null,
+    fullUrl: item.fullPath ? `/${item.fullPath}` : null,
+  }))
+
   return {
     album: albumDetails[0],
-    media: mediaItems,
+    media: mediaWithUrls,
   }
 })

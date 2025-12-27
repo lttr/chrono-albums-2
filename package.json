@@ -35,6 +35,7 @@
     "exifreader": "^4.33.1",
     "heic2any": "^0.0.4",
     "nuxt": "^4.2.2",
+    "sharp": "^0.34.5",
     "vue": "latest",
     "zod": "4.1.13"
   },

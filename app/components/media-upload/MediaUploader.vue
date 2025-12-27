@@ -178,11 +178,27 @@ async function processValidFile(fileStatus: FileStatus): Promise<void> {
     ...imageUploadData,
   }
 
-  // upload
+  // upload file first, then post metadata with variant info
   try {
-    await postMetadata(mediaUploadData)
     await createAlbum(mediaUploadData)
-    await uploadFile(mediaUploadData, fileStatus)
+    const uploadResponse = await uploadFile(mediaUploadData)
+
+    // Update mediaUploadData with variant info from server
+    if (uploadResponse) {
+      mediaUploadData.lqip = uploadResponse.lqip
+      mediaUploadData.thumbnailPath = uploadResponse.thumbnailPath
+      mediaUploadData.fullPath = uploadResponse.fullPath
+      // Use server-side dimensions if available (more accurate after processing)
+      if (uploadResponse.width) {
+        mediaUploadData.width = uploadResponse.width
+      }
+      if (uploadResponse.height) {
+        mediaUploadData.height = uploadResponse.height
+      }
+    }
+
+    await postMetadata(mediaUploadData)
+    fileStatus.status = "success"
   } catch (error) {
     fileStatus.status = "error"
     if (error instanceof Error) {
@@ -228,6 +244,10 @@ async function postMetadata(data: MediaUploadData) {
       locationLat: data.location?.Latitude,
       locationLon: data.location?.Longitude,
       locationAlt: data.location?.Altitude,
+      // Image variant data
+      lqip: data.lqip,
+      thumbnailPath: data.thumbnailPath,
+      fullPath: data.fullPath,
     } satisfies NewMedia
 
     await $fetch("/api/media", {
@@ -240,7 +260,17 @@ async function postMetadata(data: MediaUploadData) {
   }
 }
 
-async function uploadFile(data: MediaUploadData, fileStatus: FileStatus) {
+interface UploadResponse {
+  success: boolean
+  id: string
+  lqip?: string
+  thumbnailPath?: string
+  fullPath?: string
+  width?: number
+  height?: number
+}
+
+async function uploadFile(data: MediaUploadData): Promise<UploadResponse> {
   const formData = new FormData()
   const file = new File([data.file], data.fileName, {
     type: data.mimeType,
@@ -249,20 +279,10 @@ async function uploadFile(data: MediaUploadData, fileStatus: FileStatus) {
   formData.append("id", data.id)
   formData.append("albumId", data.album.id)
 
-  try {
-    await $fetch("/api/upload", {
-      method: "POST",
-      body: formData,
-    })
-    fileStatus.status = "success"
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error("Upload error:", error.message)
-      fileStatus.status = "error"
-      fileStatus.error = error?.message || "Upload failed"
-    }
-    setError(fileStatus.error || "Upload failed")
-  }
+  return await $fetch<UploadResponse>("/api/upload", {
+    method: "POST",
+    body: formData,
+  })
 }
 </script>
 

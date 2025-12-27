@@ -5,8 +5,20 @@ import {
   MAX_VIDEO_SIZE_BYTES,
 } from "~~/shared/types/media"
 import type { MediaUploadData } from "../types/media"
+import { generateVariants } from "../utils/image-variants"
 
-export default defineEventHandler(async (event) => {
+export interface UploadResponse {
+  success: boolean
+  id: string
+  // Image variant data (only for images)
+  lqip?: string
+  thumbnailPath?: string
+  fullPath?: string
+  width?: number
+  height?: number
+}
+
+export default defineEventHandler(async (event): Promise<UploadResponse> => {
   const parts = await readMultipartFormData(event)
 
   if (!parts || parts.length === 0) {
@@ -63,14 +75,57 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  // Store file using blob
+  if (!uploadData.file) {
+    throw createError({ statusCode: 400, statusMessage: "No file data" })
+  }
+
+  if (!uploadData.id) {
+    throw createError({ statusCode: 400, statusMessage: "No file id" })
+  }
+
+  const isImage = uploadData.mimeType.startsWith("image")
+
   try {
-    if (!uploadData.file) {
-      throw createError({ statusCode: 400, statusMessage: "No file data" })
+    if (isImage) {
+      // Generate image variants
+      const { variants, metadata } = await generateVariants(uploadData.file)
+
+      const id = uploadData.id
+      const originalPath = `photos/${id}-original.jpg`
+      const fullPath = `photos/${id}-full.jpg`
+      const thumbnailPath = `photos/${id}-thumb.webp`
+
+      // Store all variants to blob in parallel
+      await Promise.all([
+        blob.put(originalPath, variants.original, {
+          addRandomSuffix: false,
+        }),
+        blob.put(fullPath, variants.full, { addRandomSuffix: false }),
+        blob.put(thumbnailPath, variants.thumbnail, {
+          addRandomSuffix: false,
+        }),
+      ])
+
+      return {
+        success: true,
+        id,
+        lqip: variants.lqip,
+        thumbnailPath,
+        fullPath,
+        width: metadata.width,
+        height: metadata.height,
+      }
+    } else {
+      // Video: store as-is for now (variant generation skipped)
+      await blob.put(`${uploadData.id}.mp4`, uploadData.file, {
+        addRandomSuffix: false,
+      })
+
+      return {
+        success: true,
+        id: uploadData.id,
+      }
     }
-    await blob.put(`${uploadData.id}.jpeg`, uploadData.file, {
-      addRandomSuffix: false,
-    })
   } catch (error) {
     console.error(error)
     if (error instanceof H3Error) {

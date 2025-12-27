@@ -29,6 +29,10 @@ export const media = sqliteTable(
     mimeType: text("mimeType").notNull(),
     originalName: text("originalName"),
     width: integer("width"),
+    // Image variant paths
+    lqip: text("lqip"),
+    thumbnailPath: text("thumbnail_path"),
+    fullPath: text("full_path"),
   },
   (table) => [
     index("idx_media_kind").on(table.kind!),

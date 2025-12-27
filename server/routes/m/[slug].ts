@@ -14,9 +14,11 @@ export default defineEventHandler(async (event) => {
   // Look up media by slug
   const mediaResult = await db
     .select({
+      id: schema.media.id,
       fileName: schema.media.fileName,
       mimeType: schema.media.mimeType,
       originalName: schema.media.originalName,
+      fullPath: schema.media.fullPath,
     })
     .from(schema.media)
     .where(eq(schema.media.slug, slug))
@@ -31,12 +33,15 @@ export default defineEventHandler(async (event) => {
 
   const media = mediaResult[0]!
 
-  // Serve the file via blob with download-friendly headers
+  // Set cache headers for media files
+  setHeader(event, "Cache-Control", "public, max-age=31536000, immutable")
   setHeader(
     event,
     "Content-Disposition",
     `inline; filename="${media.originalName || media.fileName}"`,
   )
 
-  return blob.serve(event, media.fileName)
+  // Serve from fullPath (new format) or fall back to old format
+  const blobPath = media.fullPath ?? `${media.id}.jpeg`
+  return blob.serve(event, blobPath)
 })
