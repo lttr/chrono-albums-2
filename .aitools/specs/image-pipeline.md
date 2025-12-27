@@ -6,18 +6,20 @@ Performant photo album with grid view (100+ photos per album), lightbox for full
 
 ## Image Tiers
 
-| Tier      | Max Size  | Format           | Quality | Encoding | Purpose               |
-| --------- | --------- | ---------------- | ------- | -------- | --------------------- |
-| Original  | 3500×3500 | JPEG             | 92      | —        | Archive, print source |
-| Full      | 2000px    | Progressive JPEG | 85      | mozjpeg  | Lightbox              |
-| Thumbnail | 600px     | WebP             | 75      | libwebp  | Grid (@2x for 300px)  |
-| LQIP      | 20px      | JPEG             | 60      | baseline | Inline placeholder    |
+| Tier      | Max Size  | Format           | Quality | Encoding | Purpose                   |
+| --------- | --------- | ---------------- | ------- | -------- | ------------------------- |
+| Original  | 3500×3500 | JPEG             | 92      | —        | Archive, print, EXIF kept |
+| Full      | 2000px    | Progressive JPEG | 85      | mozjpeg  | Lightbox                  |
+| Thumbnail | 600px     | WebP             | 75      | libwebp  | Grid (@2x for 300px)      |
+| LQIP      | 20px      | JPEG             | 60      | baseline | Inline placeholder        |
 
 ## Format Reasoning
 
 ### Original: JPEG 92
 
 High quality source for potential print output. 92 is the threshold where JPEG artifacts become negligible for print. Higher values yield diminishing returns with significant file size increase.
+
+**EXIF preservation**: Original variant retains all EXIF metadata (GPS coordinates, camera settings, date taken, etc.) using Sharp's `withMetadata()`. Other variants strip EXIF to reduce file size.
 
 ### Full: Progressive JPEG (mozjpeg)
 
@@ -118,9 +120,9 @@ async function generateVariants(
   const image = sharp(buffer)
   const metadata = await image.metadata()
 
-  // Original (already capped at upload)
+  // Original (already capped at upload, preserves EXIF)
   const originalPath = `${outputDir}/${id}-original.jpg`
-  await image.clone().toFile(originalPath)
+  await image.clone().withMetadata().toFile(originalPath)
 
   // Full size - progressive JPEG with mozjpeg
   const fullPath = `${outputDir}/${id}-full.jpg`
