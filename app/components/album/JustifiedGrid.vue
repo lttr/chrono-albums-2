@@ -11,7 +11,7 @@
         :box="boxes[index]!"
         :index="index"
         :eager="index < 12"
-        @click="emit('open', index)"
+        @click="(idx, trigger) => emit('open', idx, trigger)"
       />
     </template>
   </div>
@@ -26,6 +26,7 @@ interface MediaItem {
   thumbnailUrl: string
   fullUrl: string
   lqip: string | null
+  originalName?: string | null
 }
 
 const props = defineProps<{
@@ -33,7 +34,7 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  open: [index: number]
+  open: [index: number, trigger: HTMLElement]
 }>()
 
 const containerRef = ref<HTMLElement | null>(null)

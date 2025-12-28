@@ -10,6 +10,7 @@ interface LightboxMedia {
 
 export function useLightbox(media: Ref<LightboxMedia[]>) {
   const lightbox = ref<PhotoSwipeLightbox | null>(null)
+  const triggerElement = ref<HTMLElement | null>(null)
 
   const dataSource = computed(() =>
     media.value.map((item) => ({
@@ -30,6 +31,15 @@ export function useLightbox(media: Ref<LightboxMedia[]>) {
       closeOnVerticalDrag: true,
       // Keyboard bindings (arrows, escape) enabled by default
     })
+
+    // Restore focus after lightbox closes
+    lightbox.value.on("close", () => {
+      setTimeout(() => {
+        triggerElement.value?.focus()
+        triggerElement.value = null
+      }, 50)
+    })
+
     lightbox.value.init()
   })
 
@@ -40,7 +50,8 @@ export function useLightbox(media: Ref<LightboxMedia[]>) {
     }
   })
 
-  const open = (index: number) => {
+  const open = (index: number, trigger?: HTMLElement) => {
+    triggerElement.value = trigger ?? (document.activeElement as HTMLElement)
     lightbox.value?.loadAndOpen(index)
   }
 

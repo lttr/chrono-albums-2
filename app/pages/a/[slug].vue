@@ -25,7 +25,11 @@
       </p>
     </header>
 
-    <JustifiedGrid v-if="data?.media.length" :media="data.media" @open="open" />
+    <JustifiedGrid
+      v-if="data?.media.length"
+      :media="data.media"
+      @open="(idx, trigger) => open(idx, trigger)"
+    />
 
     <p v-else-if="data && !data.media.length" class="empty-state">
       Album has no photos yet.
