@@ -7,6 +7,9 @@ import { drizzle } from "drizzle-orm/libsql"
 import { seed } from "drizzle-seed"
 import type { BaseSQLiteDatabase } from "drizzle-orm/sqlite-core"
 import * as schema from "../server/db/schema"
+import sharp from "sharp"
+import { readdir, readFile, writeFile, mkdir } from "node:fs/promises"
+import { join } from "node:path"
 
 const MOCK_USER = {
   id: "mock-user-001",
@@ -56,6 +59,72 @@ function generateSlug(): string {
   return crypto.randomUUID().replace(/-/g, "")
 }
 
+const BLOB_DIR = ".data/blob/photos"
+const FIXTURES_DIR = "fixtures/images"
+
+interface BlobMeta {
+  contentType: string
+  size: number
+  mtime: string
+}
+
+async function writeBlobFile(
+  path: string,
+  data: Buffer,
+  contentType: string,
+): Promise<void> {
+  const fullPath = join(BLOB_DIR, path)
+  const meta: BlobMeta = {
+    contentType,
+    size: data.length,
+    mtime: new Date().toISOString(),
+  }
+  await writeFile(fullPath, data)
+  await writeFile(`${fullPath}.$meta.json`, JSON.stringify(meta))
+}
+
+async function generateAndStoreVariants(
+  id: string,
+  input: Buffer,
+): Promise<{ lqip: string; width: number; height: number }> {
+  // Generate variants
+  const [original, full, thumbnail, lqipBuffer] = await Promise.all([
+    sharp(input)
+      .resize(3500, 3500, { fit: "inside", withoutEnlargement: true })
+      .rotate()
+      .withMetadata()
+      .jpeg({ quality: 92 })
+      .toBuffer(),
+    sharp(input)
+      .resize(2000, 2000, { fit: "inside", withoutEnlargement: true })
+      .rotate()
+      .jpeg({ quality: 85, progressive: true, mozjpeg: true })
+      .toBuffer(),
+    sharp(input)
+      .resize(600, 600, { fit: "inside", withoutEnlargement: true })
+      .rotate()
+      .webp({ quality: 75 })
+      .toBuffer(),
+    sharp(input).resize(20).rotate().jpeg({ quality: 60 }).toBuffer(),
+  ])
+
+  // Get dimensions from original variant
+  const meta = await sharp(original).metadata()
+
+  // Store all variants
+  await Promise.all([
+    writeBlobFile(`${id}-original.jpg`, original, "image/jpeg"),
+    writeBlobFile(`${id}-full.jpg`, full, "image/jpeg"),
+    writeBlobFile(`${id}-thumb.webp`, thumbnail, "image/webp"),
+  ])
+
+  return {
+    lqip: `data:image/jpeg;base64,${lqipBuffer.toString("base64")}`,
+    width: meta.width ?? 0,
+    height: meta.height ?? 0,
+  }
+}
+
 async function main() {
   const client = createClient({
     url: "file:.data/db/sqlite.db",
@@ -63,6 +132,9 @@ async function main() {
   const db = drizzle(client, { schema })
 
   console.log("Seeding database...")
+
+  // Ensure blob directory exists
+  await mkdir(BLOB_DIR, { recursive: true })
 
   // Clear existing data first (in correct order due to foreign keys)
   await db.delete(schema.media)
@@ -97,6 +169,8 @@ async function main() {
     userRelations: _ur,
     sessionRelations: _sr,
     accountRelations: _ar,
+    media: _media,
+    mediaRelations: _mr,
     ...seedSchema
   } = schema
 
@@ -136,18 +210,43 @@ async function main() {
         }),
       },
     },
-    media: {
-      count: 10,
-      columns: {
-        height: f.int({ minValue: 0, maxValue: 1000 }),
-        width: f.int({ minValue: 0, maxValue: 1000 }),
-        slug: f.valuesFromArray({
-          values: Array.from({ length: 10 }, () => generateSlug()),
-          isUnique: true,
-        }),
-      },
-    },
   }))
+
+  // Seed media from fixture images
+  const albums = await db.select().from(schema.album)
+  const fixtureFiles = await readdir(FIXTURES_DIR)
+  const imageFiles = fixtureFiles.filter((f) => f.endsWith(".jpg"))
+
+  console.log(
+    `Seeding ${imageFiles.length} media items across ${albums.length} albums...`,
+  )
+
+  for (let i = 0; i < imageFiles.length; i++) {
+    const fileName = imageFiles[i]
+    const album = albums[i % albums.length] // Distribute across albums
+    const input = await readFile(join(FIXTURES_DIR, fileName))
+    const id = crypto.randomUUID()
+
+    const { lqip, width, height } = await generateAndStoreVariants(id, input)
+
+    await db.insert(schema.media).values({
+      id,
+      albumId: album.id,
+      slug: generateSlug(),
+      fileName,
+      originalName: fileName,
+      mimeType: "image/jpeg",
+      kind: "image",
+      fileSize: input.length,
+      width,
+      height,
+      lqip,
+      thumbnailPath: `photos/${id}-thumb.webp`,
+      fullPath: `photos/${id}-full.jpg`,
+      originalPath: `photos/${id}-original.jpg`,
+    })
+    console.log(`  Created media: ${fileName} → album "${album.title}"`)
+  }
 
   // Create project memberships for mock user
   // Owner of first 2 projects, member of 3rd
