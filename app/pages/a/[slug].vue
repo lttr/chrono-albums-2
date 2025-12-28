@@ -1,64 +1,98 @@
 <template>
-  <div class="p-stack">
+  <div class="album-page">
     <header v-if="data?.album" class="album-header">
       <nav class="breadcrumb">
-        <NuxtLink
-          v-if="data.album.projectSlug"
-          :to="`/p/${data.album.projectSlug}`"
-        >
-          {{ data.album.projectName }}
-        </NuxtLink>
+        <NuxtLink to="/">Albums</NuxtLink>
+        <template v-if="data.album.projectSlug">
+          <span>/</span>
+          <NuxtLink :to="`/p/${data.album.projectSlug}`">
+            {{ data.album.projectName }}
+          </NuxtLink>
+        </template>
         <template v-if="data.album.categorySlug">
           <span>/</span>
           <NuxtLink :to="`/c/${data.album.categorySlug}`">
             {{ data.album.categoryName }}
           </NuxtLink>
         </template>
-        <span>/</span>
       </nav>
       <h1>{{ data.album.title }}</h1>
-      <p class="album-date">{{ data.album.month }}/{{ data.album.year }}</p>
+      <p class="album-meta">
+        {{ formatDate(data.album.month, data.album.year) }}
+        <span v-if="data.media.length" class="album-count">
+          {{ data.media.length }} photos
+        </span>
+      </p>
     </header>
 
-    <section v-if="data?.media.length" class="media-grid p-auto-grid">
-      <figure v-for="item of data.media" :key="item.id" class="media-item">
-        <a :href="item.fullUrl" target="_blank" class="media-link">
-          <img
-            v-if="item.kind === 'image'"
-            :src="item.thumbnailUrl"
-            :alt="item.originalName || item.fileName"
-            loading="lazy"
-          />
-          <video v-else :src="item.fullUrl" preload="metadata"></video>
-        </a>
-        <figcaption v-if="item.originalName">
-          {{ item.originalName }}
-        </figcaption>
-      </figure>
-    </section>
+    <JustifiedGrid v-if="data?.media.length" :media="data.media" @open="open" />
 
     <p v-else-if="data && !data.media.length" class="empty-state">
-      Album neobsahuje žádná média.
+      Album has no photos yet.
     </p>
 
-    <p v-if="error" class="error-state">Album nenalezeno.</p>
+    <p v-if="error" class="error-state">Album not found.</p>
   </div>
 </template>
 
-<script lang="ts" setup>
-useHead({
-  meta: [{ name: "robots", content: "noindex, nofollow" }],
+<script setup lang="ts">
+definePageMeta({
+  layout: "gallery",
 })
 
 const route = useRoute("a-slug")
-const { data, error } = useFetch(`/api/albums/by-slug/${route.params.slug}`)
+const { data, error } = await useFetch(
+  `/api/albums/by-slug/${route.params.slug}`,
+)
+
+const { open } = useLightbox(computed(() => data.value?.media ?? []))
+
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+]
+
+function formatDate(month: number | null, year: number): string {
+  if (month) {
+    return `${months[month - 1]} ${year}`
+  }
+  return String(year)
+}
+
+useHead({
+  title: () => data.value?.album?.title ?? "Album",
+  meta: [{ name: "robots", content: "noindex, nofollow" }],
+})
 </script>
 
 <style scoped>
+.album-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-4);
+}
+
 .album-header {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.album-header h1 {
+  margin: 0;
+  font-size: var(--font-size-4);
+  font-weight: 600;
 }
 
 .breadcrumb {
@@ -77,54 +111,24 @@ const { data, error } = useFetch(`/api/albums/by-slug/${route.params.slug}`)
   color: var(--text-color-1);
 }
 
-.album-date {
+.album-meta {
+  margin: 0;
   color: var(--text-color-2);
   font-size: var(--font-size-1);
+  display: flex;
+  gap: var(--space-3);
 }
 
-.media-grid {
-  --auto-grid-min: 200px;
-}
-
-.media-item {
-  margin: 0;
-  overflow: hidden;
-  border-radius: var(--radius-2);
-  background: var(--surface-0);
-}
-
-.media-link {
-  display: block;
-}
-
-.media-item img,
-.media-item video {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.media-item img:hover,
-.media-item video:hover {
-  opacity: 0.9;
-}
-
-.media-item figcaption {
-  padding: var(--space-2);
-  font-size: var(--font-size--1);
-  color: var(--text-color-2);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.album-count {
+  color: var(--text-color-3);
 }
 
 .empty-state,
 .error-state {
   color: var(--text-color-2);
   font-style: italic;
+  text-align: center;
+  padding: var(--space-8) 0;
 }
 
 .error-state {

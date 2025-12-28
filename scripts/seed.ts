@@ -217,13 +217,15 @@ async function main() {
   const fixtureFiles = await readdir(FIXTURES_DIR)
   const imageFiles = fixtureFiles.filter((f) => f.endsWith(".jpg"))
 
+  // Put all images in first album for testing justified grid
+  const testAlbum = albums[0]
+
   console.log(
-    `Seeding ${imageFiles.length} media items across ${albums.length} albums...`,
+    `Seeding ${imageFiles.length} media items into album "${testAlbum.title}"...`,
   )
 
   for (let i = 0; i < imageFiles.length; i++) {
-    const fileName = imageFiles[i]
-    const album = albums[i % albums.length] // Distribute across albums
+    const fileName = imageFiles[i]!
     const input = await readFile(join(FIXTURES_DIR, fileName))
     const id = crypto.randomUUID()
 
@@ -231,7 +233,7 @@ async function main() {
 
     await db.insert(schema.media).values({
       id,
-      albumId: album.id,
+      albumId: testAlbum.id,
       slug: generateSlug(),
       fileName,
       originalName: fileName,
@@ -245,7 +247,7 @@ async function main() {
       fullPath: `photos/${id}-full.jpg`,
       originalPath: `photos/${id}-original.jpg`,
     })
-    console.log(`  Created media: ${fileName} → album "${album.title}"`)
+    console.log(`  Created media: ${fileName}`)
   }
 
   // Create project memberships for mock user

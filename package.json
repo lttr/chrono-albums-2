@@ -34,7 +34,9 @@
     "drizzle-zod": "^0.8.3",
     "exifreader": "^4.33.1",
     "heic2any": "^0.0.4",
+    "justified-layout": "^4.1.0",
     "nuxt": "^4.2.2",
+    "photoswipe": "^5.4.4",
     "sharp": "^0.34.5",
     "vue": "latest",
     "zod": "4.1.13"

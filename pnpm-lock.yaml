@@ -41,9 +41,15 @@ importers:
       heic2any:
         specifier: ^0.0.4
         version: 0.0.4
+      justified-layout:
+        specifier: ^4.1.0
+        version: 4.1.0
       nuxt:
         specifier: ^4.2.2
         version: 4.2.2(@libsql/client@0.15.15)(@netlify/blobs@8.2.0)(@parcel/watcher@2.5.1)(@types/node@25.0.0)(@vue/compiler-sfc@3.5.25)(cac@6.7.14)(db0@0.3.4(@libsql/client@0.15.15)(drizzle-orm@0.45.1(@cloudflare/workers-types@4.20251211.0)(@libsql/client@0.15.15)(kysely@0.28.9)))(drizzle-orm@0.45.1(@cloudflare/workers-types@4.20251211.0)(@libsql/client@0.15.15)(kysely@0.28.9))(eslint@9.39.1(jiti@2.6.1))(ioredis@5.8.2)(lightningcss@1.30.2)(magicast@0.5.1)(optionator@0.9.4)(rolldown@1.0.0-beta.52)(rollup@4.53.3)(stylus@0.57.0)(terser@5.44.1)(tsx@4.21.0)(typescript@5.9.3)(vite@7.2.7(@types/node@25.0.0)(jiti@2.6.1)(lightningcss@1.30.2)(stylus@0.57.0)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))(vue-tsc@3.1.8(typescript@5.9.3))(yaml@2.8.2)
+      photoswipe:
+        specifier: ^5.4.4
+        version: 5.4.4
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -4425,6 +4431,9 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
+  justified-layout@4.1.0:
+    resolution: {integrity: sha512-M5FimNMXgiOYerVRGsXZ2YK9YNCaTtwtYp7Hb2308U1Q9TXXHx5G0p08mcVR5O53qf8bWY4NJcPBxE6zuayXSg==}
+
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
@@ -4993,6 +5002,10 @@ packages:
 
   perfect-debounce@2.0.0:
     resolution: {integrity: sha512-fkEH/OBiKrqqI/yIgjR92lMfs2K8105zt/VT6+7eTjNwisrsh47CeIED9z58zI7DfKdH3uHAn25ziRZn3kgAow==}
+
+  photoswipe@5.4.4:
+    resolution: {integrity: sha512-WNFHoKrkZNnvFFhbHL93WDkW3ifwVOXSW3w1UuZZelSmgXpIGiZSNlZJq37rR8YejqME2rHs9EhH9ZvlvFH2NA==}
+    engines: {node: '>= 0.12.0'}
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
@@ -10863,6 +10876,8 @@ snapshots:
 
   json5@2.2.3: {}
 
+  justified-layout@4.1.0: {}
+
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
@@ -11749,6 +11764,8 @@ snapshots:
   pathe@2.0.3: {}
 
   perfect-debounce@2.0.0: {}
+
+  photoswipe@5.4.4: {}
 
   picocolors@1.1.1: {}
 
