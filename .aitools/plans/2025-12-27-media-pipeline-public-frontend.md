@@ -208,9 +208,13 @@ Phase 3: Polish ✅ COMPLETE
 ├── 6. SSR + Caching (deferred - private app)
 └── 7. Accessibility
 
-Phase 4: Video Support ← NEXT
+Phase 4: Video Support ✅ COMPLETE
 ├── 8. Video Variant Pipeline (ffmpeg poster extraction)
-└── 9. Video Player Integration
+├── 9. Video Transcoding (Async)
+└── 10. Video Player Integration (grid display)
+
+Phase 5: Video in Lightbox ← NEXT
+└── 11. Video Lightbox Integration (PhotoSwipe custom content)
 ```
 
 ---
@@ -273,12 +277,19 @@ Phase 4: Video Support ← NEXT
   - [ ] Update `processing` flag when complete
   - [ ] Handle serving while processing (202 or serve original)
 
-- [ ] **10. Video Player Integration**
-  - [ ] Create VideoGridItem component with play overlay
-  - [ ] Inline video player on click
-  - [ ] Update JustifiedGrid to handle video items
-  - [ ] Update media serving route for video/poster variants
-  - [ ] Show processing indicator if video not ready
+- [x] **10. Video Player Integration**
+  - [x] Create VideoGridItem component with play overlay
+  - [x] Update JustifiedGrid to handle video items
+  - [x] Update media serving route for video/poster variants
+  - [x] Show processing indicator if video not ready
+
+### Phase 5: Video in Lightbox
+
+- [ ] **11. Video Lightbox Integration**
+  - [ ] Extend useLightbox to support video slides (PhotoSwipe custom content API)
+  - [ ] Update VideoGridItem to emit click events (like GridItem)
+  - [ ] Handle video autoplay/pause on slide change
+  - [ ] Remove inline player logic from VideoGridItem
 
 ---
 

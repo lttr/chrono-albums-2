@@ -19,7 +19,7 @@ Add video support with poster frame extraction at upload and async transcoding t
 - Poster variants generated (full, thumb, LQIP)
 - Video transcoded to h264 mp4 in background (async)
 - Videos displayed in grid with play overlay
-- Inline video player on click
+- Video playback in PhotoSwipe lightbox (see Phase 5 plan)
 
 ---
 

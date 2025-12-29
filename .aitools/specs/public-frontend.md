@@ -60,45 +60,20 @@ Flickr's justified-layout algorithm:
 
 - Poster frame thumbnail (same LQIP + thumbnail pattern as images)
 - Play icon overlay (centered, white with drop shadow)
-- Click opens inline video player (not lightbox)
-- Native `<video>` controls for playback
+- Click opens PhotoSwipe lightbox (unified with images)
+- Video plays in lightbox with native controls
 
-### Video Player
+**Processing state:** If `media.processing === true`, show a "Processing..." overlay instead of play icon. Video not yet playable, click disabled.
 
-On video click:
+### Video in Lightbox
 
-1. Replace thumbnail with `<video>` element
-2. Set `poster` attribute to full poster URL
-3. Autoplay with controls visible
-4. Click outside or press Escape to close and restore thumbnail
+Videos use PhotoSwipe's custom content API to render `<video>` elements inside slides:
 
-**Processing state:** If `media.processing === true`, show a "Processing..." overlay instead of play icon. Video not yet playable.
-
-```vue
-<template>
-  <div class="video-container">
-    <video
-      v-if="playing && !media.processing"
-      :src="media.fullUrl"
-      :poster="media.posterUrl"
-      controls
-      autoplay
-      @ended="playing = false"
-    />
-    <button
-      v-else
-      class="video-thumb"
-      @click="!media.processing && (playing = true)"
-    >
-      <img :src="media.thumbnailUrl" :alt="media.alt" />
-      <span v-if="media.processing" class="processing-indicator"
-        >Processing...</span
-      >
-      <span v-else class="play-icon">▶</span>
-    </button>
-  </div>
-</template>
-```
+- Swipe between images and videos seamlessly
+- Video autoplay on slide enter, pause on slide leave
+- Native controls visible in lightbox
+- Keyboard navigation (arrows) works across all media types
+- Escape closes lightbox (same as images)
 
 ## Lightbox
 
