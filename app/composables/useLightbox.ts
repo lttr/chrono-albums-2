@@ -55,7 +55,9 @@ export function useLightbox(media: Ref<LightboxMedia[]>) {
     // Handle video content loading
     lightbox.value.on("contentLoad", (e) => {
       const content = e.content as SlideContent
-      if (content.data.type !== "video") {return}
+      if (content.data.type !== "video") {
+        return
+      }
 
       e.preventDefault()
 
@@ -99,14 +101,18 @@ export function useLightbox(media: Ref<LightboxMedia[]>) {
     // Pause videos when changing slides
     lightbox.value.on("change", () => {
       const pswp = lightbox.value?.pswp
-      if (!pswp) {return}
+      if (!pswp) {
+        return
+      }
 
       // Pause all videos except current
       pswp.mainScroll.itemHolders.forEach(
         (holder: { slide?: { container: HTMLElement } }) => {
           if (holder.slide && holder.slide !== pswp.currSlide) {
             const video = holder.slide.container.querySelector("video")
-            if (video) {video.pause()}
+            if (video) {
+              video.pause()
+            }
           }
         },
       )
@@ -123,12 +129,16 @@ export function useLightbox(media: Ref<LightboxMedia[]>) {
     // Pause all videos on close
     lightbox.value.on("close", () => {
       const pswp = lightbox.value?.pswp
-      if (!pswp) {return}
+      if (!pswp) {
+        return
+      }
 
       pswp.mainScroll.itemHolders.forEach(
         (holder: { slide?: { container: HTMLElement } }) => {
           const video = holder.slide?.container.querySelector("video")
-          if (video) {video.pause()}
+          if (video) {
+            video.pause()
+          }
         },
       )
     })
@@ -154,7 +164,9 @@ export function useLightbox(media: Ref<LightboxMedia[]>) {
   const open = (index: number, trigger?: HTMLElement) => {
     // Don't open lightbox for processing videos
     const item = media.value[index]
-    if (item?.kind === "video" && item.processing) {return}
+    if (item?.kind === "video" && item.processing) {
+      return
+    }
 
     triggerElement.value = trigger ?? (document.activeElement as HTMLElement)
     lightbox.value?.loadAndOpen(index)
