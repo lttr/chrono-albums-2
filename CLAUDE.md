@@ -40,7 +40,18 @@ Project → has many → Category
 ### Key Directories
 
 - `app/` - Nuxt frontend (pages, components, layouts)
+  - `app/pages/index.vue` - Timeline view (albums grouped by year)
+  - `app/pages/a/[slug].vue` - Album view with justified grid
+  - `app/layouts/gallery.vue` - Gallery layout with header/footer
+  - `app/components/timeline/` - Timeline components (YearSection, AlbumCard)
+  - `app/components/album/` - Album components (JustifiedGrid, GridItem)
+  - `app/composables/useJustifiedLayout.ts` - Justified grid layout logic
+  - `app/composables/useLightbox.ts` - PhotoSwipe lightbox integration
 - `server/api/` - API routes (Nitro handlers)
+  - `server/api/timeline.get.ts` - Timeline data (albums grouped by year)
+  - `server/api/albums/` - Album CRUD operations
+  - `server/api/upload.post.ts` - Media upload with image variant generation
+- `server/routes/m/[...path].ts` - Media serving (thumbnails, full, original)
 - `server/db/schema/` - Drizzle schema definitions with Zod validation via `drizzle-zod`
 - `shared/types/` - Shared TypeScript types and Zod schemas for validation
 - `.data/blob/` - NuxtHub blob storage for uploaded media
@@ -69,4 +80,12 @@ Derive scope from the area of change (e.g., `upload`, `album`, `api`, `db`, `ui`
 
 - **Styling**: `@lttr/puleo` CSS framework
 - **Typed routes**: `experimental.typedPages: true`
-- **Image handling**: HEIC conversion via `heic2any`, compression via `compressorjs`, EXIF via `exifreader`
+- **Image handling**:
+  - HEIC conversion via `heic2any`
+  - Compression via `compressorjs`
+  - EXIF via `exifreader`
+  - Image variants: thumbnail (400px), full (1920px), original (with EXIF preserved)
+  - LQIP (Low Quality Image Placeholder) generation via `sharp`
+- **Gallery UI**:
+  - `photoswipe` - Lightbox with gestures and keyboard navigation
+  - `justified-layout` - Flickr-style responsive grid algorithm
