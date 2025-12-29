@@ -41,6 +41,10 @@ export default defineNuxtConfig({
     experimental: {
       tasks: true,
     },
+    scheduledTasks: {
+      // Run maintenance every minute: recover stuck jobs, cleanup old jobs
+      "* * * * *": ["jobs:maintenance"],
+    },
   },
   hub: {
     db: "sqlite",

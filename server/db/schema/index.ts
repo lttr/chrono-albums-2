@@ -1,6 +1,7 @@
 // Re-export all schema entities from their respective files
 export * from "./album"
 export * from "./category"
+export * from "./job"
 export * from "./media"
 export * from "./project"
 export * from "./projectMembership"
