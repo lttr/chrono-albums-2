@@ -2,10 +2,20 @@
   <div v-if="project">
     <div class="p-cluster header-container">
       <h1 class="p-heading-2">{{ project.name }}</h1>
-      <NuxtLink :to="`/p/${project.slug}`" class="public-link" target="_blank">
-        <Icon name="uil:external-link-alt" />
-        Veřejný odkaz
-      </NuxtLink>
+      <div class="p-cluster header-actions">
+        <NuxtLink :to="`/admin/projects/${projectId}/team`" class="header-link">
+          <Icon name="uil:users-alt" />
+          Tým
+        </NuxtLink>
+        <NuxtLink
+          :to="`/p/${project.slug}`"
+          class="header-link"
+          target="_blank"
+        >
+          <Icon name="uil:external-link-alt" />
+          Veřejný odkaz
+        </NuxtLink>
+      </div>
     </div>
 
     <div class="sections">
@@ -130,7 +140,11 @@ watchEffect(() => {
   margin-bottom: var(--space-6);
 }
 
-.public-link {
+.header-actions {
+  gap: var(--space-4);
+}
+
+.header-link {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
@@ -138,7 +152,7 @@ watchEffect(() => {
   font-size: var(--font-size--1);
 }
 
-.public-link:hover {
+.header-link:hover {
   color: var(--brand-color);
 }
 
