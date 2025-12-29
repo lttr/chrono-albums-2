@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm"
 import { db, schema } from "hub:db"
 
-const VALID_VARIANTS = ["thumb", "original"] as const
+const VALID_VARIANTS = ["thumb", "original", "poster"] as const
 type Variant = (typeof VALID_VARIANTS)[number]
 
 export default defineEventHandler(async (event) => {
@@ -37,11 +37,16 @@ export default defineEventHandler(async (event) => {
   // Look up media by slug
   const mediaResult = await db
     .select({
+      kind: schema.media.kind,
       fileName: schema.media.fileName,
       originalName: schema.media.originalName,
       fullPath: schema.media.fullPath,
       thumbnailPath: schema.media.thumbnailPath,
       originalPath: schema.media.originalPath,
+      // Video-specific
+      posterPath: schema.media.posterPath,
+      webPath: schema.media.webPath,
+      processing: schema.media.processing,
     })
     .from(schema.media)
     .where(eq(schema.media.slug, slug))
@@ -56,7 +61,59 @@ export default defineEventHandler(async (event) => {
 
   const media = mediaResult[0]!
 
-  // Determine which path to serve based on variant
+  // Set cache headers for media files
+  setHeader(event, "Cache-Control", "public, max-age=31536000, immutable")
+  setHeader(
+    event,
+    "Content-Disposition",
+    `inline; filename="${media.originalName || media.fileName}"`,
+  )
+
+  // Handle video media
+  if (media.kind === "video") {
+    if (variantParam === "poster") {
+      // Serve poster image
+      if (!media.posterPath) {
+        throw createError({
+          statusCode: 404,
+          statusMessage: "Poster not found",
+        })
+      }
+      setHeader(event, "Content-Type", "image/jpeg")
+      return blob.serve(event, media.posterPath)
+    }
+
+    if (variantParam === "thumb") {
+      // Serve poster thumbnail
+      if (!media.thumbnailPath) {
+        throw createError({
+          statusCode: 404,
+          statusMessage: "Thumbnail not found",
+        })
+      }
+      setHeader(event, "Content-Type", "image/webp")
+      return blob.serve(event, media.thumbnailPath)
+    }
+
+    // Default: serve video
+    if (media.processing === 1) {
+      // Still transcoding - return 202
+      setHeader(event, "Retry-After", 30)
+      throw createError({
+        statusCode: 202,
+        statusMessage: "Video is still processing",
+      })
+    }
+
+    const videoPath = media.webPath ?? media.originalPath
+    if (!videoPath) {
+      throw createError({ statusCode: 404, statusMessage: "Video not found" })
+    }
+    setHeader(event, "Content-Type", "video/mp4")
+    return blob.serve(event, videoPath)
+  }
+
+  // Handle image media
   let blobPath: string | null = null
 
   switch (variantParam) {
@@ -77,14 +134,6 @@ export default defineEventHandler(async (event) => {
       statusMessage: "Media file not available",
     })
   }
-
-  // Set cache headers for media files
-  setHeader(event, "Cache-Control", "public, max-age=31536000, immutable")
-  setHeader(
-    event,
-    "Content-Disposition",
-    `inline; filename="${media.originalName || media.fileName}"`,
-  )
 
   return blob.serve(event, blobPath)
 })

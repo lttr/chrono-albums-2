@@ -34,6 +34,11 @@ export const media = sqliteTable(
     thumbnailPath: text("thumbnail_path"),
     fullPath: text("full_path"),
     originalPath: text("original_path"),
+    // Video-specific fields
+    processing: integer("processing").default(0), // 0 = ready, 1 = transcoding, -1 = failed
+    duration: real("duration"), // video duration in seconds
+    posterPath: text("poster_path"), // full poster for video player
+    webPath: text("web_path"), // transcoded video path
   },
   (table) => [
     index("idx_media_kind").on(table.kind!),

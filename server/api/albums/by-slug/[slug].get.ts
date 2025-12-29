@@ -49,6 +49,9 @@ export default defineEventHandler(async (event) => {
       height: schema.media.height,
       dateTaken: schema.media.dateTaken,
       lqip: schema.media.lqip,
+      // Video-specific fields
+      processing: schema.media.processing,
+      duration: schema.media.duration,
     })
     .from(schema.media)
     .where(eq(schema.media.albumId, albumDetails[0]!.id))
@@ -60,6 +63,10 @@ export default defineEventHandler(async (event) => {
     thumbnailUrl: `/m/${item.slug}/thumb`,
     fullUrl: `/m/${item.slug}`,
     originalUrl: `/m/${item.slug}/original`,
+    // Video-specific URLs
+    posterUrl: item.kind === "video" ? `/m/${item.slug}/poster` : undefined,
+    // Convert processing state to boolean for frontend
+    processing: item.kind === "video" ? item.processing === 1 : undefined,
   }))
 
   return {

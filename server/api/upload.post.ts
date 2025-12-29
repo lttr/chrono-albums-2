@@ -1,4 +1,9 @@
 import { H3Error } from "h3"
+import { createWriteStream } from "fs"
+import { readFile } from "fs/promises"
+import { pipeline } from "stream/promises"
+import { Readable } from "stream"
+import { join } from "path"
 import {
   ACCEPTED_MIME_TYPES,
   MAX_IMAGE_SIZE_BYTES,
@@ -6,6 +11,12 @@ import {
 } from "~~/shared/types/media"
 import type { MediaUploadData } from "../types/media"
 import { generateVariants } from "../utils/image-variants"
+import {
+  extractVideoPoster,
+  ensureTempDir,
+  cleanupTempFile,
+} from "../utils/video-variants"
+import { enqueueTranscode } from "../utils/video-jobs"
 
 export interface UploadResponse {
   success: boolean
@@ -17,6 +28,10 @@ export interface UploadResponse {
   originalPath?: string
   width?: number
   height?: number
+  // Video-specific
+  posterPath?: string
+  duration?: number
+  processing?: boolean
 }
 
 export default defineEventHandler(async (event): Promise<UploadResponse> => {
@@ -118,14 +133,60 @@ export default defineEventHandler(async (event): Promise<UploadResponse> => {
         height: metadata.height,
       }
     } else {
-      // Video: store as-is for now (variant generation skipped)
-      await blob.put(`${uploadData.id}.mp4`, uploadData.file, {
-        addRandomSuffix: false,
-      })
+      // Video: extract poster, store original, enqueue transcoding
+      const id = uploadData.id
+      const ext = getVideoExtension(uploadData.mimeType!)
 
-      return {
-        success: true,
-        id: uploadData.id,
+      // Write upload to temp file (avoids holding in memory)
+      const tempDir = await ensureTempDir()
+      const tempVideoPath = join(tempDir, `${id}-upload.${ext}`)
+
+      await pipeline(
+        Readable.from(uploadData.file),
+        createWriteStream(tempVideoPath),
+      )
+
+      try {
+        // Extract poster from temp file
+        const { posterFull, posterThumb, posterLqip, width, height, duration } =
+          await extractVideoPoster(tempVideoPath)
+
+        const originalPath = `videos/${id}-original.${ext}`
+        const posterPath = `videos/${id}-poster.jpg`
+        const thumbnailPath = `videos/${id}-thumb.webp`
+
+        // Upload original video and poster variants to blob
+        const originalVideoBuffer = await readFile(tempVideoPath)
+        await Promise.all([
+          blob.put(originalPath, originalVideoBuffer, {
+            addRandomSuffix: false,
+          }),
+          blob.put(posterPath, posterFull, { addRandomSuffix: false }),
+          blob.put(thumbnailPath, posterThumb, { addRandomSuffix: false }),
+        ])
+
+        // Enqueue async transcoding
+        enqueueTranscode({
+          mediaId: id,
+          originalPath,
+          webPath: `videos/${id}.mp4`,
+        })
+
+        return {
+          success: true,
+          id,
+          lqip: posterLqip,
+          thumbnailPath,
+          posterPath,
+          originalPath,
+          width,
+          height,
+          duration,
+          processing: true,
+        }
+      } finally {
+        // Always clean up temp file
+        await cleanupTempFile(tempVideoPath)
       }
     }
   } catch (error) {
@@ -140,3 +201,13 @@ export default defineEventHandler(async (event): Promise<UploadResponse> => {
     })
   }
 })
+
+function getVideoExtension(mimeType: string): string {
+  const map: Record<string, string> = {
+    "video/mp4": "mp4",
+    "video/quicktime": "mov",
+    "video/webm": "webm",
+    "video/x-msvideo": "avi",
+  }
+  return map[mimeType] ?? "mp4"
+}
