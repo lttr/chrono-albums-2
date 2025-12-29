@@ -6,6 +6,25 @@ interface LightboxMedia {
   thumbnailUrl: string
   width: number | null
   height: number | null
+  kind: "image" | "video"
+  posterUrl?: string
+  processing?: boolean
+}
+
+interface SlideContent {
+  data: {
+    src: string
+    msrc: string
+    type: string
+    posterUrl?: string
+  }
+  state: string
+  element: HTMLElement | null
+  videoElement?: HTMLVideoElement | null
+  slide?: {
+    container: HTMLElement
+  }
+  onLoaded: () => void
 }
 
 export function useLightbox(media: Ref<LightboxMedia[]>) {
@@ -18,6 +37,10 @@ export function useLightbox(media: Ref<LightboxMedia[]>) {
       msrc: item.thumbnailUrl,
       width: item.width ?? 1600,
       height: item.height ?? 1200,
+      // Custom properties for video handling
+      type: item.kind === "video" ? "video" : "image",
+      posterUrl: item.posterUrl,
+      processing: item.processing,
     })),
   )
 
@@ -25,15 +48,93 @@ export function useLightbox(media: Ref<LightboxMedia[]>) {
     lightbox.value = new PhotoSwipeLightbox({
       dataSource: dataSource.value,
       pswpModule: () => import("photoswipe"),
-      // Preload adjacent slides
       preload: [1, 2],
-      // Close on vertical drag
       closeOnVerticalDrag: true,
-      // Keyboard bindings (arrows, escape) enabled by default
+    })
+
+    // Handle video content loading
+    lightbox.value.on("contentLoad", (e) => {
+      const content = e.content as SlideContent
+      if (content.data.type !== "video") {return}
+
+      e.preventDefault()
+
+      // Create video element
+      const video = document.createElement("video")
+      video.className = "pswp__video"
+      video.src = content.data.src
+      video.poster = content.data.posterUrl || content.data.msrc
+      video.controls = true
+      video.playsInline = true
+      video.preload = "metadata"
+
+      content.videoElement = video
+      content.element = video
+
+      // Mark as loaded immediately (video will buffer on play)
+      content.state = "loaded"
+      content.onLoaded()
+    })
+
+    // Custom append for video
+    lightbox.value.on("contentAppend", (e) => {
+      const content = e.content as SlideContent
+      if (content.videoElement && !content.videoElement.parentNode) {
+        e.preventDefault()
+        content.slide?.container.appendChild(content.videoElement)
+      }
+    })
+
+    // Custom remove for video
+    lightbox.value.on("contentRemove", (e) => {
+      const content = e.content as SlideContent
+      if (content.videoElement) {
+        e.preventDefault()
+        content.videoElement.pause()
+        content.videoElement.remove()
+        content.videoElement = null
+      }
+    })
+
+    // Pause videos when changing slides
+    lightbox.value.on("change", () => {
+      const pswp = lightbox.value?.pswp
+      if (!pswp) {return}
+
+      // Pause all videos except current
+      pswp.mainScroll.itemHolders.forEach(
+        (holder: { slide?: { container: HTMLElement } }) => {
+          if (holder.slide && holder.slide !== pswp.currSlide) {
+            const video = holder.slide.container.querySelector("video")
+            if (video) {video.pause()}
+          }
+        },
+      )
+
+      // Autoplay current video (if it's a video slide)
+      const currVideo = pswp.currSlide?.container.querySelector("video")
+      if (currVideo) {
+        currVideo.play().catch(() => {
+          // Autoplay blocked - user will click play
+        })
+      }
+    })
+
+    // Pause all videos on close
+    lightbox.value.on("close", () => {
+      const pswp = lightbox.value?.pswp
+      if (!pswp) {return}
+
+      pswp.mainScroll.itemHolders.forEach(
+        (holder: { slide?: { container: HTMLElement } }) => {
+          const video = holder.slide?.container.querySelector("video")
+          if (video) {video.pause()}
+        },
+      )
     })
 
     // Restore focus after lightbox closes
-    lightbox.value.on("close", () => {
+    lightbox.value.on("destroy", () => {
       setTimeout(() => {
         triggerElement.value?.focus()
         triggerElement.value = null
@@ -51,6 +152,10 @@ export function useLightbox(media: Ref<LightboxMedia[]>) {
   })
 
   const open = (index: number, trigger?: HTMLElement) => {
+    // Don't open lightbox for processing videos
+    const item = media.value[index]
+    if (item?.kind === "video" && item.processing) {return}
+
     triggerElement.value = trigger ?? (document.activeElement as HTMLElement)
     lightbox.value?.loadAndOpen(index)
   }

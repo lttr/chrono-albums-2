@@ -1,51 +1,35 @@
 <template>
-  <div
+  <button
+    type="button"
     class="video-grid-item"
     :style="{
       width: `${box.width}px`,
       height: `${box.height}px`,
       transform: `translate(${box.left}px, ${box.top}px)`,
     }"
+    :disabled="media.processing"
+    @click="handleClick"
   >
-    <!-- Playing state -->
-    <video
-      v-if="playing && !media.processing"
-      ref="videoRef"
-      :src="media.fullUrl"
-      :poster="media.posterUrl"
-      class="video-player"
-      controls
-      autoplay
-      @ended="playing = false"
-      @click.stop
-    ></video>
-
-    <!-- Thumbnail state -->
-    <button
-      v-else
-      type="button"
-      class="video-thumb"
-      :disabled="media.processing"
-      @click="play"
-    >
-      <div
-        v-if="media.lqip"
-        class="video-thumb__lqip"
-        :style="{ backgroundImage: `url(${media.lqip})` }"
-      ></div>
-      <img
-        :src="media.thumbnailUrl"
-        :alt="altText"
-        :loading="eager ? 'eager' : 'lazy'"
-        class="video-thumb__img"
-        @load="($event.target as HTMLImageElement).classList.add('loaded')"
-      />
-      <span v-if="media.processing" class="video-overlay processing">
-        Processing...
-      </span>
-      <span v-else class="video-overlay play-icon">&#9654;</span>
-    </button>
-  </div>
+    <div
+      v-if="media.lqip"
+      class="video-grid-item__lqip"
+      :style="{ backgroundImage: `url(${media.lqip})` }"
+    ></div>
+    <img
+      :src="media.thumbnailUrl"
+      :alt="altText"
+      :loading="eager ? 'eager' : 'lazy'"
+      class="video-grid-item__img"
+      @load="($event.target as HTMLImageElement).classList.add('loaded')"
+    />
+    <span v-if="media.processing" class="video-overlay processing">
+      Processing...
+    </span>
+    <span v-else class="video-overlay play-icon">&#9654;</span>
+    <span v-if="media.duration" class="video-duration">
+      {{ formatDuration(media.duration) }}
+    </span>
+  </button>
 </template>
 
 <script setup lang="ts">
@@ -54,8 +38,6 @@ interface Props {
     id: string
     slug: string
     thumbnailUrl: string
-    fullUrl: string
-    posterUrl?: string
     lqip: string | null
     originalName?: string | null
     processing?: boolean
@@ -72,8 +54,9 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const playing = ref(false)
-const videoRef = ref<HTMLVideoElement>()
+const emit = defineEmits<{
+  open: [index: number, trigger: HTMLElement]
+}>()
 
 const altText = computed(() => {
   if (props.media.originalName) {
@@ -84,51 +67,41 @@ const altText = computed(() => {
   return `Video ${props.index + 1}`
 })
 
-function play() {
-  if (!props.media.processing) {
-    playing.value = true
-  }
+function formatDuration(seconds: number | null): string {
+  if (!seconds) {return ""}
+  const mins = Math.floor(seconds / 60)
+  const secs = Math.floor(seconds % 60)
+  return `${mins}:${secs.toString().padStart(2, "0")}`
 }
 
-// Close video on escape
-onMounted(() => {
-  const handleEscape = (e: KeyboardEvent) => {
-    if (e.key === "Escape" && playing.value) {
-      playing.value = false
-    }
+function handleClick(event: MouseEvent) {
+  if (!props.media.processing) {
+    emit("open", props.index, event.currentTarget as HTMLElement)
   }
-  window.addEventListener("keydown", handleEscape)
-  onUnmounted(() => window.removeEventListener("keydown", handleEscape))
-})
+}
 </script>
 
 <style scoped>
 .video-grid-item {
   position: absolute;
   overflow: hidden;
-}
-
-.video-thumb {
-  width: 100%;
-  height: 100%;
   padding: 0;
   border: none;
   cursor: pointer;
   background: var(--surface-2);
-  position: relative;
 }
 
-.video-thumb:disabled {
+.video-grid-item:disabled {
   cursor: not-allowed;
 }
 
-.video-thumb:focus-visible {
+.video-grid-item:focus-visible {
   outline: 2px solid var(--primary-6);
   outline-offset: 2px;
   z-index: 1;
 }
 
-.video-thumb__lqip {
+.video-grid-item__lqip {
   position: absolute;
   inset: 0;
   background-size: cover;
@@ -137,7 +110,7 @@ onMounted(() => {
   transform: scale(1.1);
 }
 
-.video-thumb__img {
+.video-grid-item__img {
   position: relative;
   width: 100%;
   height: 100%;
@@ -146,7 +119,7 @@ onMounted(() => {
   transition: opacity 0.3s ease;
 }
 
-.video-thumb__img.loaded {
+.video-grid-item__img.loaded {
   opacity: 1;
 }
 
@@ -170,10 +143,15 @@ onMounted(() => {
   border-radius: 4px;
 }
 
-.video-player {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: black;
+.video-duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-variant-numeric: tabular-nums;
 }
 </style>

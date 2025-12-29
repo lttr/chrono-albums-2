@@ -12,6 +12,7 @@
           :box="boxes[index]!"
           :index="index"
           :eager="index < 12"
+          @open="(idx, trigger) => emit('open', idx, trigger)"
         />
         <GridItem
           v-else
