@@ -4,17 +4,24 @@ Retro-modern design: primarily modern and simple, with warm nostalgic undertones
 
 ## Color Palette
 
+### Light Mode
+
 - **Background**: Warm off-white (`#F8F6F1`)
-- **Text**: Soft black (`#2C2C2C`)
-- **Accent**: Single muted tone – aged gold or terracotta
-- **Secondary**: Warm gray for metadata, borders
+- **Surfaces**: `#F3F0E8` → `#EBE7DC` → `#E0DAC9`
+- **Text**: Soft black (`#2C2C2C`), secondary (`#6B6560`)
+- **Accent**: Terracotta (`#C45B28`)
+
+### Dark Mode
+
+- **Background**: Warm dark (`#1A1816`) – never cold black
+- **Surfaces**: `#252220` → `#322E2A` → `#403A35`
+- **Text**: Warm white (`#F0EBE5`), secondary (`#A89F94`)
+- **Accent**: Terracotta bright (`#D97B4A`)
 
 ## Typography
 
-- **Headings**: Clean serif (one weight)
-- **Body**: System sans-serif
-- **Dates/metadata**: Smaller, lighter weight
-- **Album titles**: One nostalgic/display serif (optional)
+- **Headings & Body**: Alike (transitional serif) – warm, nostalgic
+- **Dates/metadata**: Smaller, lighter weight, secondary color
 
 ## Subtle Nostalgic Touches
 

@@ -85,9 +85,13 @@
 
       <h3>Buttons</h3>
       <div class="component-row">
-        <button class="p-button">Primary</button>
-        <button class="p-button" data-variant="secondary">Secondary</button>
-        <button class="p-button" data-variant="ghost">Ghost</button>
+        <button class="p-button p-button-brand">Primary</button>
+        <button class="p-button p-button-secondary">Secondary</button>
+        <button class="p-button">Default</button>
+      </div>
+      <div class="component-row">
+        <button class="p-button p-button-small">Small</button>
+        <button class="p-button" disabled>Disabled</button>
       </div>
 
       <h3>Alerts</h3>
@@ -118,12 +122,8 @@
         <!-- Card with actions -->
         <AdminCard title="Card with Actions" badge="Action">
           <template #actions>
-            <button class="p-button" data-variant="ghost" data-size="small">
-              Edit
-            </button>
-            <button class="p-button" data-variant="ghost" data-size="small">
-              Delete
-            </button>
+            <button class="p-button p-button-small">Edit</button>
+            <button class="p-button p-button-small">Delete</button>
           </template>
         </AdminCard>
 
@@ -160,6 +160,56 @@
           background: var(--surface-2);
         "
       ></div>
+
+      <h3>Form Controls</h3>
+      <div class="form-demo">
+        <div class="p-form-group">
+          <label for="demo-input">Text Input</label>
+          <input id="demo-input" type="text" placeholder="Enter text..." />
+        </div>
+
+        <div class="p-form-group">
+          <label for="demo-select">Select</label>
+          <select id="demo-select">
+            <option value="">Choose an option...</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+          </select>
+        </div>
+
+        <div class="p-form-group">
+          <label for="demo-textarea">Textarea</label>
+          <textarea
+            id="demo-textarea"
+            placeholder="Enter longer text..."
+          ></textarea>
+        </div>
+
+        <div class="p-form-group">
+          <label>
+            <input type="checkbox" />
+            Checkbox option
+          </label>
+        </div>
+      </div>
+
+      <h3>Navigation</h3>
+      <nav class="breadcrumb-demo">
+        <a href="#">Admin</a>
+        <span class="separator">›</span>
+        <a href="#">Projects</a>
+        <span class="separator">›</span>
+        <span class="current">Album Name</span>
+      </nav>
+
+      <h3>States</h3>
+      <div class="states-demo">
+        <div class="state-item">
+          <span class="loading-spinner"></span>
+          <span>Loading...</span>
+        </div>
+        <div class="state-item empty-state">No items found</div>
+      </div>
     </section>
 
     <!-- Utilities -->
@@ -317,5 +367,75 @@
   justify-content: center;
   font-size: var(--font-size--1);
   color: var(--text-color-2);
+}
+
+/* Form demo */
+.form-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 400px;
+}
+
+/* Breadcrumb demo */
+.breadcrumb-demo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size--1);
+  color: var(--text-color-2);
+
+  a {
+    color: var(--text-color-2);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--brand-color);
+    }
+  }
+
+  .separator {
+    opacity: 0.5;
+  }
+
+  .current {
+    color: var(--text-color-1);
+  }
+}
+
+/* States demo */
+.states-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.state-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--surface-1);
+  border-radius: var(--radius-2);
+}
+
+.loading-spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid var(--surface-3);
+  border-top-color: var(--brand-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.empty-state {
+  color: var(--text-color-2);
+  font-style: italic;
 }
 </style>

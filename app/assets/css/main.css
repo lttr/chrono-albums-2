@@ -105,6 +105,43 @@ a.p-button {
   font-size: var(--font-size--1);
 }
 
+/* ==========================================================================
+   Form Controls - Dark Mode Visibility Fix
+   ========================================================================== */
+
+@media (--OSdark) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  textarea,
+  select {
+    background-color: var(--surface-1);
+    border: 1px solid var(--surface-3);
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):focus,
+  textarea:focus,
+  select:focus {
+    border-color: var(--brand-color);
+    outline: none;
+    box-shadow: 0 0 0 2px
+      color-mix(in srgb, var(--brand-color) 25%, transparent);
+  }
+}
+
+/* ==========================================================================
+   Button Overrides
+   ========================================================================== */
+
+/* Secondary button - improve border visibility */
+.p-button-secondary {
+  border-color: var(--surface-3);
+}
+
+@media (--OSdark) {
+  .p-button-secondary {
+    border-color: var(--text-color-2);
+  }
+}
+
 /* PhotoSwipe video support */
 .pswp__video {
   width: 100%;
