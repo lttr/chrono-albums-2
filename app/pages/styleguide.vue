@@ -84,21 +84,26 @@
       <h2>Components</h2>
 
       <h3>Buttons</h3>
+      <p class="text-muted">
+        Use <code>.p-button-brand</code> for primary actions,
+        <code>.p-button-secondary</code> for cancel/back.
+      </p>
       <div class="component-row">
-        <button class="p-button p-button-brand">Primary</button>
-        <button class="p-button p-button-secondary">Secondary</button>
-        <button class="p-button">Default</button>
+        <button class="p-button p-button-brand">Create</button>
+        <button class="p-button p-button-secondary">Cancel</button>
       </div>
       <div class="component-row">
         <button class="p-button p-button-small">Small</button>
-        <button class="p-button" disabled>Disabled</button>
+        <button class="p-button p-button-brand" disabled>Disabled</button>
       </div>
-
-      <h3>Alerts</h3>
-      <div class="p-flow">
-        <AlertsTheAlert type="success">Success message</AlertsTheAlert>
-        <AlertsTheAlert type="error">Error message</AlertsTheAlert>
-        <AlertsTheAlert type="info">Info message</AlertsTheAlert>
+      <p class="text-muted">Links as buttons (navigation):</p>
+      <div class="component-row">
+        <NuxtLink to="/styleguide" class="p-button p-button-brand"
+          >Link Button</NuxtLink
+        >
+        <NuxtLink to="/styleguide" class="p-button p-button-secondary"
+          >Back</NuxtLink
+        >
       </div>
 
       <h3>Admin Cards</h3>
@@ -151,16 +156,6 @@
         </AdminCard>
       </div>
 
-      <h3>Photo Frame</h3>
-      <div
-        class="photo-frame"
-        style="
-          max-width: 200px;
-          aspect-ratio: 4/3;
-          background: var(--surface-2);
-        "
-      ></div>
-
       <h3>Form Controls</h3>
       <div class="form-demo">
         <div class="p-form-group">
@@ -191,24 +186,6 @@
             Checkbox option
           </label>
         </div>
-      </div>
-
-      <h3>Navigation</h3>
-      <nav class="breadcrumb-demo">
-        <a href="#">Admin</a>
-        <span class="separator">›</span>
-        <a href="#">Projects</a>
-        <span class="separator">›</span>
-        <span class="current">Album Name</span>
-      </nav>
-
-      <h3>States</h3>
-      <div class="states-demo">
-        <div class="state-item">
-          <span class="loading-spinner"></span>
-          <span>Loading...</span>
-        </div>
-        <div class="state-item empty-state">No items found</div>
       </div>
     </section>
 
@@ -375,67 +352,5 @@
   flex-direction: column;
   gap: var(--space-4);
   max-width: 400px;
-}
-
-/* Breadcrumb demo */
-.breadcrumb-demo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--font-size--1);
-  color: var(--text-color-2);
-
-  a {
-    color: var(--text-color-2);
-    text-decoration: none;
-
-    &:hover {
-      color: var(--brand-color);
-    }
-  }
-
-  .separator {
-    opacity: 0.5;
-  }
-
-  .current {
-    color: var(--text-color-1);
-  }
-}
-
-/* States demo */
-.states-demo {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
-
-.state-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-3);
-  background: var(--surface-1);
-  border-radius: var(--radius-2);
-}
-
-.loading-spinner {
-  width: 1em;
-  height: 1em;
-  border: 2px solid var(--surface-3);
-  border-top-color: var(--brand-color);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.empty-state {
-  color: var(--text-color-2);
-  font-style: italic;
 }
 </style>
