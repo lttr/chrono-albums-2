@@ -17,8 +17,7 @@
 
 **Remaining:**
 
-- Video poster frame generation (ffmpeg)
-- Video playback in grid
+- None - all phases complete!
 
 ---
 
@@ -213,8 +212,10 @@ Phase 4: Video Support ✅ COMPLETE
 ├── 9. Video Transcoding (Async)
 └── 10. Video Player Integration (grid display)
 
-Phase 5: Video in Lightbox ← NEXT
+Phase 5: Video in Lightbox ✅ COMPLETE
 └── 11. Video Lightbox Integration (PhotoSwipe custom content)
+
+🎉 ALL PHASES COMPLETE
 ```
 
 ---
@@ -260,22 +261,22 @@ Phase 5: Video in Lightbox ← NEXT
 
 - [ ] **6. SSR + Caching** (deferred - private app)
 
-### Phase 4: Video Support
+### Phase 4: Video Support ✅
 
-- [ ] **8. Video Variant Pipeline (Sync)**
-  - [ ] Add ffmpeg-static and fluent-ffmpeg dependencies
-  - [ ] Create `server/utils/video-variants.ts` (poster extraction)
-  - [ ] Extract first frame as poster via ffmpeg
-  - [ ] Generate poster variants (full, thumb, LQIP) via Sharp
-  - [ ] Update upload endpoint to handle videos
-  - [ ] Add `processing` column to media schema
+- [x] **8. Video Variant Pipeline (Sync)** (commit `b27b3a9`)
+  - [x] Add ffmpeg-static, ffprobe-static, fluent-ffmpeg dependencies
+  - [x] Create `server/utils/video-variants.ts` (poster extraction)
+  - [x] Extract first frame as poster via ffmpeg
+  - [x] Generate poster variants (full, thumb, LQIP) via Sharp
+  - [x] Update upload endpoint to handle videos
+  - [x] Add `processing` column to media schema
 
-- [ ] **9. Video Transcoding (Async)**
-  - [ ] Create `server/utils/video-jobs.ts` (background queue)
-  - [ ] Implement transcodeVideo() - h264, 1080p max, faststart
-  - [ ] Enqueue transcode job after upload
-  - [ ] Update `processing` flag when complete
-  - [ ] Handle serving while processing (202 or serve original)
+- [x] **9. Video Transcoding (Async)** (commit `b27b3a9`)
+  - [x] Create `server/utils/video-jobs.ts` (background queue)
+  - [x] Implement transcodeVideo() - h264, 1080p max, faststart
+  - [x] Enqueue transcode job after upload
+  - [x] Update `processing` flag when complete
+  - [x] Handle serving while processing (serve original)
 
 - [x] **10. Video Player Integration**
   - [x] Create VideoGridItem component with play overlay
@@ -283,13 +284,14 @@ Phase 5: Video in Lightbox ← NEXT
   - [x] Update media serving route for video/poster variants
   - [x] Show processing indicator if video not ready
 
-### Phase 5: Video in Lightbox
+### Phase 5: Video in Lightbox ✅
 
-- [ ] **11. Video Lightbox Integration**
-  - [ ] Extend useLightbox to support video slides (PhotoSwipe custom content API)
-  - [ ] Update VideoGridItem to emit click events (like GridItem)
-  - [ ] Handle video autoplay/pause on slide change
-  - [ ] Remove inline player logic from VideoGridItem
+- [x] **11. Video Lightbox Integration** (commit `17e9199`)
+  - [x] Extend useLightbox to support video slides (PhotoSwipe custom content API)
+  - [x] Update VideoGridItem to emit click events (like GridItem)
+  - [x] Handle video autoplay/pause on slide change
+  - [x] Duration badge on video thumbnails
+  - [x] Video CSS styles (`.pswp__video`)
 
 ---
 
