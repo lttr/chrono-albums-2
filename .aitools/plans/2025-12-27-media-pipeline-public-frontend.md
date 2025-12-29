@@ -1,25 +1,24 @@
-# High-Level Implementation Plan: Public Photo Album
+# High-Level Implementation Plan: Public Media Album
 
 ## Current State Summary
 
-**Exists:**
+**Completed:**
 
 - Database schema (Project → Category → Album → Media)
-- Basic CRUD APIs for all entities
-- Client-side HEIC→JPEG conversion + compression (3000px max)
-- Single-file upload to NuxtHub blob storage
-- Simple CSS grid display (not justified)
+- CRUD APIs for all entities
+- Client-side HEIC→JPEG conversion + compression
+- Multi-tier image variants (Original/Full/Thumbnail/LQIP) via Sharp
+- NuxtHub blob storage with variant paths
+- Justified grid layout (justified-layout)
+- PhotoSwipe lightbox with gestures
+- Timeline view (albums grouped by year)
 - Auth layer with project membership
+- Accessibility polish (focus management, keyboard nav)
 
-**Missing (per specs):**
+**Remaining:**
 
-- Multi-tier image variants (Original/Full/Thumbnail/LQIP)
-- Server-side Sharp processing
-- Justified grid layout
-- Lightbox with gestures
-- Timeline view
-- Video poster frames
-- SSR caching strategy
+- Video poster frame generation (ffmpeg)
+- Video playback in grid
 
 ---
 
@@ -193,84 +192,108 @@ interface MediaItem {
 
 ---
 
-## Implementation Order (Suggested)
+## Implementation Order
 
 ```
-Phase 1: Image Pipeline Foundation
+Phase 1: Image Pipeline Foundation ✅ COMPLETE
 ├── 1. Image Variant Pipeline
 └── 2. Media API Enhancement
 
-Phase 2: Core Frontend
+Phase 2: Core Frontend ✅ COMPLETE
 ├── 3. Timeline View
 ├── 4. Album Grid (Justified Layout)
 └── 5. Lightbox
 
-Phase 3: Polish
-├── 6. SSR + Caching
-└── 7. Accessibility + SEO
-```
+Phase 3: Polish ✅ COMPLETE
+├── 6. SSR + Caching (deferred - private app)
+└── 7. Accessibility
 
-**Deferred:** Video support (poster frames, player) - revisit after images complete
+Phase 4: Video Support ← NEXT
+├── 8. Video Variant Pipeline (ffmpeg poster extraction)
+└── 9. Video Player Integration
+```
 
 ---
 
 ## Progress Tracking
 
-### Phase 1: Image Pipeline Foundation
+### Phase 1: Image Pipeline Foundation ✅
 
-- [ ] **1. Image Variant Pipeline**
-  - [ ] Add Sharp dependency
-  - [ ] Create `server/utils/image-variants.ts`
-  - [ ] Update DB schema (lqip, thumbnailPath, fullPath columns)
-  - [ ] Run migrations
-  - [ ] Update upload endpoint to generate variants
-  - [ ] Update MediaUploader.vue to use new response
-  - [ ] Test Sharp in NuxtHub preview deployment
+- [x] **1. Image Variant Pipeline** (commit `e03675d`)
+  - [x] Add Sharp dependency
+  - [x] Create `server/utils/image-variants.ts`
+  - [x] Update DB schema (lqip, thumbnailPath, fullPath columns)
+  - [x] Update upload endpoint to generate variants
 
-- [ ] **2. Media API Enhancement**
-  - [ ] Update album by-slug API to return variant URLs
-  - [ ] Create `/photos/[...path].ts` serving route with cache headers
-  - [ ] Add cache headers to existing `/m/[slug]` route
+- [x] **2. Media API Enhancement**
+  - [x] Update album by-slug API to return variant URLs
+  - [x] Create `/m/[...path].ts` serving route with cache headers
 
-### Phase 2: Core Frontend
+### Phase 2: Core Frontend ✅
 
-- [ ] **3. Timeline View**
-  - [ ] Create timeline API endpoint
-  - [ ] Build AlbumCard component
-  - [ ] Build YearSection component
-  - [ ] Rewrite index.vue
+- [x] **3. Timeline View** (commit `cce2b18`)
+  - [x] Create timeline API endpoint
+  - [x] Build AlbumCard component
+  - [x] Build YearSection component
+  - [x] Rewrite index.vue
 
-- [ ] **4. Album Grid (Justified Layout)**
-  - [ ] Add justified-layout dependency
-  - [ ] Create JustifiedGrid component
-  - [ ] Create GridItem component with LQIP
-  - [ ] Rewrite album page
+- [x] **4. Album Grid (Justified Layout)**
+  - [x] Add justified-layout dependency
+  - [x] Create JustifiedGrid component
+  - [x] Create GridItem component with LQIP
 
-- [ ] **5. Lightbox**
-  - [ ] Add photoswipe dependency
-  - [ ] Create useLightbox composable
-  - [ ] Integrate with grid
+- [x] **5. Lightbox**
+  - [x] Add photoswipe dependency
+  - [x] Create useLightbox composable
+  - [x] Integrate with grid
 
-### Phase 3: Polish
+### Phase 3: Polish ✅
 
-- [ ] **6. SSR + Caching**
-  - [ ] Add routeRules in nuxt.config.ts
-  - [ ] Verify cache headers
+- [x] **7. Accessibility** (commit `ed154a4`)
+  - [x] Keyboard navigation
+  - [x] Focus management (restore after lightbox close)
+  - [x] Alt text from filename
 
-- [ ] **7. Accessibility + SEO**
-  - [ ] Add Schema.org JSON-LD
-  - [ ] Keyboard navigation
-  - [ ] Focus management
-  - [ ] Meta tags
+- [ ] **6. SSR + Caching** (deferred - private app)
+
+### Phase 4: Video Support
+
+- [ ] **8. Video Variant Pipeline (Sync)**
+  - [ ] Add ffmpeg-static and fluent-ffmpeg dependencies
+  - [ ] Create `server/utils/video-variants.ts` (poster extraction)
+  - [ ] Extract first frame as poster via ffmpeg
+  - [ ] Generate poster variants (full, thumb, LQIP) via Sharp
+  - [ ] Update upload endpoint to handle videos
+  - [ ] Add `processing` column to media schema
+
+- [ ] **9. Video Transcoding (Async)**
+  - [ ] Create `server/utils/video-jobs.ts` (background queue)
+  - [ ] Implement transcodeVideo() - h264, 1080p max, faststart
+  - [ ] Enqueue transcode job after upload
+  - [ ] Update `processing` flag when complete
+  - [ ] Handle serving while processing (202 or serve original)
+
+- [ ] **10. Video Player Integration**
+  - [ ] Create VideoGridItem component with play overlay
+  - [ ] Inline video player on click
+  - [ ] Update JustifiedGrid to handle video items
+  - [ ] Update media serving route for video/poster variants
+  - [ ] Show processing indicator if video not ready
 
 ---
 
 ## Dependencies to Add
 
 ```bash
+# Phase 1-3 (already installed)
 pnpm add sharp                    # Server-side image processing
 pnpm add justified-layout         # Flickr grid algorithm
 pnpm add photoswipe               # Lightbox with gestures
+
+# Phase 4 (video support)
+pnpm add ffmpeg-static            # Bundled ffmpeg binary (~70MB)
+pnpm add fluent-ffmpeg            # Node.js ffmpeg wrapper
+pnpm add -D @types/fluent-ffmpeg  # TypeScript types
 ```
 
 ---
@@ -287,14 +310,17 @@ ALTER TABLE media ADD COLUMN full_path TEXT;
 
 ## Decisions Made
 
-- **Video support:** Deferred to future phase
+- **Video support:** Phase 4 - ffmpeg-static for poster extraction + transcoding
+- **Video transcoding:** Async background job, h264 mp4, 1080p max, faststart
 - **Migration:** Not needed (no existing media)
 - **Storage:** NuxtHub blob (Cloudflare R2)
+- **SSR caching:** Deferred (private app, not needed)
+- **SEO:** Deferred (private app, not needed)
+- **Deployment:** Coolify with Nixpacks (ffmpeg-static bundles binary)
 
 ## Remaining Questions
 
-1. **Cache invalidation** - On-demand purge or accept eventual consistency with short TTL?
-2. **Original storage** - Keep originals in same blob bucket or separate path?
+None - all decisions made.
 
 ---
 
@@ -507,3 +533,52 @@ Trade-off: On-demand is slower first load but simpler deployment. Can cache aggr
 3. **Use PhotoSwipe directly** - No wrapper needed, better control
 4. **Create `useJustifiedLayout` composable** - Wrap the library for reactive container width
 5. **Consider IPX provider** - `@nuxt/image` can use Sharp internally for on-demand resizing as fallback
+
+---
+
+### ffmpeg-static ✅ Viable (2025-12-29)
+
+**Status:** Production-ready for Nixpacks/Docker deployment
+
+- [ffmpeg-static](https://www.npmjs.com/package/ffmpeg-static) - Bundles ffmpeg binary
+- [fluent-ffmpeg](https://www.npmjs.com/package/fluent-ffmpeg) - Node.js wrapper
+
+**Installation:**
+
+```bash
+pnpm add ffmpeg-static fluent-ffmpeg
+pnpm add -D @types/fluent-ffmpeg
+```
+
+**Usage for poster extraction:**
+
+```typescript
+import ffmpeg from "fluent-ffmpeg"
+import ffmpegPath from "ffmpeg-static"
+
+ffmpeg.setFfmpegPath(ffmpegPath!)
+
+// Extract first frame
+ffmpeg(videoPath).screenshots({
+  count: 1,
+  timestamps: ["0"],
+  filename: "poster.jpg",
+  folder: outputDir,
+})
+```
+
+**Deployment notes:**
+
+- Nixpacks: Works out of the box (binary bundled in node_modules)
+- Alternative: Add `aptPkgs = ["ffmpeg"]` to nixpacks.toml for system ffmpeg
+- Size: ~70MB added to node_modules
+
+**Fallback if issues:**
+
+```toml
+# nixpacks.toml
+[phases.setup]
+aptPkgs = ["ffmpeg"]
+```
+
+Then use fluent-ffmpeg without ffmpeg-static (relies on system PATH).

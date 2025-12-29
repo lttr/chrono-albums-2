@@ -1,6 +1,6 @@
 # Public Frontend Spec
 
-Public-facing photo album views. Complements `image-pipeline.md`.
+Public-facing photo album views. Complements `media-pipeline.md`.
 
 ## Overview
 
@@ -58,9 +58,47 @@ Flickr's justified-layout algorithm:
 
 **Videos:**
 
-- Poster frame thumbnail
-- Play icon overlay (centered, white with shadow)
-- Click opens video player (not lightbox)
+- Poster frame thumbnail (same LQIP + thumbnail pattern as images)
+- Play icon overlay (centered, white with drop shadow)
+- Click opens inline video player (not lightbox)
+- Native `<video>` controls for playback
+
+### Video Player
+
+On video click:
+
+1. Replace thumbnail with `<video>` element
+2. Set `poster` attribute to full poster URL
+3. Autoplay with controls visible
+4. Click outside or press Escape to close and restore thumbnail
+
+**Processing state:** If `media.processing === true`, show a "Processing..." overlay instead of play icon. Video not yet playable.
+
+```vue
+<template>
+  <div class="video-container">
+    <video
+      v-if="playing && !media.processing"
+      :src="media.fullUrl"
+      :poster="media.posterUrl"
+      controls
+      autoplay
+      @ended="playing = false"
+    />
+    <button
+      v-else
+      class="video-thumb"
+      @click="!media.processing && (playing = true)"
+    >
+      <img :src="media.thumbnailUrl" :alt="media.alt" />
+      <span v-if="media.processing" class="processing-indicator"
+        >Processing...</span
+      >
+      <span v-else class="play-icon">▶</span>
+    </button>
+  </div>
+</template>
+```
 
 ## Lightbox
 
@@ -107,9 +145,12 @@ interface MediaItem {
   width: number
   height: number
   dateTaken: string | null
-  lqip: string // base64 data URI
-  thumbnailUrl: string // 600px WebP
-  fullUrl: string // 2000px progressive JPEG
+  lqip: string // base64 data URI (poster LQIP for videos)
+  thumbnailUrl: string // 600px WebP (poster thumb for videos)
+  fullUrl: string // 2000px JPEG for images, web-optimized mp4 for videos
+  posterUrl?: string // video only: full poster for player
+  duration?: number // video only: duration in seconds
+  processing?: boolean // video only: true while transcoding
 }
 ```
 
@@ -140,7 +181,9 @@ interface MediaItem {
 
 ## Dependencies
 
-| Package            | Purpose                 |
-| ------------------ | ----------------------- |
-| `justified-layout` | Flickr's grid algorithm |
-| `photoswipe` v5    | Lightbox with gestures  |
+| Package            | Purpose                  |
+| ------------------ | ------------------------ |
+| `justified-layout` | Flickr's grid algorithm  |
+| `photoswipe` v5    | Lightbox with gestures   |
+| `ffmpeg-static`    | Bundled ffmpeg for video |
+| `fluent-ffmpeg`    | Node.js ffmpeg wrapper   |
