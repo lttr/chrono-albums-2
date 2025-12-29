@@ -1,5 +1,6 @@
 import ffmpeg from "fluent-ffmpeg"
 import ffmpegPath from "ffmpeg-static"
+import ffprobePath from "ffprobe-static"
 import { createWriteStream } from "fs"
 import { readFile } from "fs/promises"
 import { join } from "path"
@@ -10,6 +11,7 @@ import { pipeline } from "stream/promises"
 import { blob } from "hub:blob"
 
 ffmpeg.setFfmpegPath(ffmpegPath!)
+ffmpeg.setFfprobePath(ffprobePath.path)
 
 interface VideoJob {
   mediaId: string

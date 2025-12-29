@@ -1,10 +1,12 @@
 import ffmpeg from "fluent-ffmpeg"
 import ffmpegPath from "ffmpeg-static"
+import ffprobePath from "ffprobe-static"
 import sharp from "sharp"
 import { mkdir, unlink } from "fs/promises"
 import { existsSync } from "fs"
 
 ffmpeg.setFfmpegPath(ffmpegPath!)
+ffmpeg.setFfprobePath(ffprobePath.path)
 
 // Dedicated temp directory for video processing
 const VIDEO_TEMP_DIR = ".data/temp/videos"
