@@ -24,6 +24,7 @@ export function useAuth() {
       session: mockSession,
       user: computed(() => mockUser.value),
       isLoggedIn: computed(() => true),
+      isPending: computed(() => false),
       signInWithGoogle: async () => {
         const route = useRoute()
         const redirectTo = route.query.redirect as string | undefined
@@ -41,6 +42,7 @@ export function useAuth() {
   const client = getAuthClient()
   const session = client.useSession()
 
+  const isPending = computed(() => session.value.isPending ?? false)
   const isLoggedIn = computed(() => !!session.value.data?.user)
   const user = computed(() => session.value.data?.user ?? null)
 
@@ -66,6 +68,7 @@ export function useAuth() {
     session,
     user,
     isLoggedIn,
+    isPending,
     signInWithGoogle,
     signOut,
   }
