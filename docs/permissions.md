@@ -8,26 +8,26 @@ Chrono Albums uses a project-centric access model. Users can participate in mult
 
 Users authenticate via Google OAuth. A user account consists of:
 
-- **Name** – display name from Google
-- **Email** – unique identifier, from Google account
+- **Name** - display name from Google
+- **Email** - unique identifier, from Google account
 
 A single user can be associated with many projects, with a different role in each.
 
 ## Projects & Membership
 
 ```
-User A ──┬──→ Project X (owner)
-         ├──→ Project Y (member)
-         └──→ Project Z (owner)
+User A ──┬──► Project X (owner)
+         ├──► Project Y (member)
+         └──► Project Z (owner)
 
-User B ──┬──→ Project X (member)
-         └──→ Project Y (owner)
+User B ──┬──► Project X (member)
+         └──► Project Y (owner)
 ```
 
 Each project has:
 
-- **Exactly one owner** – the user who created the project
-- **Zero or more members** – users invited by the owner
+- **Exactly one owner** - the user who created the project
+- **Zero or more members** - users invited by the owner
 
 Ownership cannot be transferred (for now).
 
@@ -70,9 +70,28 @@ Roles are scoped to individual projects. A user's role in Project A has no effec
 | Edit media      |   ✓   |   ✓    |
 | Delete media    |   ✓   |   ✓    |
 
+## Composables
+
+### `useAccess()`
+
+Global access state - fetches and caches user's memberships across all projects.
+
+```ts
+const { memberships, getProjectRole, hasProjectAccess, isProjectOwner } =
+  useAccess()
+```
+
+### `useProjectAccess(projectId)`
+
+Permission helpers for a specific project - returns reactive computed properties.
+
+```ts
+const { role, isOwner, isMember, canEditProject, canDeleteAlbum, ... } = useProjectAccess(projectId)
+```
+
 ## Summary
 
-- **One owner per project** – the creator
-- **Members are optional** – owner can work alone or invite others
-- **Roles are per-project** – no global admin or team hierarchy
-- **Owner has full control** – members can contribute but not delete structural elements (project, categories)
+- **One owner per project** - the creator
+- **Members are optional** - owner can work alone or invite others
+- **Roles are per-project** - no global admin or team hierarchy
+- **Owner has full control** - members can contribute but not delete structural elements (project, categories)
