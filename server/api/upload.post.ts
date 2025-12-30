@@ -16,7 +16,6 @@ import {
   ensureTempDir,
   cleanupTempFile,
 } from "../utils/video-variants"
-import { enqueueTranscode } from "../utils/video-jobs"
 
 export interface UploadResponse {
   success: boolean
@@ -164,13 +163,6 @@ export default defineEventHandler(async (event): Promise<UploadResponse> => {
           blob.put(posterPath, posterFull, { addRandomSuffix: false }),
           blob.put(thumbnailPath, posterThumb, { addRandomSuffix: false }),
         ])
-
-        // Enqueue async transcoding
-        enqueueTranscode({
-          mediaId: id,
-          originalPath,
-          webPath: `videos/${id}.mp4`,
-        })
 
         return {
           success: true,
