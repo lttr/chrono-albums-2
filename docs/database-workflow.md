@@ -14,7 +14,6 @@ nr db:generate          # Creates new migration file
 nr db:migrate           # Applies it
 
 # Full reset (wipe + reseed)
-# Note: db:seed requires dev server running
 nr db:reset         # Resets and seeds in one command
 ```
 
