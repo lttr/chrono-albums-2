@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "@lttr/chrono-albums-2",
   "private": true,
   "type": "module",
   "scripts": {
