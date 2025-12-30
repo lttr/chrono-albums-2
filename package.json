@@ -24,6 +24,7 @@
   "packageManager": "pnpm@10.17.1",
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@sentry/cli",
       "esbuild",
       "exifreader",
       "ffmpeg-static"
@@ -33,6 +34,7 @@
     "@libsql/client": "^0.15.15",
     "@lttr/puleo": "^0.8.1",
     "@nuxthub/core": "^0.10.1",
+    "@sentry/nuxt": "^10.32.1",
     "@zod/core": "^0.11.6",
     "better-auth": "^1.4.7",
     "compressorjs": "^1.2.1",

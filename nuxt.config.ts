@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "@vueuse/nuxt",
     "@lttr/nuxt-puleo",
+    "@sentry/nuxt/module",
   ],
   components: [
     {
@@ -31,6 +32,9 @@ export default defineNuxtConfig({
     fallback: "light",
     classPrefix: "is-",
     classSuffix: "",
+  },
+  sourcemap: {
+    client: "hidden",
   },
   experimental: {
     typedPages: true,
@@ -63,5 +67,9 @@ export default defineNuxtConfig({
   plausible: {
     ignoredHostnames: ["localhost"],
     apiHost: "https://plausible.lttr.cz",
+  },
+  sentry: {
+    org: "lukas-trumm",
+    project: "chrono-albums",
   },
 })
