@@ -3,7 +3,10 @@ export default defineNuxtRouteMiddleware((to) => {
 
   // Protect admin routes
   if (to.path.startsWith("/admin") && !isLoggedIn.value) {
-    return navigateTo("/login")
+    return navigateTo({
+      path: "/login",
+      query: { redirect: to.fullPath },
+    })
   }
 
   // Redirect logged-in users away from login page

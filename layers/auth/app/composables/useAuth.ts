@@ -25,7 +25,11 @@ export function useAuth() {
       user: computed(() => mockUser.value),
       isLoggedIn: computed(() => true),
       signInWithGoogle: async () => {
-        await navigateTo("/admin")
+        const route = useRoute()
+        const redirectTo = route.query.redirect as string | undefined
+        const callbackURL =
+          redirectTo && redirectTo !== "/" ? redirectTo : "/admin"
+        await navigateTo(callbackURL)
       },
       signOut: async () => {
         await navigateTo("/login")
@@ -41,20 +45,21 @@ export function useAuth() {
   const user = computed(() => session.value.data?.user ?? null)
 
   async function signInWithGoogle() {
+    const route = useRoute()
+    const redirectTo = route.query.redirect as string | undefined
+    // Default to /admin if on homepage or no redirect specified
+    const callbackURL = redirectTo && redirectTo !== "/" ? redirectTo : "/admin"
+
     await client.signIn.social({
       provider: "google",
-      callbackURL: "/admin",
+      callbackURL,
     })
   }
 
   async function signOut() {
-    await client.signOut({
-      fetchOptions: {
-        onSuccess: () => {
-          navigateTo("/login")
-        },
-      },
-    })
+    await client.signOut()
+    // Force full page reload to clear client-side session state
+    await navigateTo("/login", { external: true })
   }
 
   return {
