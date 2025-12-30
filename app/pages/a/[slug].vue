@@ -2,16 +2,16 @@
   <div class="album-page">
     <header v-if="data?.album" class="album-header">
       <nav class="breadcrumb">
-        <NuxtLink to="/">Albums</NuxtLink>
+        <NuxtLink class="link" to="/">Albums</NuxtLink>
         <template v-if="data.album.projectSlug">
           <span>/</span>
-          <NuxtLink :to="`/p/${data.album.projectSlug}`">
+          <NuxtLink class="link" :to="`/p/${data.album.projectSlug}`">
             {{ data.album.projectName }}
           </NuxtLink>
         </template>
         <template v-if="data.album.categorySlug">
           <span>/</span>
-          <NuxtLink :to="`/c/${data.album.categorySlug}`">
+          <NuxtLink class="link" :to="`/c/${data.album.categorySlug}`">
             {{ data.album.categoryName }}
           </NuxtLink>
         </template>
@@ -106,12 +106,12 @@ useHead({
   color: var(--text-color-2);
 }
 
-.breadcrumb a {
+.link {
   color: inherit;
   text-decoration: underline;
 }
 
-.breadcrumb a:hover {
+.link:hover {
   color: var(--text-color-1);
 }
 

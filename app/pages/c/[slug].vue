@@ -2,7 +2,11 @@
   <div class="p-stack">
     <header v-if="data?.category" class="category-header">
       <nav class="breadcrumb">
-        <NuxtLink v-if="data.project" :to="`/p/${data.project.slug}`">
+        <NuxtLink
+          v-if="data.project"
+          class="link"
+          :to="`/p/${data.project.slug}`"
+        >
           {{ data.project.name }}
         </NuxtLink>
         <span>/</span>
@@ -55,12 +59,12 @@ const { data, error } = useFetch(`/api/categories/by-slug/${route.params.slug}`)
   color: var(--text-color-2);
 }
 
-.breadcrumb a {
+.link {
   color: inherit;
   text-decoration: underline;
 }
 
-.breadcrumb a:hover {
+.link:hover {
   color: var(--text-color-1);
 }
 

@@ -121,6 +121,7 @@ function handleClick(event: MouseEvent) {
   transition: opacity 0.3s ease;
 }
 
+/* eslint-disable-next-line vue-scoped-css/no-unused-selector -- class added dynamically */
 .video-grid-item__img.loaded {
   opacity: 1;
 }

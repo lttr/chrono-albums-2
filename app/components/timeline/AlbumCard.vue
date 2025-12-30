@@ -103,6 +103,7 @@ function formatMonth(month: number): string {
   transition: opacity 0.3s ease;
 }
 
+/* eslint-disable-next-line vue-scoped-css/no-unused-selector -- class added dynamically */
 .album-card__img.loaded {
   opacity: 1;
 }
