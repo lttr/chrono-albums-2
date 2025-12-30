@@ -1,5 +1,4 @@
 import { eq, and, lt, sql } from "drizzle-orm"
-import { nanoid } from "nanoid"
 import { db, schema } from "hub:db"
 import { blob } from "hub:blob"
 
@@ -14,7 +13,7 @@ interface EnqueueOptions {
  * Add job to queue
  */
 export async function enqueueJob(options: EnqueueOptions): Promise<string> {
-  const id = nanoid()
+  const id = crypto.randomUUID()
 
   await db.insert(schema.job).values({
     id,
