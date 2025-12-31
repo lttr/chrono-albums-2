@@ -1,7 +1,15 @@
 import { count, desc, eq } from "drizzle-orm"
 import { db, schema } from "hub:db"
 
-export default defineEventHandler(async () => {
+export default defineEventHandler(async (event) => {
+  const session = await getAuthSession(event)
+  if (!session?.user) {
+    throw createError({
+      statusCode: 401,
+      message: "Unauthorized",
+    })
+  }
+
   const data = await db
     .select({
       id: schema.album.id,

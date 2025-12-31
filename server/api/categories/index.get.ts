@@ -4,7 +4,15 @@ import type { Category } from "~~/shared/types/db"
 
 export type GetCategory = Pick<Category, "id" | "name" | "slug" | "projectId">
 
-export default defineEventHandler(async (): Promise<GetCategory[]> => {
+export default defineEventHandler(async (event): Promise<GetCategory[]> => {
+  const session = await getAuthSession(event)
+  if (!session?.user) {
+    throw createError({
+      statusCode: 401,
+      message: "Unauthorized",
+    })
+  }
+
   const data = await db
     .select({
       id: schema.category.id,

@@ -4,7 +4,15 @@ import type { Project } from "~~/shared/types/db"
 
 export type GetProject = Pick<Project, "id" | "name" | "slug">
 
-export default defineEventHandler(async (): Promise<GetProject[]> => {
+export default defineEventHandler(async (event): Promise<GetProject[]> => {
+  const session = await getAuthSession(event)
+  if (!session?.user) {
+    throw createError({
+      statusCode: 401,
+      message: "Unauthorized",
+    })
+  }
+
   const data = await db
     .select({
       id: schema.project.id,
