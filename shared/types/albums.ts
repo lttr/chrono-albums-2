@@ -44,7 +44,8 @@ export const AlbumSearchParamsSchema = z.object({
     ),
   categoryId: z
     .string(errorMessages.category)
-    .check(z.minLength(1, errorMessages.category)),
+    .check(z.minLength(1, errorMessages.category))
+    .optional(),
   projectId: z
     .string(errorMessages.project)
     .check(z.minLength(1, errorMessages.project)),
