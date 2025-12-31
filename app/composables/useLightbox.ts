@@ -151,6 +151,34 @@ export function useLightbox(media: Ref<LightboxMedia[]>) {
       }, 50)
     })
 
+    // Register download button
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ;(lightbox.value as any).on("uiRegisterElement", (e: any) => {
+      e.uiElement.registerElement({
+        name: "download-button",
+        order: 8,
+        isButton: true,
+        tagName: "a",
+        html: {
+          isCustomSVG: true,
+          inner:
+            '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+          outlineID: "pswp__icn-download",
+        },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        onInit: (el: HTMLAnchorElement, pswp: any) => {
+          el.setAttribute("download", "")
+          el.setAttribute("target", "_blank")
+          el.setAttribute("rel", "noopener")
+          el.setAttribute("title", "Download")
+
+          pswp.on("change", () => {
+            el.href = pswp.currSlide?.data.src || ""
+          })
+        },
+      })
+    })
+
     lightbox.value.init()
   })
 
