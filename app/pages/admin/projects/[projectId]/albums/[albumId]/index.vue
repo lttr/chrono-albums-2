@@ -154,7 +154,6 @@ useHead({
 .media-item {
   margin: 0;
   overflow: hidden;
-  border-radius: var(--radius-2);
   background: var(--surface-0);
 }
 
@@ -165,10 +164,11 @@ useHead({
   height: auto;
   aspect-ratio: 4/3;
   object-fit: cover;
-  border-radius: var(--radius-2) var(--radius-2) 0 0;
+  border-radius: var(--radius-2);
 }
 
 .media-item figcaption {
+  margin-block-start: 0;
   padding: var(--space-1) var(--space-2);
   font-size: var(--font-size--1);
   color: var(--text-color-2);
