@@ -142,7 +142,11 @@ a.p-button {
   }
 }
 
-/* PhotoSwipe video support */
+/* PhotoSwipe overrides */
+.pswp__bg {
+  background: rgba(0, 0, 0, 0.95);
+}
+
 .pswp__video {
   width: 100%;
   height: 100%;

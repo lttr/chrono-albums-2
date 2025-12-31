@@ -165,10 +165,11 @@ useHead({
   height: auto;
   aspect-ratio: 4/3;
   object-fit: cover;
+  border-radius: var(--radius-2) var(--radius-2) 0 0;
 }
 
 .media-item figcaption {
-  padding: var(--space-2);
+  padding: var(--space-1) var(--space-2);
   font-size: var(--font-size--1);
   color: var(--text-color-2);
   white-space: nowrap;
