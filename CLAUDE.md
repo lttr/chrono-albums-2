@@ -70,3 +70,13 @@ Derive scope from the area of change (e.g., `upload`, `album`, `api`, `db`, `ui`
 - **Styling**: `@lttr/puleo` CSS framework
 - **Typed routes**: `experimental.typedPages: true`
 - **Image handling**: HEIC conversion via `heic2any`, compression via `compressorjs`, EXIF via `exifreader`
+
+## Production Deployment
+
+Coolify-managed Node.js server in Docker on VPS (not Cloudflare Workers).
+
+- **Host storage**: `/data/coolify/applications/<app-id>/data/`
+- **Container mount**: `/app/.data` (db, blob, temp)
+- **Reverse proxy**: Traefik (managed by Coolify)
+
+See `docs/production-deployment.md` for details.
