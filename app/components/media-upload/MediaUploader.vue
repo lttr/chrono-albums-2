@@ -81,6 +81,27 @@ const setError = (message: string) => {
 // File processing
 //
 
+// Limit concurrent uploads to avoid overwhelming the server
+const UPLOAD_CONCURRENCY = 3
+
+async function processWithLimit<T>(
+  items: T[],
+  fn: (item: T) => Promise<void>,
+  limit: number,
+) {
+  const executing: Promise<void>[] = []
+  for (const item of items) {
+    const p = fn(item).then(() => {
+      executing.splice(executing.indexOf(p), 1)
+    })
+    executing.push(p)
+    if (executing.length >= limit) {
+      await Promise.race(executing)
+    }
+  }
+  await Promise.all(executing)
+}
+
 async function onFilesSelected(files: File[]) {
   if (fileStatuses.value.length + files.length > maxFiles) {
     setError(
@@ -114,15 +135,11 @@ async function onFilesSelected(files: File[]) {
 
   fileStatuses.value = [...fileStatuses.value, ...newFileStatuses]
 
-  await Promise.all(
-    newFileStatuses
-      .filter((fileStatus) => fileStatus.valid)
-      .map((fileStatus) =>
-        processValidFile(
-          // make sure the passed array is reactive
-          fileStatuses.value.find((status) => status.id === fileStatus.id)!,
-        ),
-      ),
+  await processWithLimit(
+    newFileStatuses.filter((f) => f.valid),
+    (fileStatus) =>
+      processValidFile(fileStatuses.value.find((s) => s.id === fileStatus.id)!),
+    UPLOAD_CONCURRENCY,
   )
 }
 
