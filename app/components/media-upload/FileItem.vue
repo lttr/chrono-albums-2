@@ -1,6 +1,5 @@
 <template>
   <div class="file-item">
-    <div class="progress"></div>
     <div class="media">
       <Icon v-if="fileStatus.kind === 'image'" name="uil-image" />
       <Icon v-if="fileStatus.kind === 'video'" name="uil-video" />
@@ -15,7 +14,13 @@
           </video>
         </template>
       </div>
-      <div class="errors">
+      <div class="status-icon">
+        <div v-if="fileStatus.status === 'pending'" class="pending">
+          <Icon name="uil:clock" title="Čeká ve frontě" />
+        </div>
+        <div v-if="fileStatus.status === 'uploading'" class="uploading">
+          <Icon name="uil:spinner-alt" class="spin" title="Nahrávání..." />
+        </div>
         <div v-if="fileStatus.status === 'success'" class="success">
           <Icon name="uil:check-circle" />
         </div>
@@ -77,6 +82,27 @@ onUnmounted(() => {
   max-width: 15ch;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.pending {
+  color: var(--text-2);
+}
+
+.uploading {
+  color: var(--link-color);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .error {

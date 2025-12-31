@@ -126,7 +126,6 @@ async function onFilesSelected(files: File[]) {
       error,
       file,
       id: crypto.randomUUID(),
-      progress: 0,
       status: "pending" as const,
       kind,
       valid: validationResult.success,
