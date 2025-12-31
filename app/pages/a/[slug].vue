@@ -18,7 +18,7 @@
       </nav>
       <h1>{{ data.album.title }}</h1>
       <p class="album-meta">
-        {{ formatDate(data.album.month, data.album.year) }}
+        {{ formatMonthYear(data.album.month, data.album.year) }}
         <span v-if="data.media.length" class="album-count">
           {{ data.media.length }} photos
         </span>
@@ -50,28 +50,6 @@ const { data, error } = await useFetch(
 )
 
 const { open } = useLightbox(computed(() => data.value?.media ?? []))
-
-const months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-]
-
-function formatDate(month: number | null, year: number): string {
-  if (month) {
-    return `${months[month - 1]} ${year}`
-  }
-  return String(year)
-}
 
 useHead({
   title: () => data.value?.album?.title ?? "Album",
