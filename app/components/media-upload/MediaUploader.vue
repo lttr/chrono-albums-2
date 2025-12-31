@@ -280,7 +280,6 @@ async function uploadFile(data: MediaUploadData): Promise<UploadResponse> {
   })
   formData.append("file", file)
   formData.append("id", data.id)
-  formData.append("albumId", data.album.id)
 
   return await $fetch<UploadResponse>("/api/upload", {
     method: "POST",
