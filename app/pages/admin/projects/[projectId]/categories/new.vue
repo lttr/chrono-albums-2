@@ -46,6 +46,10 @@ definePageMeta({
   pageName: "Nová kategorie",
 })
 
+useHead({
+  title: "Nová kategorie | Admin",
+})
+
 const route = useRoute("admin-projects-projectId-categories-new")
 const router = useRouter()
 const projectId = computed(() => route.params.projectId)

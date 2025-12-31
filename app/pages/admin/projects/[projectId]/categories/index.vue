@@ -49,6 +49,10 @@ const { data: categories } = await useFetch("/api/categories")
 const projectCategories = computed(
   () => categories.value?.filter((c) => c.projectId === projectId.value) || [],
 )
+
+useHead({
+  title: "Kategorie | Admin",
+})
 </script>
 
 <style scoped>

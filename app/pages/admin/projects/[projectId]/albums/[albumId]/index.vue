@@ -75,12 +75,18 @@ const albumId = computed(() => route.params.albumId)
 
 const { data } = useFetch(() => `/api/albums/${albumId.value}`)
 
-// Set breadcrumb data
+// Set breadcrumb data and page title
 const routeMeta = route.meta as { albumTitle?: string }
 watchEffect(() => {
   if (data.value?.album) {
     routeMeta.albumTitle = data.value.album.title
   }
+})
+
+useHead({
+  title: computed(() =>
+    data.value?.album ? `${data.value.album.title} | Admin` : "Album | Admin",
+  ),
 })
 </script>
 

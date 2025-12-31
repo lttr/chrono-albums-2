@@ -35,6 +35,10 @@ definePageMeta({
   pageName: "Profil",
 })
 
+useHead({
+  title: "Profil | Admin",
+})
+
 const { user, signOut } = useAuth()
 
 function handleLogout() {

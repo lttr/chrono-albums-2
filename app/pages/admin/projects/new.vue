@@ -43,6 +43,10 @@ definePageMeta({
   pageName: "Nový projekt",
 })
 
+useHead({
+  title: "Nový projekt | Admin",
+})
+
 const nameId = useId()
 const router = useRouter()
 

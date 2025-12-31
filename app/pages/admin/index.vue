@@ -31,6 +31,10 @@ definePageMeta({
   layout: "admin",
 })
 
+useHead({
+  title: "Přehled | Admin",
+})
+
 const { user } = useAuth()
 
 const { data: projects } = useFetch("/api/projects")

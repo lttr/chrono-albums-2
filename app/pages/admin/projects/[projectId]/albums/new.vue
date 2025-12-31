@@ -78,6 +78,10 @@ definePageMeta({
   pageName: "Nové album",
 })
 
+useHead({
+  title: "Nové album | Admin",
+})
+
 const route = useRoute("admin-projects-projectId-albums-new")
 const router = useRouter()
 const projectId = computed(() => route.params.projectId)

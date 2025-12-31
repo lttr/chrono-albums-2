@@ -78,6 +78,10 @@ const albumsByCategory = computed(() => {
     return a.localeCompare(b, "cs")
   })
 })
+
+useHead({
+  title: "Alba | Admin",
+})
 </script>
 
 <style scoped>

@@ -43,6 +43,10 @@ definePageMeta({
   pageName: "Nahrát média",
 })
 
+useHead({
+  title: "Nahrát média | Admin",
+})
+
 const params = ref<AlbumSearchParams>()
 const prettyError = ref("")
 

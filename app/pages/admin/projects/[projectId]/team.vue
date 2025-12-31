@@ -88,6 +88,10 @@ definePageMeta({
   pageName: "Členové",
 })
 
+useHead({
+  title: "Členové | Admin",
+})
+
 const route = useRoute("admin-projects-projectId-team")
 const projectId = computed(() => route.params.projectId)
 

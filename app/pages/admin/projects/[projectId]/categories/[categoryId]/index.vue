@@ -55,12 +55,18 @@ const categoryAlbums = computed(
   () => albums.value?.filter((a) => a.categoryId === categoryId.value) || [],
 )
 
-// Set breadcrumb data
+// Set breadcrumb data and page title
 const routeMeta = route.meta as { categoryName?: string; projectName?: string }
 watchEffect(() => {
   if (category.value) {
     routeMeta.categoryName = category.value.name
   }
+})
+
+useHead({
+  title: computed(() =>
+    category.value ? `${category.value.name} | Admin` : "Kategorie | Admin",
+  ),
 })
 </script>
 

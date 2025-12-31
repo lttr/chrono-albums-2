@@ -125,12 +125,18 @@ const albumsByCategory = computed(() => {
   })
 })
 
-// Set breadcrumb data
+// Set breadcrumb data and page title
 const routeMeta = route.meta as { projectName?: string }
 watchEffect(() => {
   if (project.value) {
     routeMeta.projectName = project.value.name
   }
+})
+
+useHead({
+  title: computed(() =>
+    project.value ? `${project.value.name} | Admin` : "Projekt | Admin",
+  ),
 })
 </script>
 

@@ -43,6 +43,10 @@ definePageMeta({
   layout: "admin",
 })
 
+useHead({
+  title: "Projekty | Admin",
+})
+
 const { data: projects, error } = await useFetch("/api/projects")
 </script>
 
