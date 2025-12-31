@@ -1,0 +1,1 @@
+ALTER TABLE `album` ADD `sortOrder` text DEFAULT 'date';

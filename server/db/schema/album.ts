@@ -13,6 +13,7 @@ export const album = sqliteTable(
     id: text("id").primaryKey(),
     month: integer("month").notNull(),
     slug: text("slug").notNull().unique(),
+    sortOrder: text("sortOrder", { enum: ["date", "name"] }).default("date"),
     projectId: text("projectId").notNull(),
     title: text("title").notNull(),
     year: integer("year").notNull(),

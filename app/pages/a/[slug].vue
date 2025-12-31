@@ -19,15 +19,26 @@
       <h1>{{ data.album.title }}</h1>
       <p class="album-meta">
         {{ formatMonthYear(data.album.month, data.album.year) }}
-        <span v-if="data.media.length" class="album-count">
-          {{ data.media.length }} photos
-        </span>
+        <label class="sort-select">
+          <span class="visually-hidden">Řazení</span>
+          <select
+            :value="effectiveSortOrder"
+            @change="
+              setSortOrder(
+                ($event.target as HTMLSelectElement).value as 'date' | 'name',
+              )
+            "
+          >
+            <option value="date">Datum</option>
+            <option value="name">Název</option>
+          </select>
+        </label>
       </p>
     </header>
 
     <JustifiedGrid
-      v-if="data?.media.length"
-      :media="data.media"
+      v-if="sortedMedia.length"
+      :media="sortedMedia"
       @open="(idx, trigger) => open(idx, trigger)"
     />
 
@@ -49,7 +60,58 @@ const { data, error } = await useFetch(
   `/api/albums/by-slug/${route.params.slug}`,
 )
 
-const { open } = useLightbox(computed(() => data.value?.media ?? []))
+// Sort order management with localStorage persistence
+const localStorageKey = computed(() => `albumSort:${route.params.slug}`)
+const sortOverride = ref<"date" | "name" | null>(null)
+
+// Load override from localStorage on client
+onMounted(() => {
+  const stored = localStorage.getItem(localStorageKey.value)
+  if (stored === "date" || stored === "name") {
+    sortOverride.value = stored
+  }
+})
+
+const effectiveSortOrder = computed(() => {
+  return sortOverride.value ?? data.value?.album?.sortOrder ?? "date"
+})
+
+function setSortOrder(order: "date" | "name") {
+  const albumDefault = data.value?.album?.sortOrder ?? "date"
+  if (order === albumDefault) {
+    // Reset to album default - remove override
+    sortOverride.value = null
+    localStorage.removeItem(localStorageKey.value)
+  } else {
+    // Set override
+    sortOverride.value = order
+    localStorage.setItem(localStorageKey.value, order)
+  }
+}
+
+// Client-side sorting when override differs from API order
+const sortedMedia = computed(() => {
+  const media = data.value?.media ?? []
+  const albumDefault = data.value?.album?.sortOrder ?? "date"
+
+  // If effective sort matches album default, API already sorted correctly
+  if (effectiveSortOrder.value === albumDefault) {
+    return media
+  }
+
+  // Need to re-sort client-side
+  return [...media].sort((a, b) => {
+    if (effectiveSortOrder.value === "name") {
+      return (a.originalName ?? a.fileName ?? "").localeCompare(
+        b.originalName ?? b.fileName ?? "",
+      )
+    } else {
+      return (a.dateTaken ?? "").localeCompare(b.dateTaken ?? "")
+    }
+  })
+})
+
+const { open } = useLightbox(sortedMedia)
 
 useHead({
   title: () => data.value?.album?.title ?? "Album",
@@ -98,11 +160,8 @@ useHead({
   color: var(--text-color-2);
   font-size: var(--font-size-1);
   display: flex;
+  align-items: center;
   gap: var(--space-3);
-}
-
-.album-count {
-  color: var(--text-color-3);
 }
 
 .empty-state,
@@ -115,5 +174,22 @@ useHead({
 
 .error-state {
   color: var(--red-6);
+}
+
+.sort-select {
+  margin-left: auto;
+  font-size: var(--font-size--1);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 </style>

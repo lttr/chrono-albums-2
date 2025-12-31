@@ -35,6 +35,24 @@
           <dt>Médií</dt>
           <dd>{{ data.media.length }}</dd>
         </div>
+        <div>
+          <dt><label for="sort-order">Řazení</label></dt>
+          <dd>
+            <select
+              id="sort-order"
+              :value="data.album.sortOrder ?? 'date'"
+              :disabled="isSaving"
+              @change="
+                setSortOrder(
+                  ($event.target as HTMLSelectElement).value as 'date' | 'name',
+                )
+              "
+            >
+              <option value="date">Datum</option>
+              <option value="name">Název</option>
+            </select>
+          </dd>
+        </div>
       </dl>
     </header>
 
@@ -73,7 +91,27 @@ const route = useRoute("admin-projects-projectId-albums-albumId")
 const projectId = computed(() => route.params.projectId)
 const albumId = computed(() => route.params.albumId)
 
-const { data } = useFetch(() => `/api/albums/${albumId.value}`)
+const { data, refresh } = useFetch(() => `/api/albums/${albumId.value}`)
+
+// Sort order management
+const isSaving = ref(false)
+
+async function setSortOrder(sortOrder: "date" | "name") {
+  if (data.value?.album.sortOrder === sortOrder) {
+    return
+  }
+
+  isSaving.value = true
+  try {
+    await $fetch(`/api/albums/${albumId.value}`, {
+      method: "PATCH",
+      body: { sortOrder },
+    })
+    await refresh()
+  } finally {
+    isSaving.value = false
+  }
+}
 
 // Set breadcrumb data and page title
 const routeMeta = route.meta as { albumTitle?: string }
@@ -136,7 +174,12 @@ useHead({
 
 .album-meta div {
   display: flex;
+  align-items: center;
   gap: var(--space-2);
+}
+
+.album-meta div:last-child {
+  margin-left: auto;
 }
 
 .album-meta dt {

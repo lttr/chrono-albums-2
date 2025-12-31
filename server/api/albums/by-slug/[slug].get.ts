@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm"
+import { asc, eq } from "drizzle-orm"
 import { db, schema } from "hub:db"
 
 export default defineEventHandler(async (event) => {
@@ -19,6 +19,7 @@ export default defineEventHandler(async (event) => {
       month: schema.album.month,
       year: schema.album.year,
       createdAt: schema.album.createdAt,
+      sortOrder: schema.album.sortOrder,
       projectName: schema.project.name,
       projectSlug: schema.project.slug,
       categoryName: schema.category.name,
@@ -37,6 +38,12 @@ export default defineEventHandler(async (event) => {
     })
   }
 
+  const album = albumDetails[0]!
+  const orderBy =
+    album.sortOrder === "name"
+      ? asc(schema.media.originalName)
+      : asc(schema.media.dateTaken)
+
   const mediaItems = await db
     .select({
       id: schema.media.id,
@@ -54,8 +61,8 @@ export default defineEventHandler(async (event) => {
       duration: schema.media.duration,
     })
     .from(schema.media)
-    .where(eq(schema.media.albumId, albumDetails[0]!.id))
-    .orderBy(schema.media.dateTaken)
+    .where(eq(schema.media.albumId, album.id))
+    .orderBy(orderBy)
 
   // Transform to slug-based URLs (no internal paths exposed)
   const mediaWithUrls = mediaItems.map((item) => ({
@@ -70,7 +77,7 @@ export default defineEventHandler(async (event) => {
   }))
 
   return {
-    album: albumDetails[0],
+    album,
     media: mediaWithUrls,
   }
 })
