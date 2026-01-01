@@ -20,21 +20,26 @@ export interface GenerateVariantsResult {
 export async function generateVariants(
   input: Buffer,
 ): Promise<GenerateVariantsResult> {
-  // Create a shared sharp instance for efficiency
-  const image = sharp(input)
-
   // Get original metadata first
-  const originalMeta = await image.metadata()
+  const originalMeta = await sharp(input).metadata()
+
+  // Check if input already meets original spec (skip re-encode for pre-compressed uploads)
+  const isAlreadyOptimal =
+    originalMeta.format === "jpeg" &&
+    (originalMeta.width ?? 0) <= 3500 &&
+    (originalMeta.height ?? 0) <= 3500
 
   // Generate all variants in parallel
   const [original, full, thumbnail, lqipBuffer] = await Promise.all([
-    // Original: 3500px max, JPEG quality 92, preserve EXIF
-    sharp(input)
-      .resize(3500, 3500, { fit: "inside", withoutEnlargement: true })
-      .rotate() // Auto-rotate based on EXIF orientation
-      .withMetadata() // Preserve EXIF data
-      .jpeg({ quality: 92 })
-      .toBuffer(),
+    // Original: pass through if already optimal, otherwise resize/compress
+    isAlreadyOptimal
+      ? sharp(input).rotate().withMetadata().toBuffer() // just rotate based on EXIF
+      : sharp(input)
+          .resize(3500, 3500, { fit: "inside", withoutEnlargement: true })
+          .rotate()
+          .withMetadata()
+          .jpeg({ quality: 92 })
+          .toBuffer(),
 
     // Full: 2000px, progressive JPEG with mozjpeg
     sharp(input)
