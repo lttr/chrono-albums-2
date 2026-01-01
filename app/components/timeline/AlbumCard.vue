@@ -15,20 +15,22 @@
         @load="($event.target as HTMLImageElement).classList.add('loaded')"
       />
       <div v-else class="album-card__placeholder">
-        <span>No photos</span>
+        <span>Bez médií</span>
       </div>
     </div>
     <div class="album-card__info">
       <h3 class="album-card__title">{{ title }}</h3>
       <p class="album-card__meta">
-        <span v-if="month">{{ formatMonth(month) }} </span>{{ year }}
-        <span class="album-card__count">{{ mediaCount }} photos</span>
+        {{ formatMonthYear(month, year) }}
+        <span class="album-card__count">{{ mediaCount }} médií</span>
       </p>
     </div>
   </NuxtLink>
 </template>
 
 <script setup lang="ts">
+import { formatMonthYear } from "~/utils/date"
+
 interface Props {
   slug: string
   title: string
@@ -42,25 +44,6 @@ interface Props {
 }
 
 defineProps<Props>()
-
-const months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-]
-
-function formatMonth(month: number): string {
-  return months[month - 1] ?? ""
-}
 </script>
 
 <style scoped>

@@ -1,5 +1,5 @@
 <template>
-  <div class="p-stack">
+  <div class="project-page">
     <header v-if="data?.project" class="project-header">
       <h1>{{ data.project.name }}</h1>
     </header>
@@ -7,7 +7,7 @@
     <!-- Show categories if project has them -->
     <section v-if="data?.hasCategories" class="categories-list">
       <h2>Kategorie</h2>
-      <div class="p-auto-grid">
+      <div class="p-auto-grid categories-grid">
         <NuxtLink
           v-for="category of data.categories"
           :key="category.id"
@@ -19,19 +19,20 @@
       </div>
     </section>
 
-    <!-- Show albums directly if no categories -->
+    <!-- Show albums directly if no categories (chronologically, newer first) -->
     <section v-else-if="data?.albums.length" class="albums-list">
-      <h2>Alba</h2>
-      <div class="p-auto-grid">
-        <NuxtLink
+      <div class="p-auto-grid albums-grid">
+        <AlbumCard
           v-for="album of data.albums"
           :key="album.id"
-          :to="`/a/${album.slug}`"
-          class="album-card"
-        >
-          <strong class="album-title">{{ album.title }}</strong>
-          <span class="album-date">{{ album.month }}/{{ album.year }}</span>
-        </NuxtLink>
+          :slug="album.slug"
+          :title="album.title"
+          :month="album.month"
+          :year="album.year"
+          :cover-thumbnail="album.coverThumbnail"
+          :cover-lqip="album.coverLqip"
+          :media-count="album.mediaCount"
+        />
       </div>
     </section>
 
@@ -47,6 +48,10 @@
 </template>
 
 <script lang="ts" setup>
+definePageMeta({
+  layout: "gallery",
+})
+
 useHead({
   meta: [{ name: "robots", content: "noindex, nofollow" }],
 })
@@ -56,6 +61,15 @@ const { data, error } = useFetch(`/api/projects/by-slug/${route.params.slug}`)
 </script>
 
 <style scoped>
+.project-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-3);
+}
+
 .project-header {
   display: flex;
   flex-direction: column;
@@ -69,12 +83,15 @@ const { data, error } = useFetch(`/api/projects/by-slug/${route.params.slug}`)
   gap: var(--space-3);
 }
 
-.p-auto-grid {
+.categories-grid {
   --auto-grid-min: 200px;
 }
 
-.category-card,
-.album-card {
+.albums-grid {
+  --auto-grid-min: 280px;
+}
+
+.category-card {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
@@ -86,18 +103,8 @@ const { data, error } = useFetch(`/api/projects/by-slug/${route.params.slug}`)
   color: inherit;
 }
 
-.category-card:hover,
-.album-card:hover {
+.category-card:hover {
   background: var(--surface-2);
-}
-
-.album-title {
-  font-weight: var(--font-weight-6);
-}
-
-.album-date {
-  color: var(--text-color-2);
-  font-size: var(--font-size--1);
 }
 
 .empty-state,

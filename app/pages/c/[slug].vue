@@ -1,5 +1,5 @@
 <template>
-  <div class="p-stack">
+  <div class="category-page">
     <header v-if="data?.category" class="category-header">
       <nav class="breadcrumb">
         <NuxtLink
@@ -15,16 +15,18 @@
     </header>
 
     <section v-if="data?.albums.length" class="albums-list">
-      <div class="p-auto-grid">
-        <NuxtLink
+      <div class="p-auto-grid albums-grid">
+        <AlbumCard
           v-for="album of data.albums"
           :key="album.id"
-          :to="`/a/${album.slug}`"
-          class="album-card"
-        >
-          <strong class="album-title">{{ album.title }}</strong>
-          <span class="album-date">{{ album.month }}/{{ album.year }}</span>
-        </NuxtLink>
+          :slug="album.slug"
+          :title="album.title"
+          :month="album.month"
+          :year="album.year"
+          :cover-thumbnail="album.coverThumbnail"
+          :cover-lqip="album.coverLqip"
+          :media-count="album.mediaCount"
+        />
       </div>
     </section>
 
@@ -37,6 +39,10 @@
 </template>
 
 <script lang="ts" setup>
+definePageMeta({
+  layout: "gallery",
+})
+
 useHead({
   meta: [{ name: "robots", content: "noindex, nofollow" }],
 })
@@ -46,6 +52,15 @@ const { data, error } = useFetch(`/api/categories/by-slug/${route.params.slug}`)
 </script>
 
 <style scoped>
+.category-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-3);
+}
+
 .category-header {
   display: flex;
   flex-direction: column;
@@ -74,33 +89,8 @@ const { data, error } = useFetch(`/api/categories/by-slug/${route.params.slug}`)
   gap: var(--space-3);
 }
 
-.p-auto-grid {
-  --auto-grid-min: 200px;
-}
-
-.album-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-  padding: var(--space-3);
-  background: var(--surface-0);
-  border: var(--border-1);
-  border-radius: var(--radius-2);
-  text-decoration: none;
-  color: inherit;
-}
-
-.album-card:hover {
-  background: var(--surface-2);
-}
-
-.album-title {
-  font-weight: var(--font-weight-6);
-}
-
-.album-date {
-  color: var(--text-color-2);
-  font-size: var(--font-size--1);
+.albums-grid {
+  --auto-grid-min: 280px;
 }
 
 .empty-state,
