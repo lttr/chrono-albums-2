@@ -28,8 +28,11 @@ nr db:reset             # Resets and seeds in one command
 
 ## Deploy (self-hosted)
 
-For self-hosted deployment, migrations run automatically on server start.
-The `.data/db/sqlite.db` file persists on the server.
+**Coolify start command:**
+
+```bash
+pnpm exec nuxt db migrate && node .output/server/index.mjs
+```
 
 ## Key points
 

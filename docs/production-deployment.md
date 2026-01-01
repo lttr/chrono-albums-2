@@ -46,7 +46,13 @@ Coolify-managed Node.js server running in Docker on VPS.
    - Source: `/data/coolify/applications/<app-id>/data`
    - Target: `/app/.data`
 
-3. Redeploy
+3. Set custom start command in Coolify:
+
+   ```bash
+   pnpm exec nuxt db migrate && node .output/server/index.mjs
+   ```
+
+4. Redeploy
 
 ## Result
 
