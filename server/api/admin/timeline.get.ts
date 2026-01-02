@@ -1,8 +1,28 @@
 import { asc, count, desc, eq, inArray } from "drizzle-orm"
 import { db, schema } from "hub:db"
 
-export default defineEventHandler(async () => {
-  // Get albums with project/category info
+export default defineEventHandler(async (event) => {
+  const session = await getAuthSession(event)
+  if (!session?.user) {
+    throw createError({
+      statusCode: 401,
+      message: "Unauthorized",
+    })
+  }
+
+  // Get user's project memberships
+  const memberships = await db
+    .select({ projectId: schema.projectMembership.projectId })
+    .from(schema.projectMembership)
+    .where(eq(schema.projectMembership.userId, session.user.id))
+
+  const projectIds = memberships.map((m) => m.projectId)
+
+  if (projectIds.length === 0) {
+    return { years: [] }
+  }
+
+  // Get albums only from projects the user has access to
   const albums = await db
     .select({
       id: schema.album.id,
@@ -16,6 +36,7 @@ export default defineEventHandler(async () => {
     .from(schema.album)
     .leftJoin(schema.project, eq(schema.album.projectId, schema.project.id))
     .leftJoin(schema.category, eq(schema.album.categoryId, schema.category.id))
+    .where(inArray(schema.album.projectId, projectIds))
     .orderBy(
       desc(schema.album.year),
       desc(schema.album.month),

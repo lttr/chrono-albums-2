@@ -2,15 +2,13 @@
   <div class="album-page">
     <header v-if="data?.album" class="album-header">
       <nav class="breadcrumb">
-        <NuxtLink class="link" to="/">Albums</NuxtLink>
         <template v-if="data.album.projectSlug">
-          <span>/</span>
           <NuxtLink class="link" :to="`/p/${data.album.projectSlug}`">
             {{ data.album.projectName }}
           </NuxtLink>
         </template>
         <template v-if="data.album.categorySlug">
-          <span>/</span>
+          <span v-if="data.album.projectSlug">/</span>
           <NuxtLink class="link" :to="`/c/${data.album.categorySlug}`">
             {{ data.album.categoryName }}
           </NuxtLink>

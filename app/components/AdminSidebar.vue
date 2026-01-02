@@ -1,6 +1,17 @@
 <template>
   <nav class="sidebar" aria-label="Admin navigace">
     <div class="sidebar-section">
+      <NuxtLink
+        to="/admin/timeline"
+        class="sidebar-link"
+        exact-active-class="active"
+      >
+        <Icon name="uil-clock" class="sidebar-icon" aria-hidden="true" />
+        Všechna alba
+      </NuxtLink>
+    </div>
+
+    <div class="sidebar-section">
       <h2 id="projects-heading" class="sidebar-header">Projekty</h2>
       <div v-if="pending" class="sidebar-loading" aria-live="polite">
         Načítám...

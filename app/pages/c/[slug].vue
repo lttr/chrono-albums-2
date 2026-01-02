@@ -1,12 +1,8 @@
 <template>
   <div class="category-page">
     <header v-if="data?.category" class="category-header">
-      <nav class="breadcrumb">
-        <NuxtLink
-          v-if="data.project"
-          class="link"
-          :to="`/p/${data.project.slug}`"
-        >
+      <nav v-if="data.project" class="breadcrumb">
+        <NuxtLink class="link" :to="`/p/${data.project.slug}`">
           {{ data.project.name }}
         </NuxtLink>
         <span>/</span>
