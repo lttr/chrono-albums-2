@@ -15,10 +15,9 @@
         <h1 class="login-title">Přihlášení</h1>
         <p class="login-subtitle">Pro správu alb se přihlaste</p>
 
-        <button type="button" class="google-btn" @click="signInWithGoogle">
-          <Icon name="uil-google" />
+        <GoogleSignInButton @click="signInWithGoogle">
           Přihlásit se přes Google
-        </button>
+        </GoogleSignInButton>
       </template>
     </div>
   </div>
@@ -78,22 +77,5 @@ watch(
   color: var(--text-color-2);
   margin: 0;
   text-align: center;
-}
-
-.google-btn {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
-  background: var(--surface-1);
-  border: var(--border-1);
-  border-radius: var(--radius-2);
-  font-size: var(--font-size-0);
-  cursor: pointer;
-  transition: background 0.15s;
-
-  &:hover {
-    background: var(--surface-2);
-  }
 }
 </style>
