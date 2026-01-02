@@ -2,3 +2,7 @@ providers = ["node"]
 
 [variables]
 NIXPACKS_NODE_VERSION = '22'
+
+[phases.start]
+# https://hub.nuxt.com/docs/database/migrations#generating-migrations
+cmd = "pnpm exec nuxt db migrate && node .output/server/index.mjs"
