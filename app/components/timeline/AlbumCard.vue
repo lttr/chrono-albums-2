@@ -55,6 +55,7 @@ defineProps<Props>()
   overflow: hidden;
   background: var(--surface-1);
   transition: transform 0.15s ease;
+  max-width: 400px;
 }
 
 .album-card:hover {

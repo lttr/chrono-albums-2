@@ -1,4 +1,4 @@
-import { asc, count, desc, eq, inArray } from "drizzle-orm"
+import { count, desc, eq, inArray } from "drizzle-orm"
 import { db, schema } from "hub:db"
 
 export default defineEventHandler(async (event) => {
@@ -59,6 +59,7 @@ export default defineEventHandler(async (event) => {
       title: schema.album.title,
       month: schema.album.month,
       year: schema.album.year,
+      sortOrder: schema.album.sortOrder,
     })
     .from(schema.album)
     .where(eq(schema.album.projectId, project.id))
@@ -79,24 +80,63 @@ export default defineEventHandler(async (event) => {
 
   const albumIds = albums.map((a) => a.id)
 
-  // Get earliest media per album (by dateTaken) for cover
+  // Get all media for albums
   const allMedia = await db
     .select({
       albumId: schema.media.albumId,
       slug: schema.media.slug,
       lqip: schema.media.lqip,
       dateTaken: schema.media.dateTaken,
+      fileName: schema.media.fileName,
       createdAt: schema.media.createdAt,
     })
     .from(schema.media)
     .where(inArray(schema.media.albumId, albumIds))
-    .orderBy(asc(schema.media.dateTaken), asc(schema.media.createdAt))
 
-  // Pick first media per album
-  const coverMap = new Map<string, { slug: string; lqip: string | null }>()
+  // Group media by album
+  const mediaByAlbum = new Map<
+    string,
+    Array<{
+      slug: string
+      lqip: string | null
+      dateTaken: string | null
+      fileName: string
+      createdAt: Date
+    }>
+  >()
   for (const m of allMedia) {
-    if (!coverMap.has(m.albumId)) {
-      coverMap.set(m.albumId, { slug: m.slug, lqip: m.lqip })
+    if (!mediaByAlbum.has(m.albumId)) {
+      mediaByAlbum.set(m.albumId, [])
+    }
+    mediaByAlbum.get(m.albumId)!.push({
+      slug: m.slug,
+      lqip: m.lqip,
+      dateTaken: m.dateTaken,
+      fileName: m.fileName,
+      createdAt: m.createdAt,
+    })
+  }
+
+  // Build sortOrder map for albums
+  const albumSortOrder = new Map(
+    albums.map((a) => [a.id, a.sortOrder ?? "date"]),
+  )
+
+  // Pick first media per album based on album's sortOrder
+  const coverMap = new Map<string, { slug: string; lqip: string | null }>()
+  for (const [albumId, media] of mediaByAlbum) {
+    const sortOrder = albumSortOrder.get(albumId) ?? "date"
+    const sorted = [...media].sort((a, b) => {
+      if (sortOrder === "name") {
+        return a.fileName.localeCompare(b.fileName)
+      }
+      // Default: sort by date
+      const aDate = a.dateTaken ?? a.createdAt.toISOString()
+      const bDate = b.dateTaken ?? b.createdAt.toISOString()
+      return aDate.localeCompare(bDate)
+    })
+    if (sorted.length > 0) {
+      coverMap.set(albumId, { slug: sorted[0]!.slug, lqip: sorted[0]!.lqip })
     }
   }
 
