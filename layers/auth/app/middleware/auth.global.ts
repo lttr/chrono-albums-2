@@ -1,19 +1,7 @@
-export default defineNuxtRouteMiddleware((to) => {
-  const { isLoggedIn, isPending } = useAuth()
+export default defineNuxtRouteMiddleware(async (to) => {
+  const { isLoggedIn } = await useAuth()
 
   const isAdminRoute = to.path.startsWith("/admin")
-
-  // While session is loading, redirect protected routes to login.
-  // Login page watches auth state and redirects back when session resolves.
-  if (isPending.value) {
-    if (isAdminRoute) {
-      return navigateTo({
-        path: "/login",
-        query: { redirect: to.fullPath },
-      })
-    }
-    return
-  }
 
   // Protect admin routes
   if (isAdminRoute && !isLoggedIn.value) {

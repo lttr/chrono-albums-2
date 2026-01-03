@@ -91,7 +91,7 @@
 </template>
 
 <script lang="ts" setup>
-const { user } = useAuth()
+const { user } = await useAuth()
 
 const sidebarOpen = ref(false)
 const menuOpen = ref(false)

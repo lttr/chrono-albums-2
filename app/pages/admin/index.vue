@@ -35,7 +35,7 @@ useHead({
   title: "Přehled | Admin",
 })
 
-const { user } = useAuth()
+const { user } = await useAuth()
 
 const { data: projects } = useFetch("/api/projects")
 const { data: categories } = useFetch("/api/categories")

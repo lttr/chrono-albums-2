@@ -10,8 +10,8 @@ interface AccessState {
   loading: boolean
 }
 
-export function useAccess() {
-  const { user, isLoggedIn } = useAuth()
+export async function useAccess() {
+  const { user, isLoggedIn } = await useAuth()
 
   const state = useState<AccessState>("access", () => ({
     memberships: [],

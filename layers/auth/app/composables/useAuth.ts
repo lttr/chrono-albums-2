@@ -12,19 +12,18 @@ function getAuthClient() {
   return authClient
 }
 
-export function useAuth() {
+export async function useAuth() {
   const config = useRuntimeConfig()
 
   // Mock auth mode - bypass better-auth entirely
   if (config.public.mockAuth) {
     const mockUser = ref(MOCK_USER)
-    const mockSession = ref({ data: { user: MOCK_USER } })
+    const mockSession = ref({ user: MOCK_USER })
 
     return {
       session: mockSession,
       user: computed(() => mockUser.value),
       isLoggedIn: computed(() => true),
-      isPending: computed(() => false),
       signInWithGoogle: async () => {
         const route = useRoute()
         const redirectTo = route.query.redirect as string | undefined
@@ -40,11 +39,10 @@ export function useAuth() {
 
   // Real auth mode
   const client = getAuthClient()
-  const session = client.useSession()
+  const { data: session } = await client.useSession(useFetch)
 
-  const isPending = computed(() => session.value.isPending ?? false)
-  const isLoggedIn = computed(() => !!session.value.data?.user)
-  const user = computed(() => session.value.data?.user ?? null)
+  const isLoggedIn = computed(() => !!session.value?.user)
+  const user = computed(() => session.value?.user ?? null)
 
   async function signInWithGoogle() {
     const route = useRoute()
@@ -68,7 +66,6 @@ export function useAuth() {
     session,
     user,
     isLoggedIn,
-    isPending,
     signInWithGoogle,
     signOut,
   }

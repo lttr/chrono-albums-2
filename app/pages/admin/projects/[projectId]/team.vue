@@ -95,8 +95,8 @@ useHead({
 const route = useRoute("admin-projects-projectId-team")
 const projectId = computed(() => route.params.projectId)
 
-const { user } = useAuth()
-const { canInviteMembers, canRemoveMembers } = useProjectAccess(projectId)
+const { user } = await useAuth()
+const { canInviteMembers, canRemoveMembers } = await useProjectAccess(projectId)
 
 const currentUserId = computed(() => user.value?.id)
 

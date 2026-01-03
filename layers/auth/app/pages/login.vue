@@ -1,24 +1,12 @@
 <template>
   <div class="login-page">
     <div class="login-card">
-      <template v-if="isPending">
-        <h1 class="login-title">Načítám...</h1>
-        <p class="login-subtitle">Ověřuji přihlášení</p>
-      </template>
+      <h1 class="login-title">Přihlášení</h1>
+      <p class="login-subtitle">Pro správu alb se přihlaste</p>
 
-      <template v-else-if="isLoggedIn">
-        <h1 class="login-title">Přihlášen</h1>
-        <p class="login-subtitle">Přesměrovávám...</p>
-      </template>
-
-      <template v-else>
-        <h1 class="login-title">Přihlášení</h1>
-        <p class="login-subtitle">Pro správu alb se přihlaste</p>
-
-        <GoogleSignInButton @click="signInWithGoogle">
-          Přihlásit se přes Google
-        </GoogleSignInButton>
-      </template>
+      <GoogleSignInButton @click="signInWithGoogle">
+        Přihlásit se přes Google
+      </GoogleSignInButton>
     </div>
   </div>
 </template>
@@ -28,22 +16,7 @@ definePageMeta({
   layout: "default",
 })
 
-const route = useRoute()
-const { signInWithGoogle, isLoggedIn, isPending } = useAuth()
-
-// After OAuth callback, session loads asynchronously. The middleware can't
-// redirect because isPending is true initially. We watch for session to load
-// and redirect here once login state is confirmed.
-watch(
-  [isLoggedIn, isPending],
-  ([loggedIn, pending]) => {
-    if (!pending && loggedIn) {
-      const redirect = route.query.redirect as string | undefined
-      navigateTo(redirect && redirect !== "/" ? redirect : "/admin")
-    }
-  },
-  { immediate: true },
-)
+const { signInWithGoogle } = await useAuth()
 </script>
 
 <style scoped>

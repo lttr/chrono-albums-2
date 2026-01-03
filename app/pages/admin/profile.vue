@@ -39,7 +39,7 @@ useHead({
   title: "Profil | Admin",
 })
 
-const { user, signOut } = useAuth()
+const { user, signOut } = await useAuth()
 
 function handleLogout() {
   signOut()
