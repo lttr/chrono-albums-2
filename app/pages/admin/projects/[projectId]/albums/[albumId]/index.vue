@@ -78,7 +78,9 @@
       </NuxtLink>
     </p>
 
-    <div v-else-if="!data" class="error-message">Album nenalezeno.</div>
+    <div v-else-if="status === 'success' && !data" class="error-message">
+      Album nenalezeno.
+    </div>
   </div>
 </template>
 
@@ -91,7 +93,7 @@ const route = useRoute("admin-projects-projectId-albums-albumId")
 const projectId = computed(() => route.params.projectId)
 const albumId = computed(() => route.params.albumId)
 
-const { data, refresh } = useFetch(() => `/api/albums/${albumId.value}`)
+const { data, refresh, status } = useFetch(() => `/api/albums/${albumId.value}`)
 
 // Sort order management
 const isSaving = ref(false)
