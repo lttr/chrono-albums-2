@@ -168,7 +168,8 @@ useHead({
 
 .album-meta {
   display: flex;
-  gap: var(--space-4);
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
   margin: 0;
   color: var(--text-color-2);
   font-size: var(--font-size--1);
@@ -180,8 +181,10 @@ useHead({
   gap: var(--space-2);
 }
 
-.album-meta div:last-child {
-  margin-left: auto;
+@media (min-width: 640px) {
+  .album-meta div:last-child {
+    margin-left: auto;
+  }
 }
 
 .album-meta dt {
