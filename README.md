@@ -139,4 +139,4 @@ NUXT_PUBLIC_MOCK_AUTH=true pnpm run dev
 
 ## License
 
-Private project.
+MIT
