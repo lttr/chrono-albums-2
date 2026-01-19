@@ -1,3 +1,9 @@
+---
+created: 2025-12-12
+type: spec
+status: complete
+---
+
 # Chrono Album – Visual Identity
 
 Retro-modern design: primarily modern and simple, with warm nostalgic undertones.

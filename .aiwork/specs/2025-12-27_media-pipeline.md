@@ -1,3 +1,9 @@
+---
+created: 2025-12-27
+type: spec
+status: complete
+---
+
 # Photo Album Media Pipeline Spec
 
 ## Overview

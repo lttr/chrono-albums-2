@@ -1,3 +1,11 @@
+---
+created: 2025-12-28
+type: plan
+status: complete
+references:
+  - ../specs/2025-12-27_public-frontend.md
+---
+
 # Phase 2: Core Frontend - Detailed Implementation Plan
 
 ## Overview

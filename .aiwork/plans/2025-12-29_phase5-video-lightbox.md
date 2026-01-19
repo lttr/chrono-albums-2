@@ -1,3 +1,11 @@
+---
+created: 2025-12-29
+type: plan
+status: complete
+references:
+  - ../specs/2025-12-27_public-frontend.md
+---
+
 # Phase 5: Video in PhotoSwipe Lightbox - Detailed Implementation Plan
 
 ## Overview

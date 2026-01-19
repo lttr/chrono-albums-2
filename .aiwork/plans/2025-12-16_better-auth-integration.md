@@ -1,3 +1,9 @@
+---
+created: 2025-12-16
+type: plan
+status: complete
+---
+
 # better-auth Integration Plan
 
 ## Overview

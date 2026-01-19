@@ -1,3 +1,9 @@
+---
+created: 2025-12-29
+type: spec
+status: active
+---
+
 # Background Job Architecture
 
 ## Problem

@@ -1,3 +1,9 @@
+---
+created: 2025-12-27
+type: spec
+status: active
+---
+
 # Public Frontend Spec
 
 Public-facing photo album views. Complements `media-pipeline.md`.

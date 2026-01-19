@@ -1,3 +1,11 @@
+---
+created: 2025-12-29
+type: plan
+status: complete
+references:
+  - ../specs/2025-12-27_media-pipeline.md
+---
+
 # Phase 4: Video Support - Detailed Implementation Plan
 
 ## Overview

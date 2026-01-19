@@ -1,3 +1,11 @@
+---
+created: 2025-12-27
+type: plan
+status: complete
+references:
+  - ../specs/2025-12-27_media-pipeline.md
+---
+
 # Phase 1: Image Pipeline Foundation - Detailed Implementation Plan
 
 ## Overview

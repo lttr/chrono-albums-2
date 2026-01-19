@@ -1,3 +1,11 @@
+---
+created: 2025-12-29
+type: plan
+status: complete
+references:
+  - ../specs/2025-12-29_background-jobs.md
+---
+
 # Background Job Queue - Detailed Implementation Plan
 
 ## Overview
