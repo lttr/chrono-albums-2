@@ -1,7 +1,7 @@
 ---
 created: 2025-12-27
 type: spec
-status: active
+status: complete
 ---
 
 # Public Frontend Spec
