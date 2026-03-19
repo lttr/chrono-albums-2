@@ -1,80 +1,104 @@
 # Release Notes for Outdated Packages
 
 ## @nuxt/eslint (1.3.0 → 1.12.1)
+
 https://github.com/nuxt/eslint/releases
 
 ## @nuxtjs/seo (3.0.3 → 3.2.2)
+
 https://github.com/harlan-zw/nuxt-seo/releases
 
 ## eslint (9.25.1 → 9.39.1)
+
 https://github.com/eslint/eslint/blob/main/CHANGELOG.md
 
 ## exifreader (4.30.0 → 4.33.1)
+
 https://github.com/mattiasw/ExifReader/releases
 
 ## prettier (3.5.3 → 3.7.4)
+
 https://github.com/prettier/prettier/blob/main/CHANGELOG.md
 
 ## tsx (4.19.4 → 4.21.0)
+
 https://github.com/privatenumber/tsx/releases
 
 ## typescript (5.8.3 → 5.9.3)
+
 https://github.com/microsoft/TypeScript/releases
 
 ## @nuxt/icon (1.12.0 → 2.1.0)
+
 https://github.com/nuxt/icon/releases
 
 ## @nuxt/image (1.10.0 → 2.0.0)
+
 https://github.com/nuxt/image/blob/main/CHANGELOG.md
 
 ## @nuxtjs/plausible (1.2.0 → 2.0.1)
+
 https://github.com/nuxt-modules/plausible/releases
 
 ## @vueuse/core (13.1.0 → 14.1.0)
+
 https://github.com/vueuse/vueuse/releases
 
 ## @vueuse/nuxt (13.1.0 → 14.1.0)
+
 https://github.com/vueuse/vueuse/releases
 
 ## nuxt (3.16.2 → 4.2.2)
+
 https://github.com/nuxt/nuxt/releases
 
 ## vitest (3.2.4 → 4.0.15)
+
 https://github.com/vitest-dev/vitest/releases
 
 ## vue-tsc (2.2.10 → 3.1.8)
+
 https://github.com/vuejs/language-tools/blob/master/CHANGELOG.md
 
 ## @libsql/client (0.15.4 → 0.15.15)
+
 https://github.com/libsql/libsql-client-ts/blob/main/CHANGELOG.md
 
 ## @lttr/nuxt-config-eslint (0.3.0 → 0.4.0)
+
 https://github.com/lttr/nuxt-config-eslint/blob/master/CHANGELOG.md
 
 ## @lttr/puleo (0.5.0 → 0.8.1)
+
 https://github.com/lttr/puleo/blob/master/CHANGELOG.md
 
 ## @nuxt/fonts (0.11.1 → 0.12.1)
+
 https://github.com/nuxt/fonts/blob/main/CHANGELOG.md
 
 ## @zod/core (0.9.0 → 0.11.6)
+
 https://github.com/colinhacks/zod/releases
 
 ## db0 (0.3.2 → 0.3.4)
+
 https://github.com/unjs/db0/blob/main/CHANGELOG.md
 
 ## drizzle-kit (0.31.1 → 0.31.8)
+
 https://github.com/drizzle-team/drizzle-orm/releases
 
 ## drizzle-orm (0.43.1 → 0.45.1)
+
 https://github.com/drizzle-team/drizzle-orm/releases
 
 ## drizzle-zod (0.7.1 → 0.8.3)
+
 https://github.com/drizzle-team/drizzle-orm/releases
 
 ## unplugin-vue-router (0.12.0 → 0.19.0)
-https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md
 
+https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md
 
 ---
 
@@ -83,7 +107,8 @@ https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md
 ## @nuxt/eslint Release Notes (1.3.0 → 1.12.1)
 
 ### v1.4.0
-*Released: 5/16/2025*
+
+_Released: 5/16/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -95,7 +120,8 @@ https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md
 ---
 
 ### v1.5.0
-*Released: 7/2/2025*
+
+_Released: 7/2/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -110,7 +136,8 @@ https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md
 ---
 
 ### v1.6.0
-*Released: 7/18/2025*
+
+_Released: 7/18/2025_
 
 ### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
 
@@ -121,7 +148,8 @@ https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md
 ---
 
 ### v1.7.0
-*Released: 7/22/2025*
+
+_Released: 7/22/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -132,7 +160,8 @@ https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md
 ---
 
 ### v1.8.0
-*Released: 8/6/2025*
+
+_Released: 8/6/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -143,7 +172,8 @@ https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md
 ---
 
 ### v1.9.0
-*Released: 8/18/2025*
+
+_Released: 8/18/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -158,7 +188,8 @@ https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md
 ---
 
 ### v1.10.0
-*Released: 10/28/2025*
+
+_Released: 10/28/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -173,7 +204,8 @@ https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md
 ---
 
 ### v1.11.0
-*Released: 11/27/2025*
+
+_Released: 11/27/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -184,7 +216,8 @@ https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md
 ---
 
 ### v1.12.0
-*Released: 12/10/2025*
+
+_Released: 12/10/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -197,7 +230,8 @@ https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md
 ## @nuxtjs/seo Release Notes (3.0.3 → 3.2.2)
 
 ### v3.1.0
-*Released: 6/26/2025*
+
+_Released: 6/26/2025_
 
 ## 📦 Dependencies
 
@@ -212,17 +246,20 @@ Updated SEO related packages:
 - [nuxt-site-config](https://github.com/harlan-zw/nuxt-site-config): 3.1.9 → 3.2.2 (minor version bump)
 
 These updates bring the latest bug fixes and improvements from the Nuxt SEO ecosystem, namely:
+
 - :bug: Improved stability for I18n integration
 - :bug: Nuxt Content v3.6.0 compatibility
 
 ---
 
 ### v3.2.0
-*Released: 9/17/2025*
+
+_Released: 9/17/2025_
 
 This version implements [module dependencies](https://nuxt.com/blog/v4-1#module-development-enhancements) that are available with Nuxt v4.1, and improved [Nuxt Content v3.7 compatibility](https://github.com/nuxt/content/releases/tag/v3.7.0) and [NPM trusted publishing](https://docs.npmjs.com/trusted-publishers) for all modules for improved security.
 
-It bumps the Nuxt Robots versions, which include the new features: 
+It bumps the Nuxt Robots versions, which include the new features:
+
 - `Content-Usage` directive https://github.com/nuxt-modules/robots/pull/226
 - Bot Detection https://github.com/nuxt-modules/robots/pull/210
 
@@ -253,497 +290,570 @@ These updates bring the latest bug fixes and improvements from the Nuxt SEO ecos
 ## eslint Release Notes (9.25.1 → 9.39.1)
 
 ### v9.26.0
-*Released: 5/2/2025*
+
+_Released: 5/2/2025_
 
 ## Features
-* [`e9754e7`](https://github.com/eslint/eslint/commit/e9754e7433edf665602ceba4f7f8fbca559c974f) feat: add reportGlobalThis to no-shadow-restricted-names (#19670) (sethamus)
-* [`0fa2b7a`](https://github.com/eslint/eslint/commit/0fa2b7a3666f1eedcc091446dc860037c9bafa5c) feat: add suggestions for `eqeqeq` rule (#19640) (Nitin Kumar)
-* [`dcbdcc9`](https://github.com/eslint/eslint/commit/dcbdcc9c6be628240269b41f7bb576dde1e6f5b3) feat: Add MCP server (#19592) (Nicholas C. Zakas)
-* [`2dfd83e`](https://github.com/eslint/eslint/commit/2dfd83ef4ee054f748732581c422508c45d6f1bf) feat: add `ignoreDirectives` option in `no-unused-expressions` (#19645) (sethamus)
+
+- [`e9754e7`](https://github.com/eslint/eslint/commit/e9754e7433edf665602ceba4f7f8fbca559c974f) feat: add reportGlobalThis to no-shadow-restricted-names (#19670) (sethamus)
+- [`0fa2b7a`](https://github.com/eslint/eslint/commit/0fa2b7a3666f1eedcc091446dc860037c9bafa5c) feat: add suggestions for `eqeqeq` rule (#19640) (Nitin Kumar)
+- [`dcbdcc9`](https://github.com/eslint/eslint/commit/dcbdcc9c6be628240269b41f7bb576dde1e6f5b3) feat: Add MCP server (#19592) (Nicholas C. Zakas)
+- [`2dfd83e`](https://github.com/eslint/eslint/commit/2dfd83ef4ee054f748732581c422508c45d6f1bf) feat: add `ignoreDirectives` option in `no-unused-expressions` (#19645) (sethamus)
 
 ## Bug Fixes
-* [`96e84de`](https://github.com/eslint/eslint/commit/96e84de55ad17c96e5b6f2dece75145542505469) fix: check cache file existence before deletion (#19648) (sethamus)
-* [`d683aeb`](https://github.com/eslint/eslint/commit/d683aebc8e0792e4f80bd1488c705c90f22c317e) fix: don't crash on tests with circular references in `RuleTester` (#19664) (Milos Djermanovic)
-* [`9736d5d`](https://github.com/eslint/eslint/commit/9736d5d15870c9185da7d140becb9a15aa69057d) fix: add `namespace` to `Plugin.meta` type (#19661) (Milos Djermanovic)
-* [`17bae69`](https://github.com/eslint/eslint/commit/17bae69e02fff6f26487a3cbd9c3c3218088949c) fix: update `RuleTester.run()` type (#19634) (Nitin Kumar)
+
+- [`96e84de`](https://github.com/eslint/eslint/commit/96e84de55ad17c96e5b6f2dece75145542505469) fix: check cache file existence before deletion (#19648) (sethamus)
+- [`d683aeb`](https://github.com/eslint/eslint/commit/d683aebc8e0792e4f80bd1488c705c90f22c317e) fix: don't crash on tests with circular references in `RuleTester` (#19664) (Milos Djermanovic)
+- [`9736d5d`](https://github.com/eslint/eslint/commit/9736d5d15870c9185da7d140becb9a15aa69057d) fix: add `namespace` to `Plugin.meta` type (#19661) (Milos Djermanovic)
+- [`17bae69`](https://github.com/eslint/eslint/commit/17bae69e02fff6f26487a3cbd9c3c3218088949c) fix: update `RuleTester.run()` type (#19634) (Nitin Kumar)
 
 ## Documentation
-* [`dd98d63`](https://github.com/eslint/eslint/commit/dd98d63f09c9324124734206d904d31d433a7c92) docs: Update README (GitHub Actions Bot)
-* [`c25e858`](https://github.com/eslint/eslint/commit/c25e858d2d7e9bd3e53dcb32c9af5251d6f0569e) docs: Update README (GitHub Actions Bot)
-* [`b2397e9`](https://github.com/eslint/eslint/commit/b2397e9bef5ca7faf7e100ecebc20e457bf0b588) docs: Update README (GitHub Actions Bot)
-* [`addd0a6`](https://github.com/eslint/eslint/commit/addd0a6a62d1b89dc7ab49cbd08c5a6af3e7da29) docs: fix formatting of unordered lists in Markdown (#19660) (Milos Djermanovic)
-* [`a21b38d`](https://github.com/eslint/eslint/commit/a21b38db0276ab3373c95ebc7b1ef1910b79dfe6) docs: Update README (GitHub Actions Bot)
-* [`c0721a7`](https://github.com/eslint/eslint/commit/c0721a7f34264da0a32ade8432511eeda4a2c1b9) docs: fix double space in command (#19657) (CamWass)
+
+- [`dd98d63`](https://github.com/eslint/eslint/commit/dd98d63f09c9324124734206d904d31d433a7c92) docs: Update README (GitHub Actions Bot)
+- [`c25e858`](https://github.com/eslint/eslint/commit/c25e858d2d7e9bd3e53dcb32c9af5251d6f0569e) docs: Update README (GitHub Actions Bot)
+- [`b2397e9`](https://github.com/eslint/eslint/commit/b2397e9bef5ca7faf7e100ecebc20e457bf0b588) docs: Update README (GitHub Actions Bot)
+- [`addd0a6`](https://github.com/eslint/eslint/commit/addd0a6a62d1b89dc7ab49cbd08c5a6af3e7da29) docs: fix formatting of unordered lists in Markdown (#19660) (Milos Djermanovic)
+- [`a21b38d`](https://github.com/eslint/eslint/commit/a21b38db0276ab3373c95ebc7b1ef1910b79dfe6) docs: Update README (GitHub Actions Bot)
+- [`c0721a7`](https://github.com/eslint/eslint/commit/c0721a7f34264da0a32ade8432511eeda4a2c1b9) docs: fix double space in command (#19657) (CamWass)
 
 ## Chores
-* [`5b247c8`](https://github.com/eslint/eslint/commit/5b247c859f1b653297a9b9135d92a59742a669cc) chore: upgrade to `@eslint/js@9.26.0` (#19681) (Francesco Trotta)
-* [`d6fa4ac`](https://github.com/eslint/eslint/commit/d6fa4ac031c2fe24fb778e84940393fbda3ddf77) chore: package.json update for @eslint/js release (Jenkins)
-* [`0958690`](https://github.com/eslint/eslint/commit/09586905be394c05839996a5ea812adfac44d320) chore: disambiguate internal types `LanguageOptions` and `Rule` (#19669) (Francesco Trotta)
-* [`f1c858e`](https://github.com/eslint/eslint/commit/f1c858e3c1e9712ef398588bf5ed68bc19fad3f2) chore: fix internal type references to `Plugin` and `Rule` (#19665) (Francesco Trotta)
-* [`40dd299`](https://github.com/eslint/eslint/commit/40dd2998cedddb75e0514b2c5cc855293c85da41) refactor: One-shot ESQuery selector analysis (#19652) (Nicholas C. Zakas)
-* [`1cfd702`](https://github.com/eslint/eslint/commit/1cfd7024226cd9c42ceb75732f79e3bc36e8305c) chore: update dependency @eslint/json to ^0.12.0 (#19656) (renovate[bot])
+
+- [`5b247c8`](https://github.com/eslint/eslint/commit/5b247c859f1b653297a9b9135d92a59742a669cc) chore: upgrade to `@eslint/js@9.26.0` (#19681) (Francesco Trotta)
+- [`d6fa4ac`](https://github.com/eslint/eslint/commit/d6fa4ac031c2fe24fb778e84940393fbda3ddf77) chore: package.json update for @eslint/js release (Jenkins)
+- [`0958690`](https://github.com/eslint/eslint/commit/09586905be394c05839996a5ea812adfac44d320) chore: disambiguate internal types `LanguageOptions` and `Rule` (#19669) (Francesco Trotta)
+- [`f1c858e`](https://github.com/eslint/eslint/commit/f1c858e3c1e9712ef398588bf5ed68bc19fad3f2) chore: fix internal type references to `Plugin` and `Rule` (#19665) (Francesco Trotta)
+- [`40dd299`](https://github.com/eslint/eslint/commit/40dd2998cedddb75e0514b2c5cc855293c85da41) refactor: One-shot ESQuery selector analysis (#19652) (Nicholas C. Zakas)
+- [`1cfd702`](https://github.com/eslint/eslint/commit/1cfd7024226cd9c42ceb75732f79e3bc36e8305c) chore: update dependency @eslint/json to ^0.12.0 (#19656) (renovate[bot])
 
 ---
 
 ### v9.27.0
-*Released: 5/16/2025*
+
+_Released: 5/16/2025_
 
 ## Features
-* [`d71e37f`](https://github.com/eslint/eslint/commit/d71e37f450f4ae115ec394615e21523685f0d370) feat: Allow flags to be set in ESLINT_FLAGS env variable (#19717) (Nicholas C. Zakas)
-* [`ba456e0`](https://github.com/eslint/eslint/commit/ba456e000e104fd7f2dbd27eebbd4f35e6c18934) feat: Externalize MCP server (#19699) (Nicholas C. Zakas)
-* [`07c1a7e`](https://github.com/eslint/eslint/commit/07c1a7e839ec61bd706c651428606ea5955b2bb0) feat: add `allowRegexCharacters` to `no-useless-escape` (#19705) (sethamus)
-* [`7bc6c71`](https://github.com/eslint/eslint/commit/7bc6c71ca350fa37531291e1d704be6ed408c5dc) feat: add no-unassigned-vars rule (#19618) (Jacob Bandes-Storch)
-* [`ee40364`](https://github.com/eslint/eslint/commit/ee4036429758cdaf7f77c52f1c2b74b5a2bb7b66) feat: convert no-array-constructor suggestions to autofixes (#19621) (sethamus)
-* [`32957cd`](https://github.com/eslint/eslint/commit/32957cde72196c7e41741db311786d881c1613a1) feat: support TS syntax in `max-params` (#19557) (Nitin Kumar)
+
+- [`d71e37f`](https://github.com/eslint/eslint/commit/d71e37f450f4ae115ec394615e21523685f0d370) feat: Allow flags to be set in ESLINT_FLAGS env variable (#19717) (Nicholas C. Zakas)
+- [`ba456e0`](https://github.com/eslint/eslint/commit/ba456e000e104fd7f2dbd27eebbd4f35e6c18934) feat: Externalize MCP server (#19699) (Nicholas C. Zakas)
+- [`07c1a7e`](https://github.com/eslint/eslint/commit/07c1a7e839ec61bd706c651428606ea5955b2bb0) feat: add `allowRegexCharacters` to `no-useless-escape` (#19705) (sethamus)
+- [`7bc6c71`](https://github.com/eslint/eslint/commit/7bc6c71ca350fa37531291e1d704be6ed408c5dc) feat: add no-unassigned-vars rule (#19618) (Jacob Bandes-Storch)
+- [`ee40364`](https://github.com/eslint/eslint/commit/ee4036429758cdaf7f77c52f1c2b74b5a2bb7b66) feat: convert no-array-constructor suggestions to autofixes (#19621) (sethamus)
+- [`32957cd`](https://github.com/eslint/eslint/commit/32957cde72196c7e41741db311786d881c1613a1) feat: support TS syntax in `max-params` (#19557) (Nitin Kumar)
 
 ## Bug Fixes
-* [`5687ce7`](https://github.com/eslint/eslint/commit/5687ce7055d30e2d5ef800b3d5c3096c3fc42c0e) fix: correct mismatched removed rules (#19734) (루밀LuMir)
-* [`dc5ed33`](https://github.com/eslint/eslint/commit/dc5ed337fd18cb59801e4afaf394f6b84057b601) fix: correct types and tighten type definitions in `SourceCode` class (#19731) (루밀LuMir)
-* [`de1b5de`](https://github.com/eslint/eslint/commit/de1b5deba069f770140f3a7dba2702c1016dcc2a) fix: correct `service` property name in `Linter.ESLintParseResult` type (#19713) (Francesco Trotta)
-* [`60c3e2c`](https://github.com/eslint/eslint/commit/60c3e2cf9256f3676b7934e26ff178aaf19c9e97) fix: sort keys in eslint-suppressions.json to avoid git churn (#19711) (Ron Waldon-Howe)
-* [`9da90ca`](https://github.com/eslint/eslint/commit/9da90ca3c163adb23a9cc52421f59dedfce34fc9) fix: add `allowReserved` to `Linter.ParserOptions` type (#19710) (Francesco Trotta)
-* [`fbb8be9`](https://github.com/eslint/eslint/commit/fbb8be9256dc7613fa0b87e87974714284b78a94) fix: add `info` to `ESLint.DeprecatedRuleUse` type (#19701) (Francesco Trotta)
+
+- [`5687ce7`](https://github.com/eslint/eslint/commit/5687ce7055d30e2d5ef800b3d5c3096c3fc42c0e) fix: correct mismatched removed rules (#19734) (루밀LuMir)
+- [`dc5ed33`](https://github.com/eslint/eslint/commit/dc5ed337fd18cb59801e4afaf394f6b84057b601) fix: correct types and tighten type definitions in `SourceCode` class (#19731) (루밀LuMir)
+- [`de1b5de`](https://github.com/eslint/eslint/commit/de1b5deba069f770140f3a7dba2702c1016dcc2a) fix: correct `service` property name in `Linter.ESLintParseResult` type (#19713) (Francesco Trotta)
+- [`60c3e2c`](https://github.com/eslint/eslint/commit/60c3e2cf9256f3676b7934e26ff178aaf19c9e97) fix: sort keys in eslint-suppressions.json to avoid git churn (#19711) (Ron Waldon-Howe)
+- [`9da90ca`](https://github.com/eslint/eslint/commit/9da90ca3c163adb23a9cc52421f59dedfce34fc9) fix: add `allowReserved` to `Linter.ParserOptions` type (#19710) (Francesco Trotta)
+- [`fbb8be9`](https://github.com/eslint/eslint/commit/fbb8be9256dc7613fa0b87e87974714284b78a94) fix: add `info` to `ESLint.DeprecatedRuleUse` type (#19701) (Francesco Trotta)
 
 ## Documentation
-* [`25de550`](https://github.com/eslint/eslint/commit/25de55055d420d7c8b794ae5fdaeb67947c613d9) docs: Update description of frozen rules to mention TypeScript (#19736) (Nicholas C. Zakas)
-* [`bd5def6`](https://github.com/eslint/eslint/commit/bd5def66d1a3f9bad7da3547b5dff6003e67d9d3) docs: Clean up configuration files docs (#19735) (Nicholas C. Zakas)
-* [`4d0c60d`](https://github.com/eslint/eslint/commit/4d0c60d0738cb32c12e4ea132caa6fab6d5ed0a7) docs: Add Neovim to editor integrations (#19729) (Maria José Solano)
-* [`71317eb`](https://github.com/eslint/eslint/commit/71317ebeaf1c542114e4fcda99ee26115d8e4a27) docs: Update README (GitHub Actions Bot)
-* [`4c289e6`](https://github.com/eslint/eslint/commit/4c289e685e6cf87331f4b1e6afe34a4feb8e6cc8) docs: Update README (GitHub Actions Bot)
-* [`f0f0d46`](https://github.com/eslint/eslint/commit/f0f0d46ab2f87e439642abd84b6948b447b66349) docs: clarify that unused suppressions cause non-zero exit code (#19698) (Milos Djermanovic)
-* [`8ed3273`](https://github.com/eslint/eslint/commit/8ed32734cc22988173f99fd0703d50f94c60feb8) docs: fix internal usages of `ConfigData` type (#19688) (Francesco Trotta)
-* [`eb316a8`](https://github.com/eslint/eslint/commit/eb316a83a49347ab47ae965ff95f81dd620d074c) docs: add `fmt` and `check` sections to `Package.json Conventions` (#19686) (루밀LuMir)
-* [`a3a2559`](https://github.com/eslint/eslint/commit/a3a255924866b94ef8d604e91636547600edec56) docs: fix wording in Combine Configs (#19685) (Milos Djermanovic)
-* [`c8d17e1`](https://github.com/eslint/eslint/commit/c8d17e11dc63909e693eaed5b5ccc50e698ac3b3) docs: Update README (GitHub Actions Bot)
+
+- [`25de550`](https://github.com/eslint/eslint/commit/25de55055d420d7c8b794ae5fdaeb67947c613d9) docs: Update description of frozen rules to mention TypeScript (#19736) (Nicholas C. Zakas)
+- [`bd5def6`](https://github.com/eslint/eslint/commit/bd5def66d1a3f9bad7da3547b5dff6003e67d9d3) docs: Clean up configuration files docs (#19735) (Nicholas C. Zakas)
+- [`4d0c60d`](https://github.com/eslint/eslint/commit/4d0c60d0738cb32c12e4ea132caa6fab6d5ed0a7) docs: Add Neovim to editor integrations (#19729) (Maria José Solano)
+- [`71317eb`](https://github.com/eslint/eslint/commit/71317ebeaf1c542114e4fcda99ee26115d8e4a27) docs: Update README (GitHub Actions Bot)
+- [`4c289e6`](https://github.com/eslint/eslint/commit/4c289e685e6cf87331f4b1e6afe34a4feb8e6cc8) docs: Update README (GitHub Actions Bot)
+- [`f0f0d46`](https://github.com/eslint/eslint/commit/f0f0d46ab2f87e439642abd84b6948b447b66349) docs: clarify that unused suppressions cause non-zero exit code (#19698) (Milos Djermanovic)
+- [`8ed3273`](https://github.com/eslint/eslint/commit/8ed32734cc22988173f99fd0703d50f94c60feb8) docs: fix internal usages of `ConfigData` type (#19688) (Francesco Trotta)
+- [`eb316a8`](https://github.com/eslint/eslint/commit/eb316a83a49347ab47ae965ff95f81dd620d074c) docs: add `fmt` and `check` sections to `Package.json Conventions` (#19686) (루밀LuMir)
+- [`a3a2559`](https://github.com/eslint/eslint/commit/a3a255924866b94ef8d604e91636547600edec56) docs: fix wording in Combine Configs (#19685) (Milos Djermanovic)
+- [`c8d17e1`](https://github.com/eslint/eslint/commit/c8d17e11dc63909e693eaed5b5ccc50e698ac3b3) docs: Update README (GitHub Actions Bot)
 
 ## Chores
-* [`f8f1560`](https://github.com/eslint/eslint/commit/f8f1560de633aaf24a7099f89cbbfed12a762a32) chore: upgrade @eslint/js@9.27.0 (#19739) (Milos Djermanovic)
-* [`ecaef73`](https://github.com/eslint/eslint/commit/ecaef7351f9f3220aa57409bf98db3e55b07a02a) chore: package.json update for @eslint/js release (Jenkins)
-* [`596fdc6`](https://github.com/eslint/eslint/commit/596fdc62047dff863e990c3246b32da97ae9a14e) chore: update dependency @arethetypeswrong/cli to ^0.18.0 (#19732) (renovate[bot])
-* [`f791da0`](https://github.com/eslint/eslint/commit/f791da040189ada1b1ec15856557b939ffcd978b) chore: remove unbalanced curly brace from `.editorconfig` (#19730) (Maria José Solano)
-* [`e86edee`](https://github.com/eslint/eslint/commit/e86edee0918107e4e41e908fe59c937b83f00d4e) refactor: Consolidate Config helpers (#19675) (Nicholas C. Zakas)
-* [`cf36352`](https://github.com/eslint/eslint/commit/cf3635299e09570b7472286f25dacd8ab24e0517) chore: remove shared types (#19718) (Francesco Trotta)
-* [`f60f276`](https://github.com/eslint/eslint/commit/f60f2764971a33e252be13e560dccf21f554dbf1) refactor: Easier RuleContext creation (#19709) (Nicholas C. Zakas)
-* [`58a171e`](https://github.com/eslint/eslint/commit/58a171e8f0dcc1e599ac22bf8c386abacdbee424) chore: update dependency @eslint/plugin-kit to ^0.3.1 (#19712) (renovate[bot])
-* [`3a075a2`](https://github.com/eslint/eslint/commit/3a075a29cfb43ef08711c2e433fb6f218855886d) chore: update dependency @eslint/core to ^0.14.0 (#19715) (renovate[bot])
-* [`44bac9d`](https://github.com/eslint/eslint/commit/44bac9d15c4e0ca099d0b0d85e601f3b55d4e167) ci: run tests in Node.js 24 (#19702) (Francesco Trotta)
-* [`35304dd`](https://github.com/eslint/eslint/commit/35304dd2b0d8a4b640b9a25ae27ebdcb5e124cde) chore: add missing `funding` field to packages (#19684) (루밀LuMir)
-* [`f305beb`](https://github.com/eslint/eslint/commit/f305beb82c51215ad48c5c860f02be1b34bcce32) test: mock `process.emitWarning` to prevent output disruption (#19687) (Francesco Trotta)
+
+- [`f8f1560`](https://github.com/eslint/eslint/commit/f8f1560de633aaf24a7099f89cbbfed12a762a32) chore: upgrade @eslint/js@9.27.0 (#19739) (Milos Djermanovic)
+- [`ecaef73`](https://github.com/eslint/eslint/commit/ecaef7351f9f3220aa57409bf98db3e55b07a02a) chore: package.json update for @eslint/js release (Jenkins)
+- [`596fdc6`](https://github.com/eslint/eslint/commit/596fdc62047dff863e990c3246b32da97ae9a14e) chore: update dependency @arethetypeswrong/cli to ^0.18.0 (#19732) (renovate[bot])
+- [`f791da0`](https://github.com/eslint/eslint/commit/f791da040189ada1b1ec15856557b939ffcd978b) chore: remove unbalanced curly brace from `.editorconfig` (#19730) (Maria José Solano)
+- [`e86edee`](https://github.com/eslint/eslint/commit/e86edee0918107e4e41e908fe59c937b83f00d4e) refactor: Consolidate Config helpers (#19675) (Nicholas C. Zakas)
+- [`cf36352`](https://github.com/eslint/eslint/commit/cf3635299e09570b7472286f25dacd8ab24e0517) chore: remove shared types (#19718) (Francesco Trotta)
+- [`f60f276`](https://github.com/eslint/eslint/commit/f60f2764971a33e252be13e560dccf21f554dbf1) refactor: Easier RuleContext creation (#19709) (Nicholas C. Zakas)
+- [`58a171e`](https://github.com/eslint/eslint/commit/58a171e8f0dcc1e599ac22bf8c386abacdbee424) chore: update dependency @eslint/plugin-kit to ^0.3.1 (#19712) (renovate[bot])
+- [`3a075a2`](https://github.com/eslint/eslint/commit/3a075a29cfb43ef08711c2e433fb6f218855886d) chore: update dependency @eslint/core to ^0.14.0 (#19715) (renovate[bot])
+- [`44bac9d`](https://github.com/eslint/eslint/commit/44bac9d15c4e0ca099d0b0d85e601f3b55d4e167) ci: run tests in Node.js 24 (#19702) (Francesco Trotta)
+- [`35304dd`](https://github.com/eslint/eslint/commit/35304dd2b0d8a4b640b9a25ae27ebdcb5e124cde) chore: add missing `funding` field to packages (#19684) (루밀LuMir)
+- [`f305beb`](https://github.com/eslint/eslint/commit/f305beb82c51215ad48c5c860f02be1b34bcce32) test: mock `process.emitWarning` to prevent output disruption (#19687) (Francesco Trotta)
 
 ---
 
 ### v9.28.0
-*Released: 5/30/2025*
+
+_Released: 5/30/2025_
 
 ## Features
-* [`b0674be`](https://github.com/eslint/eslint/commit/b0674be94e4394401b4f668453a473572c321023) feat: Customization of serialization for languageOptions (#19760) (Nicholas C. Zakas)
-* [`a95721f`](https://github.com/eslint/eslint/commit/a95721f1064fdbfe0e392b955ce3053a24551f80) feat: Add `--pass-on-unpruned-suppressions` CLI option (#19773) (Milos Djermanovic)
-* [`bfd0e7a`](https://github.com/eslint/eslint/commit/bfd0e7a39535b3c1ddc742dfffa6bdcdc93079e2) feat: support TypeScript syntax in `no-use-before-define` (#19566) (Tanuj Kanti)
-* [`68c61c0`](https://github.com/eslint/eslint/commit/68c61c093a885623e48f38026e3f3a05bfa403de) feat: support TS syntax in `no-shadow` (#19565) (Nitin Kumar)
-* [`0f773ef`](https://github.com/eslint/eslint/commit/0f773ef248af0301a410fee11e1b22174100cf6a) feat: support TS syntax in `no-magic-numbers` (#19561) (Nitin Kumar)
-* [`c4a6b60`](https://github.com/eslint/eslint/commit/c4a6b6051889b1cb668d4d2ae29e9c27c74993d6) feat: add allowTypeAnnotation to func-style (#19754) (sethamus)
-* [`b03ad17`](https://github.com/eslint/eslint/commit/b03ad176f158afdd921f0af5126c398012b10559) feat: add TypeScript support to `prefer-arrow-callback` (#19678) (Tanuj Kanti)
-* [`bc3c331`](https://github.com/eslint/eslint/commit/bc3c3313ce2719062805b6849d29f9a375cf23f2) feat: ignore overloaded function declarations in func-style rule (#19755) (sethamus)
+
+- [`b0674be`](https://github.com/eslint/eslint/commit/b0674be94e4394401b4f668453a473572c321023) feat: Customization of serialization for languageOptions (#19760) (Nicholas C. Zakas)
+- [`a95721f`](https://github.com/eslint/eslint/commit/a95721f1064fdbfe0e392b955ce3053a24551f80) feat: Add `--pass-on-unpruned-suppressions` CLI option (#19773) (Milos Djermanovic)
+- [`bfd0e7a`](https://github.com/eslint/eslint/commit/bfd0e7a39535b3c1ddc742dfffa6bdcdc93079e2) feat: support TypeScript syntax in `no-use-before-define` (#19566) (Tanuj Kanti)
+- [`68c61c0`](https://github.com/eslint/eslint/commit/68c61c093a885623e48f38026e3f3a05bfa403de) feat: support TS syntax in `no-shadow` (#19565) (Nitin Kumar)
+- [`0f773ef`](https://github.com/eslint/eslint/commit/0f773ef248af0301a410fee11e1b22174100cf6a) feat: support TS syntax in `no-magic-numbers` (#19561) (Nitin Kumar)
+- [`c4a6b60`](https://github.com/eslint/eslint/commit/c4a6b6051889b1cb668d4d2ae29e9c27c74993d6) feat: add allowTypeAnnotation to func-style (#19754) (sethamus)
+- [`b03ad17`](https://github.com/eslint/eslint/commit/b03ad176f158afdd921f0af5126c398012b10559) feat: add TypeScript support to `prefer-arrow-callback` (#19678) (Tanuj Kanti)
+- [`bc3c331`](https://github.com/eslint/eslint/commit/bc3c3313ce2719062805b6849d29f9a375cf23f2) feat: ignore overloaded function declarations in func-style rule (#19755) (sethamus)
 
 ## Bug Fixes
-* [`eea3e7e`](https://github.com/eslint/eslint/commit/eea3e7eb1ca84f9e8870e1190d65d5235d9d8429) fix: Remove configured global variables from `GlobalScope#implicit` (#19779) (Milos Djermanovic)
-* [`a467de3`](https://github.com/eslint/eslint/commit/a467de39f6e509af95a7963904326635c1bf7116) fix: update context.report types (#19751) (Nitin Kumar)
-* [`fd467bb`](https://github.com/eslint/eslint/commit/fd467bb892d735a4a8863beabd181a3f3152689a) fix: remove interopDefault to use jiti's default (#19697) (sethamus)
-* [`72d16e3`](https://github.com/eslint/eslint/commit/72d16e3066aac2f1c74f4150ba43dfa8cf532584) fix: avoid false positive in `no-unassigned-vars` for declare module (#19746) (Azat S.)
-* [`81c3c93`](https://github.com/eslint/eslint/commit/81c3c936266474c2081f310098084bd0eb1768d2) fix: curly types (#19750) (Eli)
+
+- [`eea3e7e`](https://github.com/eslint/eslint/commit/eea3e7eb1ca84f9e8870e1190d65d5235d9d8429) fix: Remove configured global variables from `GlobalScope#implicit` (#19779) (Milos Djermanovic)
+- [`a467de3`](https://github.com/eslint/eslint/commit/a467de39f6e509af95a7963904326635c1bf7116) fix: update context.report types (#19751) (Nitin Kumar)
+- [`fd467bb`](https://github.com/eslint/eslint/commit/fd467bb892d735a4a8863beabd181a3f3152689a) fix: remove interopDefault to use jiti's default (#19697) (sethamus)
+- [`72d16e3`](https://github.com/eslint/eslint/commit/72d16e3066aac2f1c74f4150ba43dfa8cf532584) fix: avoid false positive in `no-unassigned-vars` for declare module (#19746) (Azat S.)
+- [`81c3c93`](https://github.com/eslint/eslint/commit/81c3c936266474c2081f310098084bd0eb1768d2) fix: curly types (#19750) (Eli)
 
 ## Documentation
-* [`3ec2082`](https://github.com/eslint/eslint/commit/3ec208233f29c161aae8f99f9f091e371fe83a62) docs: Nested arrays in files config entry (#19799) (Nicholas C. Zakas)
-* [`89a65b0`](https://github.com/eslint/eslint/commit/89a65b07f6171a860284b62d97c8b3edf312b98c) docs: clarify how config arrays can apply to subsets of files (#19788) (Shais Ch)
-* [`2ba8a0d`](https://github.com/eslint/eslint/commit/2ba8a0d75c7a8e6aa4798275126698be40391d37) docs: Add description of meta.namespace to plugin docs (#19798) (Nicholas C. Zakas)
-* [`59dd7e6`](https://github.com/eslint/eslint/commit/59dd7e6b28507053bde985ea2311dca8ec0db681) docs: update `func-style` with examples (#19793) (Tanuj Kanti)
-* [`e9129e0`](https://github.com/eslint/eslint/commit/e9129e0799d068c377d63d59a0a800e7d1fea8dd) docs: add global scope's `implicit` field to Scope Manager docs (#19770) (Milos Djermanovic)
-* [`52f5b7a`](https://github.com/eslint/eslint/commit/52f5b7a0af48a2f143f0bccfd4e036025b08280d) docs: fix minor typos and add links (#19743) (루밀LuMir)
-* [`00716a3`](https://github.com/eslint/eslint/commit/00716a339ede24ed5a76aceed833f38a6c4e8d3a) docs: upfront recommend against using the no-return-await rule (#19727) (Mike DiDomizio)
+
+- [`3ec2082`](https://github.com/eslint/eslint/commit/3ec208233f29c161aae8f99f9f091e371fe83a62) docs: Nested arrays in files config entry (#19799) (Nicholas C. Zakas)
+- [`89a65b0`](https://github.com/eslint/eslint/commit/89a65b07f6171a860284b62d97c8b3edf312b98c) docs: clarify how config arrays can apply to subsets of files (#19788) (Shais Ch)
+- [`2ba8a0d`](https://github.com/eslint/eslint/commit/2ba8a0d75c7a8e6aa4798275126698be40391d37) docs: Add description of meta.namespace to plugin docs (#19798) (Nicholas C. Zakas)
+- [`59dd7e6`](https://github.com/eslint/eslint/commit/59dd7e6b28507053bde985ea2311dca8ec0db681) docs: update `func-style` with examples (#19793) (Tanuj Kanti)
+- [`e9129e0`](https://github.com/eslint/eslint/commit/e9129e0799d068c377d63d59a0a800e7d1fea8dd) docs: add global scope's `implicit` field to Scope Manager docs (#19770) (Milos Djermanovic)
+- [`52f5b7a`](https://github.com/eslint/eslint/commit/52f5b7a0af48a2f143f0bccfd4e036025b08280d) docs: fix minor typos and add links (#19743) (루밀LuMir)
+- [`00716a3`](https://github.com/eslint/eslint/commit/00716a339ede24ed5a76aceed833f38a6c4e8d3a) docs: upfront recommend against using the no-return-await rule (#19727) (Mike DiDomizio)
 
 ## Chores
-* [`175b7b8`](https://github.com/eslint/eslint/commit/175b7b83fcdc8f3f84821510dd7e04d120402317) chore: upgrade to `@eslint/js@9.28.0` (#19802) (Francesco Trotta)
-* [`844f5a6`](https://github.com/eslint/eslint/commit/844f5a69dc78ca38f856c137e061e8facc9d00ba) chore: package.json update for @eslint/js release (Jenkins)
-* [`62b1c1b`](https://github.com/eslint/eslint/commit/62b1c1bc7981798c3aec2dd430c200c797a25629) chore: update globals to v16 (#19791) (Nitin Kumar)
-* [`e8a1cb8`](https://github.com/eslint/eslint/commit/e8a1cb8f7fbc18efa589bfedea5326de636b4868) chore: ignore jiti-v2.0 & jiti-v2.1 for renovate (#19786) (Nitin Kumar)
-* [`43d3975`](https://github.com/eslint/eslint/commit/43d39754b6d315954f46a70dbd53d1fa0eea1619) chore: Add Copilot Instructions file (#19753) (Nicholas C. Zakas)
-* [`2dfb5eb`](https://github.com/eslint/eslint/commit/2dfb5ebef4c14d552d10a6c7c2c2ce376e63654a) test: update `SourceCodeTraverser` tests (#19763) (Milos Djermanovic)
-* [`5bc21f9`](https://github.com/eslint/eslint/commit/5bc21f9e8e00f9e49442d1b6520b307ce94f3518) chore: add `*.code-workspace` to `.gitignore` (#19771) (루밀LuMir)
-* [`f4fa40e`](https://github.com/eslint/eslint/commit/f4fa40eb4bd6f4dba3b2e7fff259d0780ef6becf) refactor: NodeEventGenerator -> SourceCodeTraverser (#19679) (Nicholas C. Zakas)
-* [`0f49329`](https://github.com/eslint/eslint/commit/0f49329b4a7f91714f2cd1e9ce532d32202c47f4) refactor: use a service to emit warnings (#19725) (Francesco Trotta)
-* [`20a9e59`](https://github.com/eslint/eslint/commit/20a9e59438fde3642ab058cc55ee1b9fa02b6391) chore: update dependency shelljs to ^0.10.0 (#19740) (renovate[bot])
+
+- [`175b7b8`](https://github.com/eslint/eslint/commit/175b7b83fcdc8f3f84821510dd7e04d120402317) chore: upgrade to `@eslint/js@9.28.0` (#19802) (Francesco Trotta)
+- [`844f5a6`](https://github.com/eslint/eslint/commit/844f5a69dc78ca38f856c137e061e8facc9d00ba) chore: package.json update for @eslint/js release (Jenkins)
+- [`62b1c1b`](https://github.com/eslint/eslint/commit/62b1c1bc7981798c3aec2dd430c200c797a25629) chore: update globals to v16 (#19791) (Nitin Kumar)
+- [`e8a1cb8`](https://github.com/eslint/eslint/commit/e8a1cb8f7fbc18efa589bfedea5326de636b4868) chore: ignore jiti-v2.0 & jiti-v2.1 for renovate (#19786) (Nitin Kumar)
+- [`43d3975`](https://github.com/eslint/eslint/commit/43d39754b6d315954f46a70dbd53d1fa0eea1619) chore: Add Copilot Instructions file (#19753) (Nicholas C. Zakas)
+- [`2dfb5eb`](https://github.com/eslint/eslint/commit/2dfb5ebef4c14d552d10a6c7c2c2ce376e63654a) test: update `SourceCodeTraverser` tests (#19763) (Milos Djermanovic)
+- [`5bc21f9`](https://github.com/eslint/eslint/commit/5bc21f9e8e00f9e49442d1b6520b307ce94f3518) chore: add `*.code-workspace` to `.gitignore` (#19771) (루밀LuMir)
+- [`f4fa40e`](https://github.com/eslint/eslint/commit/f4fa40eb4bd6f4dba3b2e7fff259d0780ef6becf) refactor: NodeEventGenerator -> SourceCodeTraverser (#19679) (Nicholas C. Zakas)
+- [`0f49329`](https://github.com/eslint/eslint/commit/0f49329b4a7f91714f2cd1e9ce532d32202c47f4) refactor: use a service to emit warnings (#19725) (Francesco Trotta)
+- [`20a9e59`](https://github.com/eslint/eslint/commit/20a9e59438fde3642ab058cc55ee1b9fa02b6391) chore: update dependency shelljs to ^0.10.0 (#19740) (renovate[bot])
 
 ---
 
 ### v9.29.0
-*Released: 6/13/2025*
+
+_Released: 6/13/2025_
 
 ## Features
-* [`f686fcb`](https://github.com/eslint/eslint/commit/f686fcb51e47cf53b891ae595684afe8a0ef584d) feat: add `ecmaVersion: 2026`, parsing `using` and `await using` (#19832) (Milos Djermanovic)
-* [`19cdd22`](https://github.com/eslint/eslint/commit/19cdd226bb5957f8f7e8cb4e92d38aafe47f8ff4) feat: prune suppressions for non-existent files (#19825) (TKDev7)
-* [`b3d720f`](https://github.com/eslint/eslint/commit/b3d720f82f08022a33b10f0437111e7d270b8e3c) feat: add ES2025 globals (#19835) (fisker Cheung)
-* [`677a283`](https://github.com/eslint/eslint/commit/677a2837a17320f54a8869682af128a2a7d77579) feat: add auto-accessor fields support to class-methods-use-this (#19789) (sethamus)
-* [`dbba058`](https://github.com/eslint/eslint/commit/dbba0589f5509223658b73de6eb721f659bcec47) feat: allow global type declaration in `no-var` (#19714) (Remco Haszing)
-* [`342bd29`](https://github.com/eslint/eslint/commit/342bd29e1a10a4b521ed0dbb6d889dcfc137e863) feat: ignore type annotations in no-restricted-globals (#19781) (sethamus)
-* [`786bcd1`](https://github.com/eslint/eslint/commit/786bcd13652b90c5bd0c7201610b856ad1b87542) feat: add allowProperties option to no-restricted-properties (#19772) (sethamus)
-* [`05b66d0`](https://github.com/eslint/eslint/commit/05b66d05bd68214f2fa1ab53fb2734c9d9e5348a) feat: add `sourceCode.isGlobalReference(node)` method (#19695) (Nitin Kumar)
+
+- [`f686fcb`](https://github.com/eslint/eslint/commit/f686fcb51e47cf53b891ae595684afe8a0ef584d) feat: add `ecmaVersion: 2026`, parsing `using` and `await using` (#19832) (Milos Djermanovic)
+- [`19cdd22`](https://github.com/eslint/eslint/commit/19cdd226bb5957f8f7e8cb4e92d38aafe47f8ff4) feat: prune suppressions for non-existent files (#19825) (TKDev7)
+- [`b3d720f`](https://github.com/eslint/eslint/commit/b3d720f82f08022a33b10f0437111e7d270b8e3c) feat: add ES2025 globals (#19835) (fisker Cheung)
+- [`677a283`](https://github.com/eslint/eslint/commit/677a2837a17320f54a8869682af128a2a7d77579) feat: add auto-accessor fields support to class-methods-use-this (#19789) (sethamus)
+- [`dbba058`](https://github.com/eslint/eslint/commit/dbba0589f5509223658b73de6eb721f659bcec47) feat: allow global type declaration in `no-var` (#19714) (Remco Haszing)
+- [`342bd29`](https://github.com/eslint/eslint/commit/342bd29e1a10a4b521ed0dbb6d889dcfc137e863) feat: ignore type annotations in no-restricted-globals (#19781) (sethamus)
+- [`786bcd1`](https://github.com/eslint/eslint/commit/786bcd13652b90c5bd0c7201610b856ad1b87542) feat: add allowProperties option to no-restricted-properties (#19772) (sethamus)
+- [`05b66d0`](https://github.com/eslint/eslint/commit/05b66d05bd68214f2fa1ab53fb2734c9d9e5348a) feat: add `sourceCode.isGlobalReference(node)` method (#19695) (Nitin Kumar)
 
 ## Bug Fixes
-* [`85c082c`](https://github.com/eslint/eslint/commit/85c082c54bd42ad818f5938b8fb1fb2aa0a1912f) fix: explicit matching behavior with negated patterns and arrays (#19845) (Milos Djermanovic)
-* [`9bda4a9`](https://github.com/eslint/eslint/commit/9bda4a9bf18c9fef91cdd93921a0935ffcf9a9fc) fix: fix `LintOptions.filterCodeBlock` types (#19837) (ntnyq)
-* [`7ab77a2`](https://github.com/eslint/eslint/commit/7ab77a2c7605126daaa7e7f7ab75b5c252677d12) fix: correct breaking deprecation of FlatConfig type (#19826) (Logicer)
-* [`1ba3318`](https://github.com/eslint/eslint/commit/1ba33181ab300588a803434884c054ed003f0bbd) fix: add `language` and `dialects` to `no-use-before-define` (#19808) (Francesco Trotta)
+
+- [`85c082c`](https://github.com/eslint/eslint/commit/85c082c54bd42ad818f5938b8fb1fb2aa0a1912f) fix: explicit matching behavior with negated patterns and arrays (#19845) (Milos Djermanovic)
+- [`9bda4a9`](https://github.com/eslint/eslint/commit/9bda4a9bf18c9fef91cdd93921a0935ffcf9a9fc) fix: fix `LintOptions.filterCodeBlock` types (#19837) (ntnyq)
+- [`7ab77a2`](https://github.com/eslint/eslint/commit/7ab77a2c7605126daaa7e7f7ab75b5c252677d12) fix: correct breaking deprecation of FlatConfig type (#19826) (Logicer)
+- [`1ba3318`](https://github.com/eslint/eslint/commit/1ba33181ab300588a803434884c054ed003f0bbd) fix: add `language` and `dialects` to `no-use-before-define` (#19808) (Francesco Trotta)
 
 ## Documentation
-* [`00e3e6a`](https://github.com/eslint/eslint/commit/00e3e6ad1357df7d46be51d3f305efecb90244a7) docs: add support for custom name parameter to `includeIgnoreFile` (#19795) (루밀LuMir)
-* [`3aed075`](https://github.com/eslint/eslint/commit/3aed0756ed3669ac27fc243c81fd82e3d0e6973b) docs: Update README (GitHub Actions Bot)
-* [`a2f888d`](https://github.com/eslint/eslint/commit/a2f888d679e2a44964da596a4158911819e1d31d) docs: enhance documentation with links and fix typos (#19761) (루밀LuMir)
-* [`53c3235`](https://github.com/eslint/eslint/commit/53c3235ba1c90a85a44f0abd18998ccc4e0445bf) docs: update to clarify prompt usage (#19748) (Jennifer Davis)
+
+- [`00e3e6a`](https://github.com/eslint/eslint/commit/00e3e6ad1357df7d46be51d3f305efecb90244a7) docs: add support for custom name parameter to `includeIgnoreFile` (#19795) (루밀LuMir)
+- [`3aed075`](https://github.com/eslint/eslint/commit/3aed0756ed3669ac27fc243c81fd82e3d0e6973b) docs: Update README (GitHub Actions Bot)
+- [`a2f888d`](https://github.com/eslint/eslint/commit/a2f888d679e2a44964da596a4158911819e1d31d) docs: enhance documentation with links and fix typos (#19761) (루밀LuMir)
+- [`53c3235`](https://github.com/eslint/eslint/commit/53c3235ba1c90a85a44f0abd18998ccc4e0445bf) docs: update to clarify prompt usage (#19748) (Jennifer Davis)
 
 ## Chores
-* [`5c114c9`](https://github.com/eslint/eslint/commit/5c114c962f29d0b33e6439e9ab0985014af06b9f) chore: upgrade @eslint/js@9.29.0 (#19851) (Milos Djermanovic)
-* [`acf2201`](https://github.com/eslint/eslint/commit/acf2201a067d062e007b1b7b164b8e96fa1af50f) chore: package.json update for @eslint/js release (Jenkins)
-* [`a806994`](https://github.com/eslint/eslint/commit/a806994263e54e4bc1481736b1c0626c8b770808) refactor: Remove eslintrc from flat config functionality (#19833) (Nicholas C. Zakas)
-* [`152ed51`](https://github.com/eslint/eslint/commit/152ed51329d82c6e7375f41a105e01b31750e17f) test: switch to flat config mode in code path analysis tests (#19824) (Milos Djermanovic)
-* [`b647239`](https://github.com/eslint/eslint/commit/b647239272931e0a947500b2f554fc8ccdf8adfd) chore: Update first-party dependencies faster with Renovate (#19822) (Nicholas C. Zakas)
-* [`7abe42e`](https://github.com/eslint/eslint/commit/7abe42e2de931289e19e34e390d16936cf6faf64) refactor: SafeEmitter -> SourceCodeVisitor (#19708) (Nicholas C. Zakas)
-* [`e392895`](https://github.com/eslint/eslint/commit/e39289596757702b6c8d747d5ab9c1a7820c108f) perf: improve time complexity of `getLocFromIndex` (#19782) (루밀LuMir)
-* [`0ed289c`](https://github.com/eslint/eslint/commit/0ed289c5ceed1c10b599b22c8b9374a5a3a144dd) chore: remove accidentally committed file (#19807) (Francesco Trotta)
+
+- [`5c114c9`](https://github.com/eslint/eslint/commit/5c114c962f29d0b33e6439e9ab0985014af06b9f) chore: upgrade @eslint/js@9.29.0 (#19851) (Milos Djermanovic)
+- [`acf2201`](https://github.com/eslint/eslint/commit/acf2201a067d062e007b1b7b164b8e96fa1af50f) chore: package.json update for @eslint/js release (Jenkins)
+- [`a806994`](https://github.com/eslint/eslint/commit/a806994263e54e4bc1481736b1c0626c8b770808) refactor: Remove eslintrc from flat config functionality (#19833) (Nicholas C. Zakas)
+- [`152ed51`](https://github.com/eslint/eslint/commit/152ed51329d82c6e7375f41a105e01b31750e17f) test: switch to flat config mode in code path analysis tests (#19824) (Milos Djermanovic)
+- [`b647239`](https://github.com/eslint/eslint/commit/b647239272931e0a947500b2f554fc8ccdf8adfd) chore: Update first-party dependencies faster with Renovate (#19822) (Nicholas C. Zakas)
+- [`7abe42e`](https://github.com/eslint/eslint/commit/7abe42e2de931289e19e34e390d16936cf6faf64) refactor: SafeEmitter -> SourceCodeVisitor (#19708) (Nicholas C. Zakas)
+- [`e392895`](https://github.com/eslint/eslint/commit/e39289596757702b6c8d747d5ab9c1a7820c108f) perf: improve time complexity of `getLocFromIndex` (#19782) (루밀LuMir)
+- [`0ed289c`](https://github.com/eslint/eslint/commit/0ed289c5ceed1c10b599b22c8b9374a5a3a144dd) chore: remove accidentally committed file (#19807) (Francesco Trotta)
 
 ---
 
 ### v9.30.0
-*Released: 6/27/2025*
+
+_Released: 6/27/2025_
 
 ## Features
-* [`52a5fca`](https://github.com/eslint/eslint/commit/52a5fcaa4e0bb4e55c014c20ed47d6c93b107635) feat: Support `basePath` property in config objects (#19879) (Milos Djermanovic)
-* [`4ab4482`](https://github.com/eslint/eslint/commit/4ab44823df4d4b47d3650da949077a0551e7579e) feat: add `allowSeparateTypeImports` option to `no-duplicate-imports` (#19872) (sethamus)
-* [`b8a7e7a`](https://github.com/eslint/eslint/commit/b8a7e7aeb5f0ed2e1670771ab4dda6fd723d96eb) feat: throw error when column is negative in `getIndexFromLoc` (#19831) (루밀LuMir)
+
+- [`52a5fca`](https://github.com/eslint/eslint/commit/52a5fcaa4e0bb4e55c014c20ed47d6c93b107635) feat: Support `basePath` property in config objects (#19879) (Milos Djermanovic)
+- [`4ab4482`](https://github.com/eslint/eslint/commit/4ab44823df4d4b47d3650da949077a0551e7579e) feat: add `allowSeparateTypeImports` option to `no-duplicate-imports` (#19872) (sethamus)
+- [`b8a7e7a`](https://github.com/eslint/eslint/commit/b8a7e7aeb5f0ed2e1670771ab4dda6fd723d96eb) feat: throw error when column is negative in `getIndexFromLoc` (#19831) (루밀LuMir)
 
 ## Bug Fixes
-* [`6a0f164`](https://github.com/eslint/eslint/commit/6a0f164543bf8461d6a27a740c9e08aa77cbe42d) fix: handle `null` type `loc` in `getIndexFromLoc` method (#19862) (루밀LuMir)
-* [`3fbcd70`](https://github.com/eslint/eslint/commit/3fbcd704a0b2aef2a6c1fc34d2bc4b35f6425067) fix: update error message for `no-restricted-properties` (#19855) (Tanuj Kanti)
-* [`7ef4cf7`](https://github.com/eslint/eslint/commit/7ef4cf76610d42727a404e495ac6d47868cf5040) fix: remove unnecessary semicolon from fixes (#19857) (Francesco Trotta)
-* [`7dabc38`](https://github.com/eslint/eslint/commit/7dabc38a8406d470fb2389eec2f0ad1ad214173e) fix: use `process.version` in `--env-info` (#19865) (TKDev7)
+
+- [`6a0f164`](https://github.com/eslint/eslint/commit/6a0f164543bf8461d6a27a740c9e08aa77cbe42d) fix: handle `null` type `loc` in `getIndexFromLoc` method (#19862) (루밀LuMir)
+- [`3fbcd70`](https://github.com/eslint/eslint/commit/3fbcd704a0b2aef2a6c1fc34d2bc4b35f6425067) fix: update error message for `no-restricted-properties` (#19855) (Tanuj Kanti)
+- [`7ef4cf7`](https://github.com/eslint/eslint/commit/7ef4cf76610d42727a404e495ac6d47868cf5040) fix: remove unnecessary semicolon from fixes (#19857) (Francesco Trotta)
+- [`7dabc38`](https://github.com/eslint/eslint/commit/7dabc38a8406d470fb2389eec2f0ad1ad214173e) fix: use `process.version` in `--env-info` (#19865) (TKDev7)
 
 ## Documentation
-* [`8662ed1`](https://github.com/eslint/eslint/commit/8662ed1f6debc358e22812b145e117aa4a907d78) docs: adopt eslint-stylistic sub packages related changes (#19887) (ntnyq)
-* [`20158b0`](https://github.com/eslint/eslint/commit/20158b09db3430cf00b202ba8c25ce874bbaf00a) docs: typo in comment for unused variables handling (#19870) (leopardracer)
-* [`ebfb5b4`](https://github.com/eslint/eslint/commit/ebfb5b46136c4d737c9783333e3057421d1a0bef) docs: Fixed Typo in configuration-files.md (#19873) (0-20)
-* [`4112fd0`](https://github.com/eslint/eslint/commit/4112fd09531092e9651e9981205bcd603dc56acf) docs: clarify that boolean is still allowed for rule `meta.deprecated` (#19866) (Bryan Mishkin)
+
+- [`8662ed1`](https://github.com/eslint/eslint/commit/8662ed1f6debc358e22812b145e117aa4a907d78) docs: adopt eslint-stylistic sub packages related changes (#19887) (ntnyq)
+- [`20158b0`](https://github.com/eslint/eslint/commit/20158b09db3430cf00b202ba8c25ce874bbaf00a) docs: typo in comment for unused variables handling (#19870) (leopardracer)
+- [`ebfb5b4`](https://github.com/eslint/eslint/commit/ebfb5b46136c4d737c9783333e3057421d1a0bef) docs: Fixed Typo in configuration-files.md (#19873) (0-20)
+- [`4112fd0`](https://github.com/eslint/eslint/commit/4112fd09531092e9651e9981205bcd603dc56acf) docs: clarify that boolean is still allowed for rule `meta.deprecated` (#19866) (Bryan Mishkin)
 
 ## Chores
-* [`2b6491c`](https://github.com/eslint/eslint/commit/2b6491cd4b8eec44d4a3f8dea1b71151e8dd0230) chore: upgrade to `@eslint/js@9.30.0` (#19889) (Francesco Trotta)
-* [`5a5d526`](https://github.com/eslint/eslint/commit/5a5d5261037fdf84a91f2f22d3726d58572453f4) chore: package.json update for @eslint/js release (Jenkins)
-* [`eaf8a41`](https://github.com/eslint/eslint/commit/eaf8a418af32b3190494e4a2284533353c28ccfa) chore: Correct typos in linter tests (#19878) (kilavvy)
+
+- [`2b6491c`](https://github.com/eslint/eslint/commit/2b6491cd4b8eec44d4a3f8dea1b71151e8dd0230) chore: upgrade to `@eslint/js@9.30.0` (#19889) (Francesco Trotta)
+- [`5a5d526`](https://github.com/eslint/eslint/commit/5a5d5261037fdf84a91f2f22d3726d58572453f4) chore: package.json update for @eslint/js release (Jenkins)
+- [`eaf8a41`](https://github.com/eslint/eslint/commit/eaf8a418af32b3190494e4a2284533353c28ccfa) chore: Correct typos in linter tests (#19878) (kilavvy)
 
 ---
 
 ### v9.31.0
-*Released: 7/11/2025*
+
+_Released: 7/11/2025_
 
 ## Features
-* [`35cf44c`](https://github.com/eslint/eslint/commit/35cf44c22e36b1554486e7a75c870e86c10b83f8) feat: output full actual location in rule tester if different (#19904) (ST-DDT)
-* [`a6a6325`](https://github.com/eslint/eslint/commit/a6a63259de6cb5642f69c7be429554bbcedca4c0) feat: support explicit resource management in `no-loop-func` (#19895) (Milos Djermanovic)
-* [`4682cdc`](https://github.com/eslint/eslint/commit/4682cdc6960279ee17f23899fbab6f58d881eadf) feat: support explicit resource management in `no-undef-init` (#19894) (Milos Djermanovic)
-* [`5848216`](https://github.com/eslint/eslint/commit/58482165eaf597cc5c58216a956c301ae87520b3) feat: support explicit resource management in `init-declarations` (#19893) (Milos Djermanovic)
-* [`bb370b8`](https://github.com/eslint/eslint/commit/bb370b8e79f65ee32d9d89ecf249fb74a141ad22) feat: support explicit resource management in `no-const-assign` (#19892) (Milos Djermanovic)
+
+- [`35cf44c`](https://github.com/eslint/eslint/commit/35cf44c22e36b1554486e7a75c870e86c10b83f8) feat: output full actual location in rule tester if different (#19904) (ST-DDT)
+- [`a6a6325`](https://github.com/eslint/eslint/commit/a6a63259de6cb5642f69c7be429554bbcedca4c0) feat: support explicit resource management in `no-loop-func` (#19895) (Milos Djermanovic)
+- [`4682cdc`](https://github.com/eslint/eslint/commit/4682cdc6960279ee17f23899fbab6f58d881eadf) feat: support explicit resource management in `no-undef-init` (#19894) (Milos Djermanovic)
+- [`5848216`](https://github.com/eslint/eslint/commit/58482165eaf597cc5c58216a956c301ae87520b3) feat: support explicit resource management in `init-declarations` (#19893) (Milos Djermanovic)
+- [`bb370b8`](https://github.com/eslint/eslint/commit/bb370b8e79f65ee32d9d89ecf249fb74a141ad22) feat: support explicit resource management in `no-const-assign` (#19892) (Milos Djermanovic)
 
 ## Bug Fixes
-* [`07fac6c`](https://github.com/eslint/eslint/commit/07fac6cafa0426b4d1ea12d9001f3955f19b286d) fix: retry on EMFILE when writing autofix results (#19926) (TKDev7)
-* [`28cc7ab`](https://github.com/eslint/eslint/commit/28cc7abbb72b29b1cac6fc4253646a7839586064) fix: Remove incorrect RuleContext types (#19910) (Nicholas C. Zakas)
+
+- [`07fac6c`](https://github.com/eslint/eslint/commit/07fac6cafa0426b4d1ea12d9001f3955f19b286d) fix: retry on EMFILE when writing autofix results (#19926) (TKDev7)
+- [`28cc7ab`](https://github.com/eslint/eslint/commit/28cc7abbb72b29b1cac6fc4253646a7839586064) fix: Remove incorrect RuleContext types (#19910) (Nicholas C. Zakas)
 
 ## Documentation
-* [`664cb44`](https://github.com/eslint/eslint/commit/664cb44ab03785bd200a792607a7e20faa2d4b28) docs: Update README (GitHub Actions Bot)
-* [`40dbe2a`](https://github.com/eslint/eslint/commit/40dbe2a43f83d366e9026faec70293512fb61ca2) docs: fix mismatch between `globalIgnores()` code and text (#19914) (MaoShizhong)
-* [`5a0069d`](https://github.com/eslint/eslint/commit/5a0069d60815246cf24e1c96125540792c2507ef) docs: Update README (GitHub Actions Bot)
-* [`fef04b5`](https://github.com/eslint/eslint/commit/fef04b5c7fea99362d67b31b8e98cd4914020ed3) docs: Update working on issues info (#19902) (Nicholas C. Zakas)
+
+- [`664cb44`](https://github.com/eslint/eslint/commit/664cb44ab03785bd200a792607a7e20faa2d4b28) docs: Update README (GitHub Actions Bot)
+- [`40dbe2a`](https://github.com/eslint/eslint/commit/40dbe2a43f83d366e9026faec70293512fb61ca2) docs: fix mismatch between `globalIgnores()` code and text (#19914) (MaoShizhong)
+- [`5a0069d`](https://github.com/eslint/eslint/commit/5a0069d60815246cf24e1c96125540792c2507ef) docs: Update README (GitHub Actions Bot)
+- [`fef04b5`](https://github.com/eslint/eslint/commit/fef04b5c7fea99362d67b31b8e98cd4914020ed3) docs: Update working on issues info (#19902) (Nicholas C. Zakas)
 
 ## Chores
-* [`3ddd454`](https://github.com/eslint/eslint/commit/3ddd454c1c73294e5af7905d60d03fac162f1b3e) chore: upgrade to `@eslint/js@9.31.0` (#19935) (Francesco Trotta)
-* [`d5054e5`](https://github.com/eslint/eslint/commit/d5054e5454a537e9ade238c768c262c6c592cbc1) chore: package.json update for @eslint/js release (Jenkins)
-* [`0f4a378`](https://github.com/eslint/eslint/commit/0f4a3781fe7c11fad7b206c3c694655486ddd187) chore: update eslint (#19933) (renovate[bot])
-* [`76c2340`](https://github.com/eslint/eslint/commit/76c2340c368f96db77439b5cd1df0196cc39bf3e) chore: bump mocha to v11 (#19917) (루밀LuMir)
+
+- [`3ddd454`](https://github.com/eslint/eslint/commit/3ddd454c1c73294e5af7905d60d03fac162f1b3e) chore: upgrade to `@eslint/js@9.31.0` (#19935) (Francesco Trotta)
+- [`d5054e5`](https://github.com/eslint/eslint/commit/d5054e5454a537e9ade238c768c262c6c592cbc1) chore: package.json update for @eslint/js release (Jenkins)
+- [`0f4a378`](https://github.com/eslint/eslint/commit/0f4a3781fe7c11fad7b206c3c694655486ddd187) chore: update eslint (#19933) (renovate[bot])
+- [`76c2340`](https://github.com/eslint/eslint/commit/76c2340c368f96db77439b5cd1df0196cc39bf3e) chore: bump mocha to v11 (#19917) (루밀LuMir)
 
 ---
 
 ### v9.32.0
-*Released: 7/25/2025*
+
+_Released: 7/25/2025_
 
 ## Features
-* [`1245000`](https://github.com/eslint/eslint/commit/1245000c5a81954d42f0c7eb670efe450c3bbad5) feat: support explicit resource management in core rules (#19828) (fnx)
-* [`0e957a7`](https://github.com/eslint/eslint/commit/0e957a7b5528f375a51e7c1a2fd1b03cdcd2af2d) feat: support typescript types in accessor rules (#19882) (fnx)
+
+- [`1245000`](https://github.com/eslint/eslint/commit/1245000c5a81954d42f0c7eb670efe450c3bbad5) feat: support explicit resource management in core rules (#19828) (fnx)
+- [`0e957a7`](https://github.com/eslint/eslint/commit/0e957a7b5528f375a51e7c1a2fd1b03cdcd2af2d) feat: support typescript types in accessor rules (#19882) (fnx)
 
 ## Bug Fixes
-* [`960fd40`](https://github.com/eslint/eslint/commit/960fd40dfd204af30726b49b6bec714fe49a606e) fix: Upgrade @eslint/js (#19971) (Nicholas C. Zakas)
-* [`bbf23fa`](https://github.com/eslint/eslint/commit/bbf23fa2f1c6058f6cb5c9f2f32460a15e75e596) fix: Refactor reporting into FileReport (#19877) (Nicholas C. Zakas)
-* [`d498887`](https://github.com/eslint/eslint/commit/d4988872f375890bf677ce1a1d92a505085b51fa) fix: bump @eslint/plugin-kit to 0.3.4 to resolve vulnerability (#19965) (Milos Djermanovic)
-* [`f46fc6c`](https://github.com/eslint/eslint/commit/f46fc6c137c951bc73cf3bd9446053c1b11f769b) fix: report only global references in no-implied-eval (#19932) (Nitin Kumar)
-* [`7863d26`](https://github.com/eslint/eslint/commit/7863d26b7cfb03a81ec86f93439757ff60bf6afb) fix: remove outdated types in `ParserOptions.ecmaFeatures` (#19944) (ntnyq)
-* [`3173305`](https://github.com/eslint/eslint/commit/317330552e2d276221c7f2dd9c1516ad8b41cc3c) fix: update execScript message in no-implied-eval rule (#19937) (TKDev7)
+
+- [`960fd40`](https://github.com/eslint/eslint/commit/960fd40dfd204af30726b49b6bec714fe49a606e) fix: Upgrade @eslint/js (#19971) (Nicholas C. Zakas)
+- [`bbf23fa`](https://github.com/eslint/eslint/commit/bbf23fa2f1c6058f6cb5c9f2f32460a15e75e596) fix: Refactor reporting into FileReport (#19877) (Nicholas C. Zakas)
+- [`d498887`](https://github.com/eslint/eslint/commit/d4988872f375890bf677ce1a1d92a505085b51fa) fix: bump @eslint/plugin-kit to 0.3.4 to resolve vulnerability (#19965) (Milos Djermanovic)
+- [`f46fc6c`](https://github.com/eslint/eslint/commit/f46fc6c137c951bc73cf3bd9446053c1b11f769b) fix: report only global references in no-implied-eval (#19932) (Nitin Kumar)
+- [`7863d26`](https://github.com/eslint/eslint/commit/7863d26b7cfb03a81ec86f93439757ff60bf6afb) fix: remove outdated types in `ParserOptions.ecmaFeatures` (#19944) (ntnyq)
+- [`3173305`](https://github.com/eslint/eslint/commit/317330552e2d276221c7f2dd9c1516ad8b41cc3c) fix: update execScript message in no-implied-eval rule (#19937) (TKDev7)
 
 ## Documentation
-* [`86e7426`](https://github.com/eslint/eslint/commit/86e7426e4463ca49ffa5c82e825ecb6aa19ca8a0) docs: Update README (GitHub Actions Bot)
+
+- [`86e7426`](https://github.com/eslint/eslint/commit/86e7426e4463ca49ffa5c82e825ecb6aa19ca8a0) docs: Update README (GitHub Actions Bot)
 
 ## Chores
-* [`50de1ce`](https://github.com/eslint/eslint/commit/50de1ced9df2b1ee48ee6843c8cfe0f5d8edbc27) chore: package.json update for @eslint/js release (Jenkins)
-* [`74f01a3`](https://github.com/eslint/eslint/commit/74f01a3f5905aaa0902837ced2425209c09c048f) ci: unpin `jiti` to version `^2.5.1` (#19970) (루밀LuMir)
-* [`2ab1381`](https://github.com/eslint/eslint/commit/2ab13813a7e7f3014c35490b351447ec43229951) ci: pin `jiti` to version 2.4.2 (#19964) (Francesco Trotta)
-* [`b7f7545`](https://github.com/eslint/eslint/commit/b7f75454695079f54b77fcdc9ebe3b9199d5ad30) test: switch to flat config mode in `SourceCode` tests (#19953) (Milos Djermanovic)
-* [`f5a35e3`](https://github.com/eslint/eslint/commit/f5a35e3b7cee17cd31fc02c24c3e74b42ee202bc) test: switch to flat config mode in eslint-fuzzer (#19960) (Milos Djermanovic)
-* [`e22af8c`](https://github.com/eslint/eslint/commit/e22af8c42d622d8d912ee7bedf49bf4283247fdc) refactor: use `CustomRuleDefinitionType` in `JSRuleDefinition` (#19949) (Francesco Trotta)
-* [`e855717`](https://github.com/eslint/eslint/commit/e85571730f1360464b7ee00695c678d551f9c643) chore: switch performance tests to hyperfine (#19919) (Francesco Trotta)
-* [`2f73a23`](https://github.com/eslint/eslint/commit/2f73a23655092a41780859ffe0a07c44a2f1b5f5) test: switch to flat config mode in `ast-utils` tests (#19948) (Milos Djermanovic)
-* [`c565a53`](https://github.com/eslint/eslint/commit/c565a530f50c96dacd44e096f7d531b073aa4dc7) chore: exclude `further_reading_links.json` from Prettier formatting (#19943) (Milos Djermanovic)
+
+- [`50de1ce`](https://github.com/eslint/eslint/commit/50de1ced9df2b1ee48ee6843c8cfe0f5d8edbc27) chore: package.json update for @eslint/js release (Jenkins)
+- [`74f01a3`](https://github.com/eslint/eslint/commit/74f01a3f5905aaa0902837ced2425209c09c048f) ci: unpin `jiti` to version `^2.5.1` (#19970) (루밀LuMir)
+- [`2ab1381`](https://github.com/eslint/eslint/commit/2ab13813a7e7f3014c35490b351447ec43229951) ci: pin `jiti` to version 2.4.2 (#19964) (Francesco Trotta)
+- [`b7f7545`](https://github.com/eslint/eslint/commit/b7f75454695079f54b77fcdc9ebe3b9199d5ad30) test: switch to flat config mode in `SourceCode` tests (#19953) (Milos Djermanovic)
+- [`f5a35e3`](https://github.com/eslint/eslint/commit/f5a35e3b7cee17cd31fc02c24c3e74b42ee202bc) test: switch to flat config mode in eslint-fuzzer (#19960) (Milos Djermanovic)
+- [`e22af8c`](https://github.com/eslint/eslint/commit/e22af8c42d622d8d912ee7bedf49bf4283247fdc) refactor: use `CustomRuleDefinitionType` in `JSRuleDefinition` (#19949) (Francesco Trotta)
+- [`e855717`](https://github.com/eslint/eslint/commit/e85571730f1360464b7ee00695c678d551f9c643) chore: switch performance tests to hyperfine (#19919) (Francesco Trotta)
+- [`2f73a23`](https://github.com/eslint/eslint/commit/2f73a23655092a41780859ffe0a07c44a2f1b5f5) test: switch to flat config mode in `ast-utils` tests (#19948) (Milos Djermanovic)
+- [`c565a53`](https://github.com/eslint/eslint/commit/c565a530f50c96dacd44e096f7d531b073aa4dc7) chore: exclude `further_reading_links.json` from Prettier formatting (#19943) (Milos Djermanovic)
 
 ---
 
 ### v9.33.0
-*Released: 8/8/2025*
+
+_Released: 8/8/2025_
 
 ## Features
-* [`e07820e`](https://github.com/eslint/eslint/commit/e07820e66fd1fceaf2620dc931154955a706cc0f) feat: add global object access detection to no-restricted-globals (#19939) (sethamus)
-* [`90b050e`](https://github.com/eslint/eslint/commit/90b050ec11557cab08b6be9f05fabf97dba6a63d) feat: support explicit resource management in `one-var` (#19941) (Sweta Tanwar)
+
+- [`e07820e`](https://github.com/eslint/eslint/commit/e07820e66fd1fceaf2620dc931154955a706cc0f) feat: add global object access detection to no-restricted-globals (#19939) (sethamus)
+- [`90b050e`](https://github.com/eslint/eslint/commit/90b050ec11557cab08b6be9f05fabf97dba6a63d) feat: support explicit resource management in `one-var` (#19941) (Sweta Tanwar)
 
 ## Bug Fixes
-* [`732433c`](https://github.com/eslint/eslint/commit/732433c4fb023f45154b825cdc8cdaf1979d4336) fix: allow any type for `meta.docs.recommended` in custom rules (#19995) (Francesco Trotta)
-* [`e8a6914`](https://github.com/eslint/eslint/commit/e8a6914a249d036e12494004e586b2a2b6e104d1) fix: Fixed potential bug in check-emfile-handling.js (#19975) (諏訪原慶斗)
+
+- [`732433c`](https://github.com/eslint/eslint/commit/732433c4fb023f45154b825cdc8cdaf1979d4336) fix: allow any type for `meta.docs.recommended` in custom rules (#19995) (Francesco Trotta)
+- [`e8a6914`](https://github.com/eslint/eslint/commit/e8a6914a249d036e12494004e586b2a2b6e104d1) fix: Fixed potential bug in check-emfile-handling.js (#19975) (諏訪原慶斗)
 
 ## Documentation
-* [`34f0723`](https://github.com/eslint/eslint/commit/34f0723e2d0faf8ac8dc95ec56e6d181bd6b67f2) docs: playground button for TypeScript code example (#19671) (Tanuj Kanti)
-* [`dc942a4`](https://github.com/eslint/eslint/commit/dc942a47daf41228d69072c52f1be20789426862) docs: Update README (GitHub Actions Bot)
-* [`5a4b6f7`](https://github.com/eslint/eslint/commit/5a4b6f74320b72f9b6ad8b30f5c463b2b71315af) docs: Update no-multi-assign.md (#19979) (Yuki Takada (Yukinosuke Takada))
-* [`247e156`](https://github.com/eslint/eslint/commit/247e15698e34919a0cd411842fb3e14ac7a8f1ba) docs: add missing let declarations in `no-plusplus` (#19980) (Yuki Takada (Yukinosuke Takada))
-* [`0d17242`](https://github.com/eslint/eslint/commit/0d17242b3c25c2ddf8363f4560641acd1ae82ca9) docs: Update README (GitHub Actions Bot)
-* [`fa20b9d`](https://github.com/eslint/eslint/commit/fa20b9db8ff90ea9f0527118114dda17c656d095) docs: Clarify when to open an issue for a PR (#19974) (Nicholas C. Zakas)
+
+- [`34f0723`](https://github.com/eslint/eslint/commit/34f0723e2d0faf8ac8dc95ec56e6d181bd6b67f2) docs: playground button for TypeScript code example (#19671) (Tanuj Kanti)
+- [`dc942a4`](https://github.com/eslint/eslint/commit/dc942a47daf41228d69072c52f1be20789426862) docs: Update README (GitHub Actions Bot)
+- [`5a4b6f7`](https://github.com/eslint/eslint/commit/5a4b6f74320b72f9b6ad8b30f5c463b2b71315af) docs: Update no-multi-assign.md (#19979) (Yuki Takada (Yukinosuke Takada))
+- [`247e156`](https://github.com/eslint/eslint/commit/247e15698e34919a0cd411842fb3e14ac7a8f1ba) docs: add missing let declarations in `no-plusplus` (#19980) (Yuki Takada (Yukinosuke Takada))
+- [`0d17242`](https://github.com/eslint/eslint/commit/0d17242b3c25c2ddf8363f4560641acd1ae82ca9) docs: Update README (GitHub Actions Bot)
+- [`fa20b9d`](https://github.com/eslint/eslint/commit/fa20b9db8ff90ea9f0527118114dda17c656d095) docs: Clarify when to open an issue for a PR (#19974) (Nicholas C. Zakas)
 
 ## Build Related
-* [`27fa865`](https://github.com/eslint/eslint/commit/27fa86551bd173387e29a139293de78b0e14f0f3) build: use `ESLint` class to generate formatter examples (#19972) (Milos Djermanovic)
+
+- [`27fa865`](https://github.com/eslint/eslint/commit/27fa86551bd173387e29a139293de78b0e14f0f3) build: use `ESLint` class to generate formatter examples (#19972) (Milos Djermanovic)
 
 ## Chores
-* [`4258046`](https://github.com/eslint/eslint/commit/425804602ecb9ee5f54d1c38a473cf20538420c5) chore: update dependency @eslint/js to v9.33.0 (#19998) (renovate[bot])
-* [`ad28371`](https://github.com/eslint/eslint/commit/ad283717ed4764a171120ca7c6cba82a78fa024c) chore: package.json update for @eslint/js release (Jenkins)
-* [`06a22f1`](https://github.com/eslint/eslint/commit/06a22f154c08ea044b3172b357b226d34dfefc6a) test: resolve flakiness in --mcp flag test (#19993) (Pixel998)
-* [`54920ed`](https://github.com/eslint/eslint/commit/54920ed229693f23650dace6e567bf44413aaf98) test: switch to `Linter.Config` in `ESLintRules` type tests (#19977) (Francesco Trotta)
+
+- [`4258046`](https://github.com/eslint/eslint/commit/425804602ecb9ee5f54d1c38a473cf20538420c5) chore: update dependency @eslint/js to v9.33.0 (#19998) (renovate[bot])
+- [`ad28371`](https://github.com/eslint/eslint/commit/ad283717ed4764a171120ca7c6cba82a78fa024c) chore: package.json update for @eslint/js release (Jenkins)
+- [`06a22f1`](https://github.com/eslint/eslint/commit/06a22f154c08ea044b3172b357b226d34dfefc6a) test: resolve flakiness in --mcp flag test (#19993) (Pixel998)
+- [`54920ed`](https://github.com/eslint/eslint/commit/54920ed229693f23650dace6e567bf44413aaf98) test: switch to `Linter.Config` in `ESLintRules` type tests (#19977) (Francesco Trotta)
 
 ---
 
 ### v9.34.0
-*Released: 8/22/2025*
+
+_Released: 8/22/2025_
 
 ## Features
-* [`0bb777a`](https://github.com/eslint/eslint/commit/0bb777a82b533df595cd520d9c89d291efa14a33) feat: multithread linting (#19794) (Francesco Trotta)
-* [`43a5f9e`](https://github.com/eslint/eslint/commit/43a5f9e36f1aade16f81fc49ef4b333660faadab) feat: add eslint-plugin-regexp to eslint-config-eslint base config (#19951) (Pixel998)
+
+- [`0bb777a`](https://github.com/eslint/eslint/commit/0bb777a82b533df595cd520d9c89d291efa14a33) feat: multithread linting (#19794) (Francesco Trotta)
+- [`43a5f9e`](https://github.com/eslint/eslint/commit/43a5f9e36f1aade16f81fc49ef4b333660faadab) feat: add eslint-plugin-regexp to eslint-config-eslint base config (#19951) (Pixel998)
 
 ## Bug Fixes
-* [`9b89903`](https://github.com/eslint/eslint/commit/9b8990397b2d2ed70771bb0e2070261a0c41782c) fix: default value of accessor-pairs option in rule.d.ts file (#20024) (Tanuj Kanti)
-* [`6c07420`](https://github.com/eslint/eslint/commit/6c074206ae0eae4816197a57648b415832a20e1d) fix: fix spurious failure in neostandard integration test (#20023) (Kirk Waiblinger)
-* [`676f4ac`](https://github.com/eslint/eslint/commit/676f4acaaed6e4f6ffe0c2e21272d4702b311a7b) fix: allow scientific notation with trailing zeros matching exponent (#20002) (Sweta Tanwar)
+
+- [`9b89903`](https://github.com/eslint/eslint/commit/9b8990397b2d2ed70771bb0e2070261a0c41782c) fix: default value of accessor-pairs option in rule.d.ts file (#20024) (Tanuj Kanti)
+- [`6c07420`](https://github.com/eslint/eslint/commit/6c074206ae0eae4816197a57648b415832a20e1d) fix: fix spurious failure in neostandard integration test (#20023) (Kirk Waiblinger)
+- [`676f4ac`](https://github.com/eslint/eslint/commit/676f4acaaed6e4f6ffe0c2e21272d4702b311a7b) fix: allow scientific notation with trailing zeros matching exponent (#20002) (Sweta Tanwar)
 
 ## Documentation
-* [`0b4a590`](https://github.com/eslint/eslint/commit/0b4a590333b73a21b9e0ddc98462680e09fe3232) docs: make rulesdir deprecation clearer (#20018) (Domenico Gemoli)
-* [`327c672`](https://github.com/eslint/eslint/commit/327c67256fbeaf9d5e365802c2a11f5d32a16522) docs: Update README (GitHub Actions Bot)
-* [`bf26229`](https://github.com/eslint/eslint/commit/bf2622991f5b892610a8c3343ff16519e5fd7a79) docs: Fix typo in core-concepts/index.md (#20009) (Tobias Hernstig)
-* [`2309327`](https://github.com/eslint/eslint/commit/2309327554acbf011f0d17e7b36fdd68e43adf3a) docs: fix typo in the "Configuring Rules" section (#20001) (ghazi-git)
-* [`2b87e21`](https://github.com/eslint/eslint/commit/2b87e21321422c120c2248dae25cac7f9eec0f29) docs: [no-else-return] clarify sample code. (#19991) (Yuki Takada (Yukinosuke Takada))
-* [`c36570c`](https://github.com/eslint/eslint/commit/c36570c6657c2a92dbb4f09a8166a4d9909a091a) docs: Update README (GitHub Actions Bot)
+
+- [`0b4a590`](https://github.com/eslint/eslint/commit/0b4a590333b73a21b9e0ddc98462680e09fe3232) docs: make rulesdir deprecation clearer (#20018) (Domenico Gemoli)
+- [`327c672`](https://github.com/eslint/eslint/commit/327c67256fbeaf9d5e365802c2a11f5d32a16522) docs: Update README (GitHub Actions Bot)
+- [`bf26229`](https://github.com/eslint/eslint/commit/bf2622991f5b892610a8c3343ff16519e5fd7a79) docs: Fix typo in core-concepts/index.md (#20009) (Tobias Hernstig)
+- [`2309327`](https://github.com/eslint/eslint/commit/2309327554acbf011f0d17e7b36fdd68e43adf3a) docs: fix typo in the "Configuring Rules" section (#20001) (ghazi-git)
+- [`2b87e21`](https://github.com/eslint/eslint/commit/2b87e21321422c120c2248dae25cac7f9eec0f29) docs: [no-else-return] clarify sample code. (#19991) (Yuki Takada (Yukinosuke Takada))
+- [`c36570c`](https://github.com/eslint/eslint/commit/c36570c6657c2a92dbb4f09a8166a4d9909a091a) docs: Update README (GitHub Actions Bot)
 
 ## Chores
-* [`f19ad94`](https://github.com/eslint/eslint/commit/f19ad9493e0ca04c2c1455fbb3402eaad993a8be) chore: upgrade to `@eslint/js@9.34.0` (#20030) (Francesco Trotta)
-* [`b48fa20`](https://github.com/eslint/eslint/commit/b48fa20034e53bc65d1a58f3d834705e3087b00c) chore: package.json update for @eslint/js release (Jenkins)
-* [`4bce8a2`](https://github.com/eslint/eslint/commit/4bce8a250262ec47207bc260581f979e40c86bda) chore: package.json update for eslint-config-eslint release (Jenkins)
-* [`0c9999c`](https://github.com/eslint/eslint/commit/0c9999c2a682151cf13bb3a4f8916930678c2f9b) refactor: prefer default options in `grouped-accessor-pairs` (#20028) (루밀LuMir)
-* [`d503f19`](https://github.com/eslint/eslint/commit/d503f1981354c7b86e423879846c61e0405af8fe) ci: fix `stale.yml` (#20010) (루밀LuMir)
-* [`e2dc67d`](https://github.com/eslint/eslint/commit/e2dc67d8b028147de4da35c64efe1d74c9f6a883) ci: centralize `stale.yml` (#19994) (루밀LuMir)
-* [`7093cb8`](https://github.com/eslint/eslint/commit/7093cb8f590ec2a1b5364d7b5687e9b5f4e06f8a) ci: bump actions/checkout from 4 to 5 (#20005) (dependabot[bot])
+
+- [`f19ad94`](https://github.com/eslint/eslint/commit/f19ad9493e0ca04c2c1455fbb3402eaad993a8be) chore: upgrade to `@eslint/js@9.34.0` (#20030) (Francesco Trotta)
+- [`b48fa20`](https://github.com/eslint/eslint/commit/b48fa20034e53bc65d1a58f3d834705e3087b00c) chore: package.json update for @eslint/js release (Jenkins)
+- [`4bce8a2`](https://github.com/eslint/eslint/commit/4bce8a250262ec47207bc260581f979e40c86bda) chore: package.json update for eslint-config-eslint release (Jenkins)
+- [`0c9999c`](https://github.com/eslint/eslint/commit/0c9999c2a682151cf13bb3a4f8916930678c2f9b) refactor: prefer default options in `grouped-accessor-pairs` (#20028) (루밀LuMir)
+- [`d503f19`](https://github.com/eslint/eslint/commit/d503f1981354c7b86e423879846c61e0405af8fe) ci: fix `stale.yml` (#20010) (루밀LuMir)
+- [`e2dc67d`](https://github.com/eslint/eslint/commit/e2dc67d8b028147de4da35c64efe1d74c9f6a883) ci: centralize `stale.yml` (#19994) (루밀LuMir)
+- [`7093cb8`](https://github.com/eslint/eslint/commit/7093cb8f590ec2a1b5364d7b5687e9b5f4e06f8a) ci: bump actions/checkout from 4 to 5 (#20005) (dependabot[bot])
 
 ---
 
 ### v9.35.0
-*Released: 9/5/2025*
+
+_Released: 9/5/2025_
 
 ## Features
-* [`42761fa`](https://github.com/eslint/eslint/commit/42761fa7c872fb9e14c144b692af6967b3662082) feat: implement suggestions for no-empty-function (#20057) (jaymarvelz)
-* [`102f444`](https://github.com/eslint/eslint/commit/102f44442ac9bf1fcd4ba6ab9fae43ce09199df6) feat: implement suggestions for no-empty-static-block (#20056) (jaymarvelz)
-* [`e51ffff`](https://github.com/eslint/eslint/commit/e51ffff737ca245b3a1d115cb11e1c99737249a3) feat: add `preserve-caught-error` rule (#19913) (Amnish Singh Arora)
+
+- [`42761fa`](https://github.com/eslint/eslint/commit/42761fa7c872fb9e14c144b692af6967b3662082) feat: implement suggestions for no-empty-function (#20057) (jaymarvelz)
+- [`102f444`](https://github.com/eslint/eslint/commit/102f44442ac9bf1fcd4ba6ab9fae43ce09199df6) feat: implement suggestions for no-empty-static-block (#20056) (jaymarvelz)
+- [`e51ffff`](https://github.com/eslint/eslint/commit/e51ffff737ca245b3a1d115cb11e1c99737249a3) feat: add `preserve-caught-error` rule (#19913) (Amnish Singh Arora)
 
 ## Bug Fixes
-* [`10e7ae2`](https://github.com/eslint/eslint/commit/10e7ae23e30ea0834d9fdeb3a2a1db8103c36cd2) fix: update uncloneable options error message (#20059) (soda-sorcery)
-* [`bfa4601`](https://github.com/eslint/eslint/commit/bfa46013e7ea9a522c02f72250fa07160f96a6b8) fix: ignore empty switch statements with comments in no-empty rule (#20045) (jaymarvelz)
-* [`dfd11de`](https://github.com/eslint/eslint/commit/dfd11deb24fc733faa5db751a2f615eb04e48b15) fix: add `before` and `after` to test case types (#20049) (Francesco Trotta)
-* [`dabbe95`](https://github.com/eslint/eslint/commit/dabbe95c39671c5fa272da012ee1432aa088650f) fix: correct types for `no-restricted-imports` rule (#20034) (Milos Djermanovic)
-* [`ea789c7`](https://github.com/eslint/eslint/commit/ea789c7dd234c1a6be499a4644dd0f5c97615972) fix: no-loss-of-precision false positive with uppercase exponent (#20032) (sethamus)
+
+- [`10e7ae2`](https://github.com/eslint/eslint/commit/10e7ae23e30ea0834d9fdeb3a2a1db8103c36cd2) fix: update uncloneable options error message (#20059) (soda-sorcery)
+- [`bfa4601`](https://github.com/eslint/eslint/commit/bfa46013e7ea9a522c02f72250fa07160f96a6b8) fix: ignore empty switch statements with comments in no-empty rule (#20045) (jaymarvelz)
+- [`dfd11de`](https://github.com/eslint/eslint/commit/dfd11deb24fc733faa5db751a2f615eb04e48b15) fix: add `before` and `after` to test case types (#20049) (Francesco Trotta)
+- [`dabbe95`](https://github.com/eslint/eslint/commit/dabbe95c39671c5fa272da012ee1432aa088650f) fix: correct types for `no-restricted-imports` rule (#20034) (Milos Djermanovic)
+- [`ea789c7`](https://github.com/eslint/eslint/commit/ea789c7dd234c1a6be499a4644dd0f5c97615972) fix: no-loss-of-precision false positive with uppercase exponent (#20032) (sethamus)
 
 ## Documentation
-* [`d265515`](https://github.com/eslint/eslint/commit/d265515642f65246bcd45c17979f67c2afb12f95) docs: improve phrasing - "if" → "even if" from getting-started section (#20074) (jjangga0214)
-* [`a355a0e`](https://github.com/eslint/eslint/commit/a355a0e5b2e6a47cda099b31dc7d112cfb5c4315) docs: invert comparison logic for example in `no-var` doc page (#20064) (OTonGitHub)
-* [`5082fc2`](https://github.com/eslint/eslint/commit/5082fc206de6946d9d4c20e57301f78839b3b9f2) docs: Update README (GitHub Actions Bot)
-* [`99cfd7e`](https://github.com/eslint/eslint/commit/99cfd7e056e1703941c9eb8ca1ae7fdb1987ba9d) docs: add missing "the" in rule deprecation docs (#20050) (Josh Goldberg ✨)
-* [`6ad8973`](https://github.com/eslint/eslint/commit/6ad8973e5d3c94b8e100b7266f55f8eb0757eb00) docs: update `--no-ignore` and `--ignore-pattern` documentation (#20036) (Francesco Trotta)
-* [`8033b19`](https://github.com/eslint/eslint/commit/8033b195299a1eaa4a0ed6553d9e034a457bb577) docs: add documentation for `--no-config-lookup` (#20033) (Francesco Trotta)
+
+- [`d265515`](https://github.com/eslint/eslint/commit/d265515642f65246bcd45c17979f67c2afb12f95) docs: improve phrasing - "if" → "even if" from getting-started section (#20074) (jjangga0214)
+- [`a355a0e`](https://github.com/eslint/eslint/commit/a355a0e5b2e6a47cda099b31dc7d112cfb5c4315) docs: invert comparison logic for example in `no-var` doc page (#20064) (OTonGitHub)
+- [`5082fc2`](https://github.com/eslint/eslint/commit/5082fc206de6946d9d4c20e57301f78839b3b9f2) docs: Update README (GitHub Actions Bot)
+- [`99cfd7e`](https://github.com/eslint/eslint/commit/99cfd7e056e1703941c9eb8ca1ae7fdb1987ba9d) docs: add missing "the" in rule deprecation docs (#20050) (Josh Goldberg ✨)
+- [`6ad8973`](https://github.com/eslint/eslint/commit/6ad8973e5d3c94b8e100b7266f55f8eb0757eb00) docs: update `--no-ignore` and `--ignore-pattern` documentation (#20036) (Francesco Trotta)
+- [`8033b19`](https://github.com/eslint/eslint/commit/8033b195299a1eaa4a0ed6553d9e034a457bb577) docs: add documentation for `--no-config-lookup` (#20033) (Francesco Trotta)
 
 ## Chores
-* [`da87f2f`](https://github.com/eslint/eslint/commit/da87f2fe792cab5b69b62bf5c15e69ab4f433087) chore: upgrade @eslint/js@9.35.0 (#20077) (Milos Djermanovic)
-* [`af2a087`](https://github.com/eslint/eslint/commit/af2a0870fdc646091d027516601888923e5bc202) chore: package.json update for @eslint/js release (Jenkins)
-* [`7055764`](https://github.com/eslint/eslint/commit/70557649e3111c55d8cddf678b6c4079aa6f0ccc) test: remove `tests/lib/eslint/eslint.config.js` (#20065) (Milos Djermanovic)
-* [`84ffb96`](https://github.com/eslint/eslint/commit/84ffb9680b15e45bfd8c8a5db4731576ddd16fc4) chore: update `@eslint-community/eslint-utils` (#20069) (Francesco Trotta)
-* [`d5ef939`](https://github.com/eslint/eslint/commit/d5ef9397150cc178e1f9891c3ff49ac4871ec786) refactor: remove deprecated `context.parserOptions` usage across rules (#20060) (sethamus)
-* [`1b3881d`](https://github.com/eslint/eslint/commit/1b3881d7e859bec9589e39888656c33c914a8302) chore: remove redundant word (#20058) (pxwanglu)
+
+- [`da87f2f`](https://github.com/eslint/eslint/commit/da87f2fe792cab5b69b62bf5c15e69ab4f433087) chore: upgrade @eslint/js@9.35.0 (#20077) (Milos Djermanovic)
+- [`af2a087`](https://github.com/eslint/eslint/commit/af2a0870fdc646091d027516601888923e5bc202) chore: package.json update for @eslint/js release (Jenkins)
+- [`7055764`](https://github.com/eslint/eslint/commit/70557649e3111c55d8cddf678b6c4079aa6f0ccc) test: remove `tests/lib/eslint/eslint.config.js` (#20065) (Milos Djermanovic)
+- [`84ffb96`](https://github.com/eslint/eslint/commit/84ffb9680b15e45bfd8c8a5db4731576ddd16fc4) chore: update `@eslint-community/eslint-utils` (#20069) (Francesco Trotta)
+- [`d5ef939`](https://github.com/eslint/eslint/commit/d5ef9397150cc178e1f9891c3ff49ac4871ec786) refactor: remove deprecated `context.parserOptions` usage across rules (#20060) (sethamus)
+- [`1b3881d`](https://github.com/eslint/eslint/commit/1b3881d7e859bec9589e39888656c33c914a8302) chore: remove redundant word (#20058) (pxwanglu)
 
 ---
 
 ### v9.36.0
-*Released: 9/19/2025*
+
+_Released: 9/19/2025_
 
 ## Features
-* [`47afcf6`](https://github.com/eslint/eslint/commit/47afcf668df65eac68d7b04145d037037010a076) feat: correct `preserve-caught-error` edge cases (#20109) (Francesco Trotta)
+
+- [`47afcf6`](https://github.com/eslint/eslint/commit/47afcf668df65eac68d7b04145d037037010a076) feat: correct `preserve-caught-error` edge cases (#20109) (Francesco Trotta)
 
 ## Bug Fixes
-* [`75b74d8`](https://github.com/eslint/eslint/commit/75b74d865d3b8e7fa3bcf5ad29f4bf6d18d1310e) fix: add missing rule option types (#20127) (ntnyq)
-* [`1c0d850`](https://github.com/eslint/eslint/commit/1c0d85049e3f30a8809340c1abc881c63b7812ff) fix: update `eslint-all.js` to use `Object.freeze` for `rules` object (#20116) (루밀LuMir)
-* [`7d61b7f`](https://github.com/eslint/eslint/commit/7d61b7fadc9c5c6f2b131e37e8a3cffa5aae8ee6) fix: add missing scope types to `Scope.type` (#20110) (Pixel998)
-* [`7a670c3`](https://github.com/eslint/eslint/commit/7a670c301b58609017ce8cfda99ee81f95de3898) fix: correct rule option typings in `rules.d.ts` (#20084) (Pixel998)
+
+- [`75b74d8`](https://github.com/eslint/eslint/commit/75b74d865d3b8e7fa3bcf5ad29f4bf6d18d1310e) fix: add missing rule option types (#20127) (ntnyq)
+- [`1c0d850`](https://github.com/eslint/eslint/commit/1c0d85049e3f30a8809340c1abc881c63b7812ff) fix: update `eslint-all.js` to use `Object.freeze` for `rules` object (#20116) (루밀LuMir)
+- [`7d61b7f`](https://github.com/eslint/eslint/commit/7d61b7fadc9c5c6f2b131e37e8a3cffa5aae8ee6) fix: add missing scope types to `Scope.type` (#20110) (Pixel998)
+- [`7a670c3`](https://github.com/eslint/eslint/commit/7a670c301b58609017ce8cfda99ee81f95de3898) fix: correct rule option typings in `rules.d.ts` (#20084) (Pixel998)
 
 ## Documentation
-* [`b73ab12`](https://github.com/eslint/eslint/commit/b73ab12acd3e87f8d8173cda03499f6cd1f26db6) docs: update examples to use `defineConfig` (#20131) (sethamus)
-* [`31d9392`](https://github.com/eslint/eslint/commit/31d93926990fba536846ec727d7a2625fc844649) docs: fix typos (#20118) (Pixel998)
-* [`c7f861b`](https://github.com/eslint/eslint/commit/c7f861b3f8c1ac961b4cd4f22483798f3324c62b) docs: Update README (GitHub Actions Bot)
-* [`6b0c08b`](https://github.com/eslint/eslint/commit/6b0c08b106aa66f2e9fa484282f0eb63c64a1215) docs: Update README (GitHub Actions Bot)
-* [`91f97c5`](https://github.com/eslint/eslint/commit/91f97c50468fbdc089c91e99c2ea0fe821911df2) docs: Update README (GitHub Actions Bot)
+
+- [`b73ab12`](https://github.com/eslint/eslint/commit/b73ab12acd3e87f8d8173cda03499f6cd1f26db6) docs: update examples to use `defineConfig` (#20131) (sethamus)
+- [`31d9392`](https://github.com/eslint/eslint/commit/31d93926990fba536846ec727d7a2625fc844649) docs: fix typos (#20118) (Pixel998)
+- [`c7f861b`](https://github.com/eslint/eslint/commit/c7f861b3f8c1ac961b4cd4f22483798f3324c62b) docs: Update README (GitHub Actions Bot)
+- [`6b0c08b`](https://github.com/eslint/eslint/commit/6b0c08b106aa66f2e9fa484282f0eb63c64a1215) docs: Update README (GitHub Actions Bot)
+- [`91f97c5`](https://github.com/eslint/eslint/commit/91f97c50468fbdc089c91e99c2ea0fe821911df2) docs: Update README (GitHub Actions Bot)
 
 ## Chores
-* [`12411e8`](https://github.com/eslint/eslint/commit/12411e8d450ed26a5f7cca6a78ec05323c9323e8) chore: upgrade @eslint/js@9.36.0 (#20139) (Milos Djermanovic)
-* [`488cba6`](https://github.com/eslint/eslint/commit/488cba6b391b97b2cfc74bbb46fdeacb1361949e) chore: package.json update for @eslint/js release (Jenkins)
-* [`bac82a2`](https://github.com/eslint/eslint/commit/bac82a2a9c80a3f69087852758d7737aea371f09) ci: simplify renovate configuration (#19907) (唯然)
-* [`c00bb37`](https://github.com/eslint/eslint/commit/c00bb37d62c1bcc0a37f094371be9c40064009f1) ci: bump actions/labeler from 5 to 6 (#20090) (dependabot[bot])
-* [`fee751d`](https://github.com/eslint/eslint/commit/fee751dc8aeab54547af4538332ea5c069ef28b6) refactor: use `defaultOptions` in rules (#20121) (Pixel998)
-* [`1ace67d`](https://github.com/eslint/eslint/commit/1ace67d9f7903adc3d3f09868aa05b673e7d3f3b) chore: update example to use `defineConfig` (#20111) (루밀LuMir)
-* [`4821963`](https://github.com/eslint/eslint/commit/4821963bf765532069c49e9da9ecbe9485b073fc) test: add missing loc information to error objects in rule tests (#20112) (루밀LuMir)
-* [`b42c42e`](https://github.com/eslint/eslint/commit/b42c42e7cd3ac9ee1b5a15f16ff25b325d0482e4) chore: disallow use of deprecated `type` property in core rule tests (#20094) (Milos Djermanovic)
-* [`7bb498d`](https://github.com/eslint/eslint/commit/7bb498d720dcd054cc042ca4b60b138d8485f07c) test: remove deprecated `type` property from core rule tests (#20093) (Pixel998)
-* [`e10cf2a`](https://github.com/eslint/eslint/commit/e10cf2ab42fe5b481d980dc652f7504414747733) ci: bump actions/setup-node from 4 to 5 (#20089) (dependabot[bot])
-* [`5cb0ce4`](https://github.com/eslint/eslint/commit/5cb0ce48ef6cfbbe6d09131c33a53f9d66fe9bd4) refactor: use `meta.defaultOptions` in `preserve-caught-error` (#20080) (Pixel998)
-* [`f9f7cb5`](https://github.com/eslint/eslint/commit/f9f7cb578dced3c14f635e17c75aa6744d291f4d) chore: package.json update for eslint-config-eslint release (Jenkins)
-* [`81764b2`](https://github.com/eslint/eslint/commit/81764b298065a328038cd067bc8fedef97e57500) chore: update `eslint` peer dependency in `eslint-config-eslint` (#20079) (Milos Djermanovic)
+
+- [`12411e8`](https://github.com/eslint/eslint/commit/12411e8d450ed26a5f7cca6a78ec05323c9323e8) chore: upgrade @eslint/js@9.36.0 (#20139) (Milos Djermanovic)
+- [`488cba6`](https://github.com/eslint/eslint/commit/488cba6b391b97b2cfc74bbb46fdeacb1361949e) chore: package.json update for @eslint/js release (Jenkins)
+- [`bac82a2`](https://github.com/eslint/eslint/commit/bac82a2a9c80a3f69087852758d7737aea371f09) ci: simplify renovate configuration (#19907) (唯然)
+- [`c00bb37`](https://github.com/eslint/eslint/commit/c00bb37d62c1bcc0a37f094371be9c40064009f1) ci: bump actions/labeler from 5 to 6 (#20090) (dependabot[bot])
+- [`fee751d`](https://github.com/eslint/eslint/commit/fee751dc8aeab54547af4538332ea5c069ef28b6) refactor: use `defaultOptions` in rules (#20121) (Pixel998)
+- [`1ace67d`](https://github.com/eslint/eslint/commit/1ace67d9f7903adc3d3f09868aa05b673e7d3f3b) chore: update example to use `defineConfig` (#20111) (루밀LuMir)
+- [`4821963`](https://github.com/eslint/eslint/commit/4821963bf765532069c49e9da9ecbe9485b073fc) test: add missing loc information to error objects in rule tests (#20112) (루밀LuMir)
+- [`b42c42e`](https://github.com/eslint/eslint/commit/b42c42e7cd3ac9ee1b5a15f16ff25b325d0482e4) chore: disallow use of deprecated `type` property in core rule tests (#20094) (Milos Djermanovic)
+- [`7bb498d`](https://github.com/eslint/eslint/commit/7bb498d720dcd054cc042ca4b60b138d8485f07c) test: remove deprecated `type` property from core rule tests (#20093) (Pixel998)
+- [`e10cf2a`](https://github.com/eslint/eslint/commit/e10cf2ab42fe5b481d980dc652f7504414747733) ci: bump actions/setup-node from 4 to 5 (#20089) (dependabot[bot])
+- [`5cb0ce4`](https://github.com/eslint/eslint/commit/5cb0ce48ef6cfbbe6d09131c33a53f9d66fe9bd4) refactor: use `meta.defaultOptions` in `preserve-caught-error` (#20080) (Pixel998)
+- [`f9f7cb5`](https://github.com/eslint/eslint/commit/f9f7cb578dced3c14f635e17c75aa6744d291f4d) chore: package.json update for eslint-config-eslint release (Jenkins)
+- [`81764b2`](https://github.com/eslint/eslint/commit/81764b298065a328038cd067bc8fedef97e57500) chore: update `eslint` peer dependency in `eslint-config-eslint` (#20079) (Milos Djermanovic)
 
 ---
 
 ### v9.37.0
-*Released: 10/3/2025*
+
+_Released: 10/3/2025_
 
 ## Features
-* [`39f7fb4`](https://github.com/eslint/eslint/commit/39f7fb493a6924ff7dc638fd4d6e7b3d8eb95383) feat: `preserve-caught-error` should recognize all static "cause" keys (#20163) (Pixel998)
-* [`f81eabc`](https://github.com/eslint/eslint/commit/f81eabc5849ece98b8ca054f96b29f038a69bcf8) feat: support TS syntax in `no-restricted-imports` (#19562) (Nitin Kumar)
+
+- [`39f7fb4`](https://github.com/eslint/eslint/commit/39f7fb493a6924ff7dc638fd4d6e7b3d8eb95383) feat: `preserve-caught-error` should recognize all static "cause" keys (#20163) (Pixel998)
+- [`f81eabc`](https://github.com/eslint/eslint/commit/f81eabc5849ece98b8ca054f96b29f038a69bcf8) feat: support TS syntax in `no-restricted-imports` (#19562) (Nitin Kumar)
 
 ## Bug Fixes
-* [`a129cce`](https://github.com/eslint/eslint/commit/a129cced7a86ea2518eb9be6990fa18af39694ca) fix: correct `no-loss-of-precision` false positives for leading zeros (#20164) (Francesco Trotta)
-* [`09e04fc`](https://github.com/eslint/eslint/commit/09e04fcc3f4cc963eea7c9c579391de5e231595b) fix: add missing AST token types (#20172) (Pixel998)
-* [`861c6da`](https://github.com/eslint/eslint/commit/861c6da2bd2796414e6eed782155ec34e2ed6344) fix: correct `ESLint` typings (#20122) (Pixel998)
+
+- [`a129cce`](https://github.com/eslint/eslint/commit/a129cced7a86ea2518eb9be6990fa18af39694ca) fix: correct `no-loss-of-precision` false positives for leading zeros (#20164) (Francesco Trotta)
+- [`09e04fc`](https://github.com/eslint/eslint/commit/09e04fcc3f4cc963eea7c9c579391de5e231595b) fix: add missing AST token types (#20172) (Pixel998)
+- [`861c6da`](https://github.com/eslint/eslint/commit/861c6da2bd2796414e6eed782155ec34e2ed6344) fix: correct `ESLint` typings (#20122) (Pixel998)
 
 ## Documentation
-* [`b950359`](https://github.com/eslint/eslint/commit/b950359c5f39085483c3137a6a160e582ef32007) docs: fix typos across the docs (#20182) (루밀LuMir)
-* [`42498a2`](https://github.com/eslint/eslint/commit/42498a27981d50750dd15ae8660dbe85c4f4587c) docs: improve ToC accessibility by hiding non-semantic character (#20181) (Percy Ma)
-* [`29ea092`](https://github.com/eslint/eslint/commit/29ea092b93608756350b1e9c5a4f29c8a49264ab) docs: Update README (GitHub Actions Bot)
-* [`5c97a04`](https://github.com/eslint/eslint/commit/5c97a04578e6280c2395f642c2d8d6bdf30eec18) docs: show `availableUntil` in deprecated rule banner (#20170) (Pixel998)
-* [`90a71bf`](https://github.com/eslint/eslint/commit/90a71bf5024a86fc232cd2e05f96811e2a18fd0f) docs: update `README` files to add badge and instructions (#20115) (루밀LuMir)
-* [`1603ae1`](https://github.com/eslint/eslint/commit/1603ae1526d9b6f557c7d5534a4f40f46842edd6) docs: update references from `master` to `main` (#20153) (루밀LuMir)
+
+- [`b950359`](https://github.com/eslint/eslint/commit/b950359c5f39085483c3137a6a160e582ef32007) docs: fix typos across the docs (#20182) (루밀LuMir)
+- [`42498a2`](https://github.com/eslint/eslint/commit/42498a27981d50750dd15ae8660dbe85c4f4587c) docs: improve ToC accessibility by hiding non-semantic character (#20181) (Percy Ma)
+- [`29ea092`](https://github.com/eslint/eslint/commit/29ea092b93608756350b1e9c5a4f29c8a49264ab) docs: Update README (GitHub Actions Bot)
+- [`5c97a04`](https://github.com/eslint/eslint/commit/5c97a04578e6280c2395f642c2d8d6bdf30eec18) docs: show `availableUntil` in deprecated rule banner (#20170) (Pixel998)
+- [`90a71bf`](https://github.com/eslint/eslint/commit/90a71bf5024a86fc232cd2e05f96811e2a18fd0f) docs: update `README` files to add badge and instructions (#20115) (루밀LuMir)
+- [`1603ae1`](https://github.com/eslint/eslint/commit/1603ae1526d9b6f557c7d5534a4f40f46842edd6) docs: update references from `master` to `main` (#20153) (루밀LuMir)
 
 ## Chores
-* [`afe8a13`](https://github.com/eslint/eslint/commit/afe8a1346958242031fea66fdfbb239e8bf408b7) chore: update `@eslint/js` dependency to version 9.37.0 (#20183) (Francesco Trotta)
-* [`abee4ca`](https://github.com/eslint/eslint/commit/abee4ca1fa10da733b1cc4a7d5e765b912a9de82) chore: package.json update for @eslint/js release (Jenkins)
-* [`fc9381f`](https://github.com/eslint/eslint/commit/fc9381f6ca57b824e82d118c14631c17bea79d7e) chore: fix typos in comments (#20175) (overlookmotel)
-* [`e1574a2`](https://github.com/eslint/eslint/commit/e1574a22d38fd7e1891f86f8db0b09053f8963cb) chore: unpin jiti (#20173) (renovate[bot])
-* [`e1ac05e`](https://github.com/eslint/eslint/commit/e1ac05e2fae779e738f85bd47dda1cc2b7099346) refactor: mark `ESLint.findConfigFile()` as `async`, add missing docs (#20157) (Pixel998)
-* [`347906d`](https://github.com/eslint/eslint/commit/347906d627c53bf45d63ba831d2fd2b83fb0a749) chore: update eslint (#20149) (renovate[bot])
-* [`0cb5897`](https://github.com/eslint/eslint/commit/0cb5897e24059bacadb8d2e6458184904759fda1) test: remove tmp dir created for circular fixes in multithread mode test (#20146) (Milos Djermanovic)
-* [`bb99566`](https://github.com/eslint/eslint/commit/bb995665e32b3a958e78006c9fd75744c5604f1b) ci: pin `jiti` to version 2.5.1 (#20151) (Pixel998)
-* [`177f669`](https://github.com/eslint/eslint/commit/177f669adc0f96d14ae1a71cde7786f327515863) perf: improve worker count calculation for `"auto"` concurrency (#20067) (Francesco Trotta)
-* [`448b57b`](https://github.com/eslint/eslint/commit/448b57bca3406ee12c4e44e9298fc0c99d3ee10c) chore: Mark deprecated formatting rules as available until v11.0.0 (#20144) (Milos Djermanovic)
+
+- [`afe8a13`](https://github.com/eslint/eslint/commit/afe8a1346958242031fea66fdfbb239e8bf408b7) chore: update `@eslint/js` dependency to version 9.37.0 (#20183) (Francesco Trotta)
+- [`abee4ca`](https://github.com/eslint/eslint/commit/abee4ca1fa10da733b1cc4a7d5e765b912a9de82) chore: package.json update for @eslint/js release (Jenkins)
+- [`fc9381f`](https://github.com/eslint/eslint/commit/fc9381f6ca57b824e82d118c14631c17bea79d7e) chore: fix typos in comments (#20175) (overlookmotel)
+- [`e1574a2`](https://github.com/eslint/eslint/commit/e1574a22d38fd7e1891f86f8db0b09053f8963cb) chore: unpin jiti (#20173) (renovate[bot])
+- [`e1ac05e`](https://github.com/eslint/eslint/commit/e1ac05e2fae779e738f85bd47dda1cc2b7099346) refactor: mark `ESLint.findConfigFile()` as `async`, add missing docs (#20157) (Pixel998)
+- [`347906d`](https://github.com/eslint/eslint/commit/347906d627c53bf45d63ba831d2fd2b83fb0a749) chore: update eslint (#20149) (renovate[bot])
+- [`0cb5897`](https://github.com/eslint/eslint/commit/0cb5897e24059bacadb8d2e6458184904759fda1) test: remove tmp dir created for circular fixes in multithread mode test (#20146) (Milos Djermanovic)
+- [`bb99566`](https://github.com/eslint/eslint/commit/bb995665e32b3a958e78006c9fd75744c5604f1b) ci: pin `jiti` to version 2.5.1 (#20151) (Pixel998)
+- [`177f669`](https://github.com/eslint/eslint/commit/177f669adc0f96d14ae1a71cde7786f327515863) perf: improve worker count calculation for `"auto"` concurrency (#20067) (Francesco Trotta)
+- [`448b57b`](https://github.com/eslint/eslint/commit/448b57bca3406ee12c4e44e9298fc0c99d3ee10c) chore: Mark deprecated formatting rules as available until v11.0.0 (#20144) (Milos Djermanovic)
 
 ---
 
 ### v9.38.0
-*Released: 10/17/2025*
+
+_Released: 10/17/2025_
 
 ## Features
-* [`ce40f74`](https://github.com/eslint/eslint/commit/ce40f74efd45f66d9fbfc6f78ce622ee72008485) feat: update `complexity` rule to only highlight function header (#20048) (Atul Nair)
-* [`e37e590`](https://github.com/eslint/eslint/commit/e37e590aae2a7fcca4d3a9adc1379ad466e5c5d1) feat: correct `no-loss-of-precision` false positives with `e` notation (#20187) (Francesco Trotta)
+
+- [`ce40f74`](https://github.com/eslint/eslint/commit/ce40f74efd45f66d9fbfc6f78ce622ee72008485) feat: update `complexity` rule to only highlight function header (#20048) (Atul Nair)
+- [`e37e590`](https://github.com/eslint/eslint/commit/e37e590aae2a7fcca4d3a9adc1379ad466e5c5d1) feat: correct `no-loss-of-precision` false positives with `e` notation (#20187) (Francesco Trotta)
 
 ## Bug Fixes
-* [`50c3dfd`](https://github.com/eslint/eslint/commit/50c3dfd98065622765a51a8ddb1e70c44fc5a4cb) fix: improve type support for isolated dependencies in pnpm (#20201) (Francesco Trotta)
-* [`a1f06a3`](https://github.com/eslint/eslint/commit/a1f06a350c4155c4dbf39bf932a38d71d70f1b65) fix: correct SourceCode typings (#20114) (Pixel998)
+
+- [`50c3dfd`](https://github.com/eslint/eslint/commit/50c3dfd98065622765a51a8ddb1e70c44fc5a4cb) fix: improve type support for isolated dependencies in pnpm (#20201) (Francesco Trotta)
+- [`a1f06a3`](https://github.com/eslint/eslint/commit/a1f06a350c4155c4dbf39bf932a38d71d70f1b65) fix: correct SourceCode typings (#20114) (Pixel998)
 
 ## Documentation
-* [`462675a`](https://github.com/eslint/eslint/commit/462675af8a811f9ca984efaedbdc5b46b13ced7a) docs: improve web accessibility by hiding non-semantic character (#20205) (루밀LuMir)
-* [`c070e65`](https://github.com/eslint/eslint/commit/c070e65f6bb9e38d06a89ba2b3261781bec3d397) docs: correct formatting in `no-irregular-whitespace` rule documentation (#20203) (루밀LuMir)
-* [`b39e71a`](https://github.com/eslint/eslint/commit/b39e71a2130ae1ea3fbc19b19f5b951eb625722a) docs: Update README (GitHub Actions Bot)
-* [`cd39983`](https://github.com/eslint/eslint/commit/cd3998314876a4fad6463d9011bc73778ccc1fd9) docs: move `custom-formatters` type descriptions to `nodejs-api` (#20190) (Percy Ma)
+
+- [`462675a`](https://github.com/eslint/eslint/commit/462675af8a811f9ca984efaedbdc5b46b13ced7a) docs: improve web accessibility by hiding non-semantic character (#20205) (루밀LuMir)
+- [`c070e65`](https://github.com/eslint/eslint/commit/c070e65f6bb9e38d06a89ba2b3261781bec3d397) docs: correct formatting in `no-irregular-whitespace` rule documentation (#20203) (루밀LuMir)
+- [`b39e71a`](https://github.com/eslint/eslint/commit/b39e71a2130ae1ea3fbc19b19f5b951eb625722a) docs: Update README (GitHub Actions Bot)
+- [`cd39983`](https://github.com/eslint/eslint/commit/cd3998314876a4fad6463d9011bc73778ccc1fd9) docs: move `custom-formatters` type descriptions to `nodejs-api` (#20190) (Percy Ma)
 
 ## Chores
-* [`d17c795`](https://github.com/eslint/eslint/commit/d17c795bf1624e0604998482b98e6bb6bff39045) chore: upgrade @eslint/js@9.38.0 (#20221) (Milos Djermanovic)
-* [`25d0e33`](https://github.com/eslint/eslint/commit/25d0e33270e08baed09dbee2cdd56a8e5cd9da0f) chore: package.json update for @eslint/js release (Jenkins)
-* [`c82b5ef`](https://github.com/eslint/eslint/commit/c82b5efa1fc91900e029efa23e688fad67fc17fa) refactor: Use types from @eslint/core (#20168) (Nicholas C. Zakas)
-* [`ff31609`](https://github.com/eslint/eslint/commit/ff31609f195654d448954210ba4d31e921d463e8) ci: add Node.js 25 to `ci.yml` (#20220) (루밀LuMir)
-* [`004577e`](https://github.com/eslint/eslint/commit/004577eda2f2f4b2829e0364f8b41893cebfc859) ci: bump github/codeql-action from 3 to 4 (#20211) (dependabot[bot])
-* [`eac71fb`](https://github.com/eslint/eslint/commit/eac71fb77113de7bf199ff20c6ee44cefcb59848) test: remove use of `nodejsScope` option of eslint-scope from tests (#20206) (Milos Djermanovic)
-* [`4168a18`](https://github.com/eslint/eslint/commit/4168a18b7efd8facbbd71cd44a62942a9f656a30) chore: fix typo in legacy-eslint.js (#20202) (Sweta Tanwar)
-* [`205dbd2`](https://github.com/eslint/eslint/commit/205dbd2d9272e761574c478e3b0181f7b89ed0f6) chore: fix typos (#20200) (ntnyq)
-* [`dbb200e`](https://github.com/eslint/eslint/commit/dbb200e3604e63bba23a18d40089ca44604835ed) chore: use team member's username when name is not available in data (#20194) (Milos Djermanovic)
-* [`8962089`](https://github.com/eslint/eslint/commit/8962089edbd978b43513576387a134036b8e2d36) chore: mark deprecated rules as available until v11.0.0 (#20184) (Pixel998)
+
+- [`d17c795`](https://github.com/eslint/eslint/commit/d17c795bf1624e0604998482b98e6bb6bff39045) chore: upgrade @eslint/js@9.38.0 (#20221) (Milos Djermanovic)
+- [`25d0e33`](https://github.com/eslint/eslint/commit/25d0e33270e08baed09dbee2cdd56a8e5cd9da0f) chore: package.json update for @eslint/js release (Jenkins)
+- [`c82b5ef`](https://github.com/eslint/eslint/commit/c82b5efa1fc91900e029efa23e688fad67fc17fa) refactor: Use types from @eslint/core (#20168) (Nicholas C. Zakas)
+- [`ff31609`](https://github.com/eslint/eslint/commit/ff31609f195654d448954210ba4d31e921d463e8) ci: add Node.js 25 to `ci.yml` (#20220) (루밀LuMir)
+- [`004577e`](https://github.com/eslint/eslint/commit/004577eda2f2f4b2829e0364f8b41893cebfc859) ci: bump github/codeql-action from 3 to 4 (#20211) (dependabot[bot])
+- [`eac71fb`](https://github.com/eslint/eslint/commit/eac71fb77113de7bf199ff20c6ee44cefcb59848) test: remove use of `nodejsScope` option of eslint-scope from tests (#20206) (Milos Djermanovic)
+- [`4168a18`](https://github.com/eslint/eslint/commit/4168a18b7efd8facbbd71cd44a62942a9f656a30) chore: fix typo in legacy-eslint.js (#20202) (Sweta Tanwar)
+- [`205dbd2`](https://github.com/eslint/eslint/commit/205dbd2d9272e761574c478e3b0181f7b89ed0f6) chore: fix typos (#20200) (ntnyq)
+- [`dbb200e`](https://github.com/eslint/eslint/commit/dbb200e3604e63bba23a18d40089ca44604835ed) chore: use team member's username when name is not available in data (#20194) (Milos Djermanovic)
+- [`8962089`](https://github.com/eslint/eslint/commit/8962089edbd978b43513576387a134036b8e2d36) chore: mark deprecated rules as available until v11.0.0 (#20184) (Pixel998)
 
 ---
 
 ### v9.39.0
-*Released: 10/31/2025*
+
+_Released: 10/31/2025_
 
 ## Features
-* [`cc57d87`](https://github.com/eslint/eslint/commit/cc57d87a3f119e9d39c55e044e526ae067fa31ce) feat: update error loc to key in `no-dupe-class-members` (#20259) (Tanuj Kanti)
-* [`126552f`](https://github.com/eslint/eslint/commit/126552fcf35da3ddcefa527db06dabc54c04041c) feat: update error location in `for-direction` and `no-dupe-args` (#20258) (Tanuj Kanti)
-* [`167d097`](https://github.com/eslint/eslint/commit/167d0970d3802a66910e9820f31dcd717fab0b2a) feat: update `complexity` rule to highlight only static block header (#20245) (jaymarvelz)
+
+- [`cc57d87`](https://github.com/eslint/eslint/commit/cc57d87a3f119e9d39c55e044e526ae067fa31ce) feat: update error loc to key in `no-dupe-class-members` (#20259) (Tanuj Kanti)
+- [`126552f`](https://github.com/eslint/eslint/commit/126552fcf35da3ddcefa527db06dabc54c04041c) feat: update error location in `for-direction` and `no-dupe-args` (#20258) (Tanuj Kanti)
+- [`167d097`](https://github.com/eslint/eslint/commit/167d0970d3802a66910e9820f31dcd717fab0b2a) feat: update `complexity` rule to highlight only static block header (#20245) (jaymarvelz)
 
 ## Bug Fixes
-* [`15f5c7c`](https://github.com/eslint/eslint/commit/15f5c7c168d0698683943f51dd617f14a5e6815c) fix: forward traversal `step.args` to visitors (#20253) (jaymarvelz)
-* [`5a1a534`](https://github.com/eslint/eslint/commit/5a1a534e877f7c4c992885867f923df307c3929d) fix: allow JSDoc comments in object-shorthand rule (#20167) (Nitin Kumar)
-* [`e86b813`](https://github.com/eslint/eslint/commit/e86b813eb660f1a5adc8e143a70d9b683cd12362) fix: Use more types from @eslint/core (#20257) (Nicholas C. Zakas)
-* [`927272d`](https://github.com/eslint/eslint/commit/927272d1f0d5683b029b729d368a96527f283323) fix: correct `Scope` typings (#20198) (jaymarvelz)
-* [`37f76d9`](https://github.com/eslint/eslint/commit/37f76d9c539bb6fc816fedb7be4486b71a58620a) fix: use `AST.Program` type for Program node (#20244) (Francesco Trotta)
-* [`ae07f0b`](https://github.com/eslint/eslint/commit/ae07f0b3334ebd22ae2e7b09bca5973b96aa9768) fix: unify timing report for concurrent linting (#20188) (jaymarvelz)
-* [`b165d47`](https://github.com/eslint/eslint/commit/b165d471be6062f4475b972155b02654a974a0e9) fix: correct `Rule` typings (#20199) (jaymarvelz)
-* [`fb97cda`](https://github.com/eslint/eslint/commit/fb97cda70d87286a7dbd2457f578ef578d6905e8) fix: improve error message for missing fix function in suggestions (#20218) (jaymarvelz)
+
+- [`15f5c7c`](https://github.com/eslint/eslint/commit/15f5c7c168d0698683943f51dd617f14a5e6815c) fix: forward traversal `step.args` to visitors (#20253) (jaymarvelz)
+- [`5a1a534`](https://github.com/eslint/eslint/commit/5a1a534e877f7c4c992885867f923df307c3929d) fix: allow JSDoc comments in object-shorthand rule (#20167) (Nitin Kumar)
+- [`e86b813`](https://github.com/eslint/eslint/commit/e86b813eb660f1a5adc8e143a70d9b683cd12362) fix: Use more types from @eslint/core (#20257) (Nicholas C. Zakas)
+- [`927272d`](https://github.com/eslint/eslint/commit/927272d1f0d5683b029b729d368a96527f283323) fix: correct `Scope` typings (#20198) (jaymarvelz)
+- [`37f76d9`](https://github.com/eslint/eslint/commit/37f76d9c539bb6fc816fedb7be4486b71a58620a) fix: use `AST.Program` type for Program node (#20244) (Francesco Trotta)
+- [`ae07f0b`](https://github.com/eslint/eslint/commit/ae07f0b3334ebd22ae2e7b09bca5973b96aa9768) fix: unify timing report for concurrent linting (#20188) (jaymarvelz)
+- [`b165d47`](https://github.com/eslint/eslint/commit/b165d471be6062f4475b972155b02654a974a0e9) fix: correct `Rule` typings (#20199) (jaymarvelz)
+- [`fb97cda`](https://github.com/eslint/eslint/commit/fb97cda70d87286a7dbd2457f578ef578d6905e8) fix: improve error message for missing fix function in suggestions (#20218) (jaymarvelz)
 
 ## Documentation
-* [`d3e81e3`](https://github.com/eslint/eslint/commit/d3e81e30ee6be5a21151b7a17ef10a714b6059c0) docs: Always recommend to include a files property (#20158) (Percy Ma)
-* [`0f0385f`](https://github.com/eslint/eslint/commit/0f0385f1404dcadaba4812120b1ad02334dbd66a) docs: use consistent naming recommendation (#20250) (Alex M. Spieslechner)
-* [`a3b1456`](https://github.com/eslint/eslint/commit/a3b145609ac649fac837c8c0515cbb2a9321ca40) docs: Update README (GitHub Actions Bot)
-* [`cf5f2dd`](https://github.com/eslint/eslint/commit/cf5f2dd58dd98084a21da04fe7b9054b9478d552) docs: fix correct tag of `no-useless-constructor` (#20255) (Tanuj Kanti)
-* [`10b995c`](https://github.com/eslint/eslint/commit/10b995c8e5473de8d66d3cd99d816e046f35e3ec) docs: add TS options and examples for `nofunc` in `no-use-before-define` (#20249) (Tanuj Kanti)
-* [`2584187`](https://github.com/eslint/eslint/commit/2584187e4a305ea7a98e1a5bd4dca2a60ad132f8) docs: remove repetitive word in comment (#20242) (reddaisyy)
-* [`637216b`](https://github.com/eslint/eslint/commit/637216bd4f2aae7c928ad04a4e40eecffb50c9e5) docs: update CLI flags migration instructions (#20238) (jaymarvelz)
-* [`e7cda3b`](https://github.com/eslint/eslint/commit/e7cda3bdf1bdd664e6033503a3315ad81736b200) docs: Update README (GitHub Actions Bot)
-* [`7b9446f`](https://github.com/eslint/eslint/commit/7b9446f7cc2054aa2cdf8e6225f4ac15a03671a8) docs: handle empty flags sections on the feature flags page (#20222) (sethamus)
+
+- [`d3e81e3`](https://github.com/eslint/eslint/commit/d3e81e30ee6be5a21151b7a17ef10a714b6059c0) docs: Always recommend to include a files property (#20158) (Percy Ma)
+- [`0f0385f`](https://github.com/eslint/eslint/commit/0f0385f1404dcadaba4812120b1ad02334dbd66a) docs: use consistent naming recommendation (#20250) (Alex M. Spieslechner)
+- [`a3b1456`](https://github.com/eslint/eslint/commit/a3b145609ac649fac837c8c0515cbb2a9321ca40) docs: Update README (GitHub Actions Bot)
+- [`cf5f2dd`](https://github.com/eslint/eslint/commit/cf5f2dd58dd98084a21da04fe7b9054b9478d552) docs: fix correct tag of `no-useless-constructor` (#20255) (Tanuj Kanti)
+- [`10b995c`](https://github.com/eslint/eslint/commit/10b995c8e5473de8d66d3cd99d816e046f35e3ec) docs: add TS options and examples for `nofunc` in `no-use-before-define` (#20249) (Tanuj Kanti)
+- [`2584187`](https://github.com/eslint/eslint/commit/2584187e4a305ea7a98e1a5bd4dca2a60ad132f8) docs: remove repetitive word in comment (#20242) (reddaisyy)
+- [`637216b`](https://github.com/eslint/eslint/commit/637216bd4f2aae7c928ad04a4e40eecffb50c9e5) docs: update CLI flags migration instructions (#20238) (jaymarvelz)
+- [`e7cda3b`](https://github.com/eslint/eslint/commit/e7cda3bdf1bdd664e6033503a3315ad81736b200) docs: Update README (GitHub Actions Bot)
+- [`7b9446f`](https://github.com/eslint/eslint/commit/7b9446f7cc2054aa2cdf8e6225f4ac15a03671a8) docs: handle empty flags sections on the feature flags page (#20222) (sethamus)
 
 ## Chores
-* [`dfe3c1b`](https://github.com/eslint/eslint/commit/dfe3c1b2034228765c48c8a445554223767dd16d) chore: update `@eslint/js` version to 9.39.0 (#20270) (Francesco Trotta)
-* [`2375a6d`](https://github.com/eslint/eslint/commit/2375a6de8263393c129d41cac1b407b40111a73c) chore: package.json update for @eslint/js release (Jenkins)
-* [`a1f4e52`](https://github.com/eslint/eslint/commit/a1f4e52d67c94bef61edd1607dcd130047c1baf0) chore: update `@eslint` dependencies (#20265) (Francesco Trotta)
-* [`c7d3229`](https://github.com/eslint/eslint/commit/c7d32298482752eeac9fb46378d4f1ea095f3836) chore: update dependency @eslint/core to ^0.17.0 (#20256) (renovate[bot])
-* [`27549bc`](https://github.com/eslint/eslint/commit/27549bc774c7c2dc5c569070a3e87c62f602bf7d) chore: update fuzz testing to not error if code sample minimizer fails (#20252) (Milos Djermanovic)
-* [`a1370ee`](https://github.com/eslint/eslint/commit/a1370ee40e9d8e0e41843f3278cd745fc1ad543f) ci: bump actions/setup-node from 5 to 6 (#20230) (dependabot[bot])
-* [`9e7fad4`](https://github.com/eslint/eslint/commit/9e7fad4a1867709060686d03e0ec1d0d69671cfb) chore: add script to auto-generate eslint:recommended configuration (#20208) (唯然)
+
+- [`dfe3c1b`](https://github.com/eslint/eslint/commit/dfe3c1b2034228765c48c8a445554223767dd16d) chore: update `@eslint/js` version to 9.39.0 (#20270) (Francesco Trotta)
+- [`2375a6d`](https://github.com/eslint/eslint/commit/2375a6de8263393c129d41cac1b407b40111a73c) chore: package.json update for @eslint/js release (Jenkins)
+- [`a1f4e52`](https://github.com/eslint/eslint/commit/a1f4e52d67c94bef61edd1607dcd130047c1baf0) chore: update `@eslint` dependencies (#20265) (Francesco Trotta)
+- [`c7d3229`](https://github.com/eslint/eslint/commit/c7d32298482752eeac9fb46378d4f1ea095f3836) chore: update dependency @eslint/core to ^0.17.0 (#20256) (renovate[bot])
+- [`27549bc`](https://github.com/eslint/eslint/commit/27549bc774c7c2dc5c569070a3e87c62f602bf7d) chore: update fuzz testing to not error if code sample minimizer fails (#20252) (Milos Djermanovic)
+- [`a1370ee`](https://github.com/eslint/eslint/commit/a1370ee40e9d8e0e41843f3278cd745fc1ad543f) ci: bump actions/setup-node from 5 to 6 (#20230) (dependabot[bot])
+- [`9e7fad4`](https://github.com/eslint/eslint/commit/9e7fad4a1867709060686d03e0ec1d0d69671cfb) chore: add script to auto-generate eslint:recommended configuration (#20208) (唯然)
 
 ---
 
 ## exifreader Release Notes (4.30.0 → 4.33.1)
 
 ### 4.31.0: Better FieldOfView calculation, new tag FocalLength35efl
-*Released: 5/27/2025*
+
+_Released: 5/27/2025_
 
 `FocalLength35efl` is the 35 mm equivalent focal length when it has been calculated from other values in the metadata. Beware that if the image has been resized it might have the wrong value because the original dimensions have been lost.
 
 ---
 
 ### 4.32.0: Correct repeatable IPTC tags types
-*Released: 9/20/2025*
+
+_Released: 9/20/2025_
 
 This type bug fix might cause issues if you have relied on any of these IPTC tags always being a scalar value: `Destination`, `Subject Reference`, `Supplemental Category`, `Content Location Code`, `Content Location Name`, `Reference Service`, `Reference Date`, `Reference Number`, `By-line`, `By-line Title`, `Contact`, `Writer/Editor`
 
@@ -752,7 +862,8 @@ This type bug fix might cause issues if you have relied on any of these IPTC tag
 ## prettier Release Notes (3.5.3 → 3.7.4)
 
 ### 3.6.0
-*Released: 6/23/2025*
+
+_Released: 6/23/2025_
 
 [diff](https://github.com/prettier/prettier/compare/3.5.3...3.6.0)
 
@@ -761,7 +872,8 @@ This type bug fix might cause issues if you have relied on any of these IPTC tag
 ---
 
 ### 3.7.0
-*Released: 11/27/2025*
+
+_Released: 11/27/2025_
 
 [diff](https://github.com/prettier/prettier/compare/3.6.2...3.7.0)
 
@@ -772,44 +884,41 @@ This type bug fix might cause issues if you have relied on any of these IPTC tag
 ## tsx Release Notes (4.19.4 → 4.21.0)
 
 ### v4.20.0
-*Released: 6/11/2025*
+
+_Released: 6/11/2025_
 
 # [4.20.0](https://github.com/privatenumber/tsx/compare/v4.19.4...v4.20.0) (2025-06-11)
 
-
 ### Bug Fixes
 
-* **esm:** only set json attribute if missing ([714e00b](https://github.com/privatenumber/tsx/commit/714e00b31ec2b22d092ab682edd7572e3632c8a3))
-
+- **esm:** only set json attribute if missing ([714e00b](https://github.com/privatenumber/tsx/commit/714e00b31ec2b22d092ab682edd7572e3632c8a3))
 
 ### Features
 
-* support latest Node versions ([ec316d3](https://github.com/privatenumber/tsx/commit/ec316d3efa2ae4ffbc367c9cdd84df869bf5f96f))
-
-
-
+- support latest Node versions ([ec316d3](https://github.com/privatenumber/tsx/commit/ec316d3efa2ae4ffbc367c9cdd84df869bf5f96f))
 
 ---
+
 This release is also available on:
+
 - [npm package (@latest dist-tag)](https://www.npmjs.com/package/tsx/v/4.20.0)
 
 ---
 
 ### v4.21.0
-*Released: 11/30/2025*
+
+_Released: 11/30/2025_
 
 # [4.21.0](https://github.com/privatenumber/tsx/compare/v4.20.6...v4.21.0) (2025-11-30)
 
-
 ### Features
 
-* upgrade esbuild ([#748](https://github.com/privatenumber/tsx/issues/748)) ([048fb62](https://github.com/privatenumber/tsx/commit/048fb623870f22c5026ad84187b545d418d2dfe8))
-
-
-
+- upgrade esbuild ([#748](https://github.com/privatenumber/tsx/issues/748)) ([048fb62](https://github.com/privatenumber/tsx/commit/048fb623870f22c5026ad84187b545d418d2dfe8))
 
 ---
+
 This release is also available on:
+
 - [npm package (@latest dist-tag)](https://www.npmjs.com/package/tsx/v/4.21.0)
 
 ---
@@ -817,7 +926,8 @@ This release is also available on:
 ## @nuxt/icon Release Notes (1.12.0 → 2.1.0)
 
 ### v1.13.0
-*Released: 5/16/2025*
+
+_Released: 5/16/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -833,7 +943,8 @@ This release is also available on:
 ---
 
 ### v1.14.0
-*Released: 6/19/2025*
+
+_Released: 6/19/2025_
 
 ### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
 
@@ -844,7 +955,8 @@ This release is also available on:
 ---
 
 ### v1.15.0
-*Released: 6/29/2025*
+
+_Released: 6/29/2025_
 
 ### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
 
@@ -855,7 +967,8 @@ This release is also available on:
 ---
 
 ### v2.0.0
-*Released: 8/11/2025*
+
+_Released: 8/11/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
 
@@ -866,7 +979,8 @@ This release is also available on:
 ---
 
 ### v2.1.0
-*Released: 10/22/2025*
+
+_Released: 10/22/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -883,7 +997,8 @@ This release is also available on:
 ## @nuxt/image Release Notes (1.10.0 → 2.0.0)
 
 ### v1.11.0
-*Released: 7/30/2025*
+
+_Released: 7/30/2025_
 
 [compare changes](https://github.com/nuxt/image/compare/v1.10.0...v1.11.0)
 
@@ -937,7 +1052,8 @@ This release is also available on:
 ---
 
 ### v2.0.0
-*Released: 11/5/2025*
+
+_Released: 11/5/2025_
 
 We're excited to announce **Nuxt Image v2**! 🎉 This release focuses on TypeScript support, performance improvements, and better developer experience.
 
@@ -962,14 +1078,14 @@ export const getImage = (src, { modifiers, baseURL }) => {
 }
 
 // After (v2)
-import { defineProvider } from '@nuxt/image/runtime'
+import { defineProvider } from "@nuxt/image/runtime"
 
 export default defineProvider({
   getImage(src, { modifiers, baseURL }) {
     // Fully typed modifiers
     // ...
     return { url }
-  }
+  },
 })
 ```
 
@@ -980,11 +1096,11 @@ Module options are now fully typed. For example, providers that require a `baseU
 ```ts
 export default defineNuxtConfig({
   image: {
-    provider: 'cloudinary',
+    provider: "cloudinary",
     cloudinary: {
-      baseURL: 'https://res.cloudinary.com/...' // TypeScript error if missing!
-    }
-  }
+      baseURL: "https://res.cloudinary.com/...", // TypeScript error if missing!
+    },
+  },
 })
 ```
 
@@ -996,10 +1112,10 @@ The `$img` helper and `useImage()` composable have full type inference ([#1844](
 const img = useImage()
 
 // Full autocomplete for modifiers
-const url = img('/image.jpg', { 
+const url = img("/image.jpg", {
   width: 300,
   height: 200,
-  fit: 'cover' // TypeScript knows the valid values!
+  fit: "cover", // TypeScript knows the valid values!
 })
 ```
 
@@ -1015,13 +1131,13 @@ You can now use image helpers directly in Nitro server endpoints ([#1473](https:
 // server/api/og-image.ts
 export default defineEventHandler((event) => {
   const img = useImage()
-  
+
   return {
-    url: img('/hero.jpg', { 
-      width: 1200, 
+    url: img("/hero.jpg", {
+      width: 1200,
       height: 630,
-      fit: 'cover' 
-    })
+      fit: "cover",
+    }),
   }
 })
 ```
@@ -1061,11 +1177,11 @@ We've added two new providers:
 ```ts
 export default defineNuxtConfig({
   image: {
-    provider: 'shopify',
+    provider: "shopify",
     shopify: {
-      baseURL: 'https://your-store.myshopify.com'
-    }
-  }
+      baseURL: "https://your-store.myshopify.com",
+    },
+  },
 })
 ```
 
@@ -1077,16 +1193,13 @@ We've made several optimizations to reduce bundle size and improve runtime perfo
 - **Reduced runtime utilities** ([#1816](https://github.com/nuxt/image/pull/1816)) - Removed unused code and simplified implementations
 - **Streamlined screen sizes** ([#1931](https://github.com/nuxt/image/pull/1931)) - Aligned default breakpoints with Tailwind CSS
 
-
 ### 🎯 Better layer support
 
 Nuxt Image now properly supports custom image directories within Nuxt layers ([#1880](https://github.com/nuxt/image/pull/1880)), making it easier to organize images in modular projects.
 
-
 ### ⚠️ Breaking changes
 
 #### Provider API
-
 
 The biggest breaking change is how providers are defined. All providers now use a default export with the `defineProvider` wrapper:
 
@@ -1107,6 +1220,7 @@ The deprecated `layer0` and `edgio` providers have been removed.
 #### URL formatters
 
 If you have custom providers using `joinWith` for parameter formatting, you'll need to update them to use the `formatter` function with `createOperationsGenerator`. See the [migration guide](https://image.nuxt.com/getting-started/migration#url-formatter-changes) for details.
+
 ```
 
 #### Screen sizes
@@ -1155,7 +1269,7 @@ Thank you to all the contributors who made this release possible! This includes 
 - Add support for image helpers in nitro endpoints ([#1473](https://github.com/nuxt/image/pull/1473))
 - **deps:** Upgrade to ipx v3 ([#1799](https://github.com/nuxt/image/pull/1799))
 - **ipx:** Log the architecture of the build ([#1808](https://github.com/nuxt/image/pull/1808))
-- ⚠️  Typed providers + modifiers ([#1802](https://github.com/nuxt/image/pull/1802))
+- ⚠️ Typed providers + modifiers ([#1802](https://github.com/nuxt/image/pull/1802))
 - Add type for default nuxt-picture slots ([0e4f174](https://github.com/nuxt/image/commit/0e4f174))
 - **nuxt-img:** Add types for default slot ([c4bba1b](https://github.com/nuxt/image/commit/c4bba1b))
 - Add shopify provider ([#1890](https://github.com/nuxt/image/pull/1890))
@@ -1179,8 +1293,8 @@ Thank you to all the contributors who made this release possible! This includes 
 - **cloudflare:** Don't add baseURL if there are no operations ([#1790](https://github.com/nuxt/image/pull/1790))
 - **ipx:** Always use ipx provider if external baseURL is provided ([#1800](https://github.com/nuxt/image/pull/1800))
 - **ipxStatic:** Strip repeated slashes from image path ([#1801](https://github.com/nuxt/image/pull/1801))
-- **edgio,layer0:** ⚠️  Remove providers ([#1809](https://github.com/nuxt/image/pull/1809))
-- ⚠️  Use URLSearchParams as default formatter ([#1813](https://github.com/nuxt/image/pull/1813))
+- **edgio,layer0:** ⚠️ Remove providers ([#1809](https://github.com/nuxt/image/pull/1809))
+- ⚠️ Use URLSearchParams as default formatter ([#1813](https://github.com/nuxt/image/pull/1813))
 - **nuxt-picture:** Export DefaultSlotProps ([891d79a](https://github.com/nuxt/image/commit/891d79a))
 - **aliyun:** Explicitly import useRuntimeConfig ([268eb9c](https://github.com/nuxt/image/commit/268eb9c))
 - Remove layer0 and edgio providers ([#1763](https://github.com/nuxt/image/pull/1763))
@@ -1198,8 +1312,8 @@ Thank you to all the contributors who made this release possible! This includes 
 
 ### 💅 Refactors
 
-- ⚠️  Remove unused runtime utilities and simplify code ([#1816](https://github.com/nuxt/image/pull/1816))
-- ⚠️  Remove xs and xxl screen sizes ([#1931](https://github.com/nuxt/image/pull/1931))
+- ⚠️ Remove unused runtime utilities and simplify code ([#1816](https://github.com/nuxt/image/pull/1816))
+- ⚠️ Remove xs and xxl screen sizes ([#1931](https://github.com/nuxt/image/pull/1931))
 
 ### 📖 Documentation
 
@@ -1277,11 +1391,11 @@ Thank you to all the contributors who made this release possible! This includes 
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Typed providers + modifiers ([#1802](https://github.com/nuxt/image/pull/1802))
-- **edgio,layer0:** ⚠️  Remove providers ([#1809](https://github.com/nuxt/image/pull/1809))
-- ⚠️  Use URLSearchParams as default formatter ([#1813](https://github.com/nuxt/image/pull/1813))
-- ⚠️  Remove unused runtime utilities and simplify code ([#1816](https://github.com/nuxt/image/pull/1816))
-- ⚠️  Remove xs and xxl screen sizes ([#1931](https://github.com/nuxt/image/pull/1931))
+- ⚠️ Typed providers + modifiers ([#1802](https://github.com/nuxt/image/pull/1802))
+- **edgio,layer0:** ⚠️ Remove providers ([#1809](https://github.com/nuxt/image/pull/1809))
+- ⚠️ Use URLSearchParams as default formatter ([#1813](https://github.com/nuxt/image/pull/1813))
+- ⚠️ Remove unused runtime utilities and simplify code ([#1816](https://github.com/nuxt/image/pull/1816))
+- ⚠️ Remove xs and xxl screen sizes ([#1931](https://github.com/nuxt/image/pull/1931))
 
 ### ❤️ Contributors
 
@@ -1315,7 +1429,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ## @nuxtjs/plausible Release Notes (1.2.0 → 2.0.1)
 
 ### v2.0.0
-*Released: 8/28/2025*
+
+_Released: 8/28/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
 
@@ -1328,7 +1443,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ## @vueuse/core Release Notes (13.1.0 → 14.1.0)
 
 ### v13.2.0
-*Released: 5/14/2025*
+
+_Released: 5/14/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1357,7 +1473,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.3.0
-*Released: 5/27/2025*
+
+_Released: 5/27/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1374,7 +1491,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.4.0
-*Released: 6/19/2025*
+
+_Released: 6/19/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1406,7 +1524,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.5.0
-*Released: 7/2/2025*
+
+_Released: 7/2/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1421,7 +1540,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.6.0
-*Released: 7/28/2025*
+
+_Released: 7/28/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1430,7 +1550,7 @@ Thank you to all the contributors who made this release possible! This includes 
 - **useFocusTrap**: Expose updateContainerElements for dynamic contai… &nbsp;-&nbsp; by @PeikyLiu and @ilyaliao in https://github.com/vueuse/vueuse/issues/4849 [<samp>(3d5e5)</samp>](https://github.com/vueuse/vueuse/commit/3d5e511a)
 - **useIDBKeyval**: Add `options.serializer` &nbsp;-&nbsp; by @matthewjumpsoffbuildings, @OrbisK and @43081j in https://github.com/vueuse/vueuse/issues/4781 [<samp>(bb831)</samp>](https://github.com/vueuse/vueuse/commit/bb831783)
 - **useStorageAsync**: Add `onReady` option and Promise return &nbsp;-&nbsp; by @asika32764, **Fernando Fernández**, @OrbisK and **Anthony Fu** in https://github.com/vueuse/vueuse/issues/4158 [<samp>(3a2df)</samp>](https://github.com/vueuse/vueuse/commit/3a2df2e1)
-- **useTransition**: Support custom  window &nbsp;-&nbsp; by @byronogis and **Anthony Fu** in https://github.com/vueuse/vueuse/issues/4850 [<samp>(a75f4)</samp>](https://github.com/vueuse/vueuse/commit/a75f40c8)
+- **useTransition**: Support custom window &nbsp;-&nbsp; by @byronogis and **Anthony Fu** in https://github.com/vueuse/vueuse/issues/4850 [<samp>(a75f4)</samp>](https://github.com/vueuse/vueuse/commit/a75f40c8)
 
 ### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
 
@@ -1446,7 +1566,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.7.0
-*Released: 8/18/2025*
+
+_Released: 8/18/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
 
@@ -1477,7 +1598,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.8.0
-*Released: 8/27/2025*
+
+_Released: 8/27/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1494,7 +1616,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.9.0
-*Released: 9/1/2025*
+
+_Released: 9/1/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1511,7 +1634,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v14.0.0
-*Released: 10/22/2025*
+
+_Released: 10/22/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
 
@@ -1563,7 +1687,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v14.1.0
-*Released: 11/27/2025*
+
+_Released: 11/27/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1595,7 +1720,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ## @vueuse/nuxt Release Notes (13.1.0 → 14.1.0)
 
 ### v13.2.0
-*Released: 5/14/2025*
+
+_Released: 5/14/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1624,7 +1750,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.3.0
-*Released: 5/27/2025*
+
+_Released: 5/27/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1641,7 +1768,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.4.0
-*Released: 6/19/2025*
+
+_Released: 6/19/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1673,7 +1801,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.5.0
-*Released: 7/2/2025*
+
+_Released: 7/2/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1688,7 +1817,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.6.0
-*Released: 7/28/2025*
+
+_Released: 7/28/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1697,7 +1827,7 @@ Thank you to all the contributors who made this release possible! This includes 
 - **useFocusTrap**: Expose updateContainerElements for dynamic contai… &nbsp;-&nbsp; by @PeikyLiu and @ilyaliao in https://github.com/vueuse/vueuse/issues/4849 [<samp>(3d5e5)</samp>](https://github.com/vueuse/vueuse/commit/3d5e511a)
 - **useIDBKeyval**: Add `options.serializer` &nbsp;-&nbsp; by @matthewjumpsoffbuildings, @OrbisK and @43081j in https://github.com/vueuse/vueuse/issues/4781 [<samp>(bb831)</samp>](https://github.com/vueuse/vueuse/commit/bb831783)
 - **useStorageAsync**: Add `onReady` option and Promise return &nbsp;-&nbsp; by @asika32764, **Fernando Fernández**, @OrbisK and **Anthony Fu** in https://github.com/vueuse/vueuse/issues/4158 [<samp>(3a2df)</samp>](https://github.com/vueuse/vueuse/commit/3a2df2e1)
-- **useTransition**: Support custom  window &nbsp;-&nbsp; by @byronogis and **Anthony Fu** in https://github.com/vueuse/vueuse/issues/4850 [<samp>(a75f4)</samp>](https://github.com/vueuse/vueuse/commit/a75f40c8)
+- **useTransition**: Support custom window &nbsp;-&nbsp; by @byronogis and **Anthony Fu** in https://github.com/vueuse/vueuse/issues/4850 [<samp>(a75f4)</samp>](https://github.com/vueuse/vueuse/commit/a75f40c8)
 
 ### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
 
@@ -1713,7 +1843,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.7.0
-*Released: 8/18/2025*
+
+_Released: 8/18/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
 
@@ -1744,7 +1875,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.8.0
-*Released: 8/27/2025*
+
+_Released: 8/27/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1761,7 +1893,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v13.9.0
-*Released: 9/1/2025*
+
+_Released: 9/1/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1778,7 +1911,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v14.0.0
-*Released: 10/22/2025*
+
+_Released: 10/22/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
 
@@ -1830,7 +1964,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ---
 
 ### v14.1.0
-*Released: 11/27/2025*
+
+_Released: 11/27/2025_
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
 
@@ -1862,7 +1997,8 @@ Thank you to all the contributors who made this release possible! This includes 
 ## nuxt Release Notes (3.16.2 → 4.2.2)
 
 ### v3.18.0
-*Released: 7/29/2025*
+
+_Released: 7/29/2025_
 
 > 3.18.0 is the next minor release.
 
@@ -1876,12 +2012,11 @@ Over the next six months, we'll continue backporting compatible v4 features and 
 
 Building on the delayed hydration support from v3.16, we now support **lazy hydration macros** ([#31192](https://github.com/nuxt/nuxt/pull/31192))! These provide a more ergonomic way to control component hydration:
 
-
 ```vue
 <script setup lang="ts">
 const LazyHydrationMyComponent = defineLazyHydrationComponent(
-  'visible',
-  () => import('./components/MyComponent.vue')
+  "visible",
+  () => import("./components/MyComponent.vue"),
 )
 </script>
 <template>
@@ -1919,13 +2054,13 @@ Component type safety has been improved with:
 The `onWatcherCleanup` function from `vue` is now available as an auto-import ([#32396](https://github.com/nuxt/nuxt/pull/32396)), making it easier to clean up watchers and prevent memory leaks:
 
 ```ts
-const { data } = useAsyncData('users', fetchUsers)
+const { data } = useAsyncData("users", fetchUsers)
 
 watch(data, (newData) => {
   const interval = setInterval(() => {
     // Some periodic task
   }, 1000)
-  
+
   // Clean up when the watcher is stopped
   onWatcherCleanup(() => {
     clearInterval(interval)
@@ -1947,10 +2082,10 @@ The `addServerImports` kit utility now **supports single imports** ([#32289](htt
 
 ```ts
 // Before: had to wrap in array
-addServerImports([{ from: 'my-package', name: 'myUtility' }])
+addServerImports([{ from: "my-package", name: "myUtility" }])
 
 // Now: can pass directly
-addServerImports({ from: 'my-package', name: 'myUtility' })
+addServerImports({ from: "my-package", name: "myUtility" })
 ```
 
 #### TypeScript Configuration
@@ -1982,11 +2117,12 @@ npx nuxi@latest upgrade --dedupe
 
 This refreshes your lockfile and pulls in all the latest dependencies that Nuxt relies on, especially from the unjs ecosystem.
 
-
 ## 👉 Changelog
 
 [compare changes](https://github.com/nuxt/nuxt/compare/v3.17.7...v3.18.0)
+
 ### 🚀 Enhancements
+
 - **nuxt:** Expose page routes to nitro for o11y ([#32617](https://github.com/nuxt/nuxt/pull/32617))
 - **nuxt:** Export `<NuxtTime>` prop types ([#32547](https://github.com/nuxt/nuxt/pull/32547))
 - **nuxt:** Add integration with chrome devtools workspaces ([#32084](https://github.com/nuxt/nuxt/pull/32084))
@@ -1994,10 +2130,14 @@ This refreshes your lockfile and pulls in all the latest dependencies that Nuxt 
 - **nuxt:** Add `onWatcherCleanup` to imports presets ([#32396](https://github.com/nuxt/nuxt/pull/32396))
 - **nuxt:** Add route announcer to default app.vue ([#32621](https://github.com/nuxt/nuxt/pull/32621))
 - **nuxt:** Support lazy hydration macros ([#31192](https://github.com/nuxt/nuxt/pull/31192))
+
 ### 🔥 Performance
+
 - **vite:** Communicate with vite-node via internal socket ([#32417](https://github.com/nuxt/nuxt/pull/32417))
 - **kit:** Update env expansion regex to match nitro ([#30766](https://github.com/nuxt/nuxt/pull/30766))
+
 ### 🩹 Fixes
+
 - **nuxt:** Allow modules to add to `typescript.hoist` ([#32601](https://github.com/nuxt/nuxt/pull/32601))
 - **nuxt:** Retain old data when computed key changes ([#32616](https://github.com/nuxt/nuxt/pull/32616))
 - **nuxt:** Only use `scrollBehaviorType` for hash scrolling ([#32622](https://github.com/nuxt/nuxt/pull/32622))
@@ -2009,12 +2149,16 @@ This refreshes your lockfile and pulls in all the latest dependencies that Nuxt 
 - **vite:** Use vite node server to transform requests ([#32791](https://github.com/nuxt/nuxt/pull/32791))
 - **kit:** Use `mlly` to parse module paths ([#32386](https://github.com/nuxt/nuxt/pull/32386))
 - **nuxt:** Execute all plugins after error rendering error.vue ([#32744](https://github.com/nuxt/nuxt/pull/32744))
+
 ### 💅 Refactors
+
 - **nuxt:** Migrate to `oxc-walker` ([#32250](https://github.com/nuxt/nuxt/pull/32250))
 - **nuxt,schema:** Use oxc for `onPrehydrate` transform ([#32045](https://github.com/nuxt/nuxt/pull/32045))
 - **nuxt:** Pass file language directly to parser options ([#32665](https://github.com/nuxt/nuxt/pull/32665))
 - **nuxt:** Use direct import of `installNuxtModule` ([228e3585e](https://github.com/nuxt/nuxt/commit/228e3585e))
+
 ### 📖 Documentation
+
 - Pass `v3` template to create nuxt examples ([03182202f](https://github.com/nuxt/nuxt/commit/03182202f))
 - Add reference to `useNuxtData` in data fetching composable pages ([#32589](https://github.com/nuxt/nuxt/pull/32589))
 - Document the --modules flag in the init command ([#32599](https://github.com/nuxt/nuxt/pull/32599))
@@ -2034,23 +2178,30 @@ This refreshes your lockfile and pulls in all the latest dependencies that Nuxt 
 - Hydration best practice ([#32746](https://github.com/nuxt/nuxt/pull/32746))
 - Add example for module `.with()` ([#32757](https://github.com/nuxt/nuxt/pull/32757))
 - Replace dead Vue Router docs links ([#32779](https://github.com/nuxt/nuxt/pull/32779))
+
 ### 🏡 Chore
+
 - Handle missing commit details ([0af98763d](https://github.com/nuxt/nuxt/commit/0af98763d))
 - Update reproduction links for bug-report template ([#32722](https://github.com/nuxt/nuxt/pull/32722))
 - Update `unbuild` and use absolute path in dev stubs ([#32759](https://github.com/nuxt/nuxt/pull/32759))
+
 ### ✅ Tests
+
 - Also assert status ([4b4b224f7](https://github.com/nuxt/nuxt/commit/4b4b224f7))
 - Ignore vue `module.exports` export ([ac8b02d09](https://github.com/nuxt/nuxt/commit/ac8b02d09))
 - Extend timeout when waiting for hydration ([49c01ba81](https://github.com/nuxt/nuxt/commit/49c01ba81))
 - Benchmark minimal fixture instead ([#31174](https://github.com/nuxt/nuxt/pull/31174))
 - Add minimal pages fixture ([#30457](https://github.com/nuxt/nuxt/pull/30457))
 - Bump bundle size ([bafa953c3](https://github.com/nuxt/nuxt/commit/bafa953c3))
+
 ### 🤖 CI
+
 - Trigger website redeploy on main branch ([#32695](https://github.com/nuxt/nuxt/pull/32695))
 - Release `pkg.pr.new` for `main`/`3.x` branches as well ([ca4f0b1da](https://github.com/nuxt/nuxt/commit/ca4f0b1da))
 - Apply `3x` tag to latest v3 release ([5e8dfc150](https://github.com/nuxt/nuxt/commit/5e8dfc150))
 
 ### ❤️ Contributors
+
 - Daniel Roe (@danielroe)
 - Bobbie Goede (@BobbieGoede)
 - Damian Głowala (@DamianGlowala)
@@ -2077,7 +2228,8 @@ This refreshes your lockfile and pulls in all the latest dependencies that Nuxt 
 ---
 
 ### v3.19.0
-*Released: 9/3/2025*
+
+_Released: 9/3/2025_
 
 ## 👀 Highlights
 
@@ -2096,7 +2248,9 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 ## 👉 Changelog
 
 [compare changes](https://github.com/nuxt/nuxt/compare/v3.18.1...v3.19.0)
+
 ### 🚀 Enhancements
+
 - **kit:** Add `ignore` option to `resolveFiles` ([#32858](https://github.com/nuxt/nuxt/pull/32858))
 - **kit:** Add `onInstall` and `onUpgrade` module hooks ([#32397](https://github.com/nuxt/nuxt/pull/32397))
 - **nuxt,vite:** Add experimental support for `rolldown-vite` ([#31812](https://github.com/nuxt/nuxt/pull/31812))
@@ -2105,10 +2259,14 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - **nuxt:** Lazy hydration macros without auto-imports ([#33037](https://github.com/nuxt/nuxt/pull/33037))
 - **kit,nuxt,schema:** Allow modules to specify dependencies ([#33063](https://github.com/nuxt/nuxt/pull/33063))
 - **kit,nuxt:** Add `getLayerDirectories` util and refactor to use it ([#33098](https://github.com/nuxt/nuxt/pull/33098))
+
 ### 🔥 Performance
+
 - **nuxt:** Clear inline route rules cache when pages change ([#32877](https://github.com/nuxt/nuxt/pull/32877))
 - **nuxt:** Stop watching app manifest once a change has been detected ([#32880](https://github.com/nuxt/nuxt/pull/32880))
+
 ### 🩹 Fixes
+
 - **nuxt:** Handle `satisfies` in page augmentation ([#32902](https://github.com/nuxt/nuxt/pull/32902))
 - **nuxt:** Type response in `useFetch` hooks ([#32891](https://github.com/nuxt/nuxt/pull/32891))
 - **nuxt:** Add TS parenthesis and as expression for page meta extraction ([#32914](https://github.com/nuxt/nuxt/pull/32914))
@@ -2131,12 +2289,16 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - **kit:** Prioritise local layers over extended layers ([ae8b0d2b8](https://github.com/nuxt/nuxt/commit/ae8b0d2b8))
 - **kit:** Address merge conflict ([89ccbbebb](https://github.com/nuxt/nuxt/commit/89ccbbebb))
 - **kit:** Do not resolve public dir aliases ([5d87d3a80](https://github.com/nuxt/nuxt/commit/5d87d3a80))
+
 ### 💅 Refactors
+
 - **nuxt:** Simplify page segment parsing ([#32901](https://github.com/nuxt/nuxt/pull/32901))
 - **nuxt:** Remove unnecessary `async/await` in `afterEach` ([#32999](https://github.com/nuxt/nuxt/pull/32999))
 - **vite:** Simplify inline chunk iteration ([9ea90fc33](https://github.com/nuxt/nuxt/commit/9ea90fc33))
 - **kit,nuxt,ui-templates,vite:** Address deprecations + improve regexp perf ([#33093](https://github.com/nuxt/nuxt/pull/33093))
+
 ### 📖 Documentation
+
 - Add a section about augmenting types with TS project references ([#32843](https://github.com/nuxt/nuxt/pull/32843))
 - Switch example to use vitest projects ([#32863](https://github.com/nuxt/nuxt/pull/32863))
 - Update testing `setupTimeout` and add `teardownTimeout` ([#32868](https://github.com/nuxt/nuxt/pull/32868))
@@ -2147,11 +2309,15 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - Correct filename in example ([#33000](https://github.com/nuxt/nuxt/pull/33000))
 - Add more information about using `useRoute` and accessing route in middleware ([#33004](https://github.com/nuxt/nuxt/pull/33004))
 - Avoid variable shadowing in locale example ([#33031](https://github.com/nuxt/nuxt/pull/33031))
+
 ### 🏡 Chore
+
 - Remove stray test file ([42fd247a4](https://github.com/nuxt/nuxt/commit/42fd247a4))
 - Ignore webpagetest.org when scanning links ([cb18f4960](https://github.com/nuxt/nuxt/commit/cb18f4960))
 - Add `type: 'module'` in playground ([#33099](https://github.com/nuxt/nuxt/pull/33099))
+
 ### ✅ Tests
+
 - Add failing test for link component duplication ([#32792](https://github.com/nuxt/nuxt/pull/32792))
 - Simplify module hook tests ([#32950](https://github.com/nuxt/nuxt/pull/32950))
 - Refactor stubbing of `import.meta.dev` ([#33023](https://github.com/nuxt/nuxt/pull/33023))
@@ -2162,7 +2328,9 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - Use `vi.waitUntil` instead of custom retry logic ([4c8c13090](https://github.com/nuxt/nuxt/commit/4c8c13090))
 - Update test for app creation ([9a3b44515](https://github.com/nuxt/nuxt/commit/9a3b44515))
 - Update bundle size snapshot ([76988ce97](https://github.com/nuxt/nuxt/commit/76988ce97))
+
 ### 🤖 CI
+
 - Remove double set of tests for docs prs ([14c006ac4](https://github.com/nuxt/nuxt/commit/14c006ac4))
 - Add workflow for discord team discussion threads ([f14854fc3](https://github.com/nuxt/nuxt/commit/f14854fc3))
 - Fix some syntax issues with discord + github integrations ([c059f7cd1](https://github.com/nuxt/nuxt/commit/c059f7cd1))
@@ -2180,6 +2348,7 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - Add github ai moderator ([#33077](https://github.com/nuxt/nuxt/pull/33077))
 
 ### ❤️ Contributors
+
 - Daniel Roe (@danielroe)
 - abeer0 (@iiio2)
 - Julien Huang (@huang-julien)
@@ -2203,7 +2372,8 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 ---
 
 ### v3.20.0
-*Released: 10/28/2025*
+
+_Released: 10/28/2025_
 
 > **3.20.0** is the next minor release.
 
@@ -2217,12 +2387,12 @@ npx nuxt upgrade --dedupe --channel=v3
 
 This will deduplicate your lockfile as well, and help ensure that you pull in updates from other dependencies that Nuxt relies on, particularly in the unjs ecosystem.
 
-
 ## 👉 Changelog
 
 [compare changes](https://github.com/nuxt/nuxt/compare/v3.19.3...v3.20.0)
 
 ### 🚀 Enhancements
+
 - **nuxt:** Allow specifying component `declarationPath` ([#33419](https://github.com/nuxt/nuxt/pull/33419))
 - **kit:** Add `extensions` option for `resolveModule` ([#33328](https://github.com/nuxt/nuxt/pull/33328))
 - **nuxt:** Add abortController option to `useAsyncData` ([#32531](https://github.com/nuxt/nuxt/pull/32531))
@@ -2231,10 +2401,14 @@ This will deduplicate your lockfile as well, and help ensure that you pull in up
 - **nuxt,schema:** Extract asyncData handlers to chunks ([#33131](https://github.com/nuxt/nuxt/pull/33131))
 - **kit:** Add `setGlobalHead` utility ([#33512](https://github.com/nuxt/nuxt/pull/33512))
 - **kit,vite:** Allow enabling vite environment api ([#33492](https://github.com/nuxt/nuxt/pull/33492))
+
 ### 🔥 Performance
+
 - **nuxt:** Precompute renderer dependencies at build time ([#33361](https://github.com/nuxt/nuxt/pull/33361))
 - **kit,schema:** Remove some unnecessary dependencies ([bdf34c263](https://github.com/nuxt/nuxt/commit/bdf34c263))
+
 ### 🩹 Fixes
+
 - **nuxt:** Preserve hash with redirecting based on `routeRules` ([#33222](https://github.com/nuxt/nuxt/pull/33222))
 - **kit:** Safely cleanup `loadNuxtConfig` in concurrent calls ([#33420](https://github.com/nuxt/nuxt/pull/33420))
 - **nuxt:** Allow object-format `href` in `<NuxtLink>` ([b97ae2f70](https://github.com/nuxt/nuxt/commit/b97ae2f70))
@@ -2252,7 +2426,9 @@ This will deduplicate your lockfile as well, and help ensure that you pull in up
 - **nuxt:** Add `NuxtTime` relative time `numeric` prop ([#33552](https://github.com/nuxt/nuxt/pull/33552))
 - **nuxt:** Add `NuxtTime` relative time `relativeStyle` prop ([#33557](https://github.com/nuxt/nuxt/pull/33557))
 - **nuxt:** Handle arrays in app config correctly during HMR ([#33555](https://github.com/nuxt/nuxt/pull/33555))
+
 ### 💅 Refactors
+
 - Remove obsolete `shortPath` property ([#33384](https://github.com/nuxt/nuxt/pull/33384))
 - **kit:** Extract trace utilities ([ddaedfa51](https://github.com/nuxt/nuxt/commit/ddaedfa51))
 - **nuxt,vite,webpack:** Allow builders to augment types ([#33427](https://github.com/nuxt/nuxt/pull/33427))
@@ -2260,7 +2436,9 @@ This will deduplicate your lockfile as well, and help ensure that you pull in up
 - **nitro,nuxt:** Extract `@nuxt/nitro-server` package ([#33462](https://github.com/nuxt/nuxt/pull/33462))
 - **nuxt:** Use `RouteLocationNormalizedLoadedGeneric` internally ([aa211fb4f](https://github.com/nuxt/nuxt/commit/aa211fb4f))
 - **vite:** Make vite plugins environment-compatible ([#33445](https://github.com/nuxt/nuxt/pull/33445))
+
 ### 📖 Documentation
+
 - Add nuxt module `addServerPlugin` note ([#33409](https://github.com/nuxt/nuxt/pull/33409))
 - Remove deprecated node version ([#33411](https://github.com/nuxt/nuxt/pull/33411))
 - Update `declarationPath` in `addComponent` ([#33380](https://github.com/nuxt/nuxt/pull/33380))
@@ -2269,7 +2447,9 @@ This will deduplicate your lockfile as well, and help ensure that you pull in up
 - Recommend `getLayerDirectories()` instead of `nuxt.options._layers` ([#33484](https://github.com/nuxt/nuxt/pull/33484))
 - Add docs for `moduleDependencies` ([#33499](https://github.com/nuxt/nuxt/pull/33499))
 - Pin codemod to v0.18.7 for migration recipe ([#33522](https://github.com/nuxt/nuxt/pull/33522))
+
 ### 🏡 Chore
+
 - Migrate gitpod to ona ([#33159](https://github.com/nuxt/nuxt/pull/33159))
 - Use native node to run `test:prepare` ([cbad63c02](https://github.com/nuxt/nuxt/commit/cbad63c02))
 - Do not use native node to run `test:prepare` ([672c09423](https://github.com/nuxt/nuxt/commit/672c09423))
@@ -2283,16 +2463,21 @@ This will deduplicate your lockfile as well, and help ensure that you pull in up
 - Filter out commits before last tag when constructing changelog ([257049712](https://github.com/nuxt/nuxt/commit/257049712))
 - Ignore `@rollup/plugin-commonjs` ([c2bd323b8](https://github.com/nuxt/nuxt/commit/c2bd323b8))
 - Pin `@rollup/plugin-commonjs` ([a524522ea](https://github.com/nuxt/nuxt/commit/a524522ea))
+
 ### ✅ Tests
+
 - Update runtime test to use `asyncDataDefaults.errorValue` ([b6f1c9b0d](https://github.com/nuxt/nuxt/commit/b6f1c9b0d))
 - Refactor suite to use common matrix utils ([#33483](https://github.com/nuxt/nuxt/pull/33483))
 - Update typed router test ([c55db2854](https://github.com/nuxt/nuxt/commit/c55db2854))
+
 ### 🤖 CI
+
 - Publish `@nuxt/nitro-server` on pkg-pr-new ([d37ef17b0](https://github.com/nuxt/nuxt/commit/d37ef17b0))
 - Remove nitro-server publish until v4.2 is released ([e34c2f52f](https://github.com/nuxt/nuxt/commit/e34c2f52f))
 - For now, use tag push to trigger release ([0705b835f](https://github.com/nuxt/nuxt/commit/0705b835f))
 
 ### ❤️ Contributors
+
 - Daniel Roe (@danielroe)
 - 山吹色御守 (@KazariEX)
 - Matej Černý (@cernymatej)
@@ -2311,7 +2496,8 @@ This will deduplicate your lockfile as well, and help ensure that you pull in up
 ---
 
 ### v4.0.0
-*Released: 7/16/2025*
+
+_Released: 7/16/2025_
 
 **Nuxt 4.0 is here!** 🎉
 
@@ -2444,6 +2630,7 @@ Happy coding with Nuxt 4! 🚀
 [compare changes](https://github.com/nuxt/nuxt/compare/v3.17.7...v4.0.0)
 
 ### 🚀 Enhancements
+
 - **ui-templates:** Update template branding for v4 ([#27843](https://github.com/nuxt/nuxt/pull/27843))
 - **deps:** Upgrade to latest versions of c12, jiti and unbuild ([#27995](https://github.com/nuxt/nuxt/pull/27995))
 - **kit:** Reimplement cjs utils using `mlly` ([#28012](https://github.com/nuxt/nuxt/pull/28012))
@@ -2459,36 +2646,40 @@ Happy coding with Nuxt 4! 🚀
 - **nuxt:** Export `<NuxtTime>` prop types ([#32547](https://github.com/nuxt/nuxt/pull/32547))
 - **nuxt:** Add route announcer to default app.vue ([#32621](https://github.com/nuxt/nuxt/pull/32621))
 - **nuxt:** Expose page routes to nitro for o11y ([#32617](https://github.com/nuxt/nuxt/pull/32617))
+
 ### 🔥 Performance
-- **nuxt:** ⚠️  Don't call `render:html` for server islands ([#27889](https://github.com/nuxt/nuxt/pull/27889))
+
+- **nuxt:** ⚠️ Don't call `render:html` for server islands ([#27889](https://github.com/nuxt/nuxt/pull/27889))
 - **vite:** Don't write stub manifest for legacy bundler ([#27957](https://github.com/nuxt/nuxt/pull/27957))
 - **kit:** Update env expansion regex to match nitro ([#30766](https://github.com/nuxt/nuxt/pull/30766))
 - **vite:** Communicate with vite-node via internal socket ([#32417](https://github.com/nuxt/nuxt/pull/32417))
+
 ### 🩹 Fixes
-- **schema,vite:** ⚠️  Do not allow configuring vite dev bundler ([#27707](https://github.com/nuxt/nuxt/pull/27707))
-- **schema:** ⚠️  Default to `compatibilityVersion: 4` ([#27710](https://github.com/nuxt/nuxt/pull/27710))
-- **nuxt:** ⚠️  Emit absolute paths in `builder:watch` hook ([#27709](https://github.com/nuxt/nuxt/pull/27709))
-- **nuxt:** ⚠️  Improve default `asyncData` value behaviour ([#27718](https://github.com/nuxt/nuxt/pull/27718))
-- **nuxt:** ⚠️  Remove old experimental options ([#27749](https://github.com/nuxt/nuxt/pull/27749))
-- **kit:** ⚠️  Support loading nuxt 4 and drop support for <=2 ([#27837](https://github.com/nuxt/nuxt/pull/27837))
-- **nuxt:** ⚠️  Remove `__NUXT__` after hydration ([#27745](https://github.com/nuxt/nuxt/pull/27745))
+
+- **schema,vite:** ⚠️ Do not allow configuring vite dev bundler ([#27707](https://github.com/nuxt/nuxt/pull/27707))
+- **schema:** ⚠️ Default to `compatibilityVersion: 4` ([#27710](https://github.com/nuxt/nuxt/pull/27710))
+- **nuxt:** ⚠️ Emit absolute paths in `builder:watch` hook ([#27709](https://github.com/nuxt/nuxt/pull/27709))
+- **nuxt:** ⚠️ Improve default `asyncData` value behaviour ([#27718](https://github.com/nuxt/nuxt/pull/27718))
+- **nuxt:** ⚠️ Remove old experimental options ([#27749](https://github.com/nuxt/nuxt/pull/27749))
+- **kit:** ⚠️ Support loading nuxt 4 and drop support for <=2 ([#27837](https://github.com/nuxt/nuxt/pull/27837))
+- **nuxt:** ⚠️ Remove `__NUXT__` after hydration ([#27745](https://github.com/nuxt/nuxt/pull/27745))
 - **ui-templates:** Add default title back ([3415241a6](https://github.com/nuxt/nuxt/commit/3415241a6))
-- **kit:** ⚠️  Drop support for building nuxt 2 projects ([1beddba6a](https://github.com/nuxt/nuxt/commit/1beddba6a))
-- **nuxt:** ⚠️  Bump internal majorVersion to `4` ([7aae4033b](https://github.com/nuxt/nuxt/commit/7aae4033b))
+- **kit:** ⚠️ Drop support for building nuxt 2 projects ([1beddba6a](https://github.com/nuxt/nuxt/commit/1beddba6a))
+- **nuxt:** ⚠️ Bump internal majorVersion to `4` ([7aae4033b](https://github.com/nuxt/nuxt/commit/7aae4033b))
 - **kit:** Mark `resolvePath` utils as sync ([655e1473d](https://github.com/nuxt/nuxt/commit/655e1473d))
 - **kit:** Revert change to `tryResolveModule` ([2d136e04c](https://github.com/nuxt/nuxt/commit/2d136e04c))
 - **kit:** Add back `requireModule` and `tryRequireModule` ([#28013](https://github.com/nuxt/nuxt/pull/28013))
 - **nuxt:** Hide unhandled error messages in prod ([#28156](https://github.com/nuxt/nuxt/pull/28156))
 - **nuxt:** Add `useScriptCrisp` scripts stub ([0c3cc4cf3](https://github.com/nuxt/nuxt/commit/0c3cc4cf3))
-- **nuxt:** ⚠️  Remove unused `globalName` property ([#28391](https://github.com/nuxt/nuxt/pull/28391))
+- **nuxt:** ⚠️ Remove unused `globalName` property ([#28391](https://github.com/nuxt/nuxt/pull/28391))
 - **nuxt:** Use static import for `updateAppConfig` in HMR ([#28349](https://github.com/nuxt/nuxt/pull/28349))
 - **vite:** Write dev manifest when `ssr: false` ([#28488](https://github.com/nuxt/nuxt/pull/28488))
-- **kit,nuxt,schema:** ⚠️  Remove other support for nuxt2/bridge ([#28936](https://github.com/nuxt/nuxt/pull/28936))
+- **kit,nuxt,schema:** ⚠️ Remove other support for nuxt2/bridge ([#28936](https://github.com/nuxt/nuxt/pull/28936))
 - **webpack:** Only insert dynamic require plugin when building ([b619b35e9](https://github.com/nuxt/nuxt/commit/b619b35e9))
 - **nuxt:** Guard `window` access ([d874726ff](https://github.com/nuxt/nuxt/commit/d874726ff))
 - **nuxt:** Remove unneeded subpath import ([18a6ef1ca](https://github.com/nuxt/nuxt/commit/18a6ef1ca))
 - **webpack:** Handle new webpack chunk format ([d293c06d2](https://github.com/nuxt/nuxt/commit/d293c06d2))
-- **kit:** ⚠️  Do not check compatibility for nuxt version < 2.13 ([f94cda4c8](https://github.com/nuxt/nuxt/commit/f94cda4c8))
+- **kit:** ⚠️ Do not check compatibility for nuxt version < 2.13 ([f94cda4c8](https://github.com/nuxt/nuxt/commit/f94cda4c8))
 - **ui-templates:** Fix examples link and add bluesky ([#30866](https://github.com/nuxt/nuxt/pull/30866))
 - **vite:** Use `resolveId` from `vite-node` to resolve deps ([#30922](https://github.com/nuxt/nuxt/pull/30922))
 - **nuxt:** Import `isEqual` from main `ohash` export ([3ec1a1e5e](https://github.com/nuxt/nuxt/commit/3ec1a1e5e))
@@ -2499,14 +2690,14 @@ Happy coding with Nuxt 4! 🚀
 - **schema:** Re-enable `purgeCachedData` by default ([06745604c](https://github.com/nuxt/nuxt/commit/06745604c))
 - **webpack:** Expand dynamic require regexp to match new pattern ([62e700daa](https://github.com/nuxt/nuxt/commit/62e700daa))
 - **nuxt:** Add back missing reset of `.execute` ([d79e14612](https://github.com/nuxt/nuxt/commit/d79e14612))
-- **nuxt,schema:** ⚠️  Remove support for `compatibilityVersion: 3` ([#32255](https://github.com/nuxt/nuxt/pull/32255))
-- **kit,nuxt,schema,vite:** ⚠️  Remove support for some deprecated options ([#32257](https://github.com/nuxt/nuxt/pull/32257))
-- **nuxt:** ⚠️  Don't rerun asyncdata w/ existing data in `useAsyncData` ([#32170](https://github.com/nuxt/nuxt/pull/32170))
+- **nuxt,schema:** ⚠️ Remove support for `compatibilityVersion: 3` ([#32255](https://github.com/nuxt/nuxt/pull/32255))
+- **kit,nuxt,schema,vite:** ⚠️ Remove support for some deprecated options ([#32257](https://github.com/nuxt/nuxt/pull/32257))
+- **nuxt:** ⚠️ Don't rerun asyncdata w/ existing data in `useAsyncData` ([#32170](https://github.com/nuxt/nuxt/pull/32170))
 - **nuxt:** Scan nitro handlers before writing types ([a3698c08b](https://github.com/nuxt/nuxt/commit/a3698c08b))
 - **nuxt:** Force asyncData `errorValue`/`value` to be undefined ([7e4eac655](https://github.com/nuxt/nuxt/commit/7e4eac655))
-- **nuxt:** ⚠️  Remove public and assets aliases ([#32119](https://github.com/nuxt/nuxt/pull/32119))
+- **nuxt:** ⚠️ Remove public and assets aliases ([#32119](https://github.com/nuxt/nuxt/pull/32119))
 - **webpack:** Update dynamic require pattern ([#32278](https://github.com/nuxt/nuxt/pull/32278))
-- **schema:** ⚠️  Remove top level generate option ([#32355](https://github.com/nuxt/nuxt/pull/32355))
+- **schema:** ⚠️ Remove top level generate option ([#32355](https://github.com/nuxt/nuxt/pull/32355))
 - **ui-templates:** Add aria tag on Nuxt logo ([#32429](https://github.com/nuxt/nuxt/pull/32429))
 - **nuxt:** Augment runtime config in server context ([#32482](https://github.com/nuxt/nuxt/pull/32482))
 - **kit:** Do not skip layer with defined `srcDir` ([#32487](https://github.com/nuxt/nuxt/pull/32487))
@@ -2518,19 +2709,23 @@ Happy coding with Nuxt 4! 🚀
 - **nuxt:** Allow modules to add to `typescript.hoist` ([#32601](https://github.com/nuxt/nuxt/pull/32601))
 - **nuxt:** Include shared declarations in `tsconfig.server.json` ([#32594](https://github.com/nuxt/nuxt/pull/32594))
 - **nuxt:** Retain old data when computed key changes ([#32616](https://github.com/nuxt/nuxt/pull/32616))
-- **nuxt:** ⚠️  Bump `compatibilityDate` to `2025-07-15` ([e35e1ccb9](https://github.com/nuxt/nuxt/commit/e35e1ccb9))
+- **nuxt:** ⚠️ Bump `compatibilityDate` to `2025-07-15` ([e35e1ccb9](https://github.com/nuxt/nuxt/commit/e35e1ccb9))
 - **nuxt:** Only use `scrollBehaviorType` for hash scrolling ([#32622](https://github.com/nuxt/nuxt/pull/32622))
+
 ### 💅 Refactors
-- **kit,nuxt:** ⚠️  Drop nuxt 2 + ejs template compile support ([#27706](https://github.com/nuxt/nuxt/pull/27706))
-- **nuxt:** ⚠️  Move `#app/components/layout` -> `#app/components/nuxt-layout` ([209e81b60](https://github.com/nuxt/nuxt/commit/209e81b60))
-- **kit,nuxt,vite,webpack:** ⚠️  Remove legacy require utils ([#28008](https://github.com/nuxt/nuxt/pull/28008))
+
+- **kit,nuxt:** ⚠️ Drop nuxt 2 + ejs template compile support ([#27706](https://github.com/nuxt/nuxt/pull/27706))
+- **nuxt:** ⚠️ Move `#app/components/layout` -> `#app/components/nuxt-layout` ([209e81b60](https://github.com/nuxt/nuxt/commit/209e81b60))
+- **kit,nuxt,vite,webpack:** ⚠️ Remove legacy require utils ([#28008](https://github.com/nuxt/nuxt/pull/28008))
 - **nuxt:** Simplify check of `dedupe` option ([#28151](https://github.com/nuxt/nuxt/pull/28151))
 - **nuxt:** Use direct import of `installNuxtModule` ([501ccc375](https://github.com/nuxt/nuxt/commit/501ccc375))
 - **kit:** Remove internal function ([#32189](https://github.com/nuxt/nuxt/pull/32189))
-- **schema:** ⚠️  Remove config.schema.json export + defaults ([#32254](https://github.com/nuxt/nuxt/pull/32254))
+- **schema:** ⚠️ Remove config.schema.json export + defaults ([#32254](https://github.com/nuxt/nuxt/pull/32254))
 - **nuxt:** Migrate to `oxc-walker` ([#32250](https://github.com/nuxt/nuxt/pull/32250))
 - **nuxt,schema:** Use oxc for `onPrehydrate` transform ([#32045](https://github.com/nuxt/nuxt/pull/32045))
+
 ### 📖 Documentation
+
 - Indicate what `useAsyncData` must return ([#28259](https://github.com/nuxt/nuxt/pull/28259))
 - Update `deep` default for `useAsyncData` & `useFetch` ([#28564](https://github.com/nuxt/nuxt/pull/28564))
 - Fix link to issue ([4d13f1027](https://github.com/nuxt/nuxt/commit/4d13f1027))
@@ -2540,9 +2735,13 @@ Happy coding with Nuxt 4! 🚀
 - Add reference to `useNuxtData` in data fetching composable pages ([#32589](https://github.com/nuxt/nuxt/pull/32589))
 - Temporarily use v4 template for v4 docs ([850a879d3](https://github.com/nuxt/nuxt/commit/850a879d3))
 - Document the --modules flag in the init command ([#32599](https://github.com/nuxt/nuxt/pull/32599))
+
 ### 📦 Build
+
 - **deps:** Bump esbuild from 0.23.1 to 0.25.0 ([#31247](https://github.com/nuxt/nuxt/pull/31247))
+
 ### 🏡 Chore
+
 - Manage update to `vite-plugin-checker` separately ([02d46dd3d](https://github.com/nuxt/nuxt/commit/02d46dd3d))
 - Update docs typecheck command ([#28433](https://github.com/nuxt/nuxt/pull/28433))
 - Improve accuracy of 4.x changelog ([#28706](https://github.com/nuxt/nuxt/pull/28706))
@@ -2565,7 +2764,9 @@ Happy coding with Nuxt 4! 🚀
 - Add webpack resolution ([088bcd459](https://github.com/nuxt/nuxt/commit/088bcd459))
 - Migrate playground + test fixtures to new directory format ([#32357](https://github.com/nuxt/nuxt/pull/32357))
 - **schema:** Remove duplicated documentation ([349f75447](https://github.com/nuxt/nuxt/commit/349f75447))
+
 ### ✅ Tests
+
 - Remove unused experimental options ([6d971ddc9](https://github.com/nuxt/nuxt/commit/6d971ddc9))
 - Add additional `attw` test for built packages ([#30206](https://github.com/nuxt/nuxt/pull/30206))
 - Add minimal pages fixture ([#30457](https://github.com/nuxt/nuxt/pull/30457))
@@ -2576,36 +2777,41 @@ Happy coding with Nuxt 4! 🚀
 - More precise asyncData tests ([023fb13eb](https://github.com/nuxt/nuxt/commit/023fb13eb))
 - Extend timeout when waiting for hydration ([f34c6c240](https://github.com/nuxt/nuxt/commit/f34c6c240))
 - Also assert status ([4f6bdf755](https://github.com/nuxt/nuxt/commit/4f6bdf755))
+
 ### 🤖 CI
+
 - Bump node v22 ([#30251](https://github.com/nuxt/nuxt/pull/30251))
 - Run workflows on merge groups ([ff37ad9df](https://github.com/nuxt/nuxt/commit/ff37ad9df))
 - Do not invoke semantic-pr test on merge groups ([fadd618d1](https://github.com/nuxt/nuxt/commit/fadd618d1))
+
 #### ⚠️ Breaking Changes
-- **nuxt:** ⚠️  Don't call `render:html` for server islands ([#27889](https://github.com/nuxt/nuxt/pull/27889))
-- **schema,vite:** ⚠️  Do not allow configuring vite dev bundler ([#27707](https://github.com/nuxt/nuxt/pull/27707))
-- **schema:** ⚠️  Default to `compatibilityVersion: 4` ([#27710](https://github.com/nuxt/nuxt/pull/27710))
-- **nuxt:** ⚠️  Emit absolute paths in `builder:watch` hook ([#27709](https://github.com/nuxt/nuxt/pull/27709))
-- **nuxt:** ⚠️  Improve default `asyncData` value behaviour ([#27718](https://github.com/nuxt/nuxt/pull/27718))
-- **nuxt:** ⚠️  Remove old experimental options ([#27749](https://github.com/nuxt/nuxt/pull/27749))
-- **kit:** ⚠️  Support loading nuxt 4 and drop support for <=2 ([#27837](https://github.com/nuxt/nuxt/pull/27837))
-- **nuxt:** ⚠️  Remove `__NUXT__` after hydration ([#27745](https://github.com/nuxt/nuxt/pull/27745))
-- **kit:** ⚠️  Drop support for building nuxt 2 projects ([1beddba6a](https://github.com/nuxt/nuxt/commit/1beddba6a))
-- **nuxt:** ⚠️  Bump internal majorVersion to `4` ([7aae4033b](https://github.com/nuxt/nuxt/commit/7aae4033b))
-- **nuxt:** ⚠️  Remove unused `globalName` property ([#28391](https://github.com/nuxt/nuxt/pull/28391))
-- **kit,nuxt,schema:** ⚠️  Remove other support for nuxt2/bridge ([#28936](https://github.com/nuxt/nuxt/pull/28936))
-- **kit:** ⚠️  Do not check compatibility for nuxt version < 2.13 ([f94cda4c8](https://github.com/nuxt/nuxt/commit/f94cda4c8))
-- **nuxt,schema:** ⚠️  Remove support for `compatibilityVersion: 3` ([#32255](https://github.com/nuxt/nuxt/pull/32255))
-- **kit,nuxt,schema,vite:** ⚠️  Remove support for some deprecated options ([#32257](https://github.com/nuxt/nuxt/pull/32257))
-- **nuxt:** ⚠️  Don't rerun asyncdata w/ existing data in `useAsyncData` ([#32170](https://github.com/nuxt/nuxt/pull/32170))
-- **nuxt:** ⚠️  Remove public and assets aliases ([#32119](https://github.com/nuxt/nuxt/pull/32119))
-- **schema:** ⚠️  Remove top level generate option ([#32355](https://github.com/nuxt/nuxt/pull/32355))
-- **nuxt:** ⚠️  Bump `compatibilityDate` to `2025-07-15` ([e35e1ccb9](https://github.com/nuxt/nuxt/commit/e35e1ccb9))
-- **kit,nuxt:** ⚠️  Drop nuxt 2 + ejs template compile support ([#27706](https://github.com/nuxt/nuxt/pull/27706))
-- **nuxt:** ⚠️  Move `#app/components/layout` -> `#app/components/nuxt-layout` ([209e81b60](https://github.com/nuxt/nuxt/commit/209e81b60))
-- **kit,nuxt,vite,webpack:** ⚠️  Remove legacy require utils ([#28008](https://github.com/nuxt/nuxt/pull/28008))
-- **schema:** ⚠️  Remove config.schema.json export + defaults ([#32254](https://github.com/nuxt/nuxt/pull/32254))
+
+- **nuxt:** ⚠️ Don't call `render:html` for server islands ([#27889](https://github.com/nuxt/nuxt/pull/27889))
+- **schema,vite:** ⚠️ Do not allow configuring vite dev bundler ([#27707](https://github.com/nuxt/nuxt/pull/27707))
+- **schema:** ⚠️ Default to `compatibilityVersion: 4` ([#27710](https://github.com/nuxt/nuxt/pull/27710))
+- **nuxt:** ⚠️ Emit absolute paths in `builder:watch` hook ([#27709](https://github.com/nuxt/nuxt/pull/27709))
+- **nuxt:** ⚠️ Improve default `asyncData` value behaviour ([#27718](https://github.com/nuxt/nuxt/pull/27718))
+- **nuxt:** ⚠️ Remove old experimental options ([#27749](https://github.com/nuxt/nuxt/pull/27749))
+- **kit:** ⚠️ Support loading nuxt 4 and drop support for <=2 ([#27837](https://github.com/nuxt/nuxt/pull/27837))
+- **nuxt:** ⚠️ Remove `__NUXT__` after hydration ([#27745](https://github.com/nuxt/nuxt/pull/27745))
+- **kit:** ⚠️ Drop support for building nuxt 2 projects ([1beddba6a](https://github.com/nuxt/nuxt/commit/1beddba6a))
+- **nuxt:** ⚠️ Bump internal majorVersion to `4` ([7aae4033b](https://github.com/nuxt/nuxt/commit/7aae4033b))
+- **nuxt:** ⚠️ Remove unused `globalName` property ([#28391](https://github.com/nuxt/nuxt/pull/28391))
+- **kit,nuxt,schema:** ⚠️ Remove other support for nuxt2/bridge ([#28936](https://github.com/nuxt/nuxt/pull/28936))
+- **kit:** ⚠️ Do not check compatibility for nuxt version < 2.13 ([f94cda4c8](https://github.com/nuxt/nuxt/commit/f94cda4c8))
+- **nuxt,schema:** ⚠️ Remove support for `compatibilityVersion: 3` ([#32255](https://github.com/nuxt/nuxt/pull/32255))
+- **kit,nuxt,schema,vite:** ⚠️ Remove support for some deprecated options ([#32257](https://github.com/nuxt/nuxt/pull/32257))
+- **nuxt:** ⚠️ Don't rerun asyncdata w/ existing data in `useAsyncData` ([#32170](https://github.com/nuxt/nuxt/pull/32170))
+- **nuxt:** ⚠️ Remove public and assets aliases ([#32119](https://github.com/nuxt/nuxt/pull/32119))
+- **schema:** ⚠️ Remove top level generate option ([#32355](https://github.com/nuxt/nuxt/pull/32355))
+- **nuxt:** ⚠️ Bump `compatibilityDate` to `2025-07-15` ([e35e1ccb9](https://github.com/nuxt/nuxt/commit/e35e1ccb9))
+- **kit,nuxt:** ⚠️ Drop nuxt 2 + ejs template compile support ([#27706](https://github.com/nuxt/nuxt/pull/27706))
+- **nuxt:** ⚠️ Move `#app/components/layout` -> `#app/components/nuxt-layout` ([209e81b60](https://github.com/nuxt/nuxt/commit/209e81b60))
+- **kit,nuxt,vite,webpack:** ⚠️ Remove legacy require utils ([#28008](https://github.com/nuxt/nuxt/pull/28008))
+- **schema:** ⚠️ Remove config.schema.json export + defaults ([#32254](https://github.com/nuxt/nuxt/pull/32254))
 
 ### ❤️ Contributors
+
 - Daniel Roe (@danielroe)
 - Connor Pearson (@cjpearson)
 - Stephen Jason Wang (@stephenjason89)
@@ -2634,7 +2840,8 @@ Happy coding with Nuxt 4! 🚀
 ---
 
 ### v4.1.0
-*Released: 9/3/2025*
+
+_Released: 9/3/2025_
 
 ## 👀 Highlights
 
@@ -2646,7 +2853,9 @@ Build stability has been significantly improved with import maps ([#33075](https
 
 ```html
 <!-- Automatically injected import map -->
-<script type="importmap">{"imports":{"#entry":"/_nuxt/DC5HVSK5.js"}}</script>
+<script type="importmap">
+  { "imports": { "#entry": "/_nuxt/DC5HVSK5.js" } }
+</script>
 ```
 
 By default, JS chunks emitted in a Vite build are hashed, which means they can be cached immutably. However, this can cause a significant issue: a change to a single component can cause _every_ hash to be invalidated, massively increasing the chance of 404s.
@@ -2667,8 +2876,8 @@ And of course you can disable it if needed:
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   experimental: {
-    entryImportMap: false
-  }
+    entryImportMap: false,
+  },
 })
 ```
 
@@ -2678,8 +2887,8 @@ Nuxt now includes experimental support for `rolldown-vite` ([#31812](https://git
 
 To try Rolldown in your Nuxt project, you need to override Vite with the rolldown-powered version since Vite is a dependency of Nuxt. Add the following to your `package.json`:
 
-
 **npm**:
+
 ```json
 {
   "overrides": {
@@ -2689,6 +2898,7 @@ To try Rolldown in your Nuxt project, you need to override Vite with the rolldow
 ```
 
 **pnpm**:
+
 ```json
 {
   "pnpm": {
@@ -2700,6 +2910,7 @@ To try Rolldown in your Nuxt project, you need to override Vite with the rolldow
 ```
 
 **yarn**:
+
 ```json
 {
   "resolutions": {
@@ -2709,6 +2920,7 @@ To try Rolldown in your Nuxt project, you need to override Vite with the rolldow
 ```
 
 **bun**:
+
 ```json
 {
   "overrides": {
@@ -2732,8 +2944,8 @@ Lazy hydration macros now work without auto-imports ([#33037](https://github.com
 <script setup>
 // Works even with components: false
 const LazyComponent = defineLazyHydrationComponent(
-  'visible',
-  () => import('./MyComponent.vue')
+  "visible",
+  () => import("./MyComponent.vue"),
 )
 </script>
 ```
@@ -2746,14 +2958,14 @@ If you have enabled experimental extraction of route rules, these are now expose
 
 ```ts
 // In your module
-nuxt.hook('pages:extend', pages => {
+nuxt.hook("pages:extend", (pages) => {
   pages.push({
-    path: '/api-docs',
-    rules: { 
+    path: "/api-docs",
+    rules: {
       prerender: true,
       cors: true,
-      headers: { 'Cache-Control': 's-maxage=31536000' }
-    }
+      headers: { "Cache-Control": "s-maxage=31536000" },
+    },
   })
 })
 ```
@@ -2769,25 +2981,25 @@ Modules can now specify dependencies and modify options for other modules ([#330
 ```ts
 export default defineNuxtModule({
   meta: {
-    name: 'my-module',
+    name: "my-module",
   },
   moduleDependencies: {
-    'some-module': {
+    "some-module": {
       // You can specify a version constraint for the module
-      version: '>=2',
-      // By default moduleDependencies will be added to the list of modules 
+      version: ">=2",
+      // By default moduleDependencies will be added to the list of modules
       // to be installed by Nuxt unless `optional` is set.
       optional: true,
       // Any configuration that should override `nuxt.options`.
       overrides: {},
       // Any configuration that should be set. It will override module defaults but
       // will not override any configuration set in `nuxt.options`.
-      defaults: {}
-    }
+      defaults: {},
+    },
   },
-  setup (options, nuxt) {
+  setup(options, nuxt) {
     // Your module setup logic
-  }
+  },
 })
 ```
 
@@ -2800,19 +3012,19 @@ Module authors now have access to two new lifecycle hooks: `onInstall` and `onUp
 ```ts
 export default defineNuxtModule({
   meta: {
-    name: 'my-module',
-    version: '1.0.0',
+    name: "my-module",
+    version: "1.0.0",
   },
 
   onInstall(nuxt) {
     // This will be run when the module is first installed
-    console.log('Setting up my-module for the first time!')
+    console.log("Setting up my-module for the first time!")
   },
 
   onUpgrade(inlineOptions, nuxt, previousVersion) {
     // This will be run when the module is upgraded
     console.log(`Upgrading my-module from v${previousVersion}`)
-  }
+  },
 })
 ```
 
@@ -2827,8 +3039,8 @@ The new `ignore` option for `resolveFiles` ([#32858](https://github.com/nuxt/nux
 
 ```ts
 // Resolve all .vue files except test files
-const files = await resolveFiles(srcDir, '**/*.vue', {
-  ignore: ['**/*.test.vue', '**/__tests__/**']
+const files = await resolveFiles(srcDir, "**/*.vue", {
+  ignore: ["**/*.test.vue", "**/__tests__/**"],
 })
 ```
 
@@ -2837,7 +3049,7 @@ const files = await resolveFiles(srcDir, '**/*.vue', {
 A new `getLayerDirectories` utility ([#33098](https://github.com/nuxt/nuxt/pull/33098)) provides a clean interface for accessing layer directories without directly accessing private APIs:
 
 ```ts
-import { getLayerDirectories } from '@nuxt/kit'
+import { getLayerDirectories } from "@nuxt/kit"
 
 const layerDirs = await getLayerDirectories(nuxt)
 // Access key directories:
@@ -2857,10 +3069,10 @@ Several kit utilities have been improved for better developer experience:
 
 ```ts
 // Before: required array
-addServerImports([{ from: 'my-package', name: 'myUtility' }])
+addServerImports([{ from: "my-package", name: "myUtility" }])
 
 // Now: can pass directly
-addServerImports({ from: 'my-package', name: 'myUtility' })
+addServerImports({ from: "my-package", name: "myUtility" })
 ```
 
 #### 🔥 Performance Optimizations
@@ -2892,7 +3104,9 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 ## 👉 Changelog
 
 [compare changes](https://github.com/nuxt/nuxt/compare/v4.0.3...v4.1.0)
+
 ### 🚀 Enhancements
+
 - **kit:** Add `ignore` option to `resolveFiles` ([#32858](https://github.com/nuxt/nuxt/pull/32858))
 - **kit:** Add `onInstall` and `onUpgrade` module hooks ([#32397](https://github.com/nuxt/nuxt/pull/32397))
 - **nuxt,vite:** Add experimental support for `rolldown-vite` ([#31812](https://github.com/nuxt/nuxt/pull/31812))
@@ -2901,10 +3115,14 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - **nuxt:** Lazy hydration macros without auto-imports ([#33037](https://github.com/nuxt/nuxt/pull/33037))
 - **kit,nuxt,schema:** Allow modules to specify dependencies ([#33063](https://github.com/nuxt/nuxt/pull/33063))
 - **kit,nuxt:** Add `getLayerDirectories` util and refactor to use it ([#33098](https://github.com/nuxt/nuxt/pull/33098))
+
 ### 🔥 Performance
+
 - **nuxt:** Clear inline route rules cache when pages change ([#32877](https://github.com/nuxt/nuxt/pull/32877))
 - **nuxt:** Stop watching app manifest once a change has been detected ([#32880](https://github.com/nuxt/nuxt/pull/32880))
+
 ### 🩹 Fixes
+
 - **nuxt:** Handle `satisfies` in page augmentation ([#32902](https://github.com/nuxt/nuxt/pull/32902))
 - **nuxt:** Type response in `useFetch` hooks ([#32891](https://github.com/nuxt/nuxt/pull/32891))
 - **nuxt:** Add TS parenthesis and as expression for page meta extraction ([#32914](https://github.com/nuxt/nuxt/pull/32914))
@@ -2926,12 +3144,16 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - **nuxt:** Search for colliding names in route children ([b58c139d2](https://github.com/nuxt/nuxt/commit/b58c139d2))
 - **nuxt:** Delete `nuxtApp._runningTransition` on resolve ([#33025](https://github.com/nuxt/nuxt/pull/33025))
 - **nuxt:** Add validation for nuxt island reviver key ([#33069](https://github.com/nuxt/nuxt/pull/33069))
+
 ### 💅 Refactors
+
 - **nuxt:** Simplify page segment parsing ([#32901](https://github.com/nuxt/nuxt/pull/32901))
 - **nuxt:** Remove unnecessary `async/await` in `afterEach` ([#32999](https://github.com/nuxt/nuxt/pull/32999))
 - **vite:** Simplify inline chunk iteration ([6f4da1b8c](https://github.com/nuxt/nuxt/commit/6f4da1b8c))
 - **kit,nuxt,ui-templates,vite:** Address deprecations + improve regexp perf ([#33093](https://github.com/nuxt/nuxt/pull/33093))
+
 ### 📖 Documentation
+
 - Switch example to use vitest projects ([#32863](https://github.com/nuxt/nuxt/pull/32863))
 - Update testing `setupTimeout` and add `teardownTimeout` ([#32868](https://github.com/nuxt/nuxt/pull/32868))
 - Update `webRoot` to use new app directory ([df7177bff](https://github.com/nuxt/nuxt/commit/df7177bff))
@@ -2945,12 +3167,16 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - Add more information about using `useRoute` and accessing route in middleware ([#33004](https://github.com/nuxt/nuxt/pull/33004))
 - Avoid variable shadowing in locale example ([#33031](https://github.com/nuxt/nuxt/pull/33031))
 - Add documentation for module lifecycle hooks ([#33115](https://github.com/nuxt/nuxt/pull/33115))
+
 ### 🏡 Chore
+
 - **config:** Migrate renovate config ([#32861](https://github.com/nuxt/nuxt/pull/32861))
 - Remove stray test file ([ca84285cc](https://github.com/nuxt/nuxt/commit/ca84285cc))
 - Ignore webpagetest.org when scanning links ([6c974f0be](https://github.com/nuxt/nuxt/commit/6c974f0be))
 - Add `type: 'module'` in playground ([#33099](https://github.com/nuxt/nuxt/pull/33099))
+
 ### ✅ Tests
+
 - Add failing test for link component duplication ([#32792](https://github.com/nuxt/nuxt/pull/32792))
 - Simplify module hook tests ([#32950](https://github.com/nuxt/nuxt/pull/32950))
 - Refactor stubbing of `import.meta.dev` ([#33023](https://github.com/nuxt/nuxt/pull/33023))
@@ -2959,7 +3185,9 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - Use `expect.poll` ([53fb61d5d](https://github.com/nuxt/nuxt/commit/53fb61d5d))
 - Use `expect.poll` instead of `expectWithPolling` ([357492ca7](https://github.com/nuxt/nuxt/commit/357492ca7))
 - Use `vi.waitUntil` instead of custom retry logic ([611e66a47](https://github.com/nuxt/nuxt/commit/611e66a47))
+
 ### 🤖 CI
+
 - Remove double set of tests for docs prs ([6bc9dccf4](https://github.com/nuxt/nuxt/commit/6bc9dccf4))
 - Add workflow for discord team discussion threads ([bc656a24d](https://github.com/nuxt/nuxt/commit/bc656a24d))
 - Fix some syntax issues with discord + github integrations ([f5f01b8c1](https://github.com/nuxt/nuxt/commit/f5f01b8c1))
@@ -2977,6 +3205,7 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - Add github ai moderator ([#33077](https://github.com/nuxt/nuxt/pull/33077))
 
 ### ❤️ Contributors
+
 - Daniel Roe (@danielroe)
 - abeer0 (@iiio2)
 - Julien Huang (@huang-julien)
@@ -3001,7 +3230,8 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 ---
 
 ### v4.2.0
-*Released: 10/25/2025*
+
+_Released: 10/25/2025_
 
 > 4.2.0 is the next minor release.
 
@@ -3019,14 +3249,18 @@ This works by passing an internal signal to your `useAsyncData` `handler` to can
 <script setup lang="ts">
 const controller = new AbortController()
 
-const { data, error, clear, refresh } = await useAsyncData('users', (_nuxtApp, { signal }) => $fetch('/api/users', {
-  signal
-}))
+const { data, error, clear, refresh } = await useAsyncData(
+  "users",
+  (_nuxtApp, { signal }) =>
+    $fetch("/api/users", {
+      signal,
+    }),
+)
 
 refresh() // will actually cancel the $fetch request (if dedupe: cancel)
 refresh() // will actually cancel the $fetch request (if dedupe: cancel)
 refresh()
-  
+
 clear() // will cancel the latest pending handler
 </script>
 ```
@@ -3034,7 +3268,7 @@ clear() // will cancel the latest pending handler
 You also pass an `AbortController` signal directly to `refresh`/`execute`, giving you fine-grained control over request cancellation. This is particularly useful when you need to abort requests based on user actions or component lifecycle events.
 
 ```ts
-const { data, refresh } = await useAsyncData('posts', fetchPosts)
+const { data, refresh } = await useAsyncData("posts", fetchPosts)
 
 // Abort an ongoing refresh
 const abortController = new AbortController()
@@ -3065,8 +3299,8 @@ This should improve performance when developing and eliminate some edge case bug
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   experimental: {
-    viteEnvironmentApi: true
-  }
+    viteEnvironmentApi: true,
+  },
 })
 ```
 
@@ -3075,7 +3309,7 @@ This is also the first breaking change for Nuxt v5. You can opt in to these brea
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   future: {
-    compatibilityVersion: 5
+    compatibilityVersion: 5,
   },
 })
 ```
@@ -3110,20 +3344,20 @@ This is **particularly effective for prerendered static sites**, as the data fet
 > [!NOTE]
 > In testing with a previous version of nuxt.com, this feature **reduced JavaScript bundle size by 39%**! Of course, your mileage may vary depending on how much data fetching logic you have.
 
-```vue [pages/blog/[slug\\].vue]
+```vue [pages/blog/[slug\].vue]
 <script setup lang="ts">
 // This handler will be extracted into a separate chunk
 // and only loaded when needed
-const { data: post } = await useAsyncData('post', async () => {
+const { data: post } = await useAsyncData("post", async () => {
   const content = await queryContent(`/blog/${route.params.slug}`).findOne()
-  
+
   // Complex data processing that you don't want in the client bundle
   const processed = await processMarkdown(content)
   const related = await findRelatedPosts(content.tags)
-  
+
   return {
     ...processed,
-    related
+    related,
   }
 })
 </script>
@@ -3134,8 +3368,8 @@ For static/prerendered sites, enable it in your config:
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   experimental: {
-    extractAsyncDataHandlers: true
-  }
+    extractAsyncDataHandlers: true,
+  },
 })
 ```
 
@@ -3161,8 +3395,8 @@ To enable this feature, set `experimental.typescriptPlugin` to `true` in your Nu
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   experimental: {
-    typescriptPlugin: true
-  }
+    typescriptPlugin: true,
+  },
 })
 ```
 
@@ -3198,7 +3432,9 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 ## 👉 Changelog
 
 [compare changes](https://github.com/nuxt/nuxt/compare/v4.1.3...v4.2.0)
+
 ### 🚀 Enhancements
+
 - **nuxt:** Allow specifying component `declarationPath` ([#33419](https://github.com/nuxt/nuxt/pull/33419))
 - **kit:** Add `extensions` option for `resolveModule` ([#33328](https://github.com/nuxt/nuxt/pull/33328))
 - **nuxt:** Add abortController option to `useAsyncData` ([#32531](https://github.com/nuxt/nuxt/pull/32531))
@@ -3208,10 +3444,14 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - **schema:** Enable setting `future.compatibilityVersion` to `5` ([22f4693a1](https://github.com/nuxt/nuxt/commit/22f4693a1))
 - **kit,vite:** Allow enabling vite environment api ([#33492](https://github.com/nuxt/nuxt/pull/33492))
 - **kit:** Add `setGlobalHead` utility ([#33512](https://github.com/nuxt/nuxt/pull/33512))
+
 ### 🔥 Performance
+
 - **nuxt:** Precompute renderer dependencies at build time ([#33361](https://github.com/nuxt/nuxt/pull/33361))
 - **kit,schema:** Remove some unnecessary dependencies ([7ae2cf563](https://github.com/nuxt/nuxt/commit/7ae2cf563))
+
 ### 🩹 Fixes
+
 - **nuxt:** Preserve hash with redirecting based on `routeRules` ([#33222](https://github.com/nuxt/nuxt/pull/33222))
 - **kit:** Safely cleanup `loadNuxtConfig` in concurrent calls ([#33420](https://github.com/nuxt/nuxt/pull/33420))
 - **nuxt:** Allow object-format `href` in `<NuxtLink>` ([c69e4c30d](https://github.com/nuxt/nuxt/commit/c69e4c30d))
@@ -3230,7 +3470,9 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - **nuxt:** Add `NuxtTime` relative time `relativeStyle` prop ([#33557](https://github.com/nuxt/nuxt/pull/33557))
 - **nuxt:** Handle arrays in app config correctly during HMR ([#33555](https://github.com/nuxt/nuxt/pull/33555))
 - **vite:** Unset `optimizeDeps.include` for server environment ([#33550](https://github.com/nuxt/nuxt/pull/33550))
+
 ### 💅 Refactors
+
 - Remove obsolete `shortPath` property ([#33384](https://github.com/nuxt/nuxt/pull/33384))
 - **kit:** Extract trace utilities ([9687505ac](https://github.com/nuxt/nuxt/commit/9687505ac))
 - **nuxt,vite,webpack:** Allow builders to augment types ([#33427](https://github.com/nuxt/nuxt/pull/33427))
@@ -3238,7 +3480,9 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - **vite:** Make vite plugins environment-compatible ([#33445](https://github.com/nuxt/nuxt/pull/33445))
 - **nitro,nuxt:** Extract `@nuxt/nitro-server` package ([#33462](https://github.com/nuxt/nuxt/pull/33462))
 - **nuxt:** Use `RouteLocationNormalizedLoadedGeneric` internally ([b51cb3067](https://github.com/nuxt/nuxt/commit/b51cb3067))
+
 ### 📖 Documentation
+
 - Update link to localisation issue ([d32859da2](https://github.com/nuxt/nuxt/commit/d32859da2))
 - Add nuxt module `addServerPlugin` note ([#33409](https://github.com/nuxt/nuxt/pull/33409))
 - Remove deprecated node version ([#33411](https://github.com/nuxt/nuxt/pull/33411))
@@ -3252,7 +3496,9 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - Clarify extends removal in TypeScript config migration ([#33523](https://github.com/nuxt/nuxt/pull/33523))
 - Pin codemod to v0.18.7 for migration recipe ([#33522](https://github.com/nuxt/nuxt/pull/33522))
 - Fix links ([#33554](https://github.com/nuxt/nuxt/pull/33554))
+
 ### 🏡 Chore
+
 - Migrate gitpod to ona ([#33159](https://github.com/nuxt/nuxt/pull/33159))
 - Use native node to run `test:prepare` ([6ef632b82](https://github.com/nuxt/nuxt/commit/6ef632b82))
 - Do not use native node to run `test:prepare` ([eca36cfe5](https://github.com/nuxt/nuxt/commit/eca36cfe5))
@@ -3270,13 +3516,18 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 - Also respect since date for bump type ([08900f610](https://github.com/nuxt/nuxt/commit/08900f610))
 - Also respect `since` in nightly releases ([74ca73ca1](https://github.com/nuxt/nuxt/commit/74ca73ca1))
 - Ignore `@rollup/plugin-commonjs` ([cd12980ce](https://github.com/nuxt/nuxt/commit/cd12980ce))
+
 ### ✅ Tests
+
 - Refactor suite to use common matrix utils ([#33483](https://github.com/nuxt/nuxt/pull/33483))
+
 ### 🤖 CI
+
 - Publish `@nuxt/nitro-server` on pkg-pr-new ([b7ccf17bf](https://github.com/nuxt/nuxt/commit/b7ccf17bf))
 - Remove nitro-server publish until v4.2 is released ([904d4f6ec](https://github.com/nuxt/nuxt/commit/904d4f6ec))
 
 ### ❤️ Contributors
+
 - 山吹色御守 (@KazariEX)
 - Florian Heuberger (@Flo0806)
 - Daniel Roe (@danielroe)
@@ -3298,7 +3549,8 @@ This will refresh your lockfile and pull in all the latest dependencies that Nux
 ## vitest Release Notes (3.2.4 → 4.0.15)
 
 ### v4.0.0
-*Released: 10/22/2025*
+
+_Released: 10/22/2025_
 
 Vitest 4.0 is out!
 
@@ -3491,7 +3743,8 @@ To stay updated, read our [blog post](https://vitest.dev/blog/vitest-4) and chec
 ## vue-tsc Release Notes (2.2.10 → 3.1.8)
 
 ### v3.0.0
-*Released: 7/1/2025*
+
+_Released: 7/1/2025_
 
 > [!IMPORTANT]  
 > **Deprecation Notice:** Dropping Vue 2 and vue-class-component Support in **v3.1**: #5455
@@ -3509,11 +3762,13 @@ To stay updated, read our [blog post](https://vitest.dev/blog/vitest-4) and chec
 ## UX & DX Improvements
 
 ### Navigation & Tooling
+
 - Global components now jump to their source files rather than type definitions. (PR: #5221)
 - Added support for TypeScript's `sortImports` and `removeUnusedImports` commands. (PR: #5444)
 - Implemented template refs document linking. (PR: #5385)
 
 ### Localization Support
+
 - VSCode extension added multilingual support for:
   - Chinese (Simplified/Traditional)
   - Russian
@@ -3522,22 +3777,25 @@ To stay updated, read our [blog post](https://vitest.dev/blog/vitest-4) and chec
 (PR: #5330, #5340, #5404)
 
 ### Streamlined UI
+
 - v3 does not have any status bar items
-![Group 1 (2)](https://github.com/user-attachments/assets/7328ed67-73f2-4aa0-8092-06211c8ad5d2)
+  ![Group 1 (2)](https://github.com/user-attachments/assets/7328ed67-73f2-4aa0-8092-06211c8ad5d2)
 
 ## Compiler Options Updates
 
 New TSConfig options:
+
 - `strictSlotChildren`: Strict type constraints of slot children. (PR: #5137)
-- `strictVModel`:  Strict type constraints of `v-model`. (PR: #5229)
+- `strictVModel`: Strict type constraints of `v-model`. (PR: #5229)
 - `strictCssModules`: Strict type checking of CSS modules. (PR: #5164)
 - `resolveStyleImports`: Specifies whether to generate type imports for external CSS files by `<style src=\"...\">` or `@import \"...\"`. (PR: #5136)
 
 ## Renamed Settings
 
 Some settings have new names:
-- `vue.complete.casing.props` → `vue.suggest.propNameCasing`  
-- `vue.complete.casing.tags` → `vue.suggest.componentNameCasing`  
+
+- `vue.complete.casing.props` → `vue.suggest.propNameCasing`
+- `vue.complete.casing.tags` → `vue.suggest.componentNameCasing`
 - `vue.complete.defineAssignment` → `vue.suggest.defineAssignment`
 
 ## Details
@@ -3623,7 +3881,8 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 ---
 
 ### v3.1.0
-*Released: 9/28/2025*
+
+_Released: 9/28/2025_
 
 > [!IMPORTANT]  
 > Vue 2 and `vue-class-component` support has been removed, please refer to <a href="https://github.com/vuejs/language-tools/discussions/5455" target="_blank">Discussion #5455</a> for detail.
@@ -3720,13 +3979,14 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 ## @lttr/nuxt-config-eslint Release Notes (0.3.0 → 0.4.0)
 
 ### v0.4.0
-*Released: 11/3/2025*
+
+_Released: 11/3/2025_
 
 [compare changes](https://github.com/lttr/nuxt-config-eslint/compare/v0.3.0...v0.4.0)
 
 ### 🚀 Enhancements
 
-- ⚠️  Update all dependencies to latest versions ([2b296ba](https://github.com/lttr/nuxt-config-eslint/commit/2b296ba))
+- ⚠️ Update all dependencies to latest versions ([2b296ba](https://github.com/lttr/nuxt-config-eslint/commit/2b296ba))
 
 ### 🏡 Chore
 
@@ -3734,7 +3994,7 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Update all dependencies to latest versions ([2b296ba](https://github.com/lttr/nuxt-config-eslint/commit/2b296ba))
+- ⚠️ Update all dependencies to latest versions ([2b296ba](https://github.com/lttr/nuxt-config-eslint/commit/2b296ba))
 
 ### ❤️ Contributors
 
@@ -3745,14 +4005,15 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 ## @lttr/puleo Release Notes (0.5.0 → 0.8.1)
 
 ### v0.6.0
-*Released: 9/11/2025*
+
+_Released: 9/11/2025_
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.5.0...v0.6.0)
 
 ### 🚀 Enhancements
 
 - Split rootSelector config into useWhere and rootSelector ([c4c76f2](https://github.com/lttr/puleo/commit/c4c76f2))
-- ⚠️  Update all dependencies ([101356a](https://github.com/lttr/puleo/commit/101356a))
+- ⚠️ Update all dependencies ([101356a](https://github.com/lttr/puleo/commit/101356a))
 - Let PostCSS plugin know about :where config ([cbf67bf](https://github.com/lttr/puleo/commit/cbf67bf))
 
 ### 🩹 Fixes
@@ -3782,7 +4043,7 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Update all dependencies ([101356a](https://github.com/lttr/puleo/commit/101356a))
+- ⚠️ Update all dependencies ([101356a](https://github.com/lttr/puleo/commit/101356a))
 
 ### ❤️ Contributors
 
@@ -3791,7 +4052,8 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 ---
 
 ### v0.6.1
-*Released: 9/11/2025*
+
+_Released: 9/11/2025_
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.6.0...v0.6.1)
 
@@ -3806,7 +4068,8 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 ---
 
 ### v0.6.2
-*Released: 9/13/2025*
+
+_Released: 9/13/2025_
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.6.1...v0.6.2)
 
@@ -3829,13 +4092,14 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 ---
 
 ### v0.7.0
-*Released: 9/26/2025*
+
+_Released: 9/26/2025_
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.6.2...v0.7.0)
 
 ### 🚀 Enhancements
 
-- ⚠️  Consolidate :host selector support to single CSS output ([9b045ed](https://github.com/lttr/puleo/commit/9b045ed))
+- ⚠️ Consolidate :host selector support to single CSS output ([9b045ed](https://github.com/lttr/puleo/commit/9b045ed))
 
 ### 💅 Refactors
 
@@ -3848,7 +4112,7 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Consolidate :host selector support to single CSS output ([9b045ed](https://github.com/lttr/puleo/commit/9b045ed))
+- ⚠️ Consolidate :host selector support to single CSS output ([9b045ed](https://github.com/lttr/puleo/commit/9b045ed))
 
 ### ❤️ Contributors
 
@@ -3857,13 +4121,14 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 ---
 
 ### v0.8.0
-*Released: 9/27/2025*
+
+_Released: 9/27/2025_
 
 [compare changes](https://github.com/lttr/puleo/compare/v0.7.0...v0.8.0)
 
 ### 🚀 Enhancements
 
-- ⚠️  Consolidate :root and :host selectors to hardcoded builds ([5457258](https://github.com/lttr/puleo/commit/5457258))
+- ⚠️ Consolidate :root and :host selectors to hardcoded builds ([5457258](https://github.com/lttr/puleo/commit/5457258))
 
 ### 🩹 Fixes
 
@@ -3877,7 +4142,7 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Consolidate :root and :host selectors to hardcoded builds ([5457258](https://github.com/lttr/puleo/commit/5457258))
+- ⚠️ Consolidate :root and :host selectors to hardcoded builds ([5457258](https://github.com/lttr/puleo/commit/5457258))
 
 ### ❤️ Contributors
 
@@ -3888,7 +4153,8 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 ## @nuxt/fonts Release Notes (0.11.1 → 0.12.1)
 
 ### v0.11.2
-*Released: 4/24/2025*
+
+_Released: 4/24/2025_
 
 ## 👉 Changelog
 
@@ -3917,8 +4183,8 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 
 - Run pkg.pr.new on prs too ([df3636f](https://github.com/nuxt/fonts/commit/df3636f))
 
-
 ### ❤️ Contributors
+
 - Guillaume Chau (@Akryum)
 - Daniel Roe (@danielroe)
 - Ezra Ashenafi (@Eazash)
@@ -3927,21 +4193,12 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 ---
 
 ### v0.11.3
-*Released: 5/9/2025*
+
+_Released: 5/9/2025_
 
 > 0.11.3 is the next patch release.
 >
 > **Timetable**: to be announced.
-
-
-
-
-
-
-
-
-
-
 
 ## 👉 Changelog
 
@@ -3960,15 +4217,16 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 - Unpin vite version ([83fe597](https://github.com/nuxt/fonts/commit/83fe597))
 - Dedupe + upgrade vite ([9d78888](https://github.com/nuxt/fonts/commit/9d78888))
 
-
 ### ❤️ Contributors
+
 - Daniel Roe (@danielroe)
 - dependabot[bot] (@dependabot[bot])
 
 ---
 
 ### v0.11.4
-*Released: 5/14/2025*
+
+_Released: 5/14/2025_
 
 > 0.11.4 is a hotfix release to address a breaking change with variable fonts
 
@@ -3980,14 +4238,15 @@ Thanks to @johnsoncodehk, @KazariEX, @alex-snezhko, @PurplePlanen, @zyoshoka, @D
 
 - **deps:** Revert `unifont` upgrade ([76a8f0d](https://github.com/nuxt/fonts/commit/76a8f0d))
 
-
 ### ❤️ Contributors
+
 - Daniel Roe (@danielroe)
 
 ---
 
 ### v0.12.0
-*Released: 11/7/2025*
+
+_Released: 11/7/2025_
 
 > 0.12.0 is the next major release.
 
@@ -4009,8 +4268,8 @@ A visual check on upgrade is important - and let me know if you encounter any is
 
 ### 🩹 Fixes
 
-- **deps:** ⚠️  Upgrade `unifont` ([f0584d0](https://github.com/nuxt/fonts/commit/f0584d0))
-- ⚠️  Set default font weight to `400 700` ([#658](https://github.com/nuxt/fonts/pull/658))
+- **deps:** ⚠️ Upgrade `unifont` ([f0584d0](https://github.com/nuxt/fonts/commit/f0584d0))
+- ⚠️ Set default font weight to `400 700` ([#658](https://github.com/nuxt/fonts/pull/658))
 
 ### 💅 Refactors
 
@@ -4053,11 +4312,11 @@ A visual check on upgrade is important - and let me know if you encounter any is
 
 #### ⚠️ Breaking Changes
 
-- **deps:** ⚠️  Upgrade `unifont` ([f0584d0](https://github.com/nuxt/fonts/commit/f0584d0))
-- ⚠️  Set default font weight to `400 700` ([#658](https://github.com/nuxt/fonts/pull/658))
-
+- **deps:** ⚠️ Upgrade `unifont` ([f0584d0](https://github.com/nuxt/fonts/commit/f0584d0))
+- ⚠️ Set default font weight to `400 700` ([#658](https://github.com/nuxt/fonts/pull/658))
 
 ### ❤️ Contributors
+
 - Daniel Roe (@danielroe)
 - Alexandru Teodor (@alexieremia)
 - dependabot[bot] (@dependabot[bot])
@@ -4068,7 +4327,8 @@ A visual check on upgrade is important - and let me know if you encounter any is
 ---
 
 ### v0.12.1
-*Released: 11/7/2025*
+
+_Released: 11/7/2025_
 
 > 0.12.1 is the next patch release.
 
@@ -4082,8 +4342,8 @@ This is a rerelease of 0.12.0, which encountered an issue in the publishing proc
 
 - Update workspace version for devtools ([#724](https://github.com/nuxt/fonts/pull/724))
 
-
 ### ❤️ Contributors
+
 - Alexandru Teodor (@alexieremia)
 
 ---
@@ -4091,7 +4351,8 @@ This is a rerelease of 0.12.0, which encountered an issue in the publishing proc
 ## db0 Release Notes (0.3.2 → 0.3.4)
 
 ### v0.3.3
-*Released: 10/1/2025*
+
+_Released: 10/1/2025_
 
 [compare changes](https://github.com/unjs/db0/compare/v0.3.2...v0.3.3)
 
@@ -4117,7 +4378,8 @@ This is a rerelease of 0.12.0, which encountered an issue in the publishing proc
 ---
 
 ### v0.3.4
-*Released: 10/1/2025*
+
+_Released: 10/1/2025_
 
 [compare changes](https://github.com/unjs/db0/compare/v0.3.3...v0.3.4)
 
@@ -4130,7 +4392,8 @@ This is a rerelease of 0.12.0, which encountered an issue in the publishing proc
 ## drizzle-kit Release Notes (0.31.1 → 0.31.8)
 
 ### drizzle-kit@0.31.2
-*Released: 6/23/2025*
+
+_Released: 6/23/2025_
 
 ### Bug fixes
 
@@ -4139,28 +4402,32 @@ This is a rerelease of 0.12.0, which encountered an issue in the publishing proc
 ---
 
 ### drizzle-kit@0.31.3
-*Released: 6/26/2025*
+
+_Released: 6/26/2025_
 
 - Internal changes to Studio context. Added `databaseName` and `packageName` properties for Studio
 
 ---
 
 ### drizzle-kit@0.31.4
-*Released: 6/27/2025*
+
+_Released: 6/27/2025_
 
 - Fixed `halfvec`, `bit` and `sparsevec` type generation bug in drizzle-kit
 
 ---
 
 ### drizzle-kit@0.31.5
-*Released: 9/26/2025*
+
+_Released: 9/26/2025_
 
 - Add casing support to studio configuration and related functions
 
 ---
 
 ### drizzle-kit@0.31.6
-*Released: 10/28/2025*
+
+_Released: 10/28/2025_
 
 ### Bug fixes
 
@@ -4169,7 +4436,8 @@ This is a rerelease of 0.12.0, which encountered an issue in the publishing proc
 ---
 
 ### drizzle-kit@0.31.7
-*Released: 11/17/2025*
+
+_Released: 11/17/2025_
 
 ### Bug fixes
 
@@ -4178,7 +4446,8 @@ This is a rerelease of 0.12.0, which encountered an issue in the publishing proc
 ---
 
 ### drizzle-kit@0.31.8
-*Released: 12/4/2025*
+
+_Released: 12/4/2025_
 
 ### Bug fixes
 
@@ -4190,7 +4459,8 @@ This is a rerelease of 0.12.0, which encountered an issue in the publishing proc
 ## drizzle-orm Release Notes (0.43.1 → 0.45.1)
 
 ### 0.44.0
-*Released: 5/28/2025*
+
+_Released: 5/28/2025_
 
 ## Error handling
 
@@ -4209,20 +4479,20 @@ By default, Drizzle uses a explicit caching strategy (i.e. `global: false`), so 
 Out first native integration was built together with Upstash team and let you natively use `upstash` as a cache for your drizzle queries
 
 ```ts
-import { upstashCache } from "drizzle-orm/cache/upstash";
-import { drizzle } from "drizzle-orm/...";
+import { upstashCache } from "drizzle-orm/cache/upstash"
+import { drizzle } from "drizzle-orm/..."
 
 const db = drizzle(process.env.DB_URL!, {
   cache: upstashCache({
     // 👇 Redis credentials (optional — can also be pulled from env vars)
-    url: '<UPSTASH_URL>',
-    token: '<UPSTASH_TOKEN>',
+    url: "<UPSTASH_URL>",
+    token: "<UPSTASH_TOKEN>",
     // 👇 Enable caching for all queries by default (optional)
     global: true,
     // 👇 Default cache behavior (optional)
-    config: { ex: 60 }
-  })
-});
+    config: { ex: 60 },
+  }),
+})
 ```
 
 You can also implement your own cache, as Drizzle exposes all the necessary APIs, such as get, put, mutate, etc.
@@ -4287,21 +4557,24 @@ For more usage example you can check our [docs](https://orm.drizzle.team/docs/ca
 ---
 
 ### 0.44.1
-*Released: 5/30/2025*
+
+_Released: 5/30/2025_
 
 - [[BUG]: Drizzle can no longer run on Durable Objects](https://github.com/drizzle-team/drizzle-orm/issues/4586)
 
 ---
 
 ### 0.44.2
-*Released: 6/4/2025*
+
+_Released: 6/4/2025_
 
 - [BUG]: Fixed type issues with joins with certain variations of `tsconfig`: [#4535](https://github.com/drizzle-team/drizzle-orm/issues/4535), [#4457](https://github.com/drizzle-team/drizzle-orm/issues/4457)
 
 ---
 
 ### 0.44.3
-*Released: 7/14/2025*
+
+_Released: 7/14/2025_
 
 - Fixed types of `$client` for clients created by drizzle function
 
@@ -4314,49 +4587,55 @@ await db.$client.[...]
 ---
 
 ### 0.44.4
-*Released: 7/29/2025*
+
+_Released: 7/29/2025_
 
 - Fix wrong DrizzleQueryError export. thanks @nathankleyn
 
 ---
 
 ### 0.44.5
-*Released: 8/25/2025*
+
+_Released: 8/25/2025_
 
 - Fixed invalid usage of `.one()` in `durable-sqlite` session
 - Fixed spread operator related crash in sqlite `blob` columns
-- Better browser support for sqlite `blob` columns 
+- Better browser support for sqlite `blob` columns
 - Improved sqlite `blob` mapping
 
 ---
 
 ### 0.44.6
-*Released: 10/2/2025*
+
+_Released: 10/2/2025_
 
 - feat: add $replicas reference #4874
 
 ---
 
 ### 0.44.7
-*Released: 10/23/2025*
+
+_Released: 10/23/2025_
 
 - fix durable sqlite transaction return value #3746 - thanks @joaocstro
 
 ---
 
 ### 0.45.0
-*Released: 12/4/2025*
 
-- Fixed pg-native Pool detection in node-postgres transactions  
-- Allowed subqueries in select fields  
-- Updated typo algorythm => algorithm  
+_Released: 12/4/2025_
+
+- Fixed pg-native Pool detection in node-postgres transactions
+- Allowed subqueries in select fields
+- Updated typo algorythm => algorithm
 - Fixed `$onUpdate` not handling `SQL` values (fixes [#2388](https://github.com/drizzle-team/drizzle-orm/issues/2388), tests implemented by [L-Mario564](https://github.com/L-Mario564) in [#2911](https://github.com/drizzle-team/drizzle-orm/pull/2911))
 - Fixed `pg` mappers not handling `Date` instances in `bun-sql:postgresql` driver responses for `date`, `timestamp` types (fixes [#4493](https://github.com/drizzle-team/drizzle-orm/issues/4493))
 
 ---
 
 ### 0.45.1
-*Released: 12/10/2025*
+
+_Released: 12/10/2025_
 
 - Fixed pg-native Pool detection in node-postgres transactions breaking in environments with forbidden `require()` ([#5107](https://github.com/drizzle-team/drizzle-orm/issues/5107))
 
@@ -4365,79 +4644,89 @@ await db.$client.[...]
 ## unplugin-vue-router Release Notes (0.12.0 → 0.19.0)
 
 ### v0.13.0
-*Released: 6/29/2025*
+
+_Released: 6/29/2025_
 
 Please refer to [CHANGELOG.md](https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md) for details.
 
 ---
 
 ### v0.14.0
-*Released: 6/29/2025*
+
+_Released: 6/29/2025_
 
 Please refer to [CHANGELOG.md](https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md) for details.
 
 ---
 
 ### v0.15.0
-*Released: 8/4/2025*
+
+_Released: 8/4/2025_
 
 Please refer to [CHANGELOG.md](https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md) for details.
 
 ---
 
 ### v0.16.0
-*Released: 10/14/2025*
+
+_Released: 10/14/2025_
 
 Please refer to [CHANGELOG.md](https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md) for details.
 
 ---
 
 ### v0.16.1
-*Released: 10/30/2025*
+
+_Released: 10/30/2025_
 
 Please refer to [CHANGELOG.md](https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md) for details.
 
 ---
 
 ### v0.16.2
-*Released: 11/14/2025*
+
+_Released: 11/14/2025_
 
 Please refer to [CHANGELOG.md](https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md) for details.
 
 ---
 
 ### v0.17.0
-*Released: 11/14/2025*
+
+_Released: 11/14/2025_
 
 Please refer to [CHANGELOG.md](https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md) for details.
 
 ---
 
 ### v0.17.1
-*Released: 11/21/2025*
+
+_Released: 11/21/2025_
 
 Please refer to [CHANGELOG.md](https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md) for details.
 
 ---
 
 ### v0.17.2
-*Released: 11/27/2025*
+
+_Released: 11/27/2025_
 
 Please refer to [CHANGELOG.md](https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md) for details.
 
 ---
 
 ### v0.18.0
-*Released: 11/28/2025*
+
+_Released: 11/28/2025_
 
 Please refer to [CHANGELOG.md](https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md) for details.
 
 ---
 
 ### v0.19.0
-*Released: 12/4/2025*
+
+_Released: 12/4/2025_
 
 Please refer to [CHANGELOG.md](https://github.com/posva/unplugin-vue-router/blob/main/CHANGELOG.md) for details.
 
 ---
-
